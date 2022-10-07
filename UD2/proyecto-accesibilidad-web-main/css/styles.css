@@ -160,8 +160,7 @@ body {
 
 .article-title a {
   color: var(--darker);
-  text-decoration: underline;
-  text-decoration-color: #6155A6;
+  text-decoration: none;
 }
 
 .article-title a:hover {
