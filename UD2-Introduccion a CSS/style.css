@@ -10,7 +10,7 @@ html{
 
 body{
     width: 80vw;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
     border-left: 1px solid grey;
     border-right: 1px solid grey;
@@ -129,9 +129,10 @@ a{
     background-color: greenyellow;
 }
 
-  /* footer{
-    position: absolute;
+footer{
+    position: relative;
     bottom: 0;
+    height: 100%;
     border-top: 1px solid gray;
     width: 80vw;
-  } */
+}
