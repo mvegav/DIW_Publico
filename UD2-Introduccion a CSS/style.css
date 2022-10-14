@@ -2,20 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} 
+}  
+/* Estilos generales*/
+html{
+    font-size: 14px; /* rem */
+}
 
 body{
-    font-size: 16px;
     width: 80vw;
+    height: 100vh;
     margin: 0 auto;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+
 }
 
 header{
     border-bottom: 1px solid gray;
 }
+
 h1{
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 h2{
     font-size: 1.8rem;
@@ -55,24 +63,76 @@ ul.destacados li{
 a {
     text-decoration-color: blueviolet;
   }
-  
-  a[title="tel"] {
+
+[title="tel"] {
     color: green;
-  }
-  
-  [href] {
+}
+
+[href] {
     font-size: 125%;
     padding: 8px;
-  }
+}
+
   /* odd -> impares
     even -> pares*/
-  article:nth-child(odd){
+article:nth-child(odd){
     background-color: beige;
-  }
+}
 
-  footer{
+a:visited{
+    color: chocolate;
+}
+
+input:hover{
+    background-color: aqua;
+}
+
+#parrafo2{
+    background-color: white;
+    color: black;
+}
+p.parrafo{
+    background-color: black;
+    color: white;
+}
+
+/* selector descendiente*/
+article p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* selector directo de hijos*/
+article > p {
+    color: darkblue;
+}
+
+/* hermano adyacente */
+h2 + p::first-letter {
+    font-size: 3rem;
+}
+
+/* hermano general */
+h2 ~ p{
+    font-weight: bold;
+}
+
+p{
+    font-weight: normal;
+    font-size: 1rem;
+    color: crimson;
+}
+
+a[href*="@"]{
+    background-color: aqua;
+}
+
+a{
+    background-color: greenyellow;
+}
+
+  /* footer{
     position: absolute;
     bottom: 0;
     border-top: 1px solid gray;
     width: 80vw;
-  }
+  } */
