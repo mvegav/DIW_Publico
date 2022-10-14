@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body{
+    font-size: 16px;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+header{
+    border-bottom: 1px solid gray;
+}
+h1{
+    text-align: center;
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.8rem;
+}
+
+h3{
+    font-size: 1.4rem;
+}
+
+article, aside, section{
+    background-color: rgba(105, 105, 105, 0.233);
+    margin: 0 auto;
+    margin: 20px 0px;
+    padding: 10px;
+}
+
+
+code{
+    font-family: 'Courier New', Courier, monospace;
+    color: darkslategrey;
+}
+
+p,li,nav,ul,code{
+    margin: 20px;
+}
+p, li{
+    line-height: 1.2rem;
+}
+
+
+ul.destacados li{
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+
+a {
+    text-decoration-color: blueviolet;
+  }
+  
+  a[title="tel"] {
+    color: green;
+  }
+  
+  [href] {
+    font-size: 125%;
+    padding: 8px;
+  }
+  /* odd -> impares
+    even -> pares*/
+  article:nth-child(odd){
+    background-color: beige;
+  }
+
+  footer{
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid gray;
+    width: 80vw;
+  }
