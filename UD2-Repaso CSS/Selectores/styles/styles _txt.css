@@ -1,0 +1,103 @@
+/* UD2- Repaso CSS
+    Selectores simples
+    Autor: 
+    fecha:
+    Nombre del fichero: styles.css
+*/
+/* Hay poner el selector delante de cada declaración para que afecte a los elementos que indica
+el comentario que cada declarción tiene encima*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #494949;
+    margin: 0.5rem;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: lightgrey;
+    border-top: 1px dotted gray;
+    text-align: center;
+}
+/* Todos los elementos de la pagina */
+/* selector universal*/
+:root {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Todos los article
+  color de fondo antiquewhite
+  bordes de 1px solido de color negro
+  borde redondeado de 10px
+  padding de 2 veces el tamaño de la letra M de la fuente del elemento root
+ */
+
+
+/* para todos los aside
+  color de fondo beige
+  borde punteado de 2px de color negro
+  borde redondeado de 10px
+  */
+
+
+/* Todos los parrafos de la pagina de color #666*/
+
+
+/* Todos los elementos h1 de la pagina
+   negrita
+   tamaño 3 veces el tamaño de la letra M de la fuente del elemento root
+   texto centrado
+*/
+
+
+/* todos los elementos h2 de la página 
+   tamaño fuente 2 veces el tamaño de la letra M de la fuente del elemento root
+   Centrado*/
+
+
+/* la primera letra del párrafo contiguo a todos los h2 
+    tamaño del texto 3 veces el tamaño de la letra M de la fuente del elemento root
+*/
+
+/* Segundo párrafo de los article 
+   borde superior punteado de 1px de color #666
+*/
+
+
+/* Todos los párrafos de clase "entradilla"
+   Negrita
+   Tamaño de la fuente 1.5 veces el tamaño de la letra M de la fuente del elemento root*/
+
+/* Todos los párrafos del primer article de un conjunto de hermanos
+   color del texto darkblue  */
+
+
+/* Todos los strong que esten dentro de párrafos
+   color del texto black*/
+
+/* para todos los enlaces que sean hermanos generales de un h2, pero solo en los article 
+  color del subrayado darkgreen*/
+
+
+/* Todos los enlaces que estén dentro de párrafos con clase "entradilla" 
+   sin decoración (subrayado)
+   color del texto orange
+   negrita
+   fuente 1.5 veces el tamaño de la letra M de la fuente del elemento root*/
+
+
+/* todos los enlaces a páginas https, antes del enlace debe aparecer una flecha a la derecha , \027af, de color darkgreen */
+
+/* para todos los párrafos de los artículos, al seleccionarlos, color de fondo rgba(255, 0, 0, 0.827) */
+
+
+/* para el párrafos del pie con id autor, antes y después, poner el símbolo de copyright "\00A9" */
