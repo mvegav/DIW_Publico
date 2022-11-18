@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacta</title>
+    <link rel="stylesheet" href="styles/estilos.css">
+</head>
+
+<body>
+    <!-- Saltar -->
+    <nav id="saltar">
+        <ul>
+            <li><a href="#menu">Saltar al menú principal</a></li>
+            <li><a href="#contenido">Saltar al contenido</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>La Accesibilidad</h1>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html" class="activa">Inicio</a></li>
+                <li><a href="accesibilidad.html">La Accesibilidad</a></li>
+                <li><a href="accesibilidadSi.html">Ejemplo Accesible</a></li>
+                <li><a href="#">Contacta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="contenido">
+        <h2>Formulario de contacto</h2>
+        <form action="#">
+            <fieldset>
+                <legend>Datos de contacto</legend>
+                <p class="campo"><label for="nombre">Nombre *</label>
+                    <!-- max y min es para campos de tipo: fecha, rangos, números-->
+                    <input type="text" name="nombre" id="nombre" autocomplete="on" size="15" max="15" min="2"
+                        title="Nombre de pila. De 2 a 15 caracterés mayúsculas o minúsculas con tildes." required
+                        pattern="[a-zA-ZáéíóúüÁÉÍÓÚàèìòùÀÈÌÒÙ'\- ]{2,15}" placeholder="Ana" autofocus>
+                </p>
+                <p class="campo">
+                    <label for="correo">Correo electrónico* </label>
+                    <input type="email" name="correo" id="correo" autocomplete="on" placeholder="correo@example.com"
+                        pattern="^[a-zA-Z0-9.#$%&*_-]+@[a-zA-Z0-9-]+(.){1}[a-zA-Z0-9-]{2,4}$" required>
+                </p>
+                <p class="campo">
+                    <label for="telefono">Teléfono * </label>
+                    <input type="tel" name="telefono" id="telefono" autocomplete="on" placeholder="654454545"
+                        pattern="[0-9]{9,9}">
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Mensaje</legend>
+                <p class="campo2"><label for="mensaje">Mensaje de contacto*
+                    </label>
+                    <textarea name="mensaje" id="mensaje"
+                        placeholder="Me gustaría que me enviaran más información sobre este tema." cols="30" rows="10"
+                        required></textarea>
+                </p>
+            </fieldset>
+            <p>* campos obligatorios</p>
+            <div>
+                <input type="submit" value="Enviar" class="boton">
+                <label for="limpiar" hidden>Limpiar</label>
+                <input type="reset" value="Limpiar" id="limpiar" class="boton">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; Marina Vega Vázquez &cir; Todos los derechos reservados </p>
+        <p><a href="http://www.w3.org/WAI/WCAG1AA-Conformance" title="Explicación del Nivel Doble-A de 
+            Conformidad">
+                <img height="32" width="88" src="http://www.w3.org/WAI/wcag1AA" alt="Icono de conformidad con el Nivel Doble-A, 
+            de las Directrices de Accesibilidad para el 
+            Contenido Web 1.0 del W3C-WAI"></a></p>
+    </footer>
+</body>
+
+</html>
