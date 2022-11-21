@@ -20,6 +20,7 @@
 }
 
 body {
+    width: 100vw;
     background-color: #fff;
     margin: 0 auto;
     padding: 0 2% 2% 2%;
@@ -232,4 +233,52 @@ nav.redes li:last-child a:after {
 
 nav.redes a {
     text-decoration: none;
+}
+
+/*====================== media queries para tablet ========================*/
+@media screen and (min-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header a.icono img {
+        max-width: max-content;
+        height: auto;
+    }
+
+    footer {
+        flex-direction: row;
+    }
+}
+
+/*====================== media queries para tablet en horizontal ========================*/
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    html {
+        background-color: #f8e2dca8;
+    }
+
+    body {
+        width: 90vw;
+    }
+}
+
+/*====================== media queries para tablet ========================*/
+@media screen and (min-width: 1024px) {
+    :root {
+        font-size: 16px;
+    }
+
+    html {
+        background-color: #f8e2dca8;
+    }
+
+    body {
+        width: 80vw;
+    }
 }

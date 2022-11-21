@@ -16,16 +16,70 @@ Mostrar ciertos detalles necesarios (la URL de los enlaces, por ejemplo).
 *  
 /* Cambiar tipografía o alternar colores */
 
+p {
+    background-color: white;
+}
+
+html {
+    background-color: unset;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    box-shadow: none;
+    color: black;
+    line-height: 1.4;
+}
 
 /* indicamos el formato de la página */
+@page {
+    size: 8.27in 11.69in;
+    /* DIN A4 */
+    margin: 0.5in 0.5in;
+}
 
 /* La propiedad page-break-inside se utiliza para evitar que un cierto elemento pueda ser cortado 
 a la mitad en un salto de página, como por ejemplo imágenes, tablas o fragmentos de código:
 */
+table,
+img,
+pre,
+code {
+    page-break-inside: avoid;
+}
 
 /* Mostrar enlaces */
+a::after {
+    content: "(" attr(href) ")";
+    padding: 0 5px;
+}
 
 /* para no mostrar los enlaces internos de la página */
-
+a[href^="http"]:not([href*="midominio.es"]):after {
+    content: " (" attr(href) ")";
+}
 
 /* Ocultar zonas no relevantes */
+
+.menu,
+.icono {
+    display: none;
+}
+
+table {
+    width: auto;
+    text-align: center;
+}
+
+th {
+    color: white;
+    background-color: dimgray;
+}
+
+code,
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(80, 77, 77);
+}
