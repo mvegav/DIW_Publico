@@ -1,0 +1,24 @@
+/* hoja estilos para impresion */
+/*
+La razón es obvia, en una impresión nos pueden interesar ciertos detalles:
+
+Eliminar fondos negros o intentar que predomine el texto blanco (gastar menos tinta).
+Usar tipografías apropiadas para impresión (cansar menos la vista, reducir gasto de tinta).
+Ocultar publicidad, menús, navegación, etc... (no tienen sentido en un documento impreso).
+Mostrar ciertos detalles necesarios (la URL de los enlaces, por ejemplo).
+*  
+/* Cambiar tipografía o alternar colores */
+
+
+/* indicamos el formato de la página */
+
+/* La propiedad page-break-inside se utiliza para evitar que un cierto elemento pueda ser cortado 
+a la mitad en un salto de página, como por ejemplo imágenes, tablas o fragmentos de código:
+*/
+
+/* Mostrar enlaces */
+
+  /* para no mostrar los enlaces internos de la página */
+
+
+  /* Ocultar zonas no relevantes */

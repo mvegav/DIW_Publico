@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+	Diseño de interfaces Web
+	Ejemplo de tutorial realizado en HTML5 y CSS3
+	Autor: Marina Vega Vázquez
+	Fecha: 21/11/2022
+	Nombre fichero: index.html
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD4 - Estilo de texto, pseudo-clases y pseudo-elementos</title>
+    <link rel="stylesheet" href="./css/base.css">
+</head>
+
+<body>
+    <header>
+        <a href="" class="icono"><img src="./img/HTML5.png" alt="Logo HTML5"></a>
+        <h1>UD4 - Estilo de texto, pseudo-clases y pseudo-elementos</h1>
+        <nav class="menu">
+            <ul>
+                <!-- acceskey - alt+shift-tecla-->
+                <li><a href="#seccion1" accesskey="d">Definir la codificación de caracteres</a></li>
+                <li><a href="#seccion2" accesskey="i">Importar hojas de estilos</a></li>
+                <li><a href="#seccion3" accesskey="l">Las pseudo-clases y los pseudo-elementos</a></li>
+                <li><a href="#seccion4" accesskey="e">Ejemplo pseudo-elementos</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <section id="seccion1">
+            <h2>Definir la codificación de caracteres</h2>
+            <p>Al igual que con los archivos HTML, es una buena idea en cada documento CSS definir la codificación de
+                caracteres utilizado en el archivo. En CSS, esto se consigue con la siguiente regla @charset</p>
+            <p><code>@charset "codificación";</code></p>
+            <p>donde encoding define la codificación de caracteres utilizada en el archivo. Añada la regla @charset al
+                archivo de hoja de estilo base.css, especificando que se utilizará el conjunto de caracteres UTF-8 en el
+                código CSS</p>
+        </section>
+        <section id="seccion2">
+            <h2>Importar hojas de estilos</h2>
+            <p>La regla @charset es un ejemplo de una at-rule CSS, que es una regla utilizada para enviar directivas al
+                navegador indicando cómo debe interpretarse y analizarse el contenido del archivo CSS. Otra at-rule es
+                la siguiente @import utilizada para importar el contenido de un archivo de hoja de estilo</p>
+            <p><code>@import url(url);</code></p>
+            <p>donde url es la URL de un archivo de hoja de estilo externo.</p>
+            <p>La regla @import se utiliza para combinar reglas de estilo de varias hojas de estilo en un único archivo.
+            </p>
+            <p>Por ejemplo, una tienda online puede tener una hoja de estilo llamada basic.css que contenga todos los
+                estilos básicos utilizados en cada página web y otra hoja de estilo especifica llamada tienda.css para
+                la parte de la tienda oline.</p>
+            <p>La declaración @import debe ir siempre antes de cualquier otra regla de estilo en la hoja de estilo.</p>
+            <p>De forma que el siguiente código importa la hoja de estilos base en la ce tienda.css:</p>
+            <p><code> @import url(base.css);</code></p>
+            <p>Si tenemos distintas hojas de estilos a importar estas se ponen una debajo de la otra. El uso de
+                múltiples reglas @import en un archivo CSS tiene el mismo impacto que añadir múltiples elementos de
+                enlace al archivo HTML. Una de las ventajas de la regla @import es que simplifica su código HTML al
+                colocar la decisión sobre qué hojas de estilo incluir y excluir en el archivo CSS en lugar de en el
+                archivo HTML.</p>
+            <p>En nuestro caso vamos a importar normalize.css en la hoja de estilos base.css</p>
+        </section>
+        <section id="seccion3">
+            <h2>Las pseudo-clases y los pseudo-elementos</h2>
+            <p>La diferencia entre pseudo-clases y pseudo-elementos es sutil. En general, los pseudo-elementos suelen
+                hacer referencia a determinadas partes de un elemento, mientras que las pseudo-clases suelen hacer
+                referencia al estado del elemento.</p>
+            <p>En resumen podemos decir que:</p>
+            <ol class="destacada">
+                <li>Las pseudo-clases y los pseudo-elementos se utilizan para agregar efectos especiales al selector.
+                </li>
+                <li>La diferencia esencial entre las pseudo-clases y los pseudo-elementos es si se deben crear nuevos
+                    elementos de forma abstracta en dicho caso se usan los pseudo-elementos.
+                </li>
+                <li>Las pseudo-clases se pueden superponer siempre que no sean mutuamente excluyentes.
+                </li>
+                <li>El pseudo-elemento solo puede aparecer una vez en un selector y solo puede aparecer al final.
+                </li>
+                <li>La prioridad de pseudo-clase y pseudo-elemento es la misma que la prioridad de clase y etiqueta
+                    respectivamente.
+                </li>
+                <li>Las pseudo-clases van precedidas de ":" y los pseudo-elementos por "::" aunque también admiten un
+                    solo ":" e incluso hay navegadores con IE que no soportan los "::".
+                </li>
+                <li>img, input y otras etiquetas individuales no tienen pseudoelementos antes y después, porque las
+                    etiquetas individuales en sí mismas no pueden tener elementos secundarios. Si queremos emplear
+                    pseudo-elemtos antes y despues los metemos detro de un elemento tipo contenedor como un div, aside,
+                    article,...
+                </li>
+            </ol>
+
+        </section>
+        <section id="seccion4">
+            <h2>Ejemplo pseudo-elementos</h2>
+            <!--table>(thead>tr>th{elemento$}*3)+tbody>tr#fila$@*3>td.columna$@{valor celda}*3-->
+            <p>Vamos a emplear la pseudo-case nt-child para poder colorear el fondo de las filas pares e impares de
+                forma distinta.</p>
+            <p>Con la pseudo-clase nth-child(odd) hacemos referencia a las filas impares, mientras que con
+                nth-child(even) hacemos referencia a las pares.</p>
+            <p><code>
+            tbody tr:nth-child(odd){<br/>
+                background-color: #f8e2dca8;<br>
+            }
+            </code></p>
+            <p>También podemos usar</p>
+            <p><code>
+                tbody tr:nth-child(2n+1){<br/>
+                    background-color: #f8e2dca8;<br/>
+                }  
+            </code></p>
+            <p>Otro método sería crear una clase para las filas impares o bien un id para cada fila a colorear el fondo.
+            </p>
+            <p><code>
+                #fila1, #fila3{<br/>
+                    background-color: #f8e2dca8;<br/>
+                }
+            </code></p>
+            <p>O</p>
+            <p><code>.Impares{<br/>
+                background-color: #f8e2dca8;<br/>
+            }</code></p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>elemento1</th>
+                        <th>elemento2</th>
+                        <th>elemento3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="fila1">
+                        <td class="columna1">valor celda</td>
+                        <td class="columna2">valor celda</td>
+                        <td class="columna3">valor celda</td>
+                    </tr>
+                    <tr id="fila2">
+                        <td class="columna1">valor celda</td>
+                        <td class="columna2">valor celda</td>
+                        <td class="columna3">valor celda</td>
+                    </tr>
+                    <tr id="fila3">
+                        <td class="columna1">valor celda</td>
+                        <td class="columna2">valor celda</td>
+                        <td class="columna3">valor celda</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Para más información puedes consultar los siguientes enlaces:</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements">Pseudoelementos
+                        developer</a></li>
+                <li><a href="https://lenguajecss.com/css/selectores/pseudoelementos/">Pseudoelementos Lenguaje CSS</a>
+                </li>
+
+            </ul>
+        </section>
+
+    </main>
+    <footer>
+        <p>Copyright &copy;Marina Vega Vázquez</p>
+        <nav class="redes icono">
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </nav>
+        <p class="icono"><a href="https://www.w3.org/WAI/WCAG2AA-Conformance"
+                title="Explanation of WCAG 2 Level AA conformance">
+                <img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-v" alt="Level AA conformance,
+                 W3C WAI Web Content Accessibility Guidelines 2.1">
+            </a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
