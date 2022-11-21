@@ -1,23 +1,235 @@
+@charset "utf-8";
+@import url(normalize.css);
+@import url(fuentes.css);
+
 /*
-La razón es obvia, en una impresión nos pueden interesar ciertos detalles:
-
-Eliminar fondos negros o intentar que predomine el texto blanco (gastar menos tinta).
-Usar tipografías apropiadas para impresión (cansar menos la vista, reducir gasto de tinta).
-Ocultar publicidad, menús, navegación, etc... (no tienen sentido en un documento impreso).
-Mostrar ciertos detalles necesarios (la URL de los enlaces, por ejemplo).
-*  
-/* Cambiar tipografía o alternar colores */
-
-
-/* indicamos el formato de la página */
-
-/* La propiedad page-break-inside se utiliza para evitar que un cierto elemento pueda ser cortado 
-a la mitad en un salto de página, como por ejemplo imágenes, tablas o fragmentos de código:
+    Hoja de estilos de la tutoría 2 de la UD4
+    Estilos de texto, importar css, pseudo-elementos y pseudo-clases,...
+    Autor: Marina Vega Vázquez
+    Fecha: 07/12/2021
+    Nombre fichero: base.css
 */
+/* -- Estilos generales --*/
+* {
+    box-sizing: border-box;
+}
 
-/* Mostrar enlaces */
+:root {
+    font-size: 12px;
+    font-family: "gentium_basicregular", Georgia, "Times New Roman", Times, serif;
+}
 
-/* para no mostrar los enlaces internos de la página */
+body {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 0 2% 2% 2%;
+}
+
+code {
+    color: #eb7655;
+    font-weight: 700;
+}
+
+h1,
+h2 {
+    /* letter-spacing: 0.2rem; espaciado entre letras*/
+    word-spacing: 0.5rem;
+    /* espaciado entre palabras*/
+    vertical-align: top;
+}
+
+h1 {
+    text-align: center;
+    font-family: "gentium_basicbold_italic";
+    font-size: 2rem;
+}
+
+h2 {
+    text-decoration: underline;
+    font-family: "gentium_basicitalic";
+    font-size: 1.8rem;
+}
+
+main p {
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
+/*===================================== Estilos cabecera ============================*/
+header a.icono {
+    width: auto;
+    margin-top: .5rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+header a.icono img {
+    max-width: 70px;
+    height: auto;
+}
+
+/*===================================== estilo del menú ================================*/
+nav.menu {
+    padding: 1rem;
+}
+
+nav.menu ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    line-height: 1.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fb897f5b;
+}
+
+nav.menu li {
+    display: block;
+    flex-basis: 100%;
+}
+
+.menu a {
+    width: 100%;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    color: #000;
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+}
 
 
-/* Ocultar zonas no relevantes */
+nav.menu li a:hover {
+    background: tomato;
+    color: white;
+}
+
+nav.menu li a::first-letter {
+    border-bottom: 2px solid red;
+}
+
+nav.menu li a:hover::before {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f061";
+    /* codigos caracteres par iconos https://fontawesome.com/v5.15/icons?d=gallery&p=2 */
+}
+
+/* -- Estilos de secciones -- */
+section p:last-child {
+    background-color: rgba(68, 68, 68, 0.123);
+}
+
+section p:first-of-type {
+    background-color: rgba(22, 115, 131, 0.123);
+}
+
+/*====================================== -- Estilos tabla =================================--*/
+table {
+    width: 60%;
+    margin: 0 auto;
+}
+
+table,
+td,
+th {
+    border: 1px solid #444;
+    /*border-spacing: 0; /*Primero, podéis limitaros a cerrar los huecos utilizando la propiedad border-spacing (espaciado de bordes)*/
+    border-collapse: collapse;
+    /*Si queréis mantener el efecto de borde de 1 píxel, necesitaréis definir la tabla de manera que los bordes se 
+    "colapsen" los unos sobre los otros. Podéis conseguirlo utilizando la propiedad border-collapse (superposición de bordes) en lugar de la de border-spacing (espaciado de bordes)*/
+}
+
+td,
+th {
+    width: 25%;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #fe5b34;
+    color: #fff;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+/*
+con la pseudo-clase nth-child(odd) hacemos referencia a las filas impares, mientras que con even hacemos 
+referencia a las pares */
+
+tbody tr:nth-child(odd) {
+    background-color: #f8e2dca8;
+}
+
+/* este método es mucho mas complicado ya que tenemos que, o bien crear un class llamado filaImpar
+ y definir cada fila impar con esta clase, o bien hacer referencia a cada id de cada fila impar 
+#fila1, #fila3{
+    background-color: #f8e2dca8;
+}*/
+
+/* -- estilos con pseudo-clases y pseudo-elementos -- */
+/* el siguiente es un pseudo-elemento experimental y por lo tanto no compatible con todos los navegadores */
+.destacada li::marker {
+    color: darkred;
+    font-size: 1.2rem;
+}
+
+section p:first-of-type::first-letter {
+    font-size: calc(100% + 0.8rem);
+    font-weight: bold;
+}
+
+/*====================================== -- Estilos del pie -- =======================================*/
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    color: #444;
+    border-top: 1px dotted #444;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: .5rem 0;
+}
+
+footer *,
+footer *::after,
+footer *::before {
+    margin: 0;
+    padding: 0;
+}
+
+nav.redes ul {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: .5rem;
+    font-size: 1.5rem;
+}
+
+nav.redes ul li {
+    align-self: flex-start;
+}
+
+nav.redes li:first-child a:after {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f082";
+}
+
+nav.redes li:last-child a:after {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f081";
+}
+
+nav.redes a {
+    text-decoration: none;
+}
