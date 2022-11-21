@@ -1,4 +1,11 @@
-/* hoja estilos para impresion */
+/*
+    hoja estilos para impresion para práctica manual HTML
+    Estilos de texto, importar css, pseudo-elementos y pseudo-clases,...
+    Autor: Marina Vega Vázquez
+    Fecha: 21/11/2022
+    Nombre fichero: print.css
+*/
+
 /*
 La razón es obvia, en una impresión nos pueden interesar ciertos detalles:
 
@@ -18,7 +25,7 @@ a la mitad en un salto de página, como por ejemplo imágenes, tablas o fragment
 
 /* Mostrar enlaces */
 
-  /* para no mostrar los enlaces internos de la página */
+/* para no mostrar los enlaces internos de la página */
 
 
-  /* Ocultar zonas no relevantes */
+/* Ocultar zonas no relevantes */
