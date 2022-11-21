@@ -84,11 +84,13 @@ nav.menu ul {
 }
 
 nav.menu li {
-  border-bottom: 1px solid #fff;
+  display: block;
+  flex-basis: 100%;
 }
 
 .menu a {
   text-decoration: none;
+  border-bottom: 1px solid #fff;
   color: #000;
   display: block;
   font-weight: bold;
@@ -128,7 +130,7 @@ table,
 td,
 th {
   border: 1px solid #444;
-  border-spacing: 0; /*Primero, podéis limitaros a cerrar los huecos utilizando la propiedad border-spacing (espaciado de bordes)*/
+ /* border-spacing: 0; /*Primero, podéis limitaros a cerrar los huecos utilizando la propiedad border-spacing (espaciado de bordes)*/
   border-collapse: collapse; 
   /*Si queréis mantener el efecto de borde de 1 píxel, necesitaréis definir la tabla de manera que los bordes se 
     "colapsen" los unos sobre los otros. Podéis conseguirlo utilizando la propiedad border-collapse (superposición de bordes) en lugar de la de border-spacing (espaciado de bordes)*/
