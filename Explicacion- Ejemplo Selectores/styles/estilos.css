@@ -53,24 +53,48 @@ li {
 }
 
 /* selector simple y descendiente indirectos */
-
-
+.lista a {
+    text-decoration: none;
+    color: green;
+    font-size: 1rem;
+}
 
 /* selectores de atributos */
-
-
-
+p a[href^="#"] {
+    color: blueviolet;
+}
 
 /* selector de pseudoclases */
 /* seleccionamos los hermanos impares de tipo section*/
-
+/*section:nth-child(odd) {*/
+section:nth-of-type(2n+1) {
+    background-color: #c6c6c63f;
+    padding: 1rem 0;
+    border-radius: 20px;
+    margin: 1rem;
+}
 
 
 /* selector de hijo descendiente directo */
-
+section>h2 {
+    background-color: var(--color-fondo);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+}
 
 
 /*selectores desdientes directos e indirectos */
+section p,
+section li {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+}
+
+section h3 {
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 2px dotted green;
+}
 
 pre {
     background-color: rgba(128, 128, 128, 0.131);
@@ -81,13 +105,15 @@ pre {
 }
 
 /* selectores hermanos general */
-
-
+h4~p.subtitulo {
+    border-top: 1px dotted #666;
+}
 
 /* selectores hermanos adyacentes */
-
-
-
+h3+ul {
+    margin-left: 2rem;
+    list-style-type: circle;
+}
 
 /* css del ejemplo de pseudoclases */
 ul#ejemplo {
@@ -142,7 +168,23 @@ tr {
 }
 
 /* Empleamos selector no hijo directo, es decir para los code que no sean hijos directos de un pre
-interlineado 100% color letra darkblue*/
+interlineado 100% color letra rgb(189, 33, 15)*/
+:not(pre)>code {
+    line-height: 100%;
+    color: rgb(189, 33, 15);
+}
 
+a>code {
+    color: darkblue;
+}
 
-/* Selector de pseudoelemento para cambiar el color de las filas pares */
+/* Selector de pseudoclase para cambiar el color de las filas pares */
+tr:nth-child(even) {
+    background-color: var(--color-fondo);
+}
+
+/* selector de pseudoelemento que al seleccionar un párrafo se ponga color de fondo darkblue y letra blanco*/
+p::selection {
+    background-color: darkblue;
+    color: white;
+}
