@@ -1,0 +1,153 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4rem;
+    --color-fuente-secundaria: #a50000;
+    --color-fuente: #000;
+    --color-fondo: #e7402e;
+    --font-size: 1rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#logo {
+    max-width: 150px;
+    height: auto;
+    text-align: center;
+}
+
+#logo img {
+    width: 60%;
+    height: auto;
+}
+
+
+
+
+/* ----- header ----*/
+header {
+    width: 100vw;
+    min-height: 120px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+h1 {
+    color: var(--color-fuente-secundaria);
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+}
+
+
+body>header>nav>ul {
+    list-style: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* ---- menu ---*/
+#menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: .5rem;
+}
+
+#menu ul li {
+    background-color: var(--color-fondo);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: all 1s ease-in;
+}
+
+#menu a {
+    width: 100%;
+    min-width: 200px;
+}
+
+#menu li:hover {
+    background-color: white;
+    border: 1px solid var(--color-fondo);
+}
+
+#menu a:hover {
+    color: var(--color-fondo);
+}
+
+/* ------ main ----- */
+main {
+    width: 100vw;
+    height: max-content;
+    padding: 0 2rem;
+}
+
+
+/* ---- footer ----- */
+footer {
+    background-color: var(--color-fondo);
+    width: 100vw;
+    height: max-content;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+footer a {
+    border-top: 2px dotted white;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+
+@media screen and (min-width: 800px) {
+    :root {
+        font-size: 14px;
+        line-height: 1.6rem;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    main {
+        flex: 2 1 auto;
+        width: 80%;
+        height: 80vh;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
