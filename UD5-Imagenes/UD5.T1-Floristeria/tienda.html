@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+	Diseño de interfaces Web
+	Ejemplo de tienda online con tarjetas de productos adaptables con flexbox
+	Autor: Marina Vega Vázquez
+	Fecha: 08/03/2022
+	Nombre fichero: tienda.html
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda online Arte Floral</title>
+  <link rel="stylesheet" href="css/tienda.css">
+</head>
+
+<body>
+  <header class="cabecera">
+    <a href="" class="logo">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="./img/logoAF-250.png, ./img/logoAF-150.png x2">
+        <source media="(min-width: 768px)" srcset="./img/logoAF-150.png, ./img/logoAF-250.png x2">
+        <img src="./img/logoAF-150.png" srcset="./img/logoAF-170.png" alt="Logo de la Floristería">
+      </picture>
+    </a>
+    <button class="cta-contact">Contacta</button>
+    <nav>
+      <ul>
+        <li><a href="">Inicio</a></li>
+        <li><a href="">Flores</a></li>
+        <li><a href="#">Tienda</a></li>
+        <li><a href="">Nosotros</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <main class="principal grande">
+    <ul class="productos">
+      <li>
+        <div class="producto">
+          <figure>
+            <img src="img/galeria/cuboFlores400.jpg" alt="">
+          </figure>
+          <h3>Cubo con flores</h3>
+          <p>Cubo de flores de aluminio pintado con un ramo de flores de temporada.</p>
+          <p><strong>Precio:</strong> 30€</p>
+          <p class="boton"><button>Comprar</button></p>
+
+        </div>
+      </li>
+      <li>
+        <div class="producto">
+          <figure>
+            <img src="img/galeria/rosaRosa400.jpg" alt="">
+          </figure>
+          <h3>Ramo de rosas</h3>
+          <p>Ramo de media docena de rosas a elegir entre: rojas, rosas, amarillas o blancas.</p>
+          <p><strong>Precio:</strong> 12€</p>
+          <p class="boton"><button>Comprar</button></p>
+        </div>
+      </li>
+      <li>
+        <div class="producto">
+          <figure>
+            <img src="img/galeria/bonsaiFicus400.jpg" alt="">
+          </figure>
+          <h3>Bonsai Ficus</h3>
+          <p>Bonsai de 30 a 50cm de alto con una edad entre 3 y 10 años</p>
+          <p><strong>Precio:</strong> 36€</p>
+          <p class="boton"><button>Comprar</button></p>
+        </div>
+      </li>
+      <li>
+        <div class="producto">
+          <figure>
+            <img src="img/galeria/suculentas400.jpg" alt="">
+          </figure>
+          <div class="inf">
+          <h3>Suculentas</h3>
+          <p>Conjunto de 2 suculentas en mazeta metálica. Tamaños de 5cm.</p>
+          <p><strong>Precio:</strong>8€</p>
+          <p class="boton"><button>Comprar</button></p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="producto">
+          <figure>
+            <img src="img/galeria/rosaBlanca400.jpg" alt="">
+          </figure>
+          <div class="inf">
+          <h3>Ramo de rosas</h3>
+          <p>Ramo de una docena de rosas a elegir entre: rojas, rosas, amarillas, blancas o mezcla.</p>       
+          <p><strong>Precio:</strong> 25€</p>
+          <p class="boton"><button>Comprar</button></p>
+        </div>
+      </li>
+      <li>
+        <div class="producto">
+          <figure>
+            <img src="img/galeria/Rododendro.400jpg.jpg" alt="">
+          </figure>
+          <h3>Rododendro</h3>
+          <p>Rododendro de color rosa en mazeta de barro.</p>
+          <p><strong>Precio:</strong> 60€</p>
+          <p class="boton"><button>Comprar</button></p>
+        </div>
+      </li>
+      <li>
+        <div class="producto">
+          <figure>
+            <img src="img/galeria/magnolio400.jpg" alt="">
+          </figure>
+          <h3>Magnonia</h3>
+          <p>Magnolia de diversos tipos: denudata, grandiflora, liliflora, siboldii, stellata y la grandiosa soluangeana (tulipan).</p>
+          <p><strong>Precio:</strong> 25€</p>
+          <p class="boton"><button>Comprar</button></p>
+        </div>
+      </li>
+      <li>
+        <div class="producto">
+          <figure>
+            <img src="img/galeria/ramo400.jpg" alt="">
+          </figure>
+          <h3>Ramo variado</h3>
+          <p>Ramo de flores de temporada.</p>
+          <p><strong>Precio desde:</strong> 10€</p>
+          <p class="boton"><button>Comprar</button></p>
+        </div>
+      </li>
+    </ul>
+  </main>
+  <footer>
+    <div class="derechos">
+      <small>© Copyright 2022. Todos los derechos reservados. </small>
+      <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img src="img/wcag1AA.gif" class="img_pie" alt="¡CSS Válido!" />
+        </a>
+      </p>
+      <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img src="img/wcag1AA-blue.gif" class="img_pie" alt="¡CSS Válido!" />
+        </a>
+      </p>
+    </div>
+    <ul>
+      <li>
+        <a href="" target="_blank">
+          <img src="./img/facebook.jpg"></img>
+        </a>
+      </li>
+      <li>
+        <a href="" target="_blank">
+          <img src="./img/twitter.jpg"></img>
+        </a>
+      </li>
+      <li>
+        <a href="" target="_blank">
+          <i class="icon ion-logo-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a href="" target="_blank">
+          <i class="icon ion-logo-github"></i>
+        </a>
+      </li>
+    </ul>
+  </footer>
+</body>
+
+</html>

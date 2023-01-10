@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
+
+:root {
+ /* --main-letra-color: #300e41;
+  /*--main-letra-color: #5e7425;*/
+  --main-letra-color:#415840;
+  --main-letra-dark-color: black;
+  --main-fondo-color: #ebe2e5;
+  --menu-fondo-color: #f3c5d9;
+  --page-fondo-color: #feffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font: 16px/1.5 "Dosis", sans-serif;
+}
+
+body>* {
+  padding: 20px;
+}
+
+
+/*********** cabecera **********/
+
+/********** contenido principal de la página ***********/
+
+
+/******* galeria ****/
+
+/***** estilo de la tienda *****/
+
+/********* pie ********/
+
+
+/****** Media Queries ************/
