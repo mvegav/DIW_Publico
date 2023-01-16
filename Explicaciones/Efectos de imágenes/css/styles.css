@@ -118,6 +118,11 @@ figure img {
     filter: contrast(200%);
 }
 
+#filtros figure:nth-of-type(4) {
+    display: flex;
+    justify-content: center;
+}
+
 #filtros figure:nth-of-type(4) .imagen:hover {
     filter: drop-shadow(16px 16px 10px black);
 }
