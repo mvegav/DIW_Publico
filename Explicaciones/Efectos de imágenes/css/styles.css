@@ -75,9 +75,9 @@ code.codigo {
     font-size: 1.2rem;
 }
 
-figure {
+/* figure {
     max-width: 800px;
-}
+} */
 
 figure.retangulo {
     width: auto;
@@ -103,6 +103,7 @@ figure img {
     border: 1px solid black;
     width: 100%;
     max-width: 800px;
+    height: auto;
 }
 
 #filtros figure:first-of-type .imagen:hover {
@@ -178,6 +179,11 @@ figure.cuadrada {
     align-content: center;
     overflow: hidden;
     margin: 0 auto;
+}
+
+figure.cuadrada img {
+    max-width: 500px;
+    height: auto;
 }
 
 #trasformaciones figure:nth-of-type(4) .imagen:hover {
