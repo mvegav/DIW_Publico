@@ -1,25 +1,31 @@
-*, *::before, *::after{
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --bg-color: #c6cac683;
     --color-title: rgb(4, 4, 36);
     --color-texto: black;
     font: 14px/1.6 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-h1, h2, h3, h4{
+h1,
+h2,
+h3,
+h4 {
     color: var(--color-title);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-html{
+html {
     background-color: var(--bg-color);
 }
-body{
+
+body {
     width: 80%;
     min-height: 100vh;
     margin: 0 auto;
@@ -28,36 +34,37 @@ body{
 }
 
 /************** header ****************/
-header{
+header {
     display: flex;
     justify-content: center;
 }
 
-header h1{
+header h1 {
     font-size: 3rem;
 }
 
 /************** main ********************/
-main{
+main {
     padding: 1rem 2rem;
     width: 100%;
 }
-h2{
+
+h2 {
     font-size: 2.5rem;
 }
 
-h3{
+h3 {
     font-size: 2rem;
     border-bottom: 2px solid #C6c6c6;
 }
 
-h4{
+h4 {
     font-size: 1.5rem;
     padding-left: .5rem;
     font-family: 'Courier New', Courier, monospace;
 }
 
-code.codigo{
+code.codigo {
     background-color: var(--bg-color);
     width: 100%;
     height: max-content;
@@ -67,7 +74,12 @@ code.codigo{
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.2rem;
 }
-figure.retangulo{
+
+figure {
+    max-width: 800px;
+}
+
+figure.retangulo {
     width: auto;
     max-width: 100%;
     height: auto;
@@ -77,86 +89,87 @@ figure.retangulo{
     overflow: hidden;
 }
 
-dt{
+dt {
     padding: 1rem;
     font-weight: 600;
 }
 
-dd{
+dd {
     padding-left: 2rem;
 }
 
-figure img{
+figure img {
     transition: all .5s ease-in-out;
     border: 1px solid black;
     width: 100%;
+    max-width: 800px;
 }
 
-#filtros figure:first-of-type .imagen:hover{
+#filtros figure:first-of-type .imagen:hover {
     filter: blur(5px);
 }
 
-#filtros figure:nth-of-type(2) .imagen:hover{
+#filtros figure:nth-of-type(2) .imagen:hover {
     filter: brightness(1.5);
 }
 
-#filtros figure:nth-of-type(3) .imagen:hover{
+#filtros figure:nth-of-type(3) .imagen:hover {
     filter: contrast(200%);
 }
 
-#filtros figure:nth-of-type(4) .imagen:hover{
+#filtros figure:nth-of-type(4) .imagen:hover {
     filter: drop-shadow(16px 16px 10px black);
 }
 
-#filtros figure:nth-of-type(5) .imagen:hover{
+#filtros figure:nth-of-type(5) .imagen:hover {
     filter: grayscale(80%);
 }
 
-#filtros figure:nth-of-type(6) .imagen:hover{
+#filtros figure:nth-of-type(6) .imagen:hover {
     filter: hue-rotate(90deg);
 }
 
-#filtros figure:nth-of-type(7) .imagen:hover{
+#filtros figure:nth-of-type(7) .imagen:hover {
     filter: invert(100%);
 }
 
-#filtros figure:nth-of-type(8) .imagen:hover{
+#filtros figure:nth-of-type(8) .imagen:hover {
     filter: saturate(180%);
 }
 
-#filtros figure:nth-of-type(9) .imagen:hover{
+#filtros figure:nth-of-type(9) .imagen:hover {
     filter: sepia(100%);
 }
 
-#filtros figure:nth-of-type(10) .imagen:hover{
+#filtros figure:nth-of-type(10) .imagen:hover {
     filter: opacity(.5);
 }
 
-#filtros figure:nth-of-type(11) .imagen:hover{
+#filtros figure:nth-of-type(11) .imagen:hover {
     filter: contrast(175%) brightness(30%);
 }
 
-#trasformaciones figure:first-of-type .imagen:hover{
+#trasformaciones figure:first-of-type .imagen:hover {
     -webkit-transform: matrix(1, -0.2, 0, 1, 0, 0);
     -o-transform: matrix(1, -0.2, 0, 1, 0, 0);
-       transform: matrix(1, -0.2, 0, 1, 0, 0);
+    transform: matrix(1, -0.2, 0, 1, 0, 0);
 }
 
-#trasformaciones figure:nth-of-type(2) .imagen:hover{
-    -webkit-transform:scale(1.3);
-    transform:scale(1.3);
+#trasformaciones figure:nth-of-type(2) .imagen:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 figure.sale {
     overflow: initial;
 }
 
-#trasformaciones figure:nth-of-type(3) .imagen:hover{
-    -webkit-transform:scale(1.3);
-    transform:scale(1.3);
+#trasformaciones figure:nth-of-type(3) .imagen:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
 }
 
-figure.cuadrada{
+figure.cuadrada {
     width: auto;
     max-width: max-content;
     height: auto;
@@ -167,31 +180,32 @@ figure.cuadrada{
     margin: 0 auto;
 }
 
-#trasformaciones figure:nth-of-type(4) .imagen:hover{
+#trasformaciones figure:nth-of-type(4) .imagen:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
 }
 
-#trasformaciones figure:nth-of-type(5){
+#trasformaciones figure:nth-of-type(5) {
     background-image: url(../img/desierto.jpg);
     transition: all 2s ease-in-out;
     border: 1px solid brown;
 }
 
-#trasformaciones figure:nth-of-type(5) .imagen:hover{
+#trasformaciones figure:nth-of-type(5) .imagen:hover {
     -webkit-transform: rotateY(180deg);
     -webkit-transform-style: preserve-3d;
     transform: rotateY(180deg);
     transform-style: preserve-3d;
 }
 
-#trasformaciones figure:nth-of-type(6){
+#trasformaciones figure:nth-of-type(6) {
     overflow: visible;
     transition: all .5s ease-in-out;
 }
-#trasformaciones figure:nth-of-type(6) .imagen:hover{
-    border-radius:50%;
-    -webkit-border-radius:50%;
+
+#trasformaciones figure:nth-of-type(6) .imagen:hover {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
     box-shadow: 0px 0px 15px 15px #ec731e;
     -webkit-box-shadow: 0px 0px 15px 15px #ec731e;
     transform: rotate(360deg);
@@ -199,7 +213,7 @@ figure.cuadrada{
 }
 
 /************ footer ******************/
-footer{
+footer {
     width: 100%;
     text-align: center;
     border-top: 2px solid #C6c6c6;
