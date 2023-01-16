@@ -75,18 +75,19 @@ code.codigo {
     font-size: 1.2rem;
 }
 
-/* figure {
+figure {
     max-width: 800px;
-} */
-
-figure.retangulo {
-    width: auto;
-    max-width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-content: center;
+    margin: 0 auto;
+}
+
+figure.retangulo {
+    width: auto;
     overflow: hidden;
+    max-width: 800px;
 }
 
 dt {
@@ -159,6 +160,10 @@ figure img {
     -webkit-transform: matrix(1, -0.2, 0, 1, 0, 0);
     -o-transform: matrix(1, -0.2, 0, 1, 0, 0);
     transform: matrix(1, -0.2, 0, 1, 0, 0);
+}
+
+#trasformaciones figure:nth-of-type(2) {
+    overflow: hidden;
 }
 
 #trasformaciones figure:nth-of-type(2) .imagen:hover {
