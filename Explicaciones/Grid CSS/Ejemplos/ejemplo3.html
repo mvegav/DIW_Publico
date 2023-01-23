@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo2 - Grid por columnas</title>
+    <style>
+        :root {
+            font-size: 14px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        section {
+            background-color: rgba(102, 102, 102, 0.891);
+            padding: 10px;
+            margin-bottom: 2rem;
+        }
+
+        div {
+            border: 1px solid white;
+            color: white;
+            font-size: 1.5rem;
+            background-color: green;
+        }
+
+        div:nth-child(even) {
+            background-color: blue;
+        }
+
+        /*Estilos grid*/
+        .container-grid:nth-of-type(1) {
+            display: grid;
+            /* empleamos posicionamiento por columnas */
+            grid-template-rows: 200px 200px 100px;
+        }
+
+        .container-grid:nth-of-type(2) {
+            display: grid;
+            /* empleamos posicionamiento por columnas del mismo tamaño */
+            grid-template-rows: repeat(3, 200px);
+            background-color: rebeccapurple;
+        }
+
+        .container-grid:nth-of-type(3) {
+            display: grid;
+            /* empleamos posicionamiento por columnas del mismo tamaño proporcional */
+            grid-template-rows: repeat(3, 1fr);
+            /* o 
+            grid-template-rows: repeat(3, 1fr);
+            */
+            background-color: antiquewhite;
+        }
+
+        .container-grid:nth-of-type(4) {
+            display: grid;
+            grid-template-rows: repeat(auto-fill, 150px);
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Maquetando por columnas</h1>
+    <h2>Ejemplo de 3 filas de 200px 200px y 100px</h2>
+    <section class="container-grid">
+        <div>
+            <p>elemento 1</p>
+        </div>
+        <div>
+            <p>elemento 2</p>
+        </div>
+        <div>
+            <p>elemento 3</p>
+        </div>
+    </section>
+    <h2>Ejemplo de 3 filas del mismo tamaño</h2>
+    <section class="container-grid">
+        <div>
+            <p>elemento 1</p>
+        </div>
+        <div>
+            <p>elemento 2</p>
+        </div>
+        <div>
+            <p>elemento 3</p>
+        </div>
+    </section>
+    <h2>Ejemplo de 3 filas del mismo tamaño del tamaño proporcionl al espacio del contenedor padre</h2>
+    <section class="container-grid">
+        <div>
+            <p>elemento 1</p>
+        </div>
+        <div>
+            <p>elemento 2</p>
+        </div>
+        <div>
+            <p>elemento 3</p>
+        </div>
+    </section>
+    <h2>Ejemplo de empleo de auto-fill - Crea tantas filas del tamaño especidicado que cojan en el contenedor padre
+    </h2>
+    <section class="container-grid">
+        <div>elemento 1</div>
+        <div>elemento 2</div>
+        <div>elemento 3</div>
+        <div>elemento 4</div>
+        <div>elemento 5</div>
+        <div>elemento 6</div>
+        <div>elemento 7</div>
+        <div>elemento 8</div>
+        <div>elemento 9</div>
+        <div>elemento 10</div>
+        <div>elemento 11</div>
+        <div>elemento 12</div>
+        <div>elemento 13</div>
+        <div>elemento 14</div>
+        <div>elemento 15</div>
+        <div>elemento 16</div>
+        <div>elemento 17</div>
+        <div>elemento 18</div>
+        <div>elemento 19</div>
+        <div>elemento 20</div>
+    </section>
+</body>
+
+</html>
