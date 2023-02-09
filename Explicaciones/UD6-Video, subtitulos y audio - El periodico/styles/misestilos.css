@@ -1,0 +1,401 @@
+/* importamos normalize para borrar formatos del navegador */
+@import "./normalize.css";
+/* importamos las fuentes */
+@import "./fuentes.css";
+/*
+   Deseño de interfaces Web
+   Unidad Didáctica 6
+   Clases
+
+   Página Web del Cine Penguin Royal Wedding 
+   Autor: Marina Vega Vázquez
+   Fecha: 08/02/2023
+
+   Fichero:  misestilos.css
+
+*/
+/*============================ estilos básicos =====================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-primaria: 'sanchez', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --ff-secundaria: 'playfair_display', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --color-fuente-boton: #000;
+    --color-boton: rgb(224, 177, 89);
+    --color-boton2: rgb(131, 103, 52);
+    --color-botonS: #ffc000;
+    --color-fuente: #000000;
+    --color-fondo: #ffffff;
+    --color-icono: #6c6c6c;
+    --color-linea: #7e7e7ea9;
+    --color-fondo-card-desc: rgba(122, 121, 121, 0.106);
+    font-family: var(--ff-secundaria);
+    font-size: 12px;
+    line-height: 1.6rem;
+}
+
+html{
+    background-color: #6c6c6c11;
+}
+
+body {
+    width: 100vw;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--color-fondo);
+    color: var(--color-fuente);
+    display: -webkit-flex;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-content: flex-start;
+}
+
+.oculto {
+    display: none;
+}
+
+.btn,
+a.btn {
+    color: var(--color-fuente-boton);
+    background-color: var(--color-boton);
+    outline: 1px solid var(--color-boton);
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px var(--color-boton2);
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: var(--color-fondo);
+    outline-color: #6C6C6C;
+    color: var(--color-fuente);
+    box-shadow: 3px 5px 3px #6c6c6c;
+}
+
+/* enlaces sin decoración*/
+.aSinDeco {
+    text-decoration: none;
+    color: var(--color-fuente);
+}
+
+/*============================ Estilos de la cabecera ===========================*/
+header {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    max-height: max-content;
+    padding: 0 1rem;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px double #6C6C6C;
+}
+
+#logo {
+    width: max-content;
+}
+
+#logo img {
+    max-width: 160px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--ff-primaria);
+}
+
+h1 {
+    font-style: normal;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+#user {
+    text-align: center;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+#icon_user {
+    width: 2rem;
+    height: auto;
+    fill: var(--color-icono);
+    margin: 0;
+    padding: 0;
+}
+
+a:hover #icon_user:hover {
+    fill: var(--color-boton);
+}
+
+#suscribete {
+    padding: .5rem;
+}
+
+/*Botón de cambio de tema*/
+
+#switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+#switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-fuente);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--color-fondo);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#switch input:checked+.slider {
+    background-color: var(--color-fuente);
+}
+
+#switch input:focus+.slider {
+    box-shadow: 0 0 1px var(--color-fuente);
+}
+
+#switch input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+#switch .slider.round {
+    border-radius: 17px;
+}
+
+#switch .slider.round:before {
+    border-radius: 50%;
+}
+
+/* Estilos del menú horizontal */
+#menu {
+    width: 100vw;
+    margin: 0 1rem;
+    border-bottom: 1px solid #6C6C6C;
+}
+
+#activa {
+    text-decoration: underline var(--color-fuente);
+}
+
+#menu ul {
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: --ff-secundaria;
+    text-transform: uppercase;
+    font-weight: 600;
+    gap: .5rem;
+}
+
+#menu ul li {
+    width: auto;
+    margin: .25rem;
+    text-align: center;
+    padding: 0 .25rem;
+}
+
+#menu ul li:hover {
+    background-color: #666;
+}
+
+#menu ul li:hover a {
+    color: var(--color-fondo);
+}
+
+/* ============================= estilos del main ========================*/
+.contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+main, section {
+    width: 100vw;
+    height: max-content;
+    font-family: var(--ff-secundaria);
+    line-height: 1.6;
+    text-align: left;
+    margin: 1rem auto;
+
+}
+
+span.autor{
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+.VideoArticulo {
+    max-width: 800px;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: black;
+    border: 1px double var(--color-boton2);
+}
+
+/*====================== Estilos del pie ==============================*/
+
+
+footer {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    max-height: max-content;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: .5rem;
+    color: #444;
+    border-top: 1px dotted #444;
+    align-items: center;
+    padding: .5rem;
+}
+
+nav.redes ul {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: .5rem;
+    font-size: 1.5rem;
+    width: max-content;
+}
+
+nav.redes ul li {
+    align-self: flex-start;
+    font-size: 2.5rem;
+    width: max-content;
+}
+
+nav.redes li:first-child a:after {
+    color: var(--color-fuente);
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f082";
+}
+
+nav.redes li:last-child a:after {
+    color: var(--color-fuente);
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f081";
+}
+
+nav.redes a {
+    text-decoration: none;
+}
+
+/* =============================== Media Queries para tablet =======================*/
+@media (min-width: 600px) {
+    
+    #logo img {
+        max-width: 200px;
+    }
+
+    body{
+        width: 80vw;
+    }
+
+
+    section>section {
+        flex-flow: row wrap;
+    }
+
+
+}
+
+/* =============================== Media Queries para desktops =======================*/
+@media (min-width: 1024px) {
+    :root {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    #logo img {
+        max-width: max-content;
+    }
+/* 
+    .contenedor {
+        flex-basis: auto;
+    } */
+
+    .portada{
+        grid-template-columns: repeat(auto-fit,minmax(auto,400px));
+    }
+
+    .portada video, .portada figure, .portada img{
+        max-width: 350px;
+    }
+    .card {
+        width: 400px;
+        height: 750px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+}
