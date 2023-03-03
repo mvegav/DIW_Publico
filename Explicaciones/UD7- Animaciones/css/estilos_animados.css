@@ -1,0 +1,77 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font: 14px/1.6 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Estilos de la cabecera */
+header {
+    text-align: center;
+    background-color: white;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation-name: color;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    /* estilos finales tras la animación
+    none - ningún estilo
+    backwards - los estilos del primer fotograma
+    forwards - los estilos del último fotograma
+    both - aplica los estilos en ambas direcciones
+    */
+
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+/** Estilos generales de las secciones */
+section {
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+figure {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+img {}
+
+/* Estilos animación color */
+@keyframes color {
+    from {
+        background-color: white;
+    }
+
+    50% {
+        background-color: bisque;
+        box-shadow: 1px 1px 1px burlywood;
+    }
+
+    to {
+        background-color: wheat;
+        box-shadow: 4px 4px 10px burlywood;
+    }
+}
