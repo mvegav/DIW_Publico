@@ -19,13 +19,10 @@
   /* position: absolute; */
   width: 160px;
   height: 110px;
-  animation: drive 4s steps(4, end) infinite;
-  -webkit-animation: drive 4s steps(4, end) infinite;
 }
 
 .contain-car-2 {
   /* margin-top: 120px; */
- 
 }
 
 .car-top {
@@ -73,7 +70,6 @@
   background: #333333;
   width: 50px;
   height: 50px;
- 
 }
 .rueda-right {
   left: 98px;
