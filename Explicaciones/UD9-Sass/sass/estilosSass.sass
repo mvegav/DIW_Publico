@@ -1,0 +1,28 @@
+//definimos variables
+$tam: 12px
+$negro: #000
+$blanco: #fff
+$naraja: orange
+$verde: green
+$colorSass: #cf649a
+$flex-columna: "column wrap"
+$flex-row: "row wrap"
+$centrado: center
+$fuente: sans-serif
+
+header
+    background-color: $negro
+    display: flex
+    flex-flow: $flex-row
+    justify-content: $centrado
+    align-content: $centrado
+    & h1
+    font-family: $fuente
+        color: $blanco
+        text-align: $centrado
+        & a
+            text-decoration: none
+            color: $colorSass
+            cursor: pointer
+            &:hover
+                color: $naraja

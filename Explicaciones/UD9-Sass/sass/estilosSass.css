@@ -1,0 +1,20 @@
+header {
+  background-color: #000;
+  display: flex;
+  flex-flow: "row wrap";
+  justify-content: center;
+  align-content: center;
+}
+header h1 {
+  font-family: sans-serif;
+  color: #fff;
+  text-align: center;
+}
+header h1 a {
+  text-decoration: none;
+  color: #cf649a;
+  cursor: pointer;
+}
+header h1 a:hover {
+  color: orange;
+}/*# sourceMappingURL=estilosSass.css.map */

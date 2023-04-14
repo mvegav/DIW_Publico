@@ -1,0 +1,28 @@
+@import "general"; // importamos el módulo _general.scss
+
+header{
+    background-color: $negro;
+    display: flex;
+    flex-flow: $flex-row;
+    justify-content: $centrado;
+    align-content: $centrado;
+    h1 {
+        font-family: $fuente;
+        color: $blanco;
+        text-align: $centrado;
+        font-size: 3rem;
+        a{
+            text-decoration: none;
+            color: $colorSass;
+            cursor: pointer;
+            &:hover{
+                color: $naraja;
+            }
+        }
+        & + h2 { /* hermano directo */
+            color: $colorSass;
+            font-size: 1.5rem;
+            text-align: $centrado;
+        }
+    }
+}
