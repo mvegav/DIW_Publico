@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejemplo ventana modal animada</title>
+  <link rel="stylesheet" href="./css/modal-animado.css" />
+  <script src="./js/ventana.js" defer></script>
+</head>
+
+<body>
+  <header class="cabecera">
+    <a href="../index.html" class="cabecera__logo"><img src="../img/logo.png" alt="Enlace a la página principal"></a>
+    <h1 class="cabecera__titulo">Ejemplo de ventanas modal animada</h1>
+  </header>
+  <main class="main">
+    <section class="main__seccion">
+      <h2>Ventana modal con animación</h2>
+      <p>
+        En este caso emplemos animaciones y javascript para mostrar y cerrar los diálogos.
+      </p>
+      <button id="openModal1">Demo Modal con una animación slide</button>
+      <button id="openModal2">Demo Modal con un conjunto de animaciones</button>
+
+    </section>
+    <section class="main__seccion">
+      <h2>Datos HTML- * Atributo</h2>
+      <p>El data-*atributo se usa para almacenar datos personalizados privados para la página o la aplicación.</p>
+      <p>El data-*atributo nos brinda la capacidad de incrustar atributos de datos personalizados en todos los elementos
+        HTML.</p>
+      <p>Los datos almacenados (personalizados) se pueden usar en el JavaScript de la página para crear una experiencia
+        de usuario más atractiva (sin llamadas Ajax ni consultas a la base de datos del lado del servidor).</p>
+        <p>Para poder usarlo en javascript emplearemos dataset.</p>
+      <p>Podemos emplear este atributo html para añadir información al elemento que posteriormente emplearemos en el
+        javascript, pero en nuestro caso lo emplearemos para indicar la animación a aplicar al elemento. De esta forma podremos reutilizar las animaciones.</p>
+        <p>Para usarlo solo debemos poner el nombre al atributo empezando por data, seguido por un guión medio y un nombre en minúsculas.</p>
+      <p>Ejemplo</p>
+      <div>
+        <pre><code class="codigo">
+          &lt;article id="electric-cars"
+          data-columns="3"
+          data-index-number="12314"
+          data-parent="cars" article&gt;
+        </code></pre>
+      </div>
+      <p>Para poder obtener los datos indicados en data emleamos dataset en javascript.</p>
+      <pre><code class="codigo">
+        const articulo = document.querySelector("#electric-cars");
+        articulo.dataset.columns; // "3"
+        articulo.dataset.indexNumber; // "12314"
+        articulo.dataset.parent; // "cars"
+      </code></pre>
+      <p>En el caso del css</p>
+      <p> Por ejemplo, para mostrar los datos principales en el artículo, puede usar contenido generado en CSS con la attr()función:     </p>
+      <pre><code class="codigo">
+        articulo::before {
+          content: attr(data-parent);
+        }
+      </code></pre>
+      <p>O puedes usar los selectores de atributos en CSS para cambiar estilos según los datos:</p>
+      <pre><code class="codigo">
+        articulo[data-columns="3"] {
+          width: 400px;
+        }
+        articulo[data-columns="4"] {
+          width: 600px;
+        }
+      </code></pre>
+      <p>Puedes ver un ejemplo de esto en <a href="https://jsbin.com/ujiday/2/edit?html,css,js,console,output" target="_blank">uso de data-*</a></p>
+    </section>
+    <dialog class="modal" id="modal1" data-animation="rotateInOutDown">
+      <div class="modal__dialog">
+        <header class="modal__header">
+          <h3>Cabecera del primer modal</h3>
+          <button class="close-modal" id="cerrar1" aria-label="close modal" data-close>
+            ✕
+          </button>
+        </header>
+        <section class="modal__content" >
+          <p><strong>Pulse X o ESC para cerrarlo</strong></p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo repellendus reprehenderit accusamus totam
+            ratione! Nesciunt, nemo dolorum recusandae ad ex nam similique dolorem ab perspiciatis qui. Facere,
+            dignissimos. Nemo, ea.</p>
+          <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but
+            because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take
+            a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage
+            from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying
+            consequences, or one who avoids a pain that produces no resultant pleasure</p>
+          <p>Nullam vitae enim vel diam elementum tincidunt a eget metus. Curabitur finibus vestibulum rutrum.
+            Vestibulum semper tellus vitae tortor condimentum porta. Sed id ex arcu. Vestibulum eleifend tortor non
+            purus porta dapibus</p>
+          <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but
+            because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take
+            a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage
+            from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying
+            consequences, or one who avoids a pain that produces no resultant pleasure</p>
+        </section>
+        <footer class="modal__footer">
+         <p>&copy; Realizado por Marina Vega Vázquez;</p>
+        </footer>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="modal2" data-animation="mixInAnimations">
+      <div class="modal__dialog">
+        <header class="modal__header">
+          <h3>Cabecera del segundo modal</h3>
+          <button class="close-modal" id="cerrar2" aria-label="close modal" data-close>
+            ✕
+          </button>
+        </header>
+        <section class="modal__content">
+          <p><strong>Pulse X o ESC para cerrarlo</strong></p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo repellendus reprehenderit accusamus totam
+            ratione! Nesciunt, nemo dolorum recusandae ad ex nam similique dolorem ab perspiciatis qui. Facere,
+            dignissimos. Nemo, ea.</p>
+          <p>Nullam vitae enim vel diam elementum tincidunt a eget metus. Curabitur finibus vestibulum rutrum.
+            Vestibulum semper tellus vitae tortor condimentum porta. Sed id ex arcu. Vestibulum eleifend tortor non
+            purus porta dapibus</p>
+        </section>
+        <footer class="modal__footer">
+          <p>&copy; Realizado por Marina Vega Vázquez;</p>
+        </footer>
+      </div>
+      </div>
+
+  </main>
+  <footer class="footer">
+    <div class="footer__derechos">
+      <small>&copy; Copyright 2023. Todos los derechos reservados. </small>
+      <p><small>Realizado por: Marina Vega Vázquez</small></p>
+    </div>
+    <div class="footer__accesible">
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="../img/wcag1AA.gif" class="img_pie" alt="¡CSS Válido!" />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="../img/wcag1AA-blue.gif" class="img_pie" alt="¡CSS Válido!" />
+      </a>
+    </div>
+    <div class="footer__redes">
+      <a href="https://github.com/mvegav/Publico.git" target="_blank">
+        <img src="../img/github.svg" alt="logo enlace a github"></img>
+      </a>
+      <a href="mailto:marinavv@iessanclemente.net">
+        <img src="../img/gmail.svg" sixze="32" alt="logo de gmail"></img>
+      </a>
+  </footer>
+</body>
+
+</html>
