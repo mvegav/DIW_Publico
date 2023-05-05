@@ -1,0 +1,166 @@
+:root {
+    font: {
+        size: 16px;
+        family: general.$fuente;
+    }
+
+    line-height: 1.5;
+}
+
+body {
+    @include general.flex($direccion: column, $wrap: nowrap, $justify: space-between);
+    min-height: 100vh;
+    @include general.anchoAlto($ancho: 100vw);
+    @include general.titulos();
+}
+
+.cabecera {
+    background-color: general.$color-fondo;
+    @include general.anchoAlto();
+    @include general.flex(row, $justify: space-between);
+    padding: 1rem;
+
+    &__logo {
+        width: 250px;
+        height: auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    // opciones generales
+    .nav {
+        font-size: 1.5rem;
+
+        &__activo {
+            font-weight: 800;
+            font-size: calc(100% + 0.15rem);
+        }
+
+        * svg,
+        * img {
+            width: 32px;
+            height: 32px;
+            //fill: white;
+            margin-top: 0;
+            padding-top: 0;
+
+            &:hover {
+                fill: yellow;
+            }
+        }
+    }
+
+    /* Estilos móvil */
+    // @media all and (max-width: 700px) {
+  
+        .centrado {
+            // padding: 0.8rem;
+            text-align: center;
+            text-decoration: none;
+            color: general.$color-primario;
+        }
+
+        &__logo {
+            width: 125px;
+        }
+
+        /* Definimos los botones*/
+
+        /* Oculta el nav en la parte izquiera */
+    
+            /* Muestra el nav*/
+          
+            // colocamos los item del menú
+            &__ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                $filas: repeat(4, 1fr);
+                @include general.grid(auto, $filas);
+                gap: 1rem;
+                padding-top: 1rem;
+                margin-top: 4rem;
+                display: block;
+            }
+
+           
+    
+    
+
+    /* Estilos Escritorio*/
+    //@media all and (min-width: 701px) {
+  
+}
+.main {
+    flex-grow: 1;
+    max-width: 90%;
+    margin: 0 auto;
+    justify-self: flex-start;
+
+    &__seccion {
+        padding: 1rem;
+
+        &--dos {
+            $columnas: repeat(auto-fit, minmax(400px, auto));
+            @include general.grid($columnas, auto);
+            gap: 1rem;
+        }
+
+        * h2,
+        * h3 {
+            padding: 1rem 0;
+        }
+
+        * p {
+            padding: 1rem;
+        }
+
+        ul,
+        li,
+        ol {
+            margin-left: 2rem;
+        }
+
+        div {
+            padding: 1rem 0;
+        }
+
+        * .centrar {
+            text-align: center;
+        }
+    }
+}
+
+.footer {
+    background-color: general.$color-fondo;
+    @include general.anchoAlto();
+    color: white;
+    @include general.flex($justify: space-between);
+    gap: 1rem;
+    padding: 1rem;
+
+    @include general.respond-to("movil") {
+        @include general.flex(column-reverse, $justify: center);
+    }
+
+    &__enlaces {
+        @include general.flex(row);
+        gap: 1rem;
+
+        div a > img {
+            text-decoration: none;
+        }
+    }
+    &__accesible {
+        .img__pie {
+            @include general.anchoAlto($ancho: 70px);
+        }
+    }
+
+    * img {
+        @include general.anchoAlto($ancho: 40px);
+        fill: white;
+    }
+}
