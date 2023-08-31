@@ -31,6 +31,7 @@ La usabilidad y la accesibilidad pretenden lo mismo, que es, que los usuarios co
 - Luego se habla de los **mitos de la accesibilidad web** y de los **beneficios que obtenemos** siguiendo las pautas de accesibilidad web.
 - Seguidamente, se enumeran los **problemas de discapacidad**, y se intenta mostrar **cómo navegan los usuarios** con dichas discapacidades.
 - También se listan los **dispositivos hardware y software** que los usuarios con discapacidad suelen utilizar.
+- Repasaremos la sintaxis del html 5, puesto que un buen uso de esta en la web será un punto de partida para una página web accesible.
 - Después se explican de una forma general los **desafíos de las personas con discapacidad y las posibles soluciones**, enumerando justo después los **principios claves** a tener en cuenta cuando desarrollamos una aplicación web.
 - Acto seguido, se muestran **trucos y códigos de ejemplo de los elementos más importantes a tener en cuenta**: imágenes y animaciones, mapas de imagen, elementos multimedia, enlaces, organización de las páginas, figuras y diagramas, scripts, frames, tablas, formularios y elementos repetitivos.
 - Para terminar se enumeran ciertas **herramientas que nos pueden ser útiles** para validar la accesibilidad web.
@@ -56,26 +57,26 @@ Usabilidad, tan de moda hoy en día
 - [Enunciado Ejercicios](/01-usabilidad/src/ejercicios-usabilidad.pdf)
 - [Solución Ejercicios](/01-usabilidad/src/Solución-ejercicios/)
 
+### UD4 - Hojas de Estilos
 
+En esta unidad:
 
-
-
-## Responsive Web Design (Diseño Web Adaptable)
-
-En el [apartado de Responsive Web Design](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd):
-
-- Veremos en primer lugar una introducción, contando que es eso del 'Responsive Web Design' (Diseño Web Adaptable), que **beneficios** tiene, y cual es la diferencia entre '**Graceful degradation**' y '**Progessive enhancement**'.
+- Repasaremos: **selectores, peso de los selectores y reglas de prioridad, pseudo-clases y pseudo-elementos**
+- Veremos los distintos tipos de unidades de medidas que podemos usar.
+- Definiremos variables y emplearemos funciones.
+- Repasaremos las propiedades relacionadas con: **colores, degradasdos, tipografías,...**.
+- Repasaremos el modelo de cajas.
+- Empezaremos a diseñar páginas empleadon FexBox.
+- Veremos una introducción, contando que es eso del 'Responsive Web Design' (Diseño Web Adaptable), que **beneficios** tiene, y cual es la diferencia entre '**Graceful degradation**' y '**Progessive enhancement**'.
 - Seguidamente, se exponen varios **ejemplos de sitios web** realizados con esa filosofía.
 - Luego se entra más en detalle en **como conseguir sitios web adaptables**: diseño fluido, sistemas de rejilla, imágenes fluidas, viewport, media queries.
 - Para terminar se enumeran las 2 metodologías más utilizadas hoy en día para hacer diseños adaptables: '**Desktop First**' y '**Mobile first**'
 
 **Recursos**:
 
-- [Slides](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd#slides)
+- [Apuntes](/UD4-Hojas%20de%20estilos/Apuntes/export/)
 - [Enunciado Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd#enunciado-ejercicios)
 - [Solución Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd#solución-ejercicios)
-
-
 
 # SASS, un preprocesador CSS
 
@@ -90,8 +91,6 @@ En este apartado:
 - [Slides](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.02-sass#slides)
 - [Enunciado Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.02-sass#enunciado-ejercicios)
 - [Solución Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.02-sass#solución-ejercicios)
-
-
 
 ## Bootstrap, un framework CSS
 
