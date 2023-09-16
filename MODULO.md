@@ -74,13 +74,16 @@ En esta unidad:
 
 **Recursos**:
 
-- [Apuntes](/UD4-Hojas%20de%20estilos/Apuntes/export/)
-- [Enunciado Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd#enunciado-ejercicios)
-- [Solución Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/03-rwd#solución-ejercicios)
+### UD5 - Contenidos multimedia en la Web: imágenes.
 
-# SASS, un preprocesador CSS
+### UD6 - Contenidos multimedia en la Web: audio y vídeo.
 
-En este apartado:
+### UD 7. Contenidos multimedia en la Web: animaciones.
+
+### UD 8. Contenidos web interactivos.
+### UD 9- Preprocesadores de hoja de estilos en cascada
+
+En esta unidad:
 
 - Veremos primero una breve introducción, contando **qué es 'SASS'** y cuales son sus **principales ventajas**.
 - Siguiendo como **instalar y ejecutar 'SASS'**.
@@ -88,21 +91,10 @@ En este apartado:
 
 **Recursos**:
 
-- [Slides](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.02-sass#slides)
-- [Enunciado Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.02-sass#enunciado-ejercicios)
-- [Solución Ejercicios](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/04-preprocesadores-css/04.02-sass#solución-ejercicios)
-
-## Bootstrap, un framework CSS
-
-En el  [apartado de Bootstrap](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap):
+# Opcional - Bootstrap, un framework CSS
 
 - Veremos primero qué es Bootstrap, sus **ventajas e inconvenientes**, y como empezar a usarlo.
 - Luego veremos las distintas **características del framework**: el sistema de rejilla, la tipografía, las tablas, los formularios, los botones, las imágenes, los helpers...
 - Después se muestran las facilidades que tiene para realizar **diseños adaptables**.
 - Seguidamente se enumeran los distintos **componentes del framework**, y los distintos añadidos que tiene si además utilizas JavaScript.
 - Y para terminar, se comenta **como se puede personalizar**, ya sea usando tu propio CSS, modificando el CSS de Bootstrap desde la página destinada a tal efecto, o directamente compilando los ficheros LESS del core.
-
-**Recursos**:
-
-- [Slides](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/#slides)
-- [Ejemplos](https://github.com/asanzdiego/curso-interfaces-web-2016/tree/master/05-bootstrap/#ejemplos)
