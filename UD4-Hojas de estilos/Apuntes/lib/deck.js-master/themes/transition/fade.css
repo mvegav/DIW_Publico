@@ -1,5 +1,4 @@
 .csstransitions.csstransforms .deck-container .slide {
-  -webkit-transition: opacity 500ms ease-in-out 0ms;
   transition: opacity 500ms ease-in-out 0ms;
 }
 .csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide {
@@ -32,4 +31,4 @@
 }
 .csstransitions.csstransforms .deck-container:not(.deck-menu) > .deck-child-current .deck-next, .csstransitions.csstransforms .deck-container:not(.deck-menu) > .deck-child-current .deck-after {
   visibility: hidden;
-}
+}/*# sourceMappingURL=fade.css.map */

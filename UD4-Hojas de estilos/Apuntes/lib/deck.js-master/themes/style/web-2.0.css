@@ -130,18 +130,18 @@ textarea {
   overflow: auto;
 }
 
-input[type="radio"] {
+input[type=radio] {
   vertical-align: text-bottom;
 }
 
-input[type="checkbox"] {
+input[type=checkbox] {
   vertical-align: bottom;
 }
 
 label,
-input[type="button"],
-input[type="submit"],
-input[type="image"],
+input[type=button],
+input[type=submit],
+input[type=image],
 button {
   cursor: pointer;
 }
@@ -152,8 +152,6 @@ button, input, select, textarea {
 
 input:invalid, textarea:invalid {
   border-radius: 1px;
-  -moz-box-shadow: 0px 0px 5px red;
-  -webkit-box-shadow: 0px 0px 5px red;
   box-shadow: 0px 0px 5px red;
 }
 input:invalid .no-boxshadow, textarea:invalid .no-boxshadow {
@@ -166,7 +164,7 @@ button {
 }
 
 select, input, textarea {
-  color: #444444;
+  color: #444;
 }
 
 a {
@@ -196,10 +194,6 @@ h1, .vcenter {
   left: 0;
   right: 0;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 
@@ -207,37 +201,33 @@ h1, .vcenter {
   position: relative;
   top: auto;
   padding: 0;
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-  -o-transform: none;
   transform: none;
 }
 
 h2 {
   font-size: 2.25em;
   font-weight: bold;
-  padding-top: .5em;
-  margin: 0 0 .66666em 0;
+  padding-top: 0.5em;
+  margin: 0 0 0.66666em 0;
   border-bottom: 3px solid #888;
 }
 
 h3 {
   font-size: 1.4375em;
   font-weight: bold;
-  margin-bottom: .30435em;
+  margin-bottom: 0.30435em;
 }
 
 h4 {
   font-size: 1.25em;
   font-weight: bold;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 h5 {
   font-size: 1.125em;
   font-weight: bold;
-  margin-bottom: .2222em;
+  margin-bottom: 0.2222em;
 }
 
 h6 {
@@ -272,7 +262,7 @@ em {
 }
 
 li {
-  padding: .25em 0;
+  padding: 0.25em 0;
   vertical-align: middle;
 }
 li > ol, li > ul {
@@ -286,7 +276,6 @@ li > ol, li > ul {
 }
 
 .slide {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
 }
@@ -343,14 +332,10 @@ pre {
 }
 .csstransforms.boxshadow pre:before {
   left: 10px;
-  -webkit-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
 .csstransforms.boxshadow pre:after {
   right: 10px;
-  -webkit-transform: rotate(3deg);
-  -ms-transform: rotate(3deg);
   transform: rotate(3deg);
 }
 
@@ -361,7 +346,7 @@ code {
 blockquote {
   font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
   font-size: 2em;
-  padding: 1em 2em .5em 2em;
+  padding: 1em 2em 0.5em 2em;
   color: #000;
   background: #fff;
   position: relative;
@@ -387,15 +372,14 @@ blockquote {
   bottom: 10px;
   left: 0;
   right: 50%;
-  -moz-border-radius: 10px / 100px;
-  border-radius: 10px / 100px;
+  border-radius: 10px/100px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 blockquote p {
   margin: 0;
 }
 blockquote cite {
-  font-size: .5em;
+  font-size: 0.5em;
   font-style: normal;
   font-weight: bold;
   color: #888;
@@ -432,20 +416,8 @@ a:hover, a:focus {
 .deck-container {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   font-size: 1.75em;
-  background: #f4fafe;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4fafe), color-stop(100%, #ccf0f0));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
-  /* Opera11.10+ */
-  background: -ms-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
-  /* IE10+ */
-  background: linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
-  /* W3C */
+  background: rgb(244, 250, 254); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera11.10+ */ /* IE10+ */
+  background: linear-gradient(top, rgb(244, 250, 254) 0%, rgb(204, 240, 240) 100%); /* W3C */
   background-attachment: fixed;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
@@ -497,4 +469,4 @@ a:hover, a:focus {
 }
 .boxshadow .goto-form {
   box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
+}/*# sourceMappingURL=web-2.0.css.map */

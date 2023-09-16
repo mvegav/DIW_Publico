@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  padding: 1rem;
+}
+.footer__accesible .img_pie {
+  width: 80px;
+}
+.footer * img {
+  width: 40px;
+  fill: white;
+}/*# sourceMappingURL=style.css.map */

@@ -129,18 +129,18 @@ textarea {
   overflow: auto;
 }
 
-input[type="radio"] {
+input[type=radio] {
   vertical-align: text-bottom;
 }
 
-input[type="checkbox"] {
+input[type=checkbox] {
   vertical-align: bottom;
 }
 
 label,
-input[type="button"],
-input[type="submit"],
-input[type="image"],
+input[type=button],
+input[type=submit],
+input[type=image],
 button {
   cursor: pointer;
 }
@@ -151,8 +151,6 @@ button, input, select, textarea {
 
 input:invalid, textarea:invalid {
   border-radius: 1px;
-  -moz-box-shadow: 0px 0px 5px red;
-  -webkit-box-shadow: 0px 0px 5px red;
   box-shadow: 0px 0px 5px red;
 }
 input:invalid .no-boxshadow, textarea:invalid .no-boxshadow {
@@ -165,7 +163,7 @@ button {
 }
 
 select, input, textarea {
-  color: #444444;
+  color: #444;
 }
 
 a {
@@ -195,10 +193,6 @@ h1, .vcenter {
   left: 0;
   right: 0;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 
@@ -206,37 +200,33 @@ h1, .vcenter {
   position: relative;
   top: auto;
   padding: 0;
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-  -o-transform: none;
   transform: none;
 }
 
 h2 {
   font-size: 2.25em;
   font-weight: bold;
-  padding-top: .5em;
-  margin: 0 0 .66666em 0;
+  padding-top: 0.5em;
+  margin: 0 0 0.66666em 0;
   border-bottom: 3px solid #888;
 }
 
 h3 {
   font-size: 1.4375em;
   font-weight: bold;
-  margin-bottom: .30435em;
+  margin-bottom: 0.30435em;
 }
 
 h4 {
   font-size: 1.25em;
   font-weight: bold;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 h5 {
   font-size: 1.125em;
   font-weight: bold;
-  margin-bottom: .2222em;
+  margin-bottom: 0.2222em;
 }
 
 h6 {
@@ -271,7 +261,7 @@ em {
 }
 
 li {
-  padding: .25em 0;
+  padding: 0.25em 0;
   vertical-align: middle;
 }
 li > ol, li > ul {
@@ -285,7 +275,6 @@ li > ol, li > ul {
 }
 
 .slide {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
 }
@@ -334,7 +323,7 @@ blockquote p {
   margin: 0;
 }
 blockquote cite {
-  font-size: .5em;
+  font-size: 0.5em;
   font-style: normal;
   font-weight: normal;
   font-weight: 100;
@@ -418,4 +407,4 @@ a:hover, a:focus {
 .no-touch.boxshadow .deck-menu .slide:hover {
   background: #000;
   box-shadow: 0 0 20px #f0a, 0 0 5px #fff;
-}
+}/*# sourceMappingURL=neon.css.map */

@@ -1,47 +1,8 @@
 % Accesibilidad Web
-% Adolfo Sanz De Diego
-% Septiembre 2016
-
-
-
-# El autor
-
-
-
-## Adolfo Sanz De Diego
-
-- Empecé **desarrollando aplicaciones web**, hasta que di el salto a la docencia.
-
-- Actualmente soy **Asesor Técnico Docente** en el servicio TIC de la D.G de Infraestructuras y Servicios de la Consejería de Educación, Juventud y Deporte de la Comunidad de Madrid.
-
-- Además colaboro como **formador especializado en tecnologías de desarrollo**.
-
-
-## Algunos proyectos
-
-- **Hackathon Lovers** <http://hackathonlovers.com>: un grupo creado para emprendedores y desarrolladores amantes de los hackathones.
-
-- **Password Manager Generator** <http://pasmangen.github.io>: un gestor de contraseñas online.
-
-- **MarkdownSlides** <https://github.com/asanzdiego/markdownslides>: un script para crear slides a partir de ficheros MD.
-
-
-## ¿Donde encontrarme?
-
-- Mi nick: **asanzdiego**
-
-    - AboutMe:  <http://about.me/asanzdiego>
-    - GitHub:   <http://github.com/asanzdiego>
-    - Twitter:  <http://twitter.com/asanzdiego>
-    - Blog:     <http://asanzdiego.blogspot.com.es>
-    - LinkedIn: <http://www.linkedin.com/in/asanzdiego>
-    - Google+:  <http://plus.google.com/+AdolfoSanzDeDiego>
-
-
+% Diseño de Interfaces Web
+% Septiembre 2023
 
 # Introducción
-
-
 
 ## Objetivos
 
@@ -50,16 +11,16 @@
 ## Oportunidades
 
 - Ofrece **oportunidades sin precedentes** para los discapacitados:
-    - Los ciegos pueden leer periódicos gracias a los lectores de pantallas.
-    - Los sordos pueden ver vídeos subtitulados.
-    - Las personas con discapacidad motora pueden utilizar programas de "eye-tracking".
+  - Los ciegos pueden leer periódicos gracias a los lectores de pantallas.
+  - Los sordos pueden ver vídeos subtitulados.
+  - Las personas con discapacidad motora pueden utilizar programas de "eye-tracking".
 
 ## Dificultades
 
 - A pesar de ello, **todavía quedan cosas por hacer**:
-    - Hay sitios web que sólo se pueden usar con el ratón.
-    - Muchos vídeos no están subtitulados para sordos.
-    - Hay interfaces en donde no hay substituto a la interacción con imágenes.
+  - Hay sitios web que sólo se pueden usar con el ratón.
+  - Muchos vídeos no están subtitulados para sordos.
+  - Hay interfaces en donde no hay substituto a la interacción con imágenes.
 
 ## Destinatarios
 
@@ -101,18 +62,18 @@
 
 - Las **WCAG (Web Content Accessibility Guidelines)** o Pautas de Accesibilidad al Contenido en la Web son las principales normas de accesibilidad web.
 
-### WCAG 1.0
+## WCAG 1.0
 
 - Finalizadas en **1999**, fueron un avance importante.
 
 - Proporcionaban **14 directrices** y numerosos puntos de control.
 
 - Proporcionaban tres prioridades:
-    - **Nivel A** requisitos básico,
-    - **Nivel AA** mejor accesibilidad y la eliminación de importantes barreras,
-    - **Nivel AAA** proporcionaba mejoras a la accesibilidad.
+  - **Nivel A** requisitos básico,
+  - **Nivel AA** mejor accesibilidad y la eliminación de importantes barreras,
+  - **Nivel AAA** proporcionaba mejoras a la accesibilidad.
 
-### WCAG 2.0
+## WCAG 2.0
 
 - Se fundamentan en WCAG 1.0, pero introducen algunos cambios significativos.
 
@@ -120,85 +81,82 @@
 
 - Sitúa únicamente 4 principios en el nivel superior, las 4 directrices POUR (Servir).
 
-### WCAG-EM 1.0
+## WCAG-EM 1.0
 
 - **Website Accessibility Conformance Evaluation Methodology**
 
 - Metodología de evaluación de la accesibilidad del contenido de páginas web
 
-### ATAG 2.0
+## ATAG 2.0
 
 - **Authoring Tool Accessibility Guidelines**
 
 - Accesibilidad de editores de páginas web
 
-### UAAG 2.0
+## UAAG 2.0
 
 - **User Agent Accessibility Guidelines**
 
 - Accesibilidad de navegadores web
 
+# Principios y pautas de la WCAG 2.1
 
+**Principios** - En el nivel más alto se sitúan los cuatro principios que proporcionan los fundamentos de la accesibilidad web: perceptible, operable, comprensible y robusto.
 
-# Directrices POUR
+**Pautas** - Por debajo de los principios están las pautas. Las doce pautas proporcionan los objetivos básicos que los autores deben lograr con el fin de crear un contenido más accesible para los usuarios con distintas discapacidad. Estas pautas no son verificables, pero proporcionan el marco y los objetivos generales que ayudan a los autores a comprender los criterios de conformidad y a implementar mejor las técnicas.
 
+## Principios
 
-
-## Perceptible (I)
+### Pricipio 1 - Perceptible
 
 - Disponible para los sentidos (visión y audición principalmente), bien a través del navegador o por medio de ayudas técnicas (por ejemplo, **lectores de pantalla, ampliadores de pantalla**, etc.)
 
-## Perceptible (II)
+**PAUTAS**
 
-- Directriz 1.1: **Texto alternativo**: Proporciona texto alternativo para el contenido que no sea textual, así podrá ser transformado en otros formatos que la gente necesite, como caracteres grandes, lenguaje braille (braile no es correcto), lenguaje oral, símbolos o lenguaje más simple.
+- Pauta 1.1: **Texto alternativo**: Proporciona texto alternativo para el contenido que no sea textual, así podrá ser transformado en otros formatos que la gente necesite, como caracteres grandes, lenguaje braille (braile no es correcto), lenguaje oral, símbolos o lenguaje más simple.
 
-- Directriz 1.2: **Contenido multimedia dependiente del tiempo**: Proporcione alternativas sincronizadas para contenidos multimedia sincronizados dependientes del tiempo.
+- Pauta 1.2: **Contenido multimedia dependiente del tiempo**: Proporcione alternativas sincronizadas para contenidos multimedia sincronizados dependientes del tiempo.
 
-## Perceptible (III)
+- Pauta 1.3: **Adaptable**: Crear contenido que pueda ser presentado de diferentes formas sin perder ni información ni estructura.
 
-- Directriz 1.3: **Adaptable**: Crear contenido que pueda ser presentado de diferentes formas sin perder ni información ni estructura.
+- Pauta 1.4: **Distinguible**: Facilitar a los usuarios ver y escuchar el contenido incluyendo la distinción entre lo más y menos importante.
 
-- Directriz 1.4: **Distinguible**: Facilitar a los usuarios ver y escuchar el contenido incluyendo la distinción entre lo más y menos importante.
-
-## Operable (I)
+### Principio 2 - Operable
 
 - Los usuarios pueden interactuar con todos los controles y elementos interactivos usando **el ratón, un teclado o un dispositivo de ayuda**.
 
-## Operable (II)
+**PAUTAS**
 
-- Directriz 2.1: **Teclado accesible**: Poder controlar todas las funciones desde el teclado.
+- Pauta 2.1: **Teclado accesible**: Poder controlar todas las funciones desde el teclado.
 
-- Directriz 2.2: **Tiempo suficiente**: Proporciona tiempo suficiente a los usuarios para leer y utilizar el contenido.
+- Pauta 2.2: **Tiempo suficiente**: Proporciona tiempo suficiente a los usuarios para leer y utilizar el contenido.
 
-## Operable (III)
+- Pauta 2.3: **Ataques epilépticos**: No diseñar contenido que pueda causar ataques epilépticos.
 
-- Directriz 2.3: **Ataques epilépticos**: No diseñar contenido que pueda causar ataques epilépticos.
-- Directriz 2.4: **Navegación**: Proporciona formas para ayudar a los usuarios a navegar, a buscar contenido y a determinar donde están estos.
+- Pauta 2.4: **Navegación**: Proporciona formas para ayudar a los usuarios a navegar, a buscar contenido y a determinar donde están estos.
 
-## Comprensible (I)
+### Principio 3 - Comprensible
 
 - El contenido es claro y se **limita la confusión y la ambigüedad**.
 
-## Comprensible (II)
+**PAUTAS**
 
-- Directriz 3.1: **Legible**: Hacer contenido de texto legible y comprensible.
+- Pauta 3.1: **Legible**: Hacer contenido de texto legible y comprensible.
 
-- Directriz 3.2: **Previsible**: Hacer la apariencia y la forma de utilizar las páginas web previsibles.
+- Pauta 3.2: **Previsible**: Hacer la apariencia y la forma de utilizar las páginas web previsibles.
 
-- Directriz 3.3: **Asistencia a la entrada de datos**: Ofrecer ayuda a los usuarios para evitar y corregir errores.
+- Pauta 3.3: **Asistencia a la entrada de datos**: Ofrecer ayuda a los usuarios para evitar y corregir errores.
 
-## Robusto (I)
+### Principio 4 - Robusto
 
 - Una **amplia gama de dispositivos y tecnologías** puede acceder al contenido.
 
-## Robusto (II)
+**PAUTAS**
 
-- Directriz 4.1: **Compatible**: Maximiza la compatibilidad con los agentes de usuario actuales y futuros, incluyendo tecnologías de asistencia.
-
+- Pauta 4.1: **Compatible**: Maximiza la compatibilidad con los agentes de usuario actuales y futuros, incluyendo tecnologías de asistencia.
 
 
 # Mitos
-
 
 
 ## Las páginas web accesibles son feas
@@ -225,11 +183,7 @@
 
 - **FALSO**. Aunque las personas con discapacidad pueden ser los usuarios que más se beneficien al aplicar la accesibilidad web, en realidad se beneficia todo el mundo, ya que también ayuda a cualquier usuario que se encuentre en circunstancias especiales como puede ser entornos con baja iluminación, ambientes ruidosos, acceso a Internet con conexiones y equipos con capacidades limitadas, etc.
 
-
-
 # Beneficios
-
-
 
 ## Mejora el posicionamiento en Buscadores
 
@@ -263,11 +217,7 @@
 
 - Es un **derecho ciudadano la participación y la no discriminación** por razón de discapacidad.
 
-
-
 # Problemas discapacidad
-
-
 
 ## Visual
 
@@ -301,9 +251,9 @@
 ## Relacionadas con el envejecimiento
 
 - Normalmente, problemas relacionados con:
-    - la discapacidad **visual**,
-    - la discapacidad **auditiva** y
-    - la discapacidad **física**.
+  - la discapacidad **visual**,
+  - la discapacidad **auditiva** y
+  - la discapacidad **física**.
 
 ## Tecnológica
 
@@ -313,11 +263,7 @@
 - Ausencia de un **plugin** para reproducir ciertos contenidos
 - Dispositivo de visualización de **pequeño tamaño**.
 
-
-
 # ¿Cómo navegan los usuarios?
-
-
 
 ## Con ceguera total o visión muy reducida
 
@@ -343,11 +289,7 @@
 
 - Suelen emplear **navegadores accesibles** que simplifican la navegación.
 
-
-
 # Hardware
-
-
 
 ## Apuntador
 
@@ -399,11 +341,7 @@
 
 ![PDA braille. Fuente: accesibilidadweb.dlsi.ua.es](../img/pda-braille.png)
 
-
-
 # Software
-
-
 
 ## Lectores de pantalla (I)
 
@@ -428,7 +366,7 @@
 ## Magnificadores de pantalla
 
 - **Virtual Magnifying Glass**: Gratuito y Software Libre. Multiplataforma (Windows, Linux, FreeBSD and OS X)
-    - <http://magnifier.sourceforge.net>
+  - <http://magnifier.sourceforge.net>
 
 ## Teclados virtuales
 
@@ -436,129 +374,121 @@
 
 ![Onboard on-screen keyboard. Fuente: asandiego](../img/onboard.png)
 
-
-
 # Desafíos y soluciones
-
-
 
 ## Ceguera (I)
 
 - **Imágenes, fotos, gráficos inservibles**
-    - Proveer de descripciones de texto en el atributo alt, si fuesen necesarias explicaciones más largas (tanto en la misma página como con un enlace externo).
+  - Proveer de descripciones de texto en el atributo alt, si fuesen necesarias explicaciones más largas (tanto en la misma página como con un enlace externo).
 
 ## Ceguera (II)
 
 - **Algunos usuarios a veces escuchan la web**
-    - Crea enlaces que permitan a los usuarios saltar los menús de navegación, listas de items, arte ASCII y otros elementos que puedan dificultar o hacer tediosa la escucha.
+  - Crea enlaces que permitan a los usuarios saltar los menús de navegación, listas de items, arte ASCII y otros elementos que puedan dificultar o hacer tediosa la escucha.
 
 ## Ceguera (III)
 
 - **Los usuarios a menudo saltan de enlace a enlace con el tabulador**
-    - Asegúrate que los enlaces tienen sentido ("clickea/pulsa aquí" es problemático).
+ - Asegúrate que los enlaces tienen sentido ("clickea/pulsa aquí" es problemático).
 
 ## Ceguera (IV)
 
 - **Los usuarios generalmente no utilizan el ratón**
-    - No escribas scripts que necesiten el uso del ratón. Provee de de alternativas por teclado (por ejemplo, utiliza onFocus en vez de onMouseover).
+  - No escribas scripts que necesiten el uso del ratón. Provee de de alternativas por teclado (por ejemplo, utiliza onFocus en vez de onMouseover).
 
 ## Ceguera (V)
 
-- **Puede ser difícil para los usuarios saber donde están cuando escuchan el contenido de una tabla**
-    - Provee de encabezados en las columnas y las filas para los datos de la tabla (\<th\>).
-    - Evite, si es posible, filas o columnas expandidas.
+- **Puede ser difícil para los usuarios saber donde están cuando escuchan el contenido de una tabla** 
+  - Provee de encabezados en las columnas y las filas para los datos de la tabla (\<th\>).
+  - Evite, si es posible, filas o columnas expandidas.
 
 ## Ceguera (VI)
 
 - **Los gráficos y las tablas de datos complejas que son interpretados visualmente son inservibles**
-    - Realice resúmenes y/o descripciones de texto, preferiblemente en la misma página, o enlace con otra página como alternativa.
+  - Realice resúmenes y/o descripciones de texto, preferiblemente en la misma página, o enlace con otra página como alternativa.
 
 ## Ceguera (VII)
 
 - **Los marcos no pueden ser vistos. Debemos acceder a ellos por separado, por lo que conlleva desorientación**
-    - No uses marcos a no ser que sea inevitable. Si lo usas, utilice títulos en el marco para reflejar su proposito. (Por ejemplo, "marco de navegación", "contenido principal").
+  - No uses marcos a no ser que sea inevitable. Si lo usas, utilice títulos en el marco para reflejar su proposito. (Por ejemplo, "marco de navegación", "contenido principal").
 
 ## Ceguera (VIII)
 
 - **Los colores son inútiles**
-    - No utilices el color para representar un significado.
+  - No utilices el color para representar un significado.
 
 ## Ceguera (IX)
 
 - **Los usuarios esperan que los links les lleven a algún sitio**
-    - No escribas scripts en links que no tengan un destino verdadero asociado (por ejemplo href="javascript: function(this)").
+  - No escribas scripts en links que no tengan un destino verdadero asociado (por ejemplo href="javascript: function(this)").
 
 ## Ceguera (X)
 
 - **Los lectores de pantalla leen el contenido en el orden que aparece en el código**
-    - Asegúrate que los CSS complejos o los diseños maquetados con tablas se leen correctamente, tanto visualmente como en el código.
+  - Asegúrate que los CSS complejos o los diseños maquetados con tablas se leen correctamente, tanto visualmente como en el código.
 
 ## Ceguera (XI)
 
 - **Hay quien no puede ver videos**
-    - Disponga de descripciones auditivas de los hechos del video que no puedan ser interpretados por el audio de este. (por ejemplo que un narrador describa las acciones en los videos, en los que no haya diálogo).
+  - Disponga de descripciones auditivas de los hechos del video que no puedan ser interpretados por el audio de este. (por ejemplo que un narrador describa las acciones en los videos, en los que no haya diálogo).
 
 ## Ceguera cromática
 
 - **Colores con un contraste similar a menudo son indistinguibles**
-    - Asegúrate que tienen un contraste suficiente.
-    - No utilices solo el color para representar un significado.
+  - Asegúrate que tienen un contraste suficiente.
+  - No utilices solo el color para representar un significado.
 
 ## Problemas visuales (I)
 
 - **A menudo los usuarios utilizan ampliadores de pantalla**
-    - Para reducir el total del desplazamiento horizontal, utiliza unidades relativas en vez de absolutas (por ejemplo, usa porcentajes para el ancho de las tablas, en vez de píxeles).
+  - Para reducir el total del desplazamiento horizontal, utiliza unidades relativas en vez de absolutas (por ejemplo, usa porcentajes para el ancho de las tablas, en vez de píxeles).
 
 ## Problemas visuales (II)
 
 - **El texto en gráficos no se amplía sin un software especial, y se ve pixelado cuando se amplía**
-    - Límita o elimina el texto dentro de gráficos.
-    - Usa anti-aliasing para conseguir un texto claro y legible.
+  - Límita o elimina el texto dentro de gráficos.
+  - Usa anti-aliasing para conseguir un texto claro y legible.
 
 ## Sordera
 
 - **El audio es inútil**
-    - Provee de transcripciones para el audio.
-    - Provee de subtítulos sincronizados para los vídeos.
+  - Provee de transcripciones para el audio.
+  - Provee de subtítulos sincronizados para los vídeos.
 
 ## Discapacidades motoras (I)
 
 - **Los usuarios puede que no sean capaces de utilizar el ratón**
-    - Asegúrate que todas las funciones están disponibles desde el teclado (intenta que con el tabulador salte de enlace a enlace).
-    - Asegúrate que el orden es lógico.
+  - Asegúrate que todas las funciones están disponibles desde el teclado (intenta que con el tabulador salte de enlace a enlace).
+  - Asegúrate que el orden es lógico.
 
 ## Discapacidades motoras (II)
 
 - **Los usuarios que utilizan tecnologías de soplado y aspirado, o similares pueden fatigarse**
-    - Proporciona un método para saltar listas largas o enlaces redundantes u otros contenidos tediosos.
+  - Proporciona un método para saltar listas largas o enlaces redundantes u otros contenidos tediosos.
 
 ## Discapacidades motoras (III)
 
 - **Los usuarios utilizan software activado por voz**
-    - El software de reconocimiento de voz generalmente no puede replicar el movimiento del ratón de una manera tan efectiva como con el uso del teclado, así que asegúrate que todas las funciones están disponibles desde el teclado.
+  - El software de reconocimiento de voz generalmente no puede replicar el movimiento del ratón de una manera tan efectiva como con el uso del teclado, así que asegúrate que todas las funciones están disponibles desde el teclado.
 
 ## Discapacidades cognitivas (I)
 
 - **Los usuarios pueden confundirse con diseños confusos o sistemas de navegación inconsistentes**
-    - Simplifica el diseño tanto como sea posible.
-    - Mantén los sistemas de navegación tan consistentes como puedas.
+  - Simplifica el diseño tanto como sea posible.
+  - Mantén los sistemas de navegación tan consistentes como puedas.
 
 ## Discapacidades cognitivas (II)
 
 - **Los usuarios pueden tener dificultades de concentración o comprensión con párrafos largos**
-    - Donde sea apropiado, agrupa la información debajo de encabezados lógicos.
-    - Organiza la información en "trozos" manejables.
+  - Donde sea apropiado, agrupa la información debajo de encabezados lógicos.
+  - Organiza la información en "trozos" manejables.
 
 ## Discapacidades cognitivas (III)
 
 - **Un solo método puede no ser suficiente**
-    - Donde sea necesario, agrega ilustraciones u otro medio al texto, y vice versa.
-
-
+  - Donde sea necesario, agrega ilustraciones u otro medio al texto, y vice versa.
 
 # Principios claves
-
-
 
 ## Proporciona un texto alternativo adecuado
 
@@ -624,11 +554,7 @@
 
 - El Cascading Style Sheets (**CSS**) permite separar el contenido de la presentación.
 
-
-
 # Imágenes y animaciones
-
-
 
 ## Use el atributo alt
 
@@ -637,11 +563,11 @@
 ## Ayuda a los usuarios
 
 - El **texto alternativo** ayuda a los usuarios:
-    - que no tengan terminales gráficas,
-    - cuyos navegadores no soporten formularios,
-    - con discapacidades visuales,
-    - que utilicen sintetizadores de voz,
-    - que hayan configurado sus agentes de usuario para no mostrar imágenes, etc.
+  - que no tengan terminales gráficas,
+  - cuyos navegadores no soporten formularios,
+  - con discapacidades visuales,
+  - que utilicen sintetizadores de voz,
+  - que hayan configurado sus agentes de usuario para no mostrar imágenes, etc.
 
 ## No especificar texto alternativo (I)
 
@@ -659,33 +585,33 @@
 
 - Mal uso de alt cuando **describe imagen en vez de su función**
 
-~~~
+```html
 <a href="anterior.html">
   <img src="./img/flecha-izq.gif" alt="Flecha roja izquierda" ></a>
 <a href="indice.html">Índice</a>
 <a href="siguiente.html">
   <img src="./img/flecha-der.gif" alt="Flecha roja derecha" ></a>
-~~~
+```
 
 ## Mal uso de alt (II)
 
 - Mal uso de alt cuando **se usa en imágenes decorativas**
 
-~~~
+```html
 <a href="unete.html">
   <img src="./img/logo.png" alt="Únete" />Únete</a>
-~~~
+```
 
 ## Mal uso de alt (III)
 
 - Mal uso de alt cuando **no aporta nada útil**
 
-~~~
+```html
 <p>
   Teléfono de contacto:
   <img src="./img/telefono.gif" alt="Teléfono de contacto" />
 </p>
-~~~
+```
 
 ## Fangs mal
 
@@ -696,50 +622,48 @@
 ## Problemas
 
 - En esta página existen **varios problemas**:
-
-    - El texto alternativo que tienen las flechas describe las imágenes, pero **no indica su función**.
-    - Las imágenes decorativas de las listas **repiten la descripción** del enlace.
-    - La imagen que contiene un número de teléfono tiene un texto alternativo que **no es nada útil**.
+  - El texto alternativo que tienen las flechas describe las imágenes, pero **no indica su función**.
+  - Las imágenes decorativas de las listas **repiten la descripción** del enlace.
+  - La imagen que contiene un número de teléfono tiene un texto alternativo que **no es nada útil**.
 
 ## Soluciones
 
 - Para que está página sea accesible existen **las siguientes soluciones**:
-
-    - El texto alternativo de las flechas pasa a **indicar su función**: "Anterior" y "Siguiente".
-    - El texto alternativo de las imágenes decorativas de las listas **lo dejamos vacío**.
-    - El texto alternativo de la imagen con un número de teléfono lo hacemos **útil** indicando el número de teléfono.
+  - El texto alternativo de las flechas pasa a **indicar su función**: "Anterior" y "Siguiente".
+  - El texto alternativo de las imágenes decorativas de las listas **lo dejamos vacío**.
+  - El texto alternativo de la imagen con un número de teléfono lo hacemos **útil** indicando el número de teléfono.
 
 ## Buen uso de alt (I)
 
 - Buen uso de alt cuando **describe la función de una imagen**
 
-~~~
+```html
 <a href="anterior.html">
   <img src="./img/flecha-izq.gif" alt="Anterior" ></a>
 <a href="indice.html">Índice</a>
 <a href="siguiente.html">
   <img src="./img/flecha-der.gif" alt="Siguiente" ></a>
-~~~
+```
 
 ## Buen uso de alt (II)
 
 - Buen uso de alt cuando **está vacío en imágenes decorativas**
 
-~~~
+```html
 <a href="unete.html">
   <img src="./img/logo.png" alt="" />Únete</a>
-~~~
+```
 
 ## Buen uso de alt (III)
 
-- Buen uso de alt cuando **el texto es útil**
+- Buen uso de alt cuando **la imagen contiene texto útil**
 
-~~~
+```html
 <p>
   Teléfono de contacto:
   <img src="./img/telefono.gif" alt="999123456" />
 </p>
-~~~
+```
 
 ## Fangs mejor
 
@@ -757,29 +681,28 @@
 
 - Lo mejor es **no incluir las imágenes decorativas en el HTML**
 
-~~~
+```html
 <ul>
   <li><a href="unete.html">Únete</a></li>
-~~~
+```
 
 ## Imágenes decorativas (II)
 
 - Lo mejor es **emplear CSS** para su inclusión.
 
-~~~
+```css
 ul {
- list-style-image:
-   url(./img/logo.png);
+ list-style-image: url(./img/logo.png);
 }
-~~~
+```
 
 ## Imágenes con texto (I)
 
 - Lo mejor es **no usar imágenes para mostrar textos** sino usar textos directamente.
 
-~~~
-Teléfono de contacto: <strong>999123456</strong>
-~~~
+```html
+<a href="tel:+999123456">Teléfono de contacto: <strong>999123456</strong></a>
+```
 
 ## Imágenes con texto (II)
 

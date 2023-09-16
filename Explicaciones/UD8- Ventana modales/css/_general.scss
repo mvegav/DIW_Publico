@@ -7,7 +7,22 @@ $tamFuente: 14;
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  padding: 1rem;
+
+  &__accesible {
+    .img_pie {
+      width: 80px;
+    }
+  }
+
+  * img {
+    width: 40px;
+    fill: white;
+  }
 }

@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  padding: 1rem;
+}
+.footer__accesible .img_pie {
+  width: 80px;
+}
+.footer * img {
+  width: 40px;
+  fill: white;
+}
+
+.eboton {
+  text-decoration: none;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+/* clase que representa el fondo de la ventana *//*# sourceMappingURL=modal.css.map */

@@ -20,13 +20,8 @@
   padding: 0 0.5%;
 }
 .csstransforms .deck-menu > .slide {
-  -webkit-transform: scale(0.22) !important;
-  -ms-transform: scale(0.22) !important;
   transform: scale(0.22) !important;
-  -webkit-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
   transform-origin: 0 0;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -42,4 +37,4 @@
 }
 .deck-menu.deck-container:hover .deck-prev-link, .deck-menu.deck-container:hover .deck-next-link {
   display: none;
-}
+}/*# sourceMappingURL=deck.menu.css.map */
