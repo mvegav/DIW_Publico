@@ -3,6 +3,33 @@
 % Diseño de Interfaces Web %
 % Autor: Marina Vega Vázquez %
 
+- [Ejercicios Repaso HTML 5 \& CSS3](#ejercicios-repaso-html-5--css3)
+  - [Objetivo](#objetivo)
+  - [Instrucciones](#instrucciones)
+  - [Ejercicios solo html](#ejercicios-solo-html)
+    - [Ejercicio 1](#ejercicio-1)
+    - [Ejercicio 2](#ejercicio-2)
+    - [Ejercicio 3](#ejercicio-3)
+    - [Ejercicio 4](#ejercicio-4)
+    - [Ejercicio 5](#ejercicio-5)
+    - [Ejercicio 6](#ejercicio-6)
+    - [Ejercicio 7](#ejercicio-7)
+    - [Ejercicio 8](#ejercicio-8)
+    - [Ejercicio 9](#ejercicio-9)
+    - [Ejercicio 10](#ejercicio-10)
+    - [Ejercicio 11](#ejercicio-11)
+    - [Ejercicio 12](#ejercicio-12)
+    - [Ejercicio 13](#ejercicio-13)
+  - [Ejercicios de html y css](#ejercicios-de-html-y-css)
+    - [Ejercicio 14](#ejercicio-14)
+    - [Ejercicio 15](#ejercicio-15)
+    - [Ejercicio 16](#ejercicio-16)
+    - [Ejercicio 17](#ejercicio-17)
+    - [Ejercicio 18](#ejercicio-18)
+    - [Ejercicio 19](#ejercicio-19)
+    - [Ejercicio 20](#ejercicio-20)
+    - [Ejercicio 21](#ejercicio-21)
+
 ## Objetivo
 
 Repasar el uso de html5 y css3, corrigiendo problemas de mal uso de los mismos.
@@ -65,7 +92,7 @@ Información a incluir
 
 Además, debe cumplir los siguientes requisitos:
 
-- Establece el charset (Codificación de caracteres) a UTF-8 dentro del <head> del documento.
+- Establece el charset (Codificación de caracteres) a UTF-8 dentro del "head" del documento.
 - Las imágenes que utilices deben estar descargadas en tu ordenador, no debes enlazarlas directamente desde Internet.
 - Cada apartado debe estar separado empleando el elemento html más adecuado para el tipo de contenido (article, aside, section, div)
 - Los títulos de cada apartado de datos deben mostrarse con la etiqueta adecuada.
@@ -127,7 +154,145 @@ De donde sacar los iconos:
 
 ### Ejercicio 14
 
-Definir un estilo diferente para los elementos h1,h2,h3,h4,h5 y h6. Mostrar mensajes utilizando estos elementos a las que se le han definido estilos: fuente, color de texto y fondo.
+Definir un estilo diferente para los elementos h1,h2,h3,h4,h5 y h6. Mostrar mensajes utilizando estos elementos a las que se le han definido estilos: fuente, color de texto y fondo. Especifica los estilos a nivel de la página html.
 
 ### Ejercicio 15
 
+> Ejercicio de bordes.
+
+Parte de la página html que encontrarás en la carpeta [plantillas](./Plantillas/Bordes/) para la realización de la siguiente página. Emplea las etiquetas: header y main.
+
+Completa o modifica el html para que emplee html5 y añáde una hoja de estilos externa dentro de una carpeta llamada src.
+
+Especificaciones:
+
+- Fuente del texto: sans-serf tamaño de 1.25rem.
+- Color fondo: rgb(38,115,82).
+- Sombra del título: negra de 5px de desplazamiento del eje X e Y.
+- Reglas del párrafo de introducción:
+  - Boder de 10px negro.
+  - margen derecho e izquierdo del 25%. ¿De que otra forma se puede hacer que este párrafo se coloque en esa misma posición de la página?
+  - relleño de 20px.
+- Reglas del párrafo de la izquierda:
+  - Boder de 20px de color rgb(128, 36, 0).
+  - margen derecho de 50%.
+  - Borde superior derecho e izquierdo de 20px.
+  - Relleno 10px.
+  - color de fondo rgb(179, 87, 51).
+- Reglas del párrafo de la derecha:
+  - Boder de 15px de color rgb(128, 72, 0).
+  - margen izquierdo de 50%.
+  - Borde superior derecho e izquierdo de 15px.
+  - Relleno 5px.
+  - color de fondo rgb(179, 123, 51).
+- Reglas del párrafo del centro:
+  - Boder de 5px de color rgb(51, 121, 179).
+  - margen izquierdo y derecho de 25%.
+  - Borde superior derecho e izquierdo de 15px.
+  - Relleno 20px.
+  - color de fondo rgb(0, 70, 128).
+
+![solución](./img/ejercicio15.png).
+
+### Ejercicio 16
+
+> Ejercicio de Fuentes locales.
+
+Parte de la página html que encontrarás en la carpeta [plantillas](./Plantillas/Fuentes/) para la realización de la siguiente página. Emplea las etiquetas: header y main.
+
+Completa o modifica el html para que emplee html5 y añáde una hoja de estilos externa dentro de una carpeta llamada src.
+
+Etiquetas:
+
+- Cada cita se encuentra en un párrafo.
+- Se usa strong para el nombre del escritor.
+- Par poner el nombre de las obras en cursiva usamos la etiqueta cite.
+
+Especificaciones:
+
+- En este ejercicio se utilizará la regla-arroba @font-face, para enlazar las siguientes fuentes en nuestro propio ordenador (descargalas de [Google Fonts](https://fonts.google.com/)):
+  - Título: Ribeye Marrow y cursive.
+  - Citas en latin: Lobster y sans-serif
+  - Citas en castellano: Just Another Hand y sans-serif.
+- Tamaño fuentes:
+  - h1: 3rem.
+  - Texto en latin: 2.5rem.
+  - Texto en castellano: 3.5rem. Espaciado entre letras 1px.
+- Reglas para el primer párrafo:
+  - Interlineado de 200%.
+  - Margen derecho e izquierdo de 30%.
+  - Texto justificado.
+- Reglas para los párrafos en castellano.
+  - Margen arriba de 0, en la horizontal de 0 y abajo de 3rem.
+  - Texto alineado a la derecha.
+
+![solución](./img/Ejercicio16.png).
+
+### Ejercicio 17
+
+> Ejercicio de Fuentes enlazadas a [Google Fonts](https://fonts.google.com/).
+
+Copia la solución anterior empleando esta vez "@import" para importar las fuentes de Google Fonts.
+
+### Ejercicio 18
+
+> Ejercicio de texto.
+
+Parte de la página html que encontrarás en la carpeta [plantillas](./Plantillas/Fuentes/) para la realización de la siguiente página. Emplea las etiquetas: header y main.
+
+Completa o modifica el html para que emplee html5 y añáde una hoja de estilos externa dentro de una carpeta llamada src.
+
+Etiquetas:
+
+- "Déjà vu" es el título de la página y está en la cabecera.
+- Cada cita con su fecha y el texto que lo acompaña están dentro de un elemento article.
+- Empleamos la etiqueta "time" para poder indicar la fecha en un formato más legible para los buscadores, añadiendo el atributo datetime. El valor del atributo puede seguir el formato AAAA-MM-DD y se hará coincidir con el valor contenido por cada etiqueta.
+- Empleamos span en el cargo y el lugare.
+- Empleamos strong para indicar el autor de la cita.
+- Al tratarse de citas cortas empleamos la etiqueta q.
+
+Especificaciones:
+
+- Fuente de partida 16px sans-serif. Texto justificado.
+- Relleno del h1 10px.
+- Etiqueta h2 fuente 1.7rem.
+- Para los article:
+  - Color fondo lighgray.
+  - Ancho máximo de 70%.
+  - Borde redondeado de 20px.
+  - Borde superior 3px rgba(0,0,0.0.674).
+  - Interlineado 2rem.
+  - Relleno de 1rem.
+  - Margen inferior de 1rem.
+- Margen de 1rem para los párrafos.
+- Para la fecha:
+  - Relleno de 5px.
+  - Color de fondo gray.
+  - Fuente 200%.
+  - Negrita.
+  - Espaciado entre letras 5px.
+- Para los strong: fuente de tipo small-caps.
+- Para las citas:
+  - borde inferior discontinuo rojo de 1px.
+  - Fuente serif de 1.5rem.
+- Para los span de cargo: negrita.
+- Para los span de lugar color verde.
+
+![solución](./img/ejercicio17.png).
+
+### Ejercicio 19
+
+Partiendo del html del currículum vitae:
+
+- Centra el texto de la cabecera.
+- El main no debe ocupar más del 80% de la página.
+- Coloca tu foto a la izquierda de la página, con el borde redondeado de forma que quede como un círculo.
+- Para separar cada apartado coloca una línea inferior de color gris en todos los apartados menos en el último.
+
+### Ejercicio 20
+
+Formatea el periódico local con css a tu gusto.
+
+### Ejercicio 21
+
+Formatea las hojas de la asociación ciclística con css a tu gusto.
