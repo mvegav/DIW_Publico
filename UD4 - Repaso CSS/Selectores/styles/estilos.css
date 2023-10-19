@@ -1,0 +1,54 @@
+/* selector universal*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* La pseudo-clase :root de CSS selecciona el elemento raíz de un árbol que representa el documento. En HTML, 
+:root representa el elemento <html> y es idéntico al selector html, excepto que su especificidad es mayor.*/
+
+:root {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  /*
+    La notación RGBA es una manera de especificar colores en la que se definen cuatro valores. 
+    Los tres primeros son los bien conocidos canales RGB (rojo, verde y azul) y el cuarto parámetro es el canal Alpha, 
+    que no es más que el grado de transparencia u opacidad del color.
+   El canal Alpha se expresa mediante un valor entre cero y uno, siendo 0 totalmente transparente y 1 totalmente opaco. 
+   Todos los valores decimales entre el cero y el 1 expresan distintos grados de opacidad.
+
+*/
+}
+
+/* selectores simples */
+
+/* selector simple por clase */
+
+/* selector simple y descendiente indirectos */
+
+/* selector de pseudoclases */
+/* seleccionamos los hermanos impares de tipo section*/
+/*section:nth-child(odd) {*/
+
+/* selector de hijo descendiente directo */
+
+/*selectores desdientes directos e indirectos */
+
+/* selectores hermanos general */
+
+/* selectores hermanos adyacentes */
+
+/* css del ejemplo de pseudoclases */
+
+/* Selector de pseudoelemento para cambiar el color de fondo de los li impares */
+
+/* Estilos para la tabla */
+
+/* Empleamos selector no hijo directo, es decir para los code que no sean hijos directos de un pre
+interlineado 100% color letra rgb(189, 33, 15)*/
+
+/* Selector de pseudoclase para cambiar el color de las filas pares */
+
+/* selector de pseudoelemento que al seleccionar un párrafo se ponga color de fondo darkblue y letra blanco*/
