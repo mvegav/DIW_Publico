@@ -52,3 +52,9 @@ interlineado 100% color letra rgb(189, 33, 15)*/
 /* Selector de pseudoclase para cambiar el color de las filas pares */
 
 /* selector de pseudoelemento que al seleccionar un párrafo se ponga color de fondo darkblue y letra blanco*/
+
+/* selectores lógicos */
+
+/*En este caso, la propiedad text-decoration: none se aplica sobre el enlace <a>, sólo si en el interior del enlace existe una etiqueta <img>*/
+
+/* para las imágenes que  no tienen el atributo alt */

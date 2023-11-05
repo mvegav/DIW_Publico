@@ -2,49 +2,52 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ejemplo selectores</title>
-  <link rel="stylesheet" href="styles/estilos.css">
+  <link rel="stylesheet" href="styles/estilos.css" />
 </head>
 
 <body>
   <header id="cabecera">
+    <!-- <a href="index.html"><img src="./img/css.svg" class="logo"></a> -->
     <h1>Ejemplo de uso de selectores</h1>
   </header>
   <main>
     <section>
       <h2>Los selectores</h2>
-      <p>En CSS los selectores se utilizan para delimitar los
-        elementos HTML de nuestra página web a los que
-        queremos aplicar estilo. Hay una amplia variedad de
-        selectores CSS, lo que permite una gran precisión a
-        la hora de seleccionar elementos a los que aplicar estilo.
-        En este artículo y sus subartículos veremos
-        con detalle todos los tipos y el modo como funcionan.</p>
+      <p>
+        En CSS los selectores se utilizan para delimitar los elementos HTML de
+        nuestra página web a los que queremos aplicar estilo. Hay una amplia
+        variedad de selectores CSS, lo que permite una gran precisión a la
+        hora de seleccionar elementos a los que aplicar estilo. En este
+        artículo y sus subartículos veremos con detalle todos los tipos y el
+        modo como funcionan.
+      </p>
       <h3>¿Qué es un selector?</h3>
-      <p> Un selector CSS es la primera parte de una regla CSS. Es un
-        patrón de elementos y otros términos que
-        indican al navegador qué elementos HTML se seleccionan para
-        aplicarles una regla que incluye los valores
-        de las propiedades CSS. El elemento o los elementos
-        seleccionados por el selector se denominan sujeto
-        del selector.</p>
+      <p>
+        Un selector CSS es la primera parte de una regla CSS. Es un patrón de
+        elementos y otros términos que indican al navegador qué elementos HTML
+        se seleccionan para aplicarles una regla que incluye los valores de
+        las propiedades CSS. El elemento o los elementos seleccionados por el
+        selector se denominan sujeto del selector.
+      </p>
       <p>En resumen son:</p>
       <ul class="lista">
         <li>Es un mecanismo para hacer target sobre elementos HTML</li>
-        <li>Determinan sobre qué elemento se va a aplicar la regla
-          CSS de la que forman parte</li>
-        <li>Determinan bajo qué estado se va a aplicar dicha regla
-          CSS</li>
+        <li>
+          Determinan sobre qué elemento se va a aplicar la regla CSS de la que
+          forman parte
+        </li>
+        <li>Determinan bajo qué estado se va a aplicar dicha regla CSS</li>
       </ul>
     </section>
     <section>
       <h2>Tipos de selectores</h2>
       <p>Disponemos de distintos tipo de selectores que son:</p>
       <ul class="lista">
-        <li><a href="#simples">Selectores Simples</a></li>
+        <li><a href="#">Selectores Simples</a></li>
         <li><a href="#atributos">Selectores de Atributos</a></li>
         <li><a href="#pseudoelementos">Selectores de pseudoelementos</a></li>
         <li><a href="#pseudoclases">Selectores de pseudoclases</a></li>
@@ -54,17 +57,15 @@
     </section>
     <section id="simple">
       <h2>Selectores Simples</h2>
-      <p>Los selectores simples selecciona elementos según el tipo de
-        elemento (tag), clase (.class) o id
-        (#id)</p>
+      <p>
+        Los selectores simples selecciona elementos según el tipo de elemento
+        (tag), clase (.class) o id (#id)
+      </p>
       <h3>Tipos de slectores simples</h3>
       <ul>
-        <li><strong>Selector de tipo -</strong> Los elementos html</li>
-        <li><strong>Selector de identificador -</strong> id</li>
-        <li><strong>Selector de clase</strong> - class</li>
-        <li><strong>Selector universal - </strong>Selecciona todos los elementos.</li>
-        <li><strong>Selector de atributos</strong></li>
-
+        <li>Los elementos html</li>
+        <li>Los identificadores - id</li>
+        <li>Las clases - class</li>
       </ul>
       <h4>Ejemplo</h4>
       <p class="subtitulo">Html</p>
@@ -96,36 +97,44 @@
     <p><a href="#cabecera">Subir Arriba</a></p>
     <section id="atributos">
       <h2>Selectores de atributos</h2>
-      <p>Los selectores de atributos son un tipo de selectores que permite seleccionar por atributo.</p>
-      <p>Lo selectores de atributos permiten seleccionar elementos
-        HTML en función de sus atributos y/o valores de esos
-        atributos.</p>
+      <p>Los selectores de atributos son un tipo de atributos avanzados</p>
+      <p>
+        Lo selectores de atributos permiten seleccionar elementos HTML en
+        función de sus atributos y/o valores de esos atributos.
+      </p>
       <p>Los cuatro tipos de selectores de atributos son:</p>
       <ul class="lista">
-        <li><code>[nombre_atributo]</code>, selecciona los elementos
-          que tienen establecido el atributo llamado <code>nombre_atributo</code>,
-          independientemente de su valor.</li>
-        <li><code>[nombre_atributo=valor]</code>, selecciona los
-          elementos que tienen establecido un atributo llamado
-          <code>nombre_atributo</code> con un valor igual a <code>valor</code>.
+        <li>
+          <code>[nombre_atributo]</code>, selecciona los elementos que tienen
+          establecido el atributo llamado <code>nombre_atributo</code>,
+          independientemente de su valor.
         </li>
-        <li><code>[nombre_atributo~=valor]</code>, selecciona los
-          elementos que tienen establecido un atributo llamado
-          <code>nombre_atributo</code> y cuyo valor es una lista
-          de palabras separadas por espacios en blanco en la que
-          al menos una de ellas es exactamente igual a <code>valor</code>.
+        <li>
+          <code>[nombre_atributo=valor]</code>, selecciona los elementos que
+          tienen establecido un atributo llamado
+          <code>nombre_atributo</code> con un valor igual a
+          <code>valor</code>.
         </li>
-        <li><code>[nombre_atributo|=valor]</code>, selecciona los
-          elementos que tienen establecido un atributo llamado
-          <code>nombre_atributo</code> y cuyo valor es una serie
-          de palabras separadas con guiones, pero que comienza con
-          <code>valor</code>. Este tipo de selector sólo es útil
-          para los atributos de tipo <code>lang</code> que indican
-          el idioma del contenido del elemento.
+        <li>
+          <code>[nombre_atributo~=valor]</code>, selecciona los elementos que
+          tienen establecido un atributo llamado
+          <code>nombre_atributo</code> y cuyo valor es una lista de palabras
+          separadas por espacios en blanco en la que al menos una de ellas es
+          exactamente igual a <code>valor</code>.
+        </li>
+        <li>
+          <code>[nombre_atributo|=valor]</code>, selecciona los elementos que
+          tienen establecido un atributo llamado
+          <code>nombre_atributo</code> y cuyo valor es una serie de palabras
+          separadas con guiones, pero que comienza con <code>valor</code>.
+          Este tipo de selector sólo es útil para los atributos de tipo
+          <code>lang</code> que indican el idioma del contenido del elemento.
         </li>
       </ul>
-      <p>A continuación se muestran algunos ejemplos de estos tipos de
-        selectores:</p>
+      <p>
+        A continuación se muestran algunos ejemplos de estos tipos de
+        selectores:
+      </p>
       <pre><code>
     <span class="hljs-comment">/* Se muestran de color azul todos los enlaces que tengan
        un atributo "class", independientemente de su valor */</span>
@@ -166,82 +175,86 @@
           </tr>
           <tr>
             <td><code>[href="#"]</code></td>
-            <td>Si el elemento tiene atributo <code>href</code>
-              y su valor es <code>#</code>.</td>
+            <td>
+              Si el elemento tiene atributo <code>href</code> y su valor es
+              <code>#</code>.
+            </td>
           </tr>
           <tr>
             <td><code>[href*="manzdev"]</code></td>
-            <td>Si el elemento tiene atributo <code>href</code>
-              y su valor contiene <code>manzdev</code>.</td>
+            <td>
+              Si el elemento tiene atributo <code>href</code> y su valor
+              contiene <code>manzdev</code>.
+            </td>
           </tr>
           <tr>
             <td><code>[href^="https://"]</code></td>
-            <td>Si el elemento tiene atributo <code>href</code>
-              y su valor comienza por <code>https://</code>.</td>
+            <td>
+              Si el elemento tiene atributo <code>href</code> y su valor
+              comienza por <code>https://</code>.
+            </td>
           </tr>
           <tr>
             <td><code>[href$=".pdf"]</code></td>
-            <td>Si el elemento tiene atributo <code>href</code>
-              y su valor termina por <code>.pdf</code> (un
-              enlace a un PDF).</td>
+            <td>
+              Si el elemento tiene atributo <code>href</code> y su valor
+              termina por <code>.pdf</code> (un enlace a un PDF).
+            </td>
           </tr>
           <tr>
             <td><code>[class~="manzdev"]</code></td>
-            <td>Si el elemento tiene atributo <code>class</code>
+            <td>
+              Si el elemento tiene atributo <code>class</code>
               con una lista de valores y uno de ellos es
               <code>manzdev</code>.
             </td>
           </tr>
           <tr>
             <td><code>[lang|="es"]</code></td>
-            <td>Si el elemento tiene atributo <code>lang</code>
-              con una lista de valores, donde alguno
-              empieza
-              por <code>es-</code>.</td>
+            <td>
+              Si el elemento tiene atributo <code>lang</code> con una lista de
+              valores, donde alguno empieza por <code>es-</code>.
+            </td>
           </tr>
         </tbody>
       </table>
+      <p><a href="#cabecera">Subir Arriba</a></p>
     </section>
     <section id="pseudoclases">
       <h2>Selectores de pseudoclases</h2>
-      <p>Existen muchos selectores y pseudo-clases de CSS
-        que nos
-        pueden ser muy útiles a la hora de preprar una
-        maquetación web y ajustar los estilos para
-        adaptarnos a un
-        diseño concreto.
+      <p>
+        Existen muchos selectores y pseudo-clases de CSS que nos pueden ser
+        muy útiles a la hora de preprar una maquetación web y ajustar los
+        estilos para adaptarnos a un diseño concreto.
       </p>
-      <p>La pseudoclase :nth-child(an+b) de CSS es una de
-        ellas, y nos
-        permite seleccionar varios elementos hijos
-        de la clase indicando su posición, según un
-        argumento o
-        fórmula.
+      <p>
+        La pseudoclase :nth-child(an+b) de CSS es una de ellas, y nos permite
+        seleccionar varios elementos hijos de la clase indicando su posición,
+        según un argumento o fórmula.
       </p>
-      <p>Es decir, si tenemos por ejemplo una lista
-        &lt;ul&gt; y queremos modificar el color sólo
-        para el 3er
-        elemento, podríamos usarlo así:
+      <p>
+        Es decir, si tenemos por ejemplo una lista &lt;ul&gt; y queremos
+        modificar el color sólo para el 3er elemento, podríamos usarlo así:
       </p>
       <pre><code>
  ul li:nth-child(3){ color: red; }
             </code></pre>
-      <p>A partir de ese uso básico, tenemos multitud de
-        opciones
-        adicionales según lo que necesitemos conseguir.
+      <p>
+        A partir de ese uso básico, tenemos multitud de opciones adicionales
+        según lo que necesitemos conseguir.
       </p>
       <h4>Ejemplo</h4>
       <ul id="ejemplo">
-        <li> 1</li>
-        <li> 2 </li>
-        <li> 3 </li>
-        <li> 4 </li>
-        <li> 5 </li>
-        <li> 6 </li>
-        <li> 7 </li>
-        <li> 8 </li>
-        <li> 9 </li>
-        <li> 10 </li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
       </ul>
 
       <table>
@@ -253,328 +266,487 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:active"><code>:active</code></a></td>
-            <td>Selecciona un elemento cuando el usuario lo
-              activa (por ejemplo, con un clic).</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:active"><code>:active</code></a>
+            </td>
+            <td>
+              Selecciona un elemento cuando el usuario lo activa (por ejemplo,
+              con un clic).
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:any-link"><code>:any-link</code></a></td>
-            <td>Selecciona los estados <code>:link</code> y
+            <td>
+              <a href="/es/docs/Web/CSS/:any-link"><code>:any-link</code></a>
+            </td>
+            <td>
+              Selecciona los estados <code>:link</code> y
               <code>:visited</code> de un enlace.
             </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:blank"><code>:blank</code></a></td>
-            <td>Selecciona un <a href="/es/docs/Web/HTML/Element/input">elemento
-                <code>&lt;input&gt;</code></a> cuyo valor de
-              entrada está vacío.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:checked"><code>:checked</code></a></td>
-            <td>Selecciona un botón de opción o casilla de
-              verificación en el estado que determines.</td>
-          </tr>
-          <tr>
-            <td><a class="only-in-en-us" title="Currently only
-                                    available in English (US)"
-                href="/en-US/docs/Web/API/WebVTT_API"><code>:current</code>
-                <small>(en-US)</small></a></td>
-            <td>Selecciona el elemento que se muestra en ese
-              momento, o un ancestro de ese elemento.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:default"><code>:default</code></a></td>
-            <td>Selecciona uno o más elementos de interfaz de
-              usuario cuyo valor es el predeterminado de entre
-              un conjunto de elementos similares.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:dir"><code>:dir</code></a></td>
-            <td>Selecciona un elemento según su direccionalidad
-              (valor del atributo <a href="/es/docs/Web/HTML/Global_attributes/dir"><code>dir</code></a>
-              de HTML o propiedad <a href="/es/docs/Web/CSS/direction"><code>direction</code></a>
-              de CSS).</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:disabled"><code>:disabled</code></a></td>
-            <td>Selecciona elementos de la interfaz de usuario
-              que están en estado inactivo.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:empty"><code>:empty</code></a></td>
-            <td>Selecciona un elemento que no tiene elementos
-              hijo, excepto por algún espacio en blanco
-              opcional.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:enabled"><code>:enabled</code></a></td>
-            <td>Selecciona elementos de la interfaz de usuario
-              que están en estado activo.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:first"><code>:first</code></a></td>
-            <td>En <a href="/en-US/docs/Web/CSS/Paged_Media" class="only-in-en-us" title="Currently only
-                                    available in English (US)">Paged Media
-                <small>(en-US)<small></small></small></a>,
-              selecciona la primera página.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:first-child"><code>:first-child</code></a></td>
-            <td>Selecciona el primero entre elementos hermanos.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:first-of-type"><code>:first-of-type</code></a></td>
-            <td>Selecciona el primero entre un tipo determinado
-              de elementos hermanos.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:focus"><code>:focus</code></a></td>
-            <td>Selecciona el elemento que tiene el foco.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:focus-visible"><code>:focus-visible</code></a></td>
-            <td>Selecciona el elemento que tiene el foco cuando
-              el foco tiene que estar visible para el usuario.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:focus-within"><code>:focus-within</code></a></td>
-            <td>Selecciona el elemento que tiene el foco y el
-              elemento con un descendiente que tiene el foco.</td>
-          </tr>
-          <tr>
-            <td><a class="only-in-en-us" title="Currently only
-                                    available in English (US)" href="/en-US/docs/Web/CSS/:future"><code>:future</code>
-                <small>(en-US)</small></a></td>
-            <td>Selecciona los elementos que van después del
-              elemento en curso.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:hover"><code>:hover</code></a></td>
-            <td>Selecciona un elemento cuando el usuario
-              interactúa con él.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:indeterminate"><code>:indeterminate</code></a></td>
-            <td>Selecciona elementos de interfaz de usuario cuyo
-              valor está en un estado no determinado, por lo
-              general se trata de <a href="/es/docs/Web/HTML/Element/input/checkbox">casillas
-                de verificación</a>.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:in-range"><code>:in-range</code></a></td>
-            <td>Selecciona un elemento cuyo valor se encuentra
-              dentro de un rango de valores determinado.</td>
-          </tr>
-          <tr>
-            <td><a href="/es/docs/Web/CSS/:invalid"><code>:invalid</code></a></td>
-            <td>Selecciona un elemento, como por ejemplo un
-              <code>&lt;input&gt;</code>, cuyo estado es no
-              válido.
+            <td>
+              <a href="/es/docs/Web/CSS/:blank"><code>:blank</code></a>
+            </td>
+            <td>
+              Selecciona un
+              <a href="/es/docs/Web/HTML/Element/input">elemento <code>&lt;input&gt;</code></a>
+              cuyo valor de entrada está vacío.
             </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:lang"><code>:lang</code></a></td>
-            <td>Selecciona un elemento según el idioma (valor
-              del atributo <a href="/es/docs/Web/HTML/Global_attributes/lang">lang</a>
-              de HTML).</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:checked"><code>:checked</code></a>
+            </td>
+            <td>
+              Selecciona un botón de opción o casilla de verificación en el
+              estado que determines.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:last-child"><code>:last-child</code></a></td>
-            <td>Selecciona el último elemento de entre sus
-              elementos hermanos.</td>
+            <td>
+              <a class="only-in-en-us" title="Currently only
+                                    available in English (US)"
+                href="/en-US/docs/Web/API/WebVTT_API"><code>:current</code> <small>(en-US)</small></a>
+            </td>
+            <td>
+              Selecciona el elemento que se muestra en ese momento, o un
+              ancestro de ese elemento.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:last-of-type"><code>:last-of-type</code></a></td>
-            <td>Selecciona el último de entre los elementos
-              hermanos de un tipo determinado.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:default"><code>:default</code></a>
+            </td>
+            <td>
+              Selecciona uno o más elementos de interfaz de usuario cuyo valor
+              es el predeterminado de entre un conjunto de elementos
+              similares.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:left"><code>:left</code></a></td>
-            <td>En <a href="/en-US/docs/Web/CSS/CSS_Pages" class="only-in-en-us" title="Currently only
-                                    available in English (US)">Paged Media
-                <small>(en-US)<small></small></small></a>
-              selecciona las páginas de la izquierda.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:dir"><code>:dir</code></a>
+            </td>
+            <td>
+              Selecciona un elemento según su direccionalidad (valor del
+              atributo
+              <a href="/es/docs/Web/HTML/Global_attributes/dir"><code>dir</code></a>
+              de HTML o propiedad
+              <a href="/es/docs/Web/CSS/direction"><code>direction</code></a>
+              de CSS).
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:link"><code>:link</code></a></td>
+            <td>
+              <a href="/es/docs/Web/CSS/:disabled"><code>:disabled</code></a>
+            </td>
+            <td>
+              Selecciona elementos de la interfaz de usuario que están en
+              estado inactivo.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:empty"><code>:empty</code></a>
+            </td>
+            <td>
+              Selecciona un elemento que no tiene elementos hijo, excepto por
+              algún espacio en blanco opcional.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:enabled"><code>:enabled</code></a>
+            </td>
+            <td>
+              Selecciona elementos de la interfaz de usuario que están en
+              estado activo.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:first"><code>:first</code></a>
+            </td>
+            <td>
+              En
+              <a href="/en-US/docs/Web/CSS/Paged_Media" class="only-in-en-us" title="Currently only
+                                    available in English (US)">Paged Media <small>(en-US)<small></small></small></a>,
+              selecciona la primera página.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:first-child"><code>:first-child</code></a>
+            </td>
+            <td>Selecciona el primero entre elementos hermanos.</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:first-of-type"><code>:first-of-type</code></a>
+            </td>
+            <td>
+              Selecciona el primero entre un tipo determinado de elementos
+              hermanos.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:focus"><code>:focus</code></a>
+            </td>
+            <td>Selecciona el elemento que tiene el foco.</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:focus-visible"><code>:focus-visible</code></a>
+            </td>
+            <td>
+              Selecciona el elemento que tiene el foco cuando el foco tiene
+              que estar visible para el usuario.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:focus-within"><code>:focus-within</code></a>
+            </td>
+            <td>
+              Selecciona el elemento que tiene el foco y el elemento con un
+              descendiente que tiene el foco.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="only-in-en-us" title="Currently only
+                                    available in English (US)" href="/en-US/docs/Web/CSS/:future"><code>:future</code>
+                <small>(en-US)</small></a>
+            </td>
+            <td>
+              Selecciona los elementos que van después del elemento en curso.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:hover"><code>:hover</code></a>
+            </td>
+            <td>
+              Selecciona un elemento cuando el usuario interactúa con él.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:indeterminate"><code>:indeterminate</code></a>
+            </td>
+            <td>
+              Selecciona elementos de interfaz de usuario cuyo valor está en
+              un estado no determinado, por lo general se trata de
+              <a href="/es/docs/Web/HTML/Element/input/checkbox">casillas de verificación</a>.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:in-range"><code>:in-range</code></a>
+            </td>
+            <td>
+              Selecciona un elemento cuyo valor se encuentra dentro de un
+              rango de valores determinado.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:invalid"><code>:invalid</code></a>
+            </td>
+            <td>
+              Selecciona un elemento, como por ejemplo un
+              <code>&lt;input&gt;</code>, cuyo estado es no válido.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:lang"><code>:lang</code></a>
+            </td>
+            <td>
+              Selecciona un elemento según el idioma (valor del atributo
+              <a href="/es/docs/Web/HTML/Global_attributes/lang">lang</a> de
+              HTML).
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:last-child"><code>:last-child</code></a>
+            </td>
+            <td>
+              Selecciona el último elemento de entre sus elementos hermanos.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:last-of-type"><code>:last-of-type</code></a>
+            </td>
+            <td>
+              Selecciona el último de entre los elementos hermanos de un tipo
+              determinado.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:left"><code>:left</code></a>
+            </td>
+            <td>
+              En
+              <a href="/en-US/docs/Web/CSS/CSS_Pages" class="only-in-en-us" title="Currently only
+                                    available in English (US)">Paged Media <small>(en-US)<small></small></small></a>
+              selecciona las páginas de la izquierda.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/es/docs/Web/CSS/:link"><code>:link</code></a>
+            </td>
             <td>Selecciona los enlaces no visitados.</td>
           </tr>
           <tr>
-            <td><a class="only-in-en-us" title="Currently only
+            <td>
+              <a class="only-in-en-us" title="Currently only
                                     available in English (US)"
-                href="/en-US/docs/Web/CSS/:local-link"><code>:local-link</code>
-                <small>(en-US)</small></a></td>
-            <td>Selecciona los enlaces que dirigen a páginas que
-              se encuentran en la misma página web que el
-              documento activo.</td>
+                href="/en-US/docs/Web/CSS/:local-link"><code>:local-link</code> <small>(en-US)</small></a>
+            </td>
+            <td>
+              Selecciona los enlaces que dirigen a páginas que se encuentran
+              en la misma página web que el documento activo.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:is"><code>:is()</code></a></td>
-            <td>Selecciona cualquiera de los selectores de la
-              lista de selección que se pase como valor de
-              este selector.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:is"><code>:is()</code></a>
+            </td>
+            <td>
+              Selecciona cualquiera de los selectores de la lista de selección
+              que se pase como valor de este selector.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:not"><code>:not</code></a></td>
-            <td>Selecciona elementos que otros selectores no han
-              seleccionado antes y que se han pasado como
-              valor de este selector.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:not"><code>:not</code></a>
+            </td>
+            <td>
+              Selecciona elementos que otros selectores no han seleccionado
+              antes y que se han pasado como valor de este selector.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:nth-child"><code>:nth-child</code></a></td>
-            <td>Selecciona elementos de entre una lista de
-              elementos hermanos. Los elementos hermanos están
-              relacionados por una fórmula del tipo <em>an + b</em>
-              (por ejemplo, 2<em>n</em> + 1 seleccionaría los
-              elementos 1, 3, 5, 7, etc., es decir, todos los
-              impares).</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:nth-child"><code>:nth-child</code></a>
+            </td>
+            <td>
+              Selecciona elementos de entre una lista de elementos hermanos.
+              Los elementos hermanos están relacionados por una fórmula del
+              tipo <em>an + b</em> (por ejemplo, 2<em>n</em> + 1 seleccionaría
+              los elementos 1, 3, 5, 7, etc., es decir, todos los impares).
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:nth-of-type"><code>:nth-of-type</code></a></td>
-            <td>Selecciona elementos de entre una lista de
-              elementos hermanos de un tipo determinado (por
-              ejemplo, todos los elementos <code>&lt;p&gt;</code>).
-              Los elementos hermanos están relacionados por
-              una fórmula del tipo <em>an + b</em> (por
-              ejemplo, 2<em>n</em> + 1 relacionaría en la
-              secuencia ese tipo de elementos, los números 1,
-              3, 5, 7, etc., es decir, todos los impares).</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:nth-of-type"><code>:nth-of-type</code></a>
+            </td>
+            <td>
+              Selecciona elementos de entre una lista de elementos hermanos de
+              un tipo determinado (por ejemplo, todos los elementos
+              <code>&lt;p&gt;</code>). Los elementos hermanos están
+              relacionados por una fórmula del tipo <em>an + b</em> (por
+              ejemplo, 2<em>n</em> + 1 relacionaría en la secuencia ese tipo
+              de elementos, los números 1, 3, 5, 7, etc., es decir, todos los
+              impares).
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:nth-last-child"><code>:nth-last-child</code></a></td>
-            <td>Selecciona elementos de entre una lista de
-              elementos hermanos, contando hacia atrás desde
-              el final. Los elementos hermanos están
-              relacionados por una fórmula del tipo <em>an+b</em>
-              (por ejemplo, 2<em>n</em> + 1 r_elacionaría en
-              la secuencia el último de los elementos de este
-              tipo con el que se encuentra dos por delante, y
-              así sucesivamente. Todos los impares, contando
-              desde el final).</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:nth-last-child"><code>:nth-last-child</code></a>
+            </td>
+            <td>
+              Selecciona elementos de entre una lista de elementos hermanos,
+              contando hacia atrás desde el final. Los elementos hermanos
+              están relacionados por una fórmula del tipo <em>an+b</em> (por
+              ejemplo, 2<em>n</em> + 1 r_elacionaría en la secuencia el último
+              de los elementos de este tipo con el que se encuentra dos por
+              delante, y así sucesivamente. Todos los impares, contando desde
+              el final).
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:nth-last-of-type"><code>:nth-last-of-type</code></a></td>
-            <td>Selecciona los elementos de entre una lista de
-              elementos hermanos que son de un tipo
-              determinado (por ejemplo, elementos <code>&lt;p&gt;</code>),
-              contando hacia atrás desde el final. Los
-              elementos hermanos están relacionados por una
-              fórmula del tipo <em>an+b</em> (por ejemplo, 2<em>n</em>
-              + 1 relacionaría en la secuencia el último de
-              los elementos de ese tipo con el que se
-              encuentra dos por delante, y así sucesivamente.
-              Todos los impares, contando desde el final).</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:nth-last-of-type"><code>:nth-last-of-type</code></a>
+            </td>
+            <td>
+              Selecciona los elementos de entre una lista de elementos
+              hermanos que son de un tipo determinado (por ejemplo, elementos
+              <code>&lt;p&gt;</code>), contando hacia atrás desde el final.
+              Los elementos hermanos están relacionados por una fórmula del
+              tipo <em>an+b</em> (por ejemplo, 2<em>n</em> + 1 relacionaría en
+              la secuencia el último de los elementos de ese tipo con el que
+              se encuentra dos por delante, y así sucesivamente. Todos los
+              impares, contando desde el final).
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:only-child"><code>:only-child</code></a></td>
-            <td>Selecciona un elemento que no tiene elementos
-              hermanos.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:only-child"><code>:only-child</code></a>
+            </td>
+            <td>Selecciona un elemento que no tiene elementos hermanos.</td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:only-of-type"><code>:only-of-type</code></a></td>
-            <td>Selecciona un elemento que es el único de su
-              tipo entre sus elementos hermanos.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:only-of-type"><code>:only-of-type</code></a>
+            </td>
+            <td>
+              Selecciona un elemento que es el único de su tipo entre sus
+              elementos hermanos.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:optional"><code>:optional</code></a></td>
-            <td>Selecciona los elementos de formulario que son
-              innecesarios.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:optional"><code>:optional</code></a>
+            </td>
+            <td>
+              Selecciona los elementos de formulario que son innecesarios.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:out-of-range"><code>:out-of-range</code></a></td>
-            <td>Selecciona un elemento cuyo valor está fuera de
-              rango.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:out-of-range"><code>:out-of-range</code></a>
+            </td>
+            <td>Selecciona un elemento cuyo valor está fuera de rango.</td>
           </tr>
           <tr>
-            <td><a class="only-in-en-us" title="Currently only
+            <td>
+              <a class="only-in-en-us" title="Currently only
                                     available in English (US)" href="/en-US/docs/Web/CSS/:past"><code>:past</code>
-                <small>(en-US)</small></a></td>
-            <td>Selecciona los elementos que se encuentran antes
-              del elemento activo.</td>
+                <small>(en-US)</small></a>
+            </td>
+            <td>
+              Selecciona los elementos que se encuentran antes del elemento
+              activo.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:placeholder-shown"><code>:placeholder-shown</code></a></td>
-            <td>Selecciona el elemento de entrada que muestra
-              texto de marcador de posición.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:placeholder-shown"><code>:placeholder-shown</code></a>
+            </td>
+            <td>
+              Selecciona el elemento de entrada que muestra texto de marcador
+              de posición.
+            </td>
           </tr>
           <tr>
-            <td><a class="only-in-en-us" title="Currently only
+            <td>
+              <a class="only-in-en-us" title="Currently only
                                     available in English (US)"
-                href="/en-US/docs/Web/CSS/:playing"><code>:playing</code>
-                <small>(en-US)</small></a></td>
-            <td>Selecciona un elemento que representa un audio,
-              un vídeo o un recurso similar que se puede
-              «reproducir» o «pausar», cuando el elemento está
-              «en reproducción».</td>
+                href="/en-US/docs/Web/CSS/:playing"><code>:playing</code> <small>(en-US)</small></a>
+            </td>
+            <td>
+              Selecciona un elemento que representa un audio, un vídeo o un
+              recurso similar que se puede «reproducir» o «pausar», cuando el
+              elemento está «en reproducción».
+            </td>
           </tr>
           <tr>
-            <td><a class="only-in-en-us" title="Currently only
+            <td>
+              <a class="only-in-en-us" title="Currently only
                                     available in English (US)" href="/en-US/docs/Web/CSS/:paused"><code>:paused</code>
-                <small>(en-US)</small></a></td>
-            <td>Selecciona un elemento que representa un audio,
-              un vídeo o un recurso similar que se puede
-              “«reproducir» o «pausar» cuando el elemento está
-              «pausado».</td>
+                <small>(en-US)</small></a>
+            </td>
+            <td>
+              Selecciona un elemento que representa un audio, un vídeo o un
+              recurso similar que se puede “«reproducir» o «pausar» cuando el
+              elemento está «pausado».
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:read-only"><code>:read-only</code></a></td>
-            <td>Selecciona los elementos que el usuario no puede
-              modificar.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:read-only"><code>:read-only</code></a>
+            </td>
+            <td>
+              Selecciona los elementos que el usuario no puede modificar.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:read-write"><code>:read-write</code></a></td>
-            <td>Selecciona los elementos que el usuario puede
-              modificar.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:read-write"><code>:read-write</code></a>
+            </td>
+            <td>Selecciona los elementos que el usuario puede modificar.</td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:required"><code>:required</code></a></td>
-            <td>Selecciona los elementos de formulario que son
-              necesarios.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:required"><code>:required</code></a>
+            </td>
+            <td>
+              Selecciona los elementos de formulario que son necesarios.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:right"><code>:right</code></a></td>
-            <td>En <a href="/en-US/docs/Web/CSS/CSS_Pages" class="only-in-en-us" title="Currently only
-                                    available in English (US)">Paged Media
-                <small>(en-US)<small></small></small></a>
-              selecciona las páginas de la derecha.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:right"><code>:right</code></a>
+            </td>
+            <td>
+              En
+              <a href="/en-US/docs/Web/CSS/CSS_Pages" class="only-in-en-us" title="Currently only
+                                    available in English (US)">Paged Media <small>(en-US)<small></small></small></a>
+              selecciona las páginas de la derecha.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:root"><code>:root</code></a></td>
-            <td>Selecciona un elemento que es la raíz del
-              documento.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:root"><code>:root</code></a>
+            </td>
+            <td>Selecciona un elemento que es la raíz del documento.</td>
           </tr>
           <tr>
-            <td><a class="only-in-en-us" title="Currently only
+            <td>
+              <a class="only-in-en-us" title="Currently only
                                     available in English (US)" href="/en-US/docs/Web/CSS/:scope"><code>:scope</code>
-                <small>(en-US)</small></a></td>
+                <small>(en-US)</small></a>
+            </td>
             <td>Selecciona cualquier elemento de ámbito.</td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:valid"><code>:valid</code></a></td>
-            <td>Selecciona un elemento como <code>&lt;input&gt;</code>,
-              en un estado válido.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:valid"><code>:valid</code></a>
+            </td>
+            <td>
+              Selecciona un elemento como <code>&lt;input&gt;</code>, en un
+              estado válido.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:target"><code>:target</code></a></td>
-            <td>Selecciona el elemento al que apunta la URL
-              activa (es decir, cuyo ID coincide con el <a href="https://en.wikipedia.org/wiki/Fragment_identifier"
-                class="external" target="_blank">identificador
-                de fragmento de la URL</a> activo).</td>
+            <td>
+              <a href="/es/docs/Web/CSS/:target"><code>:target</code></a>
+            </td>
+            <td>
+              Selecciona el elemento al que apunta la URL activa (es decir,
+              cuyo ID coincide con el
+              <a href="https://en.wikipedia.org/wiki/Fragment_identifier" class="external" target="_blank">identificador
+                de fragmento de la URL</a>
+              activo).
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/:visited"><code>:visited</code></a></td>
+            <td>
+              <a href="/es/docs/Web/CSS/:visited"><code>:visited</code></a>
+            </td>
             <td>Selecciona los enlaces visitados.</td>
           </tr>
         </tbody>
       </table>
+      <p><a href="#cabecera">Subir Arriba</a></p>
+
     </section>
     <section id="pseudoelementos">
       <h2>Selectores de pseudoelementos</h2>
-      <p>Los pseudoelementos se comportan de manera similar. Sin
-        embargo, actúan como si hubieras añadido un elemento HTML
-        totalmente nuevo en el marcado, en lugar de haber aplicado
-        una clase nueva a los elementos presentes. Los
-        pseudoelementos empiezan con un doble signo de dos puntos ::</p>
+      <p>
+        Los pseudoelementos se comportan de manera similar. Sin embargo,
+        actúan como si hubieras añadido un elemento HTML totalmente nuevo en
+        el marcado, en lugar de haber aplicado una clase nueva a los elementos
+        presentes. Los pseudoelementos empiezan con un doble signo de dos
+        puntos ::
+      </p>
       <table>
         <thead>
           <tr>
@@ -584,102 +756,378 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="/es/docs/Web/CSS/::after"><code>::after</code></a></td>
-            <td>Selecciona el elemento al que se puede aplicar
-              estilo que aparece a continuación del contenido
-              del elemento que lo origina.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/::after"><code>::after</code></a>
+            </td>
+            <td>
+              Selecciona el elemento al que se puede aplicar estilo que
+              aparece a continuación del contenido del elemento que lo
+              origina.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/::before"><code>::before</code></a></td>
-            <td>Selecciona el elemento al que se puede aplicar
-              estilo que aparece antes del contenido del
-              elemento que lo origina.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/::before"><code>::before</code></a>
+            </td>
+            <td>
+              Selecciona el elemento al que se puede aplicar estilo que
+              aparece antes del contenido del elemento que lo origina.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/::first-letter"><code>::first-letter</code></a></td>
+            <td>
+              <a href="/es/docs/Web/CSS/::first-letter"><code>::first-letter</code></a>
+            </td>
             <td>Selecciona la primera letra del elemento.</td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/::first-line"><code>::first-line</code></a></td>
-            <td>Selecciona la primera línea del elemento de
-              contenido.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/::first-line"><code>::first-line</code></a>
+            </td>
+            <td>Selecciona la primera línea del elemento de contenido.</td>
           </tr>
           <tr>
-            <td><a class="only-in-en-us" title="Currently only
+            <td>
+              <a class="only-in-en-us" title="Currently only
                                     available in English (US)"
-                href="/en-US/docs/Web/CSS/::grammar-error"><code>::grammar-error</code>
-                <small>(en-US)</small></a></td>
-            <td>Selecciona una parte del documento que contiene
-              un error de gramática indicado por el navegador.</td>
+                href="/en-US/docs/Web/CSS/::grammar-error"><code>::grammar-error</code> <small>(en-US)</small></a>
+            </td>
+            <td>
+              Selecciona una parte del documento que contiene un error de
+              gramática indicado por el navegador.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/::selection"><code>::selection</code></a></td>
-            <td>Selecciona la parte del documento que ha sido
-              seleccionada.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/::selection"><code>::selection</code></a>
+            </td>
+            <td>
+              Selecciona la parte del documento que ha sido seleccionada.
+            </td>
           </tr>
           <tr>
-            <td><a href="/es/docs/Web/CSS/::spelling-error"><code>::spelling-error</code></a></td>
-            <td>Selecciona una parte del documento que contiene
-              un error de ortografía indicado por el
-              navegador.</td>
+            <td>
+              <a href="/es/docs/Web/CSS/::spelling-error"><code>::spelling-error</code></a>
+            </td>
+            <td>
+              Selecciona una parte del documento que contiene un error de
+              ortografía indicado por el navegador.
+            </td>
           </tr>
         </tbody>
       </table>
     </section>
     <p><a href="#cabecera">Subir Arriba</a></p>
-    <section>
-      <article>
-        <h2>Combinadores</h2>
-        <dt>
-          <a href="/es/docs/Web/CSS/Next-sibling_combinator">Combinador de hermanos adyacentes</a>
-        </dt>
-        <dd>
-          <p>El combinador <code>+</code> selecciona hermanos adyacentes. Esto quiere decir que el segundo elemento
-            sigue directamente al primero y ambos comparten el mismo elemento padre.</p>
-          <p><strong>Sintaxis:</strong> <code>A + B</code></p>
-          <p><strong>Ejemplo:</strong> La regla <code>h2 + p</code> se aplicará a todos los elementos <a
-              href="/es/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a> que siguen directamente a un elemento <a
-              class="only-in-en-us" title="Currently only available in English (US)"
-              href="/en-US/docs/Web/HTML/Element/Heading_Elements"><code>&lt;h2&gt;</code> <small>(en-US)</small></a>.
-          </p>
-        </dd>
-        <dt>
-          <a href="/es/docs/Web/CSS/Subsequent-sibling_combinator">Combinador general de hermanos</a>
-        </dt>
-        <dd>
-          <p>El combinador <code>~</code> selecciona hermanos. Esto quiere decir que el segundo elemento sigue al
-            primero (no necesariamente de forma inmediata) y ambos comparten el mismo elemento padre.</p>
-          <p><strong>Sintaxis:</strong> <code>A ~ B</code></p>
-          <p><strong>Ejemplo:</strong> La regla <code>p ~ span</code> se aplicará a todos los elementos <a
-              href="/es/docs/Web/HTML/Element/span"><code>&lt;span&gt;</code></a> que siguen un elemento <a
-              href="/es/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a>.</p>
-        </dd>
-        <dt>
-          <a href="/es/docs/Web/CSS/Child_combinator">Combinador de hijo</a>
-        </dt>
-        <dd>
-          <p>El combinador <code>&gt;</code> selecciona los elementos que son hijos directos del primer elemento.</p>
-          <p><strong>Sintaxis:</strong> <code>A &gt; B</code></p>
-          <p><strong>Ejemplo:</strong> La regla <code>ul &gt; li</code> se aplicará a todos los elementos <a
-              href="/es/docs/Web/HTML/Element/li"><code>&lt;li&gt;</code></a> que son hijos directos de un elemento <a
-              href="/es/docs/Web/HTML/Element/ul"><code>&lt;ul&gt;</code></a>.</p>
-        </dd>
-        <dt><a href="/es/docs/Web/CSS/Descendant_combinator">Combinador de descendientes</a></dt>
-        <dd>
-          <p>El combinador <code>(espacio)</code> selecciona los elementos que son descendientes del primer elemento.
-          </p>
-          <p><strong>Sintaxis:</strong> <code>A B</code></p>
-          <p><strong>Ejemplo:</strong> La regla <code>div span</code> se aplicará a todos los elementos <a
-              href="/es/docs/Web/HTML/Element/span"><code>&lt;span&gt;</code></a> que están dentro de un elemento <a
-              href="/es/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a>.</p>
-        </dd>
-        </dl>
-      </article>
+    <section id="multiples">
+      <h2>Selectores mútiples</h2>
+      <p>
+        Los selectores múltiples en CSS (o multiple element selector css ) son
+        una lista de selectores separados por comas. Puedes crear esta lista
+        con selectores del mismo tipo (elemento, clase, ID) o puedes crear una
+        combinación de selectores básicos de CSS para aplicar el mismo estilo
+        a distintos selectores. Así mismo, con este selector de atributos
+        podemos modificar varios elementos al mismo tiempo , solo basta con
+        empezar tu regla CSS con este listado de selectores para que los
+        estilos se apliquen a todos los selectores de la lista.Te recomendamos
+        leer nuestro post sobre los selectores básicos en CSS para refrescar
+        tus conocimientos sobre qué tipos de selectores existen.
+      </p>
+      <section>
+        <h3>Selectores anidados</h3>
+        <p>
+          Como parte de los selectores múltiples en CSS, existen los
+          selectores anidados. Estos son selectores que dependen de otro. Ten
+          en cuenta que siempre que insertemos un selector anidado, el estilo
+          que definamos en la regla se aplicará al último selector, el que se
+          encuentra justo antes de la llave. A continuación te presentamos los
+          cuatro selectores anidados de CSS:
+        </p>
+        <pre><code>
+          &lt;h2&gt;Selector multiples&lt;/h2&gt;
+          &lt;p&gt;
+              Las propiedades se aplican a los selectores separados por comas.
+          &lt;/p&gt;
+          &lt;p&gt;
+          En el ejemplo tenemos dos listas, una ordena y otra desordenada.
+          &lt;/p&gt;
+          &lt;ul&gt;
+              &lt;li&gt;Elementos html;&lt;/li&gt;
+              &lt;li&gt;Identificadores (id);&lt;/li&gt;
+              &lt;li&gt;Clases (class)&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;ol&gt;
+          &lt;li&gt;Elementos html;&lt;/li&gt;
+          &lt;li&gt;Identificadores (id);&lt;/li&gt;
+          &lt;li&gt;Clases (class)&lt;/li&gt;
+      &lt;/ol&gt;
+                     </code></pre>
+        <p class="subtitulo">CSS</p>
+        <pre><code>
+          h2{
+              font-size= 3rem;
+          }
+          
+          ol, li {
+              color: #666;
+          }
+         
+          ul li:first-of-type::before,
+          ol li:first-of-type::before {
+            content: "\00BB";
+            color: var(--color-texto-secundario);
+            font-size: 1.3rem;
+          }
+                     </code></pre>
+      </section>
     </section>
+    <p><a href="#cabecera">Subir Arriba</a></p>
+    <section id="combinados">
+      <h2>Selectores Combinados</h2>
+      <p>Un selector combinador es la unión de dos o más selectores básicos. Para hacer selectores combinados empleamos
+        los combinadores</p>
+      <p>Un <strong>combinador CSS</strong> es un símbolo que permite <strong>combinar</strong> dos o más selectores
+        CSS, formando uno más complejo y
+        potente. Existen varios combinadores en CSS, que mostraremos en la siguiente tabla</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Símbolo</th>
+            <th>Ejemplo</th>
+            <th>Significado</th>
+        <tbody>
+          <tr>
+            <td>Combinador descendiente</td>
+            <td>(espacio)</td>
+            <td>section p { }</td>
+            <td>Selecciona dentro de otros elementos (cualquier nivel en el que se encuentre el elemento hijo)</td>
+          </tr>
+          <tr>
+            <td>Combinador hijo</td>
+            <td>&gt;</td>
+            <td>section &gt;p { }</td>
+            <td>Selecciona elementos hijos directos (primer nivel). Ej. Todos los p que estén directamente dentro de
+              section.</td>
+          </tr>
+          <tr>
+            <td>Combinador hermano adyacente</td>
+            <td>+</td>
+            <td>h2 + h3 { }</td>
+            <td>Selecciona elementos contiguos a otros (mismo nivel). Ej. El h3 seguido de un h2, uno al lado del otro.
+            </td>
+          </tr>
+          <tr>
+            <td>Combinador hermano general.</td>
+            <td>~</td>
+            <td>h2 ~ h3 { }</td>
+            <td>Selecciona elementos que siguen a otros (mismo nivel pero no necesariamente continuo). Ej. Todos los h3
+              hermamos de un h2.</td>
+          </tr>
+          <tr>
+            <td>Combinador unversal</td>
+            <td>*</td>
+            <td>section p * { }</td>
+            <td>Selecciona todos los elementos (cualquier nivel). Ej. todos los elementos que estén dentro de un p que
+              sea
+              hijo de un secction.</td>
+          </tr>
+        </tbody>
+        </tr>
+        </thead>
+      </table>
+    </section>
+    <p><a href="#cabecera">Subir Arriba</a></p>
+    <section id="logicos">
+      <h2>Combinadores lógicos</h2>
+      <p>En ciertas situaciones, es posible que queramos crear grupos con diferentes selectores con el objetivo de
+        escribir menos código, o reutilizar bloques de código CSS en más situaciones, de forma que sean más potentes y
+        flexibles.
+      </p>
+      <p>
+        La forma más sencilla de conseguir esto, es crear agrupaciones con diferentes selectores separando por comas.
+      </p>
+      <p>Sin embargo, las comas sólo son la forma más sencilla y simple de reutilizar selectores. En CSS, tenemos a
+        nuestra disposición una serie de mecanismos para agrupar o combinar selectores de una forma más potente y
+        flexible, dentro de una categoría denominada combinadores lógicos.</p>
+      <p>Estos combinadores lógicos nos permiten seleccionar elementos con ciertas restricciones y funcionan como una
+        pseudoclase (ver más adelante), sólo que se le pueden pasar parámetros, ya que son de tipo pseudoclase
+        funcional.</p>
+      <p>Veamos los mecanismos que tenemos a nuestra disposición para ello:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Selector</th>
+            <th>Descripción</th>
+          </tr>
+        <tbody>
+          <tr>
+            <td>:is()</td>
+            <td>Agrupaciones de elementos. Seleccionamos varios elementos separándolos por comas. Permite combinar con
+              otros selectores.</td>
+          </tr>
+          <tr>
+            <td>:where()</td>
+            <td>Como :is pero esta regla tienen menor especificidad CSS.</td>
+          </tr>
+          <tr>
+            <td>:has()</td>
+            <td>Permite seleccionar elementos padre que tengan ciertas características en sus hijos.</td>
+          </tr>
+          <tr>
+            <td>:not()</td>
+            <td>Permite seleccionar elementos que no cumplan ciertas características.</td>
+          </tr>
+        </tbody>
+        </tr>
+        </thead>
+      </table>
+      <section>
+        <h3>El combinador :is()</h3>
+        <p>La pseudoclase funcional :is() es un reemplazo práctico de la agrupación de selectores mediante comas, que
+          permite reescribir selectores complejos de una forma mucho más práctica y compacta, ya que permite combinar y
+          acumular con otros selectores anteriores o posteriores a :is().</p>
+        <p>Observa el siguiente selector que agrupa tres selectores diferentes</p>
+        <pre><code>
+      .container .list,   /* Especificidad (0,2,0) */
+      .container .menu,   /* Especificidad (0,2,0) */
+      .container ul {     /* Especificidad (0,1,1) */
+            /* ... */
+       }
+        </code></pre>
+        <p>Si nos fijamos bien, la clase .container siempre aparece en cada uno de los tres casos, sin embargo, no hay
+          forma de abreviarla, aunque sólo cambie la última parte. Algo que se acentúa si el selector es mucho más
+          largo.
+        </p>
+        <p>Con la pseudoclase :is() si que podemos abreviar la información repetida en el ejemplo anterior, haciéndolo
+          de
+          la siguiente forma:
+        </p>
+        <pre><code>
+        .container :is(.list, .menu, .ul) {     /* Especificidad (0,2,0) */
+              /* ... */
+         }
+          </code></pre>
+        <p>Sin embargo, mucho cuidado con la especificidad CSS, ya que no tiene porque ser equivalente. Con la
+          pseudoclase
+          :is(), se calcula la especificidad sumando la especificidad más alta de sus parámetros. Para el selector
+          .container .list la especificidad sería (0,2,0) tanto usando :is() como no usándolo, sin embargo, en el caso
+          del
+          selector .container ul, en el primer caso sin :is(), la especificidad sería (0,1,1), mientras que con :is()
+          seguiría siendo (0,2,0).</p>
+      </section>
+      <section>
+        <h3>El combinador :is()</h3>
+        <p>La pseudoclase funcional :is() es un reemplazo práctico de la agrupación de selectores mediante comas, que
+          permite reescribir selectores complejos de una forma mucho más práctica y compacta, ya que permite combinar y
+          acumular con otros selectores anteriores o posteriores a :is().</p>
+        <p>Observa el siguiente selector que agrupa tres selectores diferentes</p>
+        <pre><code>
+      .container .list,   /* Especificidad (0,2,0) */
+      .container .menu,   /* Especificidad (0,2,0) */
+      .container ul {     /* Especificidad (0,1,1) */
+            /* ... */
+       }
+        </code></pre>
+        <p>Si nos fijamos bien, la clase .container siempre aparece en cada uno de los tres casos, sin embargo, no hay
+          forma de abreviarla, aunque sólo cambie la última parte. Algo que se acentúa si el selector es mucho más
+          largo.
+        </p>
+        <p>Con la pseudoclase :is() si que podemos abreviar la información repetida en el ejemplo anterior, haciéndolo
+          de
+          la siguiente forma:
+        </p>
+        <pre><code>
+        .container :is(.list, .menu, .ul) {     /* Especificidad (0,2,0) */
+              /* ... */
+         }
+          </code></pre>
+        <p>Sin embargo, mucho cuidado con la especificidad CSS, ya que no tiene porque ser equivalente. Con la
+          pseudoclase
+          :is(), se calcula la especificidad sumando la especificidad más alta de sus parámetros. Para el selector
+          .container .list la especificidad sería (0,2,0) tanto usando :is() como no usándolo, sin embargo, en el caso
+          del
+          selector .container ul, en el primer caso sin :is(), la especificidad sería (0,1,1), mientras que con :is()
+          seguiría siendo (0,2,0).</p>
+      </section>
+      <section>
+        <h3>El combinador :where()</h3>
+        <p>El combinador :where() funciona exactamente igual que el combinador :is(), la única diferencia que tiene es
+          en cuanto a la especificidad CSS. Mientras que con :is(), la especificidad es el valor más alto de la lista de
+          parámetros, en el caso de :where() es siempre cero.</p>
+        <pre><code>
+            .container :is(.list, .menu, .ul) {     /* Especificidad (0,2,0) */
+                  /* ... */
+             }
+             .container :where(.list, .menu, .ul) {     /* Especificidad (0,1,0) */
+              /* ... */
+         } 
+              </code></pre>
+      </section>
+      <section>
+        <h3>El combinador :has()</h3>
+        <p>La pseudoclase :has() permite seleccionar el elemento precedido, si sus elementos hijos cumplen los criterios
+          indicados por parámetro. Esto puede resultar un poco confuso, pero se ve claramente en el siguiente ejemplo:
+        </p>
+        <pre><code>
+          a:has(> img) {
+            text-decoration: none;
+          }
+        </code></pre>
+        <p>En este caso, la propiedad text-decoration: none se aplica sobre el enlace <a>, sólo si en el interior del
+            enlace existe una etiqueta <img>. Este ejemplo podría ser muy útil para eliminar estilos sobre imágenes que
+            son enlaces.
+        </p>
+        <p>Algunos detalles interesantes sobre la pseudoclase funcional :has():
+        </p>
+        <p>
+        <ul>
+          <li>La pseudoclase <span>:has()</span> no se puede anidar dentro de otra <span>:has()</span></li>
+          <li>Los pseudoelementos como <span>::before</span> o <span>::after</span> no funcionan dentro de
+            <span>:has()</span>
+          </li>
+          <li>La especificidad de <span>:has()</span> es el valor más alto de los selectores indicados por parámetro.
+          </li>
+        </ul>
+        </p>
+      </section>
+      <section>
+        <h3>El combinador :not()</h3>
+        <p>La pseudoclase de negación :not() es muy útil, ya que permite seleccionar todos los elementos que no cumplan
+          los criterios indicados en sus parámetros entre paréntesis.
+        </p>
+        <p>Veamos un sencillo ejemplo:
+        </p>
+        <pre><code>
+          p:not(.general) {
+            border: 1px solid #DDD;
+            padding: 8px;
+            background: #FFF;
+          }
+        </code></pre>
+        <p>Este pequeño fragmento de código nos indica que todos los párrafos
+        <p> que no pertenezcan a la clase .general, se les aplique el estilo especificado.
+        </p>
+        <p>Algunos detalles interesantes sobre la pseudoclase funcional :has():
+        </p>
+        <p>
+        <ul>
+          <li>Se puede indicar una lista de criterios por parámetro, y no uno solo (como en el ejemplo anterior).</span>
+          </li>
+          <li>La pseudoclase <span>:not</span> no accepta pseudoelementos como <span>::before</span> o
+            <span>::after</span> por parámetro.
+          </li>
+          <li>Al igual que con <span>:is()</span>, la especificidad de <span>:not()</span> es el valor más alto de sus
+            parámetros.
+          </li>
+        </ul>
+        </p>
+      </section>
   </main>
   <footer>
-    <p>&copy; todos los derechos reservados. &cir; Autora - Marina Vega
-      Vázquez</p>
+    <p>
+      &copy; todos los derechos reservados. &cir; Autora - Marina Vega Vázquez
+    </p>
   </footer>
 </body>
 
