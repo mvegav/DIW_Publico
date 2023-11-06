@@ -1,5 +1,5 @@
 /* selector universal*/
-* {
+*, *::after, *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,32 +18,190 @@
     que no es más que el grado de transparencia u opacidad del color.
    El canal Alpha se expresa mediante un valor entre cero y uno, siendo 0 totalmente transparente y 1 totalmente opaco. 
    Todos los valores decimales entre el cero y el 1 expresan distintos grados de opacidad.
-
 */
+  --color-fondo: rgba(124,225,192,0.304);
+  --color-texto-secundrio: rgba(15,89,82);
+  --size-h1: 3rem;
+  --fuente-subtitulos: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* selectores simples */
+.logo{
+  max-width: 3rem;
+}
+
+header{
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem;
+  padding: .5rem;
+}
+
+h1 { 
+  font-size: var(--size-h1);
+  color: var(--color-texto-secundrio);
+  display: inline-block;
+}
+
+h2{
+  font-size: calc(var(--size-h1) - 1rem);
+}
+
+h3{
+  font-size: calc(var(--size-h1) - 1.5rem);
+}
+
+h4{
+  font-size: calc(var(--size-h1) - 1.7rem);
+}
+
+p, ul, li {
+  margin: 1rem;
+}
 
 /* selector simple por clase */
 
+.subtitulo{
+  font-weight: 600;
+  padding-left: 1rem;
+  font-family: var(--fuente-subtitulos);
+}
+
+.hljs-comment{
+  color: #666;
+}
+
+.hljs-selector-tag{
+  color: green;
+}
+
 /* selector simple y descendiente indirectos */
+.lista a {
+  text-decoration: none;
+  color: green;
+  font-size: 1rem;
+}
+
+/* selectores de atributos */
+p a[href^="#"] {
+  color: blueviolet;
+  text-decoration: none;
+}
+
+p a[href^="#"]::before {
+  content: "\25b2";
+  padding-right: .5rem;
+}
 
 /* selector de pseudoclases */
 /* seleccionamos los hermanos impares de tipo section*/
 /*section:nth-child(odd) {*/
+section:nth-of-type(2n + 1){
+  background-color: #c6c6c63f;
+  margin: 1rem;
+  padding: 1rem 0;
+  border-radius: 20px;
+}
 
 /* selector de hijo descendiente directo */
+section > h2 {
+  background-color: var(--color-fondo);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
+li > span {
+  color: brown;
+  font-weight: 600;
+}
 /*selectores desdientes directos e indirectos */
+section p,
+section li{
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+
+/* section :is(p,li){
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+} */
+
+/* section :where(p,li){
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+} */
+
+section h3{
+  border-radius: 5px;
+  border: 2px dotted green;
+}
+
+pre{
+  background-color: rgba(128, 128, 128, 0.131);
+  font-family: 'Courier New', Courier, monospace;
+  margin: 1rem;
+  width: max-content;
+  padding-right: 2rem;
+}
 
 /* selectores hermanos general */
+h4 ~ p.subtitulo {
+  border-top: 1px dotted #666;
+}
 
 /* selectores hermanos adyacentes */
+h3 + ul {
+  margin-left: 2rem;
+  list-style-type: circle;
+}
 
+ul.ejemplo{
+  text-align: center;
+}
+
+ul.ejemplo li{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+}
 /* css del ejemplo de pseudoclases */
+/* Despues del primer li de ol o ul el \00BB 1.3rem colore secundario*/
+/* ul li:first-of-type::before, ol li:first-of-type::before {
+  content: "\00BB";
+  color: var(--color-texto-secundrio);
+  font-size: 1.3rem;
+} */
+/* el último \00ab */
+/* ul li:last-of-type::after, ol li:last-of-type::after {
+  content: "\00AB";
+  color: var(--color-texto-secundrio);
+  font-size: 1.3rem;
+} */
+.ejemplo li:first-of-type::before, .ejemplo li:last-of-type::after {
+  color: var(--color-texto-secundrio);
+  font-size: 1.3rem;
+}
+
+.ejemplo li:first-of-type::before {
+  content: "\00BB";
+}
+.ejemplo li:last-of-type::after {
+  content: "\00AB";
+}
 
 /* Selector de pseudoelemento para cambiar el color de fondo de los li impares */
+.ejemplo li:nth-child(odd){
+  background-color: #ffd986;
+}
 
+.ejemplo li:nth-child(even){
+  background-color: #efffab;
+}
 /* Estilos para la tabla */
 
 /* Empleamos selector no hijo directo, es decir para los code que no sean hijos directos de un pre
