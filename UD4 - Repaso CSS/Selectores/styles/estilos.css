@@ -96,8 +96,9 @@ p a[href^="#"]::before {
 }
 
 /* selector de pseudoclases */
+
 /* seleccionamos los hermanos impares de tipo section*/
-/*section:nth-child(odd) {*/
+/* section:nth-child(odd) { */
 section:nth-of-type(2n + 1){
   background-color: #c6c6c63f;
   margin: 1rem;
@@ -195,24 +196,77 @@ ul.ejemplo li{
 }
 
 /* Selector de pseudoelemento para cambiar el color de fondo de los li impares */
-.ejemplo li:nth-child(odd){
+/* .ejemplo li:nth-child(odd){ */
+.ejemplo li:nth-child(2n + 1){
   background-color: #ffd986;
 }
 
-.ejemplo li:nth-child(even){
+/* .ejemplo li:nth-child(even){ */
+.ejemplo li:nth-child(2n){
   background-color: #efffab;
 }
 /* Estilos para la tabla */
+table {
+  font-size: 1rem;
+  margin: 0 auto;
+  max-width: 90%;
+  box-shadow: 0 0 10px #0004;
+}
+
+thead{
+  background: linear-gradient(rgb(21, 153, 21) 50%, green 0);
+  color: white;
+  font-size: 1.1rem;
+}
 
 /* Empleamos selector no hijo directo, es decir para los code que no sean hijos directos de un pre
 interlineado 100% color letra rgb(189, 33, 15)*/
+:not(pre) > code {
+  line-height: 100%;
+  color: rgb(189, 33, 15);
+}
 
-/* Selector de pseudoclase para cambiar el color de las filas pares */
+/* los code hijos directos de enlaces color de texto darkblue */
+a > code {
+  color: darkblue;
+}
+
+/* Selector de pseudoclase para cambiar el color de las filas pares --color-fondo */
+/* tr:nth-child(even){ */
+tr:nth-of-type(even){
+  background-color: var(--color-fondo);
+}
 
 /* selector de pseudoelemento que al seleccionar un párrafo se ponga color de fondo darkblue y letra blanco*/
+p::selection{
+  background-color: darkblue;
+  color: white;
+} 
 
 /* selectores lógicos */
+/*section table, section tr, section th, section td{*/
+  section :is(table, tr, th, td){
+    border: 1px solid #666;
+    border-collapse: collapse;
+    padding: 8px;
+  }
+  
+  section :where(table, tr, th, td){
+    border: 1px solid red;
+    border-collapse: collapse;
+    padding: 8px;
+  }
 
 /*En este caso, la propiedad text-decoration: none se aplica sobre el enlace <a>, sólo si en el interior del enlace existe una etiqueta <img>*/
+a:has(img){
+  text-decoration: none;
+}
 
 /* para las imágenes que  no tienen el atributo alt */
+img:not([alt]){
+  border: 2px solid red;
+}
+
+footer p{
+  display: inline-block;
+}
