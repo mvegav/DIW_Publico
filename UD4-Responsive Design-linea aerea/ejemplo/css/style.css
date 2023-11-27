@@ -1,0 +1,268 @@
+@import "./normalize.css";
+@import "./fuentes.css";
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+:root{
+    font-family: 'roboto', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    --color-primario: #004aad;
+    --color-primario-claro: #6ca6d9;
+    --color-secundario: #ffa843;
+    --color-secundario-oscuro: #f29441;
+    --tam-h1: 3rem;
+}
+
+p{
+    padding: 0.5rem;
+}
+
+h1, h2, h3, h4{
+    font-family: 'roboto bold', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1{
+    font-size: var(--tam-h1);
+}
+
+h2{
+    font-size: calc(var(--tam-h1) - 0.5rem);
+}
+
+h3{
+    font-size: calc(var(--tam-h1) - 1rem);
+}
+
+/* no reconocida por firefox*/
+a:has(i){
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-size: 1.6rem;
+}
+
+a > i{
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-size: 1.6rem;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+nav li{
+    list-style: none;
+}
+
+.logo{
+    max-width: 100px;
+    /* display: inline-block; */
+}
+
+img{
+    width: 100%;
+}
+
+.lista-fila{
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+a:hover{
+    border-bottom: medium solid;
+}
+
+.activa{
+    font-weight: 600;
+}
+
+/** Estilos del body **/
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/** Estilos del header **/
+header{
+    background-color: var(--color-primario);
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    position: fixed;
+    width: 100%;
+}
+
+header h1{
+    color: var(--color-secundario);
+    display: none;
+}
+
+header nav#menu-escritorio{
+    display: none;
+}
+header nav#menu-escritorio a{
+    color: var(--color-secundario);
+    font-size: 1.8rem;
+}
+
+header nav#menu-escritorio ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+/* Estilos del menú movil */
+
+#menu-movil{
+    background-color: #88b7e0e8;
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    border-bottom: medium solid var(--color-primario);
+    height: calc(100% - 270px);
+    max-height: 500px;
+}
+
+#menu-movil nav{
+    height: 100%;
+}
+#menu-movil ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#menu-movil nav ul a{
+    font-size: 2.3rem;
+    color: #014194;
+}
+
+#menu-movil a:hover{
+    border: unset;
+}
+
+#menu-movil li{
+    width: 100%;
+    text-align: center;
+}
+
+#menu-movil li:hover{
+    background-color: var(--color-secundario);
+}
+
+
+/* ocultamos el menú movil al no hacer target */
+#menu-movil:not(:target){
+    left: -100%;
+}
+#menu-movil:not(:target) > a > i.fas{
+    display: none;
+}
+
+/* desplegar el menú movil al hacer target */
+#menu-movil:target {
+    left: 0;
+}
+/* ocultamos el icono menu hamburguesa abrir */
+#menu-movil:target + a > i.fas{
+    display: none;
+}
+
+/* Estilos iconos menú hamburguesa */
+header .fas{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+}
+/* 
+header nav li{
+  padding: .5rem;
+}  */
+/** Estilos del main **/
+main{
+   /* flex: 1;*/ /*flex-grow flex-shrink flex-basis*/
+   width: 100%;
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 100px;
+}
+
+/** Estilos del footer **/
+footer{
+    background-color: var(--color-primario);
+    color: #fafafa;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Media queries para tablet o escritorio */
+@media screen and (min-width: 600px){
+    footer{
+        flex-direction: row;
+    }
+    header h1{
+        display: inline-block;
+    }
+    header nav#menu-escritorio{
+        display: inline-block;
+    }
+
+    #menu-movil, #menu-movil:target, #menu-movil:not(:target) {
+    /* #menu-movil { */
+        left: -100%;
+    }
+    header * i.fas{
+        display: none;
+    }
+    main{
+        margin-top: 200px;
+    }
+    
+}
+
+/* para pantallas grandes */
+
+@media screen and (min-width: 1300px) {
+    :root{
+        font-size: 15px;
+    }
+
+    html{
+        background-color: var(--color-primario-claro);
+    }
+
+    body{
+        max-width: 80%;
+        background-color: white;
+        margin: 0 auto;
+        box-shadow: 0 5px 15px var(--color-primario);
+    }
+
+    header{
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    body{
+        max-width: 60%;
+    }
+}
+
