@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efectos sobre imágenes</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Efectos sobre imágenes</h1>
+    </header>
+    <main>
+        <section id="filtros">
+            <h2>Aplicar filtros a las imágenes con CSS</h2>
+            <p>
+                Podemos aplicar distintos efectos sobre las imágenes empleando CSS 3,
+                entre ellos tenemos la propiedad
+                <strong>filter</strong>
+                la cuál nos permite aplicar una serie de filtros sobre las imágenes.
+            </p>
+            <p>
+                La propiedad CSS filter dota de efectos gráficos como el desenfoque o
+                cambio de color en la representación antes de que se muestre el
+                elemento. Los filtros se utilizan comúnmente para ajustar la
+                representación de imágenes, fondos o bordes.
+            </p>
+            <h3>Desenfoque</h3>
+            <h4>blur()</h4>
+            <p>
+                Aplica un desenfoque Gaussiano a la imagen. El valor de 'radio' define
+                el valor de la desviación estándar de la función de desenfoque
+                Gaussiano o el número de píxeles que se mezclan entre sí, por lo que
+                un valor mayor creará un mayor desenfoque. El valor lagunar de
+                interpolación (es decir, si no se proporciona ningún parametro) es 0.
+                El parámetro se especifica como una longitud de CSS, pero no acepta
+                porcentajes.
+            </p>
+            <code class="codigo"> .imagen:hover {filter: blur(5px);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Brillo</h3>
+            <h4>brightness()</h4>
+            <p>
+                Se aplica una multiplicación lineal a la imagen, haciendo que parezca
+                más o menos brillante. Un valor de 0% convertirá la imagen
+                completamente a negro. Un valor de 100% no producirá ningún cambio en
+                la imagen. Otros valores causarán una multiplicación lineal en el
+                efecto. Los valores de una cantidad superior al 100% aumentarán el
+                brillo de la imagen. El valor lagunar (si no se especifica ningún
+                valor) es 1 (equivalente a 100%).
+            </p>
+            <code class="codigo"> .imagen:hover {filter: brightness(1.5);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Contraste</h3>
+            <h4>contrast()</h4>
+            <p>
+                Ajusta el contraste del elemento. Un valor superior a 0% creará una
+                imagen completamente gris. Un valor de 100% deja al elemento sin
+                cambios. Valores superiores a 100% son permitidos, dando como
+                resultado mayor contraste. El valor lagunar de interpolación (si no se
+                especifica ningún valor) es 1 (equivalente a 100%).
+            </p>
+            <code class="codigo"> .imagen:hover {filter: contrast(200%);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Sombra a la imagen </h3>
+            <h4>drop-shadow()</h4>
+            <p>
+                Aplica un efecto de sombra a la imagen. Una sombra es realmente una versión desenfocada y separada de la
+                máscara alfa de la imagen, dibujada en un color particular, debajo de la misma. La función acepta un
+                parámetro de tipo <strong>&lt;shadow&gt;</strong> (definido en CSS3 Backgrounds), con la excepción de
+                que la palabra clave
+                ‘inset’ no está permitida. Esta función es similar a la propiedad box-shadow, más establecida; la
+                diferencia es que con filtros, algunos navegadores proveen aceleración de hardware para mayor
+                rendimiento.</p>
+            <p>Los valores para el parámetro <strong>&lt;shadow&gt;</strong> son los siguientes: </p>
+            <dt><code>&lt;offset-x&gt;</code> <code>&lt;offset-y&gt;</code> (requerido)</dt>
+            <dd>
+                <p>
+                    Son dos valores <code>&lt;length&gt;</code></a> para establecer la
+                    posición de la sobra respecto a la imagen. <code>&lt;offset-x&gt;</code> especifica la distancia
+                    horizontal. Valores negativos establecen la sombra a la izquierda del elemento.
+                    <code>&lt;offset-y&gt;</code> especifica la distancia vertical. Valores negativos establecen la
+                    sombra arriba del elemento. Véase <code>&lt;length&gt;</code></a>
+                    para unidades posibles.
+                    Si ambos valores son <code>0</code>, la sombra será colocada detrás del elemento (y puede generar un
+                    efecto de desenfoque si se establecen <code>&lt;blur-radius&gt;</code> y/o
+                    <code>&lt;spread-radius&gt;</code>).
+                </p>
+            </dd>
+            <dt id="blur-radius"><code>&lt;blur-radius&gt;</code> (opcional)</dt>
+            <dd>
+                <p>Es un tercer valor <code>&lt;length&gt;</code></a>. Mientras mayor
+                    sea el valor, mayor será el desenfoque, por lo que la sombra se vuelve más grande y clara. No se
+                    permiten valores negativos. Si no es especificado, su valor predeterminado será <code>0</code> (el
+                    borde de la sombra es nítido).</p>
+            </dd>
+            <dt id="spread-radius"><code>&lt;spread-radius&gt;</code> (opcional)</dt>
+            <dd>
+                <p>
+                    Es el cuarto valor<code>&lt;length&gt;</code></a>. Valores
+                    positivos harán que la sombra se expanda, y valores negativos harán que la sombra se contraiga. Si
+                    no se especifica, su valor predeterminado será <code>0</code> (la sombra tendrá el mismo tamaño del
+                    elemento).
+                    Nota: Webkit, y tal vez otros navegadores, no soportan este cuarto valor; si se incluye, no se
+                    aplicará el filtro.
+                </p>
+            </dd>
+            <dt id="color"><code>&lt;color&gt;</code> (opcional)</dt>
+            <dd>
+                <p>Véanse los valores <a href="/es/docs/Web/CSS/color_value"><code>&lt;color&gt;</code></a> para las
+                    opciones posibles de palabras clave y notaciones. Si no se especifica, el color depende del
+                    navegador. En Gecko (Firefox), Presto (Opera) y Trident (Internet Explorer), se usa el valor de la
+                    propiedad <a href="/es/docs/Web/CSS/color"><code>color</code></a>. Por otro lado, la sombra en
+                    WebKit es transparente, y por lo tanto, es inútil si se omite <code>&lt;color&gt;</code>.</p>
+            </dd>
+            <code class="codigo"> .imagen:hover {drop-shadow(16px 16px 10px black);} </code>
+            <figure class="borde">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Escala de grises</h3>
+            <h4>grayscale()</h4>
+            <p>
+                Convierte la imagen a escala de grises. El valor del parámetro define la proporción de la
+                conversión. Un
+                valor de 100% es completamente a escala de grises. Un valor de 0% deja la imagen sin cambios.
+                Valores
+                entre 0% y 100% son múltiplos lineales de este efecto. Si el parámetro no es incluido, se usa el
+                valor
+                de 0.
+            </p>
+            <code class="codigo"> .imagen:hover {filter: grayscale(80%);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Rotación en el tono</h3>
+            <h4>hue-rotate()</h4>
+            <p>
+                Aplica una rotación de tono (matiz) al elemento. El valor del ángulo define el número de grados al
+                rededor del círculo de colores al que se ajustarán los colores de la imagen. Un valor de 0deg deja la
+                imagen sin cambios. Si el parámetro del ángulo no es especificado, se usa valor de 0deg. Aunque no hay
+                valor máximo, el efecto de valores encima de 360deg da la vuelta al círculo de colores.
+            </p>
+            <code class="codigo"> .imagen:hover {filter: hue-rotate(90deg);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Inversión de colores</h3>
+            <h4>invert()</h4>
+            <p>
+                Invierte los colores de la imagen. El parámetro define la proporción de la conversión. Un valor de 100%
+                invierte completamente la imagen. Un valor de 0% deja a la imagen sin cambios. Valores entre 0% y 100%
+                son múltiplos lineales del efecto. Si el parámetro no es especificado, se usa un valor de 0.
+            </p>
+            <code class="codigo"> .imagen:hover {filter: invert(100%);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Saturación</h3>
+            <h4>saturate()</h4>
+            <p>
+                Aplica saturación a la imagen. El valor del parámetro define la proporción de la conversión. Un valor de
+                0% es completamente sin saturación. Un valor de 100% deja la imagen sin cambios. Otros valores son
+                múltiplos lineales del efecto. Valores por encima de 100% son permitidos, dando resultados de
+                sobresaturación. Si no se especifica el parámetro, se usa el valor de 1.
+            </p>
+            <code class="codigo"> .imagen:hover {filter: saturate(180%);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Sepia</h3>
+            <h4>sepia()</h4>
+            <p>
+                Convierte la imagen a sepia. El valor del parámetro define la proporción de la conversión. Un valor de
+                100% es completamente sepia. Un valor de 0% deja la imagen sin cambios. Valores entre 0% y 100% son
+                múltiplos lineales del efecto. Si no se especifica el parámetro, se usa el valor de 0.
+            </p>
+            <code class="codigo"> .imagen:hover {filter: sepia(100%);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Trasparencia</h3>
+            <h4>opacity()</h4>
+            <p>
+                Aplica transparencia a la imagen. El valor del parámetro define la proporción de la conversión. Un valor
+                de 0% es completamente transparente. Un valor de 100% deja la imagen sin cambios. Valores entre 0% y
+                100% son múltiplos lineales del efecto. Esto es equivalente a multiplicar las muestras de la imagen por
+                el valor indicado. Si el parámetro no es especificado, se usa un valor de 1. Esta función es similar a
+                la propiedad opacity, más establecida; la diferencia es que con filtros, algunos navegadores proveen
+                aceleración de hardware para mayor rendimiento.
+            </p>
+            <code class="codigo"> .imagen:hover {filter: opacity(.5);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Combinación de funciones</h3>
+            <p>Se puede combinar cualquier número de funciones para manipular la representación de la imagen. Los
+                siguientes ejemplos aumentan el contraste y brillo de la imagen.</p>
+            <code class="codigo"> .imagen:hover { filter: contrast(175%) brightness(30%);} </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+        </section>
+        <section id="trasformaciones">
+            <h2>Trasformaciones y animaciones</h2>
+            <p>
+                CSS3 provee también de una serie de efectos que imprimen movimiento a las imágenes, transformándolas y
+                animándolas. Combinándolas además se pueden conseguir efectos espectaculares. Algunos de ellos implican
+                usar un contenedor, un div que contiene la imagen, y que definiré con la clase .contenedor.
+            </p>
+            <h3>transform</h3>
+            <p>
+                La propiedad CSS transform te permite modificar el espacio de coordenadas del modelo de formato visual
+                CSS. Usándola, los elementos pueden ser trasladados, rotados, escalados o sesgados de acuerdo a los
+                valores establecidos
+            </p>
+            <h3>Transformación 2D</h3>
+            <h4>matrix()</h4>
+            <code class="codigo">transform:  matrix(a, c, b, d, tx, ty)</code>
+            <p>
+                Específica una matriz de transformación 2D compuesta por seis valores a especificar. Esto es el
+                equivalente a la aplicación de una transformación lineal de una matriz de un
+                mapa coordenadas de un nuevo sistema de coordenadas en un sistema de coordenadas anterior.
+            </p>
+            <code class="codigo">
+                -webkit-transform: matrix(1, -0.2, 0, 1, 0, 0); <br>
+                -o-transform: matrix(1, -0.2, 0, 1, 0, 0); <br>
+                transform: matrix(1, -0.2, 0, 1, 0, 0); 
+            </code>
+            <figure class="retangulo sale">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Zoom y cambios de tamaño</h3>
+            <h4>scale()</h4>
+            <p>
+                Especifica una operación de escalado 2D descrita por [sx, sy].
+            </p>
+            <p>
+                <strong>Nota: Si sy no es especificado, se asumirá que tanto sx como sy tendrán el mismo valor</strong>
+                Disponemos de la versión scaleX para escalar solo en el eje de las X y scaleY, para escalar en el eje Y.
+            </p>
+            <code class="codigo">
+                figure:hover .imagen {-webkit-transform:scale(1.3);transform:scale(1.3);} <br>
+                .figure {overflow:hidden;}
+            </code>
+            <figure class="retangulo">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <p>
+                En realidad, como ves, es escalar la imagen a un tamaño mayor (multiplicarlo por 1.3 en este ejemplo)
+                pero estableciendo un contenedor que oculta todo lo que sale del tamaño original (gracias al
+                overflow:hidden). Con un escalado de este tipo sin contenedor conseguimos una imagen que se agranda:
+            </p>
+            <figure class="retangulo sale">
+                <img src="./img/paisaje.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Giros y rotaciones</h3>
+            <h4>rotate()</h4>
+            <p>
+                Define una operación de rotación 2D de un elemento, específicando la cantidad de grados (deg) que este
+                rotará en sentido de las manecillas del reloj (según lo especificado por la propiedad transform-origen).
+                La operación corresponde a la matriz [cos(angle) sin(angle) -sin(angle) cos(angle) 0 0].
+            </p>
+            <p>
+                Vamos a emplear una imagen cuadrada, ya que esto es importante cuando este tipo de efecto se dispara con
+                un hover, ya que si pones el puntero en el borde y al girar la imagen sale de debajo del puntero,
+                volverá a su sitio, encontrando ahí de nuevo al puntero y… en fin, entra en un bucle muy poco agradable
+                visualmente.
+            </p>
+            <code class="codigo">
+                figure:hover .imagen {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+            </code>
+            <figure class="cuadrada">
+                <img src="./img/paisaje2.jpg" class="imagen" alt="" />
+            </figure>
+            <p>Puedes utilizar cualquier valor que quieras en grados para rotate, entre 0 e infinito. Valores por encima
+                de 360 darán como resultado más de una vuelta. Pero no te pases, si pones por ejemplo 3600 la imagen
+                dará diez vueltas completas cada vez que le pongan el ratón encima. ¡Qué mareo!</p>
+            <code class="codigo">
+                    figure:hover .imagen {
+                        -webkit-transform: rotateY(180deg); <br>
+                        -webkit-transform-style: preserve-3d; <br>
+                        transform: rotateY(180deg); <br>
+                        transform-style: preserve-3d;}
+                </code>
+            <figure class="cuadrada">
+                <img src="./img/paisaje2.jpg" class="imagen" alt="" />
+            </figure>
+            <h3>Combinando efectos</h3>
+            <h4>rotate()</h4>
+            <p>
+                Puedes combinar varios efectos como el giro, el box-shadow (para establecer sombras o resplandores) y el
+                border-radius para conseguir una cosa tan estrambótica como ésta:
+            </p>
+            <code class="codigo">
+                figure:hover .imagen { <br>
+                    border-radius:50%; <br>
+                    -webkit-border-radius:50%; <br>
+                    box-shadow: 0px 0px 15px 15px #ec731e; <br>
+                    -webkit-box-shadow: 0px 0px 15px 15px #ec731e; <br>
+                    transform: rotate(360deg); <br>
+                    -webkit-transform: rotate(360deg);}
+            </code>
+            <figure class="cuadrada">
+                <img src="./img/paisaje2.jpg" class="imagen" alt="" />
+            </figure>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Realizado por Marina Vega Vázquez</p>
+    </footer>
+</body>
+
+</html>

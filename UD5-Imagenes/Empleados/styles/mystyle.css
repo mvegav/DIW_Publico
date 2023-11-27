@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Estilos generales */
+:root {
+  /*En esta ocasión las siglas no son colores, sino parámetros: 
+  Hue (tono), Saturation (saturacion) y Lightness (luminosidad).
+*/
+  --clr-primario: hsl(206, 80%, 32%);
+  --clr-secundario: hsl(206, 100%, 96%);
+  --clr-secundario-2: hsl(206, 90%, 76%);
+  --clr-letra: hsl(209, 61%, 16%);
+  --clr-letra-2: hsl(205, 22%, 34%);
+  --clr-fondo: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-blue-light: hsl(207, 82%, 44%);
+  --clr-black: #222;
+  /* fuentes*/
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  /* sombras */
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  /* dimensiones*/
+  --radius: 0.25rem;
+  --spacing: 0.1rem;
+  --max-width: 1170px;
+  --max-width-cards: 320px;
+  --fuente-h1: 2rem;
+  /* Estilos generales fuentes */
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-fondo);
+  color: var(--clr-letra);
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  padding: 0.5rem 0;
+  font-family: var(--ff-primary);
+}
+h1 {
+  font-size: var(--fuente-h1);
+}
+h2 {
+  font-size: calc(var(--fuente-h1) / 1.5);
+}
+h3 {
+  font-size: calc(var(--fuente-h1) / 2);
+}
+h4 {
+  font-size: calc(var(--fuente-h1) / 2.25);
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-letra-2);
+}
+
+/* Estilos del main */
+
+/* Estilos de la cabecera */
+
+/* Estilos del contenedor de cards de empleados */
+
+/* Estilos del article de empleados */
+
+/* Estilos del figure que tiene la imagen del empleado */
+
+/* Estilos para poner las comillas en la esfera de delante de la imagen */
+
+/* Esfera que tenemos debajo de la imagen */
+
+/* Estilos de la imagen */
+
+/* Estilos del h2 que contiene el nombre del empleado */
+
+/* Estilos del h3 que contiene el puesto */
+
+/* Estilos del párrafo que tiene la información del empleado*/
+#info {
+  margin-bottom: 0.75rem;
+}
+
+/* Estilos del botón contactar */
+
+/* Media querie */
