@@ -82,21 +82,63 @@ p {
 }
 
 /* Estilos del main */
-
+main{
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
 /* Estilos de la cabecera */
+header{
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.subrayado {
+  height: 0.25rem;
+  width: 5rem;
+  background-color: var(--clr-primario);
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+}
+
+header:hover .subrayado{
+  /* width: 20rem; */
+  transform: scaleX(3.5);
+  background-color: var(--clr-blue-light);
+}
+
 
 /* Estilos del contenedor de cards de empleados */
 
 /* Estilos del article de empleados */
 
 /* Estilos del figure que tiene la imagen del empleado */
-
+.img-contenedor{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  /* overflow: hidden; */
+}
 /* Estilos para poner las comillas en la esfera de delante de la imagen */
 
 /* Esfera que tenemos debajo de la imagen */
 
 /* Estilos de la imagen */
-
+.persona-img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+}
 /* Estilos del h2 que contiene el nombre del empleado */
 
 /* Estilos del h3 que contiene el puesto */
@@ -109,3 +151,12 @@ p {
 /* Estilos del botón contactar */
 
 /* Media querie */
+@media screen and (min-width: 800px) {
+  :root{
+    font-size: 16px;
+    --fuente-h1: 2.5rem;
+  }
+ h1,h2,h3,h4 {
+  line-height: 1;
+ }
+}
