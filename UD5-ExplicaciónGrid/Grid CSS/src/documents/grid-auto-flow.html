@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propiedad grid-auto-flow</title>
+  <link rel="stylesheet" href="./css/base_styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Empleo de GridLayout</h1>
+  </header>
+  <main>
+    <section>
+      <h2>La propiedad Grid-auto-flow</h2>
+      <p>La propiedad CSS grid-auto-flow forma parte de la especificación CSS Grid Layout que nos permite controlar el
+        flujo de los elementos de la cuadrícula que se colocan automáticamente cuando no se posicionan explícitamente
+        con ninguna propiedad grid de posicionamiento.</p>
+      <p class="destacado">Ejemplo sin grid-auto-flow</p>
+      <ul class="galeria">
+        <li>
+          <img src="https://source.unsplash.com/random?iran" alt="">
+          <span class="numero">1</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?greece" alt="">
+          <span class="numero">2</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?dance" alt="">
+          <span class="numero">3</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?usa" alt="">
+          <span class="numero">4</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?spain" alt="">
+          <span class="numero">5</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?italy" alt="">
+          <span class="numero">6</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?france" alt="">
+          <span class="numero">7</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?china" alt="">
+          <span class="numero">8</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?japan" alt="">
+          <span class="numero">9</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?uk" alt="">
+          <span class="numero">10</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?england" alt="">
+          <span class="numero">11</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?cuba" alt="">
+          <span class="numero">12</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?amazon" alt="">
+          <span class="numero">13</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?germany" alt="">
+          <span class="numero">14</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?canada" alt="">
+          <span class="numero">15</span>
+        </li>
+      </ul>
+      <p class="destacado">Ejemplo con grid-auto-flow</p>
+      <ul class="galeria auto-flow">
+        <li>
+          <img src="https://source.unsplash.com/random?iran" alt="">
+          <span class="numero">1</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?greece" alt="">
+          <span class="numero">2</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?dance" alt="">
+          <span class="numero">3</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?usa" alt="">
+          <span class="numero">4</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?spain" alt="">
+          <span class="numero">5</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?italy" alt="">
+          <span class="numero">6</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?france" alt="">
+          <span class="numero">7</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?china" alt="">
+          <span class="numero">8</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?japan" alt="">
+          <span class="numero">9</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?uk" alt="">
+          <span class="numero">10</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?england" alt="">
+          <span class="numero">11</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?cuba" alt="">
+          <span class="numero">12</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?amazon" alt="">
+          <span class="numero">13</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?germany" alt="">
+          <span class="numero">14</span>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/random?canada" alt="">
+          <span class="numero">15</span>
+        </li>
+      </ul>
+      <p class="explicacion"><strong>Nota!</strong> Establecemos la propiedad grid-auto-flow en dense para que el
+        algoritmo de auto-colocación haga el back-tracking para encontrar y rellenar huecos con elementos más pequeños
+        que vienen después en el grib. En definitiva, autoajusta el contenido para que no queden huecos.</p>
+      <p>Fíjate en el noveno elemento de la cuadrícula, ahora se ha movido para rellenar el primer hueco en el que puede
+        caber, de la misma forma que el séptimo.
+        Así que, por defecto, la cuadrícula avanza y nunca mira hacia atrás para comprobar si puede encajar un elemento
+        en los espacios vacíos anteriores. Pero cuando declaramos denso, el algoritmo intenta rellenar tantos huecos
+        como pueda, independientemente del orden de origen.</p>
+
+      <p><strong>Fila denso</strong></p>
+      <p>Como row es el valor por defecto, usar row dense es lo mismo que usar dense y tiene el mismo efecto.</p>
+      <p><strong>columna densa</strong></p>
+      <p>Los elementos de la rejilla se ordenarán por columnas mientras se rellenan los huecos.
+      </p>
+      <p>Si cambiamos el valor de la propiedad grid-auto-flow a column dense en el ejemplo anterior, tendremos el
+        siguiente resultado:</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copysr;Realizado por Marina Vega Vázquez</p>
+  </footer>
+</body>
+
+</html>
