@@ -40,12 +40,71 @@ h1 {
 =  Estilos del botón de selección de la voz y de la caja de voz  =
 ==============================================*/
 
+.btn{
+  cursor: pointer;
+  background-color: var(--color-fondo-texto);
+  color: var(--color-texto);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: .5rem;
+}
+
+.btn:active{
+  transform: scale(1.1);
+  background-color: var(--color-texto);
+  color: #fafafa;
+}
+
+.btn:focus{
+  background-color: #333;
+  color: #fafafa;
+}
+
+.btn:hover{
+  box-shadow: 0 4px 10px;
+}
+
+button#read:hover{
+  outline: 1px solid var(--color-fondo-texto);
+}
 /*=====  End of Estilos del botón de selección de la voz y de la caja de voz  ======*/
 
 /*=====================================================
 =  Estilos de la caja de texto de elección de la voz  =
 =======================================================*/
+.text-box {
+  width: 70%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -800px);
+  background-color: var(--color-fondo-caja);
+  color: #fafafa;
+  border-radius: 5px;
+  padding: 20px;
+  transition: all 1s ease-in-out;
 
+}
+
+.text-box.show {
+  transform: translate(-50%, 0);
+}
+
+.text-box .close{
+  float: right;
+  text-align: right;
+  cursor: pointer;
+}
+.text-box select{
+  background-color: var(--color-fondo-texto);
+  border: 0;
+  color: var(--color-texto);
+  height: 30px;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
 .text-box textarea {
   border: 1px solid #dadada;
   border-radius: 4px;
@@ -55,9 +114,13 @@ h1 {
   width: 100%;
   height: 150px;
 }
-
 .text-box label {
   font-size: 1.5rem;
+}
+
+.text-box .btn{
+  width: 100%;
+  font-size: 1.3rem;
 }
 /*=====  End of  Estilos de la caja de texto de elección de la voz  ======*/
 
@@ -68,6 +131,10 @@ h1 {
  */
 
 main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 0.625rem;
 }
 
 /*=============================================
@@ -79,6 +146,11 @@ main {
   border-radius: 5px;
   cursor: pointer;
   background-color: var(--color-fondo-texto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s ease-out;
+  overflow: hidden;
 }
 
 .box:hover,
@@ -88,8 +160,15 @@ main {
 
 /* Imágenes de las card */
 
+.box img{
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
 /* Párrafo con el texto de las card prefijadas */
-
+.box .info{
+  
+}
 /*=====  End of Estilos de las cards  ======*/
 
 /*=============================================
