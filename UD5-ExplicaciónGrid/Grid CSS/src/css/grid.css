@@ -220,3 +220,134 @@ section {
 
   grid-template-rows: repeat(3, minmax(auto,200px));
 }
+
+/** Flujo de la Grid **/
+.grid-flow{
+  display: grid;
+  /* 5cx3r */
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(3,150px);
+
+  grid-auto-flow: row; /* valor predeterminado */
+  grid-auto-flow: column;
+
+  grid-auto-flow: row;
+  grid-auto-rows: 100px;
+
+  grid-auto-flow: column;
+  grid-auto-columns: 300px;
+}
+
+/** Flujo denso de la grid **/
+.grid-flow-dense{
+  display: grid;
+  /* 5cx3r */
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(3,200px);
+  grid-auto-flow: row dense;
+  grid-auto-flow: column dense;
+
+}
+
+.grid-flow-dense .item:nth-child(11){
+  background-color: cadetblue;
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+
+/* Grid items en capas (superposición) **/
+
+.grid-layers{
+  display: grid;
+  /* 4cx4r */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4,1fr);
+}
+
+.grid-layers .item:nth-child(1){
+  background-color: yellow;
+  grid-column: 1 / 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 1 / 3 ;
+  /* grid-row-start / grid-column-start / grid-row-end / grid-column-end */
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+.grid-layers .item:nth-child(2){
+  background-color: blue;
+  grid-area: 1 / 3 / 3 / 5;
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+
+.grid-layers .item:nth-child(3){
+  background-color: green;
+  grid-area: 3 / 1 / 5 / 3;
+}
+
+.grid-layers .item:nth-child(4){
+  background-color: orange;
+  grid-area: 3 / 3 / 5 / 5;
+}
+
+.grid-layers .item:nth-child(5){
+  background-color: rgba(137, 43, 226, 0.765);
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  grid-area: 2 / 2 / 4 / 4;
+}
+
+/* Estilos del orden de los items del grid */
+
+.grid-order{
+  display: grid;
+  /* 3cx2r */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2,1fr);
+}
+
+.grid-order .item:nth-child(1){
+  /* order valor por defecto 0. Permite valores positivos y negativos*/
+  order: 1;
+}
+
+.grid-order .item:nth-child(2){
+  /* order valor por defecto 0. Permite valores positivos y negativos*/
+  order: 2;
+}
+
+.grid-order .item:nth-child(5){
+  /* order valor por defecto 0. Permite valores positivos y negativos*/
+  order: -1;
+}
+
+
+/* Alineación de los items de la grid */
+.grid-align{
+  display: grid;
+    /* 3cx2r */
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 150px);
+  /* justify-items alinea mis elementos grid en el eje horizontal(X). Valor defecto strectch */
+  justify-items: stretch;
+  justify-items: start;
+  justify-items: end;
+  justify-items: center;
+  /* align-items alinea mis elementos grid en el eje vertical(Y). Valor defecto strectch */
+  align-items: stretch;
+  align-items: start;
+  align-items: end;
+  align-items: center;
+
+}
+
+.grid-align .item:nth-child(4){
+  justify-self: start;
+  align-self: start;
+}
+
+
+
+
