@@ -348,6 +348,81 @@ section {
   align-self: start;
 }
 
+/* Alineación de Grid Tracks */
+
+.grid-align-tracks{
+  display: grid;
+   /* 3cx2r */
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(2, 200px);
+  /* justify-contens alinea los tracks de la grid en el eje horizontal(X) */
+  justify-content: start;
+  justify-content: end;
+  justify-content: center;
+  justify-content: stretch;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+
+  /* aling-contens alinea los tracks de la grid en el eje vertical(Y) */
+  align-content: start;
+  align-content: end;
+  align-content: center;
+  align-content: space-between;
+  align-content: space-around;
+  align-content: space-evenly;
+}
+
+/* Definimos tamaño mínimo y máximo de los items */
+.grid-min-max{
+  display: grid;
+  /* 4cx?r */
+  grid-template-columns: repeat(4, minmax(100px, 200px));
+  /*valor mínimo igual al mínimo del conenido que tenga la celda*/
+  grid-template-columns: repeat(4, minmax(min-content, 200px));
+  grid-template-columns: repeat(4, minmax(100px, min-content));
+  /*valor máximo igual al máximo del conenido que tenga la celda. */
+  grid-template-columns: repeat(4, minmax(100px, max-content));
+  grid-template-columns: repeat(4, minmax(max-content,200px));
+  grid-template-columns: repeat(4, minmax(min-content, max-content));
+}
+
+/* Grid con patrones repetitivos */
+
+.grid-repeat{
+  display: grid;
+    /* 4cx?r */
+  grid-template-columns: repeat(4, 10% 20% 30% 40%);
+  grid-template-columns: repeat(2, 10% 20% 30% 40%);
+  grid-template-columns: repeat(2, 20% 30%);
+  grid-template-columns: repeat(2, 50px 100px 150px);
+  grid-template-columns: repeat(2, 5rem 8rem 10rem);
+
+  /* 4cx?r */
+  grid-template-columns: repeat(2, 100px 200px);
+  grid-auto-rows: 150px;
+  grid-auto-rows: repeat(2, 100px 200px); /* no funciona */
+}
+
+/* Estilos de la grid dinámica */
+.grid-dynamics{
+  display: grid;
+  /* 4cx?r */
+  grid-template-columns: repeat(4, 100px);
+  /* auto-fill rellena la grid con tracks (filas o columnas) generadas dinámicamente */
+  grid-template-columns: repeat(auto-fill, 100px);
+  /* auto-fit ajusta la grid con tracks (filas o columnas) existentes.*/
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+}
 
 
+/* Estilos para grid Responsive sin Media Queries */
 
+.grid-responsive{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 200px));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
