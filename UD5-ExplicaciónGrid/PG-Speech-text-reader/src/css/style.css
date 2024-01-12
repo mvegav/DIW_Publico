@@ -15,10 +15,12 @@
 }
 
 body {
+  width: 100vw;
   background: var(--color-fondo-pagina);
   font-family: "Lato", sans-serif;
   margin: 0 auto;
   padding: 1.25rem;
+  
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -37,6 +39,7 @@ h1 {
   flex: 1;
   margin: 0 auto;
   padding: 1.25rem;
+  width: 100%;
 }
 
 /*============================================
@@ -70,6 +73,12 @@ h1 {
 
 button#read:hover{
   outline: 1px solid var(--color-fondo-texto);
+}
+
+.btn-toggle{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1.3rem;
 }
 /*=====  End of Estilos del botón de selección de la voz y de la caja de voz  ======*/
 
@@ -134,8 +143,14 @@ button#read:hover{
  */
 
 main {
+  /* width: 100%; */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 280px)); */
+  /* grid-auto-rows: 1fr; */
+  grid-template-rows: repeat(auto-fit, minmax(250px,1fr));
+/*  grid-auto-rows: 1fr;*/
   justify-content: center;
   gap: 0.625rem;
 }
@@ -149,11 +164,11 @@ main {
   border-radius: 5px;
   cursor: pointer;
   background-color: var(--color-fondo-texto);
+  transition: box-shadow 0.2s ease-out;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: box-shadow 0.2s ease-out;
-  overflow: hidden;
 }
 
 .box:hover,
@@ -170,7 +185,13 @@ main {
 }
 /* Párrafo con el texto de las card prefijadas */
 .box .info{
-  
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 /*=====  End of Estilos de las cards  ======*/
 
@@ -189,5 +210,22 @@ footer {
 /*=============================================
 =            Estilos media queries            =
 =============================================*/
+/* @media screen and (max-width: 1100px) {
+  main{
+    grid-template-columns: repeat(3, minmax(auto,280px));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main{
+    grid-template-columns: repeat(2, minmax(auto,280px));
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main{
+    grid-template-columns: 1fr;
+  }
+} */
 
 /*=====  End of Estilos media queries  ======*/
