@@ -185,13 +185,26 @@ main {
 }
 /* Párrafo con el texto de las card prefijadas */
 .box .info{
+  background-color: var(--color-fondo-texto);
+  color: var(--color-texto);
   font-size: 1.2rem;
   letter-spacing: 1px;
   text-transform: uppercase;
+  margin: 0;
+  padding: 0.625rem;
+  width: 100%;
+  height: 60px; 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
+  /* height: 100%; */
   text-align: center;
+}
+
+.box:hover .info,
+.box.active .info {
+  background-color: var(--color-fondo-caja);
+  color: var(--color-fondo-pagina);
 }
 /*=====  End of Estilos de las cards  ======*/
 
