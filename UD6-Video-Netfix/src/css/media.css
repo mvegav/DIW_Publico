@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/*
+   Diseño de Interfaces Web
+   Unidad 6
+   Práctica guiada Netflix
+
+   Autor: Marina Vega Vázquez
+   Fecha: 16/01/2023
+
+   Nombre del archivo: media.css
+
+*/
+/* Estilos del reproductor de vídeo */
+video {
+  display: block;
+  width: 95%;
+  margin: 5px auto;
+}
+
+::cue {
+  font: 1.4rem sans-serif;
+  line-height: 1.6;
+  background-color: transparent;
+
+  text-shadow: black 1px 1px 2px;
+  color: rgb(255, 177, 66);
+}
+
+::cue(.titulo) {
+  font: 3.5rem sans-serif;
+  background-color: rgba(36, 32, 32, 0.8);
+}
+
+::cue(v[voice="Ross"]) {
+  color: #0babdb;
+}
+
+::cue(v[voice="Joey"]) {
+  color: gold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+::cue(v[voice="Rachel"]) {
+  color: violet;
+}

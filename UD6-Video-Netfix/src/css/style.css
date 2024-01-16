@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import "./fonts.css";
+
+/*
+   Diseño de Interfaces Web
+   Unidad 6
+   Práctica guiada Netflix
+
+   Autor: Marina Vega Vázquez
+   Fecha: 16/01/2023
+
+   Nombre del archivo: style.css
+
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-netflix: #e50914;
+  --clr-fondo: black;
+  --clr-texto: #c6c6c6;
+  --fnt-light: "Netflix light", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  --fnt-bold: "Netflix bold", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  --tam-max-width: 1600px;
+  --tam-max-img-videos: calc((1600px / 4) - 2rem);
+  font-size: 14px;
+  font-family: var(--fnt-light);
+  line-height: 1.6;
+  letter-spacing: 2px;
+}
+
+html {
+  background: linear-gradient(180deg, rgb(0, 0, 0) 38%, rgb(34, 33, 33) 100%);
+  color: white;
+}
+
+/*=============================================
+=            Estilos del header            =
+=============================================*/
+
+/*=====  End of Estilos del header  ======*/
+
+/*=============================================
+=            Estilos del main            =
+=============================================*/
+
+/*=============================================
+=            Estilos de la sección de la portada  =
+=============================================*/
+
+/*=====  End of Estilos de la sección de la portada */
+
+/*=============================================
+=            Estilos de la sección de las card de video            =
+=============================================*/
+
+/*=====  End of Estilos de la sección de las card de video  ======*/
+
+/*=====  End of Estilos del main  ======*/
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/*=====  End of Estilos del footer  ======*/
+
+/*=============================================
+=            Media queries            =
+=============================================*/
+@media screen and (min-width: 768px) {
+  .portada {
+    /* grid-template-columns: 1fr;*/
+    flex-direction: row;
+  }
+  #card-video {
+    max-width: 720px;
+  }
+  main {
+    max-width: var(--tam-max-width);
+    width: 90%;
+  }
+}
+
+/*=====  End of Media queries  ======*/
