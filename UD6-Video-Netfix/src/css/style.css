@@ -7,7 +7,7 @@
    Práctica guiada Netflix
 
    Autor: Marina Vega Vázquez
-   Fecha: 16/01/2023
+   Fecha: 16/01/2024
 
    Nombre del archivo: style.css
 
@@ -44,11 +44,12 @@ html {
 }
 
 body {
-  width: 100vw;
+  /* width: 100vw; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 
 /*=============================================
 =            Estilos del header            =
@@ -103,6 +104,16 @@ div.opciones h2 {
 #btn-unir {
   background-color: var(--clr-netflix);
   outline-color: var(--clr-netflix);
+}
+
+#btn-unir:hover{
+  background-color: white;
+  color: var(--clr-netflix);
+}
+
+#btn-iniciar:hover{
+  outline-color: var(--clr-netflix);
+  color: var(--clr-netflix);
 }
 
 /*=====  End of Estilos del header  ======*/
@@ -163,6 +174,10 @@ video{
   font-size: 4rem;
 }
 
+.ocultar {
+  display: none;
+}
+
 .txt-video button{
   background-color: transparent;
   border: none;
@@ -198,6 +213,10 @@ video{
   grid-template-columns: repeat(auto-fit, minmax(auto, var(--tam-max-img-videos)));
   gap: 2rem;
   justify-content: center;
+}
+
+.enlace-video:hover, .enlace-video:focus{
+  box-shadow: 0 0 15px var(--clr-netflix);
 }
 
 /*=====  End of Estilos de la sección de las card de video  ======*/
