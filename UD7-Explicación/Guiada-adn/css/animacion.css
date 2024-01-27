@@ -1,0 +1,47 @@
+:root {
+  --clr-fondo: #262626;
+  --clr-cadena1: rgb(201, 41, 216);
+  --clr-cadena2: #07a314;
+}
+
+/*=============================================
+=   Estilos del contenedor de la animación            =
+=============================================*/
+
+/* par - contiene dos moléculas de ADN, superior e inferior */
+
+/* primer circulo de cada par de átomos */
+
+/* segundo cículo, verde, de cada par */
+
+/* retrasamos el inicio de la animación del segundo par -0.1s
+Si especificamos un valor negativo, la animación comenzará inmediatamente, 
+pero no desde el principio de la misma, sino desde el punto que le hemos indicado. 
+Por ejemplo, si ponemos un retardo de -0.1s, la animación se iniciará inmediatamente 
+pero comenzará en el microsegundo 1 de la secuencia. */
+
+/* en este podemos ver que el atomo 3 empieza en el microsegundo 2 por lo tanto
+está escalado para el rosa 1.5*/
+
+/*=====  End of Estilos del contenedor de la animación  ======*/
+
+/*=============================================
+=            Estilos del pié            =
+=============================================*/
+footer {
+  text-align: center;
+}
+
+/*=====  End of Estilos del pié  ======*/
+
+/*=============================================
+=            Estilos de las animaciones           =
+=============================================*/
+
+/* Animación de la cadena rosa, empieza arriba, se escala 1.5 al 20% al 50% se coloca 
+abajo al 50.1% pasa debajo de la cadena verde, al 75% se reduce un 20% y continua detrás
+al 100% se coloca arriba encima*/
+
+/* empieza abajo, se encoge al 25%, al 50% pasa a estar arriba, al 50%.1 cambiamos
+el z-index para que esté encima del rosa, al 80% se escala al valor inicial y pasa a tener 
+z-index: 2, al 100% pasa a la posicion inicial */

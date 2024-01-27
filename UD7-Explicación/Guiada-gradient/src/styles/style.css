@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "Zen";
+  src: url(../fonts/ZenGarden.ttf) format(truetype),
+    url(../fonts/ZenGarden.otf) format(OpenType);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 12px;
+  line-height: 1.6;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(130deg, #07d9a3, #048fee);
+  /* Establece el tamaño de la imagen de fondo, en este caso del gradient
+  ancho alto*/
+  background-size: 400% 400%;
+  -webkit-animation: gradient 16s ease infinite;
+  -moz-animation: gradient 16s ease infinite;
+  -o-animation: graduebt 16s ease infinite;
+  animation: gradient 16s ease infinite;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "Zen", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-size: 4rem;
+  letter-spacing: 10px;
+}
+
+.logo {
+  max-width: 100px;
+  max-height: 100px;
+  overflow: hidden;
+}
+.logo img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/*=============================================
+=            Estilos aside            =
+=============================================*/
+aside {
+  margin: auto;
+  width: 80%;
+  max-width: 1200px;
+  min-width: 280px;
+}
+blockquote {
+  padding: 2rem 3rem;
+  margin: 0;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-family: Calibri;
+  color: white;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+}
+blockquote p {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+blockquote p:first-child:before {
+  content: "\201C";
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 7.5rem;
+  font-weight: 700;
+  opacity: 1;
+  position: absolute;
+  top: -2rem;
+  left: -2.5rem;
+  text-shadow: none;
+  z-index: -10;
+}
+blockquote p:first-child::after {
+  content: "\201D";
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 7.5rem;
+  font-weight: 700;
+  opacity: 1;
+  position: absolute;
+  top: -2rem;
+  right: -1rem;
+  text-shadow: none;
+  z-index: -10;
+}
+blockquote cite {
+  font-size: 14px;
+}
+blockquote cite span {
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.octogon {
+  -webkit-clip-path: polygon(
+    50% 0%,
+    38.11% 6.7%,
+    24.99% 6.72%,
+    18.06% 18.44%,
+    6.7% 25%,
+    6.56% 38.64%,
+    0% 50%,
+    6.7% 61.89%,
+    6.7% 75%,
+    18.44% 81.94%,
+    25% 93.3%,
+    38.64% 93.44%,
+    50% 100%,
+    61.88% 93.3%,
+    75% 93.3%,
+    81.94% 81.56%,
+    93.3% 74.9%,
+    93.44% 61.36%,
+    100% 50%,
+    93.3% 38.11%,
+    93.3% 25%,
+    81.56% 18.06%,
+    74.96% 6.7%,
+    61.36% 6.56%,
+    50% 0%
+  );
+  clip-path: url(#octogon);
+  height: 80px;
+  width: 80px;
+}
+
+/*=============================================
+=            Estilos del pie            =
+=============================================*/
+footer {
+  background-color: rgba(0, 0, 0, 0.368);
+  text-align: center;
+  padding: 1rem;
+  position: sticky;
+  bottom: 0;
+}
+
+/*=====  End of Estilos del pie  ======*/
+/* background-position
+primer valor posición en el eje x
+Segundo posición en el eje Y*/
+
+/*=============================================
+=            Media queries            =
+=============================================*/
+@media screen and (min-width: 750px) {
+  :root {
+    font-size: 16px;
+  }
+  header {
+    height: 140px;
+  }
+  .octogon {
+    height: 100px;
+    width: 100px;
+  }
+}
