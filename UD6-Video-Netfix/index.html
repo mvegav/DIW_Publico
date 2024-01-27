@@ -12,12 +12,11 @@
 </head>
 
 <body>
-  <audio autoplay id="bgsound">
+  <audio id="bgsound" autoplay>
     <source src="./src/sound/netfllix.mp3" type="audio/mp3">
+    <source src="./src/sound/netfllix.ogg" type="audio/ogg">
     <p>Su navegador no soporta la reproducción de audio.</p>
   </audio>
-
-
   <header>
     <a href="index.html" class="logo">
       <img src="./src/img/logo.jpg" alt="Enlace a la página principal">
@@ -45,8 +44,11 @@
       <section id="card-video">
         <video poster="./src/img/friends.png" id="video" controls>
           <source src="./src/videos/FRIENDS - LA REUNION Tráiler (2021).mp4" type="video/mp4">
-          <em>Su navegador no soporta la edición de vídeos</em>
-          <track src="./src/videos/vtt/friends.vtt" kind="subtitles" srclang="es" label="Español" default>
+          <source src="./src/videos/FRIENDS - LA REUNION Tráiler (2021).ogg" type="video/ogg">
+          <source src="./src/videos/FRIENDS - LA REUNION Tráiler (2021).webm" type="video/webm">
+          <track src="./src/videos/vtt/friends-es.vtt" kind="subtitles" srclang="es" label="Español" default >
+          <track src="./src/videos/vtt/friends-en.vtt" kind="subtitles" srclang="en" label="English" >
+          <em>Su navegador no soporta la reproducción de vídeos.</em>
         </video>
         <div class="txt-cont">
           <div class="txt-video">
@@ -71,7 +73,6 @@
         <a class="enlace-video"><img src="./src/img/TheGoodPlace.jpg" alt="The Good Place"></a>
         <a class="enlace-video"><img src="./src/img/TheOffice.jpg" alt="The Office"></a>
         <a class="enlace-video"><img src="./src/img/EnQuePiensan" alt="¿En qué piensan los hombres?"></a>
-
       </div>
     </section>
   </main>
