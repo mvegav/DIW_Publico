@@ -1,0 +1,51 @@
+/* importamos las fuentes */
+
+/* fuente Sanchez */
+
+@font-face {
+    font-family: 'sanchez';
+    src: url('../fuentes/Sanchez/sanchez-italic-webfont.woff2') format('woff2'),
+        url('../fuentes/Sanchez/sanchez-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'sanchez';
+    src: url('../fuentes/Sanchez/sanchez-regular-webfont.woff2') format('woff2'),
+        url('../fuentes/Sanchez/sanchez-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* fuentes PlayFair Display - Empleamos los ficheros que tienen todos los estilos*/
+
+
+@font-face {
+    font-family: 'playfair_display';
+    src: url('../fuentes/Sanchez/playfairdisplay-italic-variablefont_wght-webfont.woff2') format('woff2'),
+        url('../fuentes/Sanchez/playfairdisplay-italic-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+
+@font-face {
+    font-family: 'playfair_display';
+    src: url('../fuentes/Sanchez/playfairdisplay-variablefont_wght-webfont.woff2') format('woff2'),
+        url('../fuentes/Sanchez/playfairdisplay-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-display: auto;
+    font-style: normal;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2") format("woff2");
+}

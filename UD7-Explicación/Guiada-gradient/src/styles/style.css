@@ -27,10 +27,20 @@ body {
   background-size: 400% 400%;
   -webkit-animation: gradient 16s ease infinite;
   -moz-animation: gradient 16s ease infinite;
-  -o-animation: graduebt 16s ease infinite;
+  -o-animation: gradient 16s ease infinite;
   animation: gradient 16s ease infinite;
 }
 
+header{
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.368);
+  position: sticky;
+  top: 0;
+}
 header h1 {
   flex: 1;
   text-align: center;
@@ -149,7 +159,7 @@ footer {
   text-align: center;
   padding: 1rem;
   position: sticky;
-  bottom: 0;
+  bottom: 0; 
 }
 
 /*=====  End of Estilos del pie  ======*/
@@ -172,3 +182,60 @@ Segundo posición en el eje Y*/
     width: 100px;
   }
 }
+
+
+/*=============================================
+=            Estilos fotograma clave            =
+=============================================*/
+@keyframes gradient {
+  0%{
+    background-position: 5% 0%;
+  }
+  50%{
+    background-position: 96% 100%;
+  }
+  100%{
+    background-position: 5% 0%;
+  }
+}
+
+@-moz-keyframes gradient {
+  0%{
+    background-position: 5% 0%;
+  }
+  50%{
+    background-position: 96% 100%;
+  }
+  100%{
+    background-position: 5% 0%;
+  }
+}
+
+@-o-keyframes gradient {
+  0%{
+    background-position: 5% 0%;
+  }
+  50%{
+    background-position: 96% 100%;
+  }
+  100%{
+    background-position: 5% 0%;
+  }
+}
+
+@-webkit-keyframes gradient {
+  0%{
+    background-position: 5% 0%;
+  }
+  50%{
+    background-position: 96% 100%;
+  }
+  100%{
+    background-position: 5% 0%;
+  }
+}
+/*=====  End of Estilos fotograma clave  ======*/
+
+
+
+
