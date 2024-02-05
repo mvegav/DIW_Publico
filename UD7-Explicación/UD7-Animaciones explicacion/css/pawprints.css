@@ -1,0 +1,37 @@
+body {
+    background: #8fd5d5;
+}
+
+
+.contain-animation{
+    height: 350px;
+}
+
+/* contenedor de las pisadas */
+.contain-bear{
+    width: 575px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cover{
+    background: #8fd5d5;
+    width: 675px;
+    height: 150px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    /* si queremos que empieze mostrando la primera pisada tenemos que indicar
+    solo la 
+     animation: mostrar 6s steps(6,start) infinite; */
+    animation: mostrar 7s steps(7,end) infinite; 
+
+}
+
+@keyframes mostrar {
+    to{
+        transform: translateX(675px); 
+        /* transform: translateX(579px); */
+    }
+}
