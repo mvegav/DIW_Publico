@@ -37,6 +37,36 @@
   height: 126px;
 }
 
+.line-2{
+  left: 63px;
+  -webkit-transform: rotate(90deg) translate3d(0,0,0);
+  transform: rotate(90deg);
+}
+.line-3{
+  -webkit-transform: rotate(30deg) translate3d(0,0,0);
+  transform: rotate(30deg);
+  margin-left: -1px;
+  width: 2px;
+}
+.line-4{
+  -webkit-transform: rotate(-30deg) translate3d(0,0,0);
+  transform: rotate(-30deg);
+  margin-left: -1px;
+  width: 2px;
+}
+.line-5{
+  -webkit-transform: rotate(60deg) translate3d(0,0,0);
+  transform: rotate(60deg);
+  margin-left: -1px;
+  width: 2px;
+}
+.line-6{
+  -webkit-transform: rotate(-60deg) translate3d(0,0,0);
+  transform: rotate(-60deg);
+  margin-left: -1px;
+  width: 2px;
+}
+
 .hour {
   position: absolute;
   top: 50%;
@@ -51,6 +81,10 @@
   width: 8px;
   height: 35px;
   z-index: 5;
+  -o-animation: tick-tock 4300s steps(4300,end) infinite;
+  -moz-animation: tick-tock 4300s steps(4300,end) infinite;
+  -webkit-animation: tick-tock 4300s steps(4300,end) infinite;
+  animation: tick-tock 4300s steps(4300,end) infinite;
 }
 
 .minute {
@@ -65,8 +99,10 @@
   width: 8px;
   height: 50px;
   z-index: 3;
-  animation: tick-tock 3600s steps(60, end) infinite;
-  -webkit-animation: tick-tock 3600s steps(60, end) infinite;
+  -o-animation: tick-tock 3600s steps(60,end) infinite;
+  -moz-animation: tick-tock 3600s steps(60,end) infinite;
+  -webkit-animation: tick-tock 3600s steps(60,end) infinite;
+  animation: tick-tock 3600s steps(60,end) infinite;
 }
 
 .second {
@@ -81,8 +117,10 @@
   width: 2px;
   height: 50px;
   z-index: 5;
-  animation: tick-tock 60s steps(60, end) infinite;
-  -webkit-animation: tick-tock 60s steps(60, end) infinite;
+  -o-animation: tick-tock 60s steps(60,end) infinite;
+  -moz-animation: tick-tock 60s steps(60,end) infinite;
+  -webkit-animation: tick-tock 60s steps(60,end) infinite;
+  animation: tick-tock 60s steps(60,end) infinite;
 }
 
 .center {
@@ -173,4 +211,24 @@
   top: 26px;
   width: 75px;
   height: 15px;
+}
+@-webkit-keyframes tick-tock {
+  to{
+    -webkit-transform: rotate(360deg) translate3d(0,0,0);
+  }
+}
+@-o-keyframes tick-tock {
+  to{
+    -o-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes tick-tock {
+  to{
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes tick-tock {
+  to{
+    transform: rotate(360deg);
+  }
 }

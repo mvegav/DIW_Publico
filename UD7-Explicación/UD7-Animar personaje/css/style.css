@@ -17,3 +17,103 @@
 body {
   background: #000;
 }
+
+#personaje{
+  width: 112px;
+  height: 156px;
+  margin: auto;
+  background: url(../img/bern.png) repeat-x;
+  /* animation: caminar 8s linear infinite; */
+  -o-animation: caminar 1s steps(6) infinite;
+  -moz-animation: caminar 1s steps(6) infinite;
+  -webkit-animation: caminar 1s steps(6) infinite;
+  animation: caminar 1s steps(6) infinite;
+  position: relative;
+  bottom: 36px;
+}
+
+#cielo{
+  background: url("../img/monkey-sky.png") repeat-x;
+  -o-animation: moverbg 9s linear infinite;
+  -webkit-animation: moverbg 9s linear infinite;
+  -moz-animation: moverbg 9s linear infinite;
+  animation: moverbg 9s linear infinite;
+}
+
+#mar{
+  background: url("../img/monkey-sea.png") repeat-x;
+  position: relative;
+  top: 145px;
+  -o-animation: moverbg 6s linear infinite;
+  -webkit-animation: moverbg 6s linear infinite;
+  -moz-animation: moverbg 6s linear infinite;
+  animation: moverbg 6s linear infinite;
+  /* inset hace la sombra dentro del marco, por encima del fondo pero debajo del contenido*/
+  box-shadow: 10px 10px 45px rgba(0, 0, 0, 0.85) inset;
+}
+@-moz-keyframes caminar {
+  0%{
+    background-position: 0;
+  }
+  100%{
+    background-position: -672px;
+  } 
+}
+@-o-keyframes caminar {
+  0%{
+    background-position: 0;
+  }
+  100%{
+    background-position: -672px;
+  } 
+}
+@-webkit-keyframes caminar {
+  0%{
+    background-position: 0;
+  }
+  100%{
+    background-position: -672px;
+  } 
+}
+@keyframes caminar {
+  0%{
+    background-position: 0;
+  }
+  100%{
+    background-position: -672px;
+  } 
+}
+@-o-keyframes moverbg {
+  0%{
+    background-position: 550px;
+  }
+  100%{
+    background-position: 0%;
+  }
+}
+@-moz-document moverbg {
+  0%{
+    background-position: 550px;
+  }
+  100%{
+    background-position: 0%;
+  } 
+}
+@-webkit-keyframes moverbg {
+  0%{
+    background-position: 550px;
+  }
+  100%{
+    background-position: 0%;
+  }
+  
+}
+@keyframes moverbg {
+  0%{
+    background-position: 550px;
+  }
+  100%{
+    background-position: 0%;
+  }
+  
+}
