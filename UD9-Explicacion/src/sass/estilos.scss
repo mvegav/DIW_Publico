@@ -1,0 +1,92 @@
+/* ******************************************
+**** Primer css
+**** Autor: Marina Vega
+**** fecha: 19/02/2024
+****
+********************************************* */
+// Sintaxis scss
+@use "./modulos/variables" as var;
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    //font-family: $fuente-primaria;
+    //font-size: 16px;
+    font: {
+        family: var.$fuente-primaria;
+        size: 16px;
+    }
+    line-height: 1.6;
+
+    img{
+         width: 100%;
+    }
+
+    header{
+        background-color: var.$color-fondo;
+
+        .avatar{
+            max-width: 80px;
+        }
+
+        h1{
+            //text-align: center;
+            //text-transform: uppercase;
+            text: {
+                align: center;
+                transform: uppercase;
+            }
+            font-size: 2.5rem;
+        }
+    }
+
+    main{
+        flex: 1;
+    }
+
+    .articulo{
+        padding: 1rem;
+
+        &-portada {
+            height: 300px;
+            // interpolación de variables
+            background: url(#{var.$url-img}/fondos/#{var.$fondo}) no-repeat center;
+        }
+        h2{
+            font-size: 2rem;
+            background-color: var.$color-fondo-h2;
+            padding-left: 1rem;
+            border-radius: var.$radio-small;
+        }
+
+        p{
+            padding: 0.5rem;
+
+            &.autor{
+                font-style: italic;
+            }
+
+            a{
+                text-decoration: none;
+                color: var.$color-fondo;
+
+                &:hover{
+                    color: blue;
+                    border-bottom: 1px solid blue;
+                }
+            }
+        }
+    }
+
+    footer {
+        background-color: var.$color-fondo;
+        text-align: center;
+    }
+}

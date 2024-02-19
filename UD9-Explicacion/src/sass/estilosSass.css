@@ -1,0 +1,51 @@
+/* Hoja de estilos */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 1.6;
+}
+body header {
+  background-color: violet;
+}
+body header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+body main {
+  flex: 1;
+}
+body .articulo {
+  padding: 1rem;
+}
+body .articulo h2 {
+  font-size: 2rem;
+  background-color: rgba(238, 130, 238, 0.348);
+  padding-left: 1rem;
+  border-radius: 5px;
+}
+body .articulo p {
+  padding: 0.5rem;
+}
+body .articulo p.autor {
+  font-style: italic;
+}
+body .articulo p::-moz-selection {
+  color: red;
+  background-color: yellow;
+}
+body .articulo p::selection {
+  color: red;
+  background-color: yellow;
+}
+body .articulo-segundo {
+  border: 1px solid red;
+}/*# sourceMappingURL=estilosSass.css.map */

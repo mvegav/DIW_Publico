@@ -1,0 +1,68 @@
+/* ******************************************
+**** Primer css
+**** Autor: Marina Vega
+**** fecha: 19/02/2024
+****
+********************************************* */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+body img {
+  width: 100%;
+}
+body header {
+  background-color: violet;
+}
+body header .avatar {
+  max-width: 80px;
+}
+body header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+body main {
+  flex: 1;
+}
+body .articulo {
+  padding: 1rem;
+}
+body .articulo-portada {
+  height: 300px;
+  background: url(../../img/fondos/fondo.png) no-repeat center;
+}
+body .articulo h2 {
+  font-size: 2rem;
+  background-color: rgba(238, 130, 238, 0.348);
+  padding-left: 1rem;
+  border-radius: 5px;
+}
+body .articulo p {
+  padding: 0.5rem;
+}
+body .articulo p.autor {
+  font-style: italic;
+}
+body .articulo p a {
+  text-decoration: none;
+  color: violet;
+}
+body .articulo p a:hover {
+  color: blue;
+  border-bottom: 1px solid blue;
+}
+body footer {
+  background-color: violet;
+  text-align: center;
+}/*# sourceMappingURL=estilos.css.map */

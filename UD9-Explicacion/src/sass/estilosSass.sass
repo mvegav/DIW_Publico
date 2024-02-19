@@ -1,0 +1,47 @@
+// Versión original de sass
+/* Hoja de estilos */
+*, *::after, *::before
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    font-size: 16px
+    line-height: 1.6
+
+    header
+        background-color: violet
+        h1
+            text-align: center
+            text-transform: uppercase
+            font-size: 2.5rem
+
+    main
+        flex: 1
+
+    .articulo
+        padding: 1rem
+
+        h2
+            font-size: 2rem
+            background-color: rgba(238,130,238,0.348)
+            padding-left: 1rem
+            border-radius: 5px
+
+        p
+            padding: 0.5rem
+
+            &.autor
+                font-style: italic
+
+            &::selection
+                color: red
+                background-color: yellow
+            
+        
+        &-segundo
+            border: 1px solid red
+        
