@@ -1,0 +1,22 @@
+@forward "variables" show $color-texto-primario;
+
+@mixin ancho-alto($ancho:100%, $alto:auto){
+    width: $ancho;
+    height: $alto;
+}
+
+@mixin fuente($family, $size, $color:$color-texto-primario){
+    font: {
+        size: $size;
+        family: $family;
+    }
+    color: $color;
+}
+
+@mixin flex($direccion: row, $wrap: wrap, $justify: center, $align: center){
+    display: flex;
+    flex-flow: $direccion $wrap;    
+    justify-content: $justify;
+    align-items: $align;
+    align-content: $align;
+}

@@ -5,88 +5,63 @@
 ****
 ********************************************* */
 // Sintaxis scss
-@use "./modulos/variables" as var;
+@use "./modulos" as modulos;
 
-*, *::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.articulo {
+    padding: 1rem;
+
+    &-portada {
+        height: 300px;
+        // interpolación de variables
+        background: url(#{modulos.$url-img}/fondos/#{modulos.$fondo}) no-repeat center;
+    }
+
+    h2 {
+        font-size: 2rem;
+        background-color: modulos.$color-fondo-h2;
+        padding-left: 1rem;
+        border-radius: modulos.$radio-small;
+    }
+
+    p {
+        padding: 0.5rem;
+
+        &.autor {
+            font-style: italic;
+        }
+
+        a {
+            text-decoration: none;
+            color: modulos.$color-fondo;
+
+            &:hover {
+                color: blue;
+                border-bottom: 1px solid blue;
+            }
+        }
+    }
 }
 
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    //font-family: $fuente-primaria;
-    //font-size: 16px;
-    font: {
-        family: var.$fuente-primaria;
-        size: 16px;
-    }
-    line-height: 1.6;
+.cards{
+    @include modulos.flex();
+    gap: 1rem;
 
-    img{
-         width: 100%;
-    }
+    &__card{
+        @include modulos.ancho-alto(250px,250px);
+        @include modulos.flex(column);
 
-    header{
-        background-color: var.$color-fondo;
-
-        .avatar{
-            max-width: 80px;
-        }
-
-        h1{
-            //text-align: center;
-            //text-transform: uppercase;
-            text: {
-                align: center;
-                transform: uppercase;
-            }
-            font-size: 2.5rem;
-        }
-    }
-
-    main{
-        flex: 1;
-    }
-
-    .articulo{
-        padding: 1rem;
-
-        &-portada {
-            height: 300px;
-            // interpolación de variables
-            background: url(#{var.$url-img}/fondos/#{var.$fondo}) no-repeat center;
-        }
-        h2{
-            font-size: 2rem;
-            background-color: var.$color-fondo-h2;
-            padding-left: 1rem;
-            border-radius: var.$radio-small;
-        }
-
-        p{
-            padding: 0.5rem;
-
-            &.autor{
-                font-style: italic;
-            }
-
-            a{
-                text-decoration: none;
-                color: var.$color-fondo;
-
-                &:hover{
-                    color: blue;
-                    border-bottom: 1px solid blue;
-                }
+        $prepro: "sass","less","stylus";
+        @each $fondo in $prepro{
+            &--#{$fondo}{
+                background: url(#{modulos.$url-img}/prepro/#{$fondo}.jpg) no-repeat;
+                background-size: cover;
             }
         }
+
+        h3{
+          $font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+           @include modulos.fuente($font-family, 3rem,white); 
+        }
     }
 
-    footer {
-        background-color: var.$color-fondo;
-        text-align: center;
-    }
 }

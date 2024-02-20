@@ -11,6 +11,8 @@
 }
 
 body {
+  width: 100vw;
+  height: auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,7 +24,14 @@ body img {
   width: 100%;
 }
 body header {
+  width: 100%;
+  height: auto;
   background-color: violet;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
 }
 body header .avatar {
   max-width: 80px;
@@ -35,34 +44,72 @@ body header h1 {
 body main {
   flex: 1;
 }
-body .articulo {
+body footer {
+  background-color: violet;
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+
+.articulo {
   padding: 1rem;
 }
-body .articulo-portada {
+.articulo-portada {
   height: 300px;
   background: url(../../img/fondos/fondo.png) no-repeat center;
 }
-body .articulo h2 {
+.articulo h2 {
   font-size: 2rem;
   background-color: rgba(238, 130, 238, 0.348);
   padding-left: 1rem;
   border-radius: 5px;
 }
-body .articulo p {
+.articulo p {
   padding: 0.5rem;
 }
-body .articulo p.autor {
+.articulo p.autor {
   font-style: italic;
 }
-body .articulo p a {
+.articulo p a {
   text-decoration: none;
   color: violet;
 }
-body .articulo p a:hover {
+.articulo p a:hover {
   color: blue;
   border-bottom: 1px solid blue;
 }
-body footer {
-  background-color: violet;
-  text-align: center;
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+}
+.cards__card {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.cards__card--sass {
+  background: url(../../img/prepro/sass.jpg) no-repeat;
+  background-size: cover;
+}
+.cards__card--less {
+  background: url(../../img/prepro/less.jpg) no-repeat;
+  background-size: cover;
+}
+.cards__card--stylus {
+  background: url(../../img/prepro/stylus.jpg) no-repeat;
+  background-size: cover;
+}
+.cards__card h3 {
+  font-size: 3rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
 }/*# sourceMappingURL=estilos.css.map */
