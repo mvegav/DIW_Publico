@@ -11,7 +11,7 @@
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   height: auto;
   min-height: 100vh;
   display: flex;
@@ -20,10 +20,21 @@ body {
   font-size: 16px;
   line-height: 1.6;
 }
+body h2 {
+  font-size: 2rem;
+}
+body h3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: oblique;
+  font-size: 1.6666666667rem;
+}
+body h4 {
+  font-size: 1.25rem;
+}
 body img {
   width: 100%;
 }
-body header {
+body footer, body header {
   width: 100%;
   height: auto;
   background-color: violet;
@@ -32,11 +43,29 @@ body header {
   justify-content: space-between;
   align-items: center;
   align-content: center;
+  padding: 0.5rem 2rem;
 }
-body header .avatar {
-  max-width: 80px;
+body .avatar {
+  border: 4px double white;
+  overflow: hidden;
+}
+body .avatar img {
+  transition: all 0.2s ease-in-out;
+}
+body .avatar--retangular {
+  max-width: 50px;
+  height: 50px;
+}
+body .avatar--circular {
+  max-width: 70px;
+  height: 70px;
+  border-radius: 35px;
+}
+body .avatar:hover img {
+  transform: rotate(360deg);
 }
 body header h1 {
+  flex: 1;
   text-align: center;
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -45,10 +74,7 @@ body main {
   flex: 1;
 }
 body footer {
-  background-color: violet;
   text-align: center;
-  width: 100%;
-  height: auto;
 }
 
 .articulo {

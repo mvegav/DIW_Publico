@@ -7,8 +7,9 @@
     box-sizing: border-box;
 }
 
+
 body{
-    @include mixin.ancho-alto(100vw);
+    @include mixin.ancho-alto(100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,27 +20,68 @@ body{
         size: 16px;
     }
     line-height: 1.6;
-
-    img{
-         width: 100%;
+    
+    h2{
+        @include mixin.titulos(2);
     }
-
-    header{
+    // h3{
+    //     @include mixin.titulos(3);
+    // }
+    h3{
+        //font: mixin.titulos(3){
+        font: {
+            family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            style: oblique;
+            size: mixin.titulos(3);
+        }
+    }
+    h4{
+        @include mixin.titulos(4);
+    }
+    img{
+        width: 100%;
+    }
+    
+    %fondo{
         @include mixin.ancho-alto();
         background-color: var.$color-fondo;
         @include mixin.flex($justify: space-between);
-        .avatar{
-            max-width: 80px;
+        padding: 0.5rem 2rem;
+    }
+    
+    .avatar{
+        border: 4px double white;
+        overflow: hidden;
+        img{
+            transition: all 0.2s ease-in-out; 
         }
+    
+        &--retangular{
+            @include mixin.avatar(50px, false);
+        }
+        
+        &--circular{
+            @include mixin.avatar(70px);
+        } 
+
+        &:hover img{
+            $propiedad: rotate(360deg);
+            @include mixin.transform($propiedad);
+        }
+    }
+    header{
+        @extend %fondo;
 
         h1{
+            flex: 1;
             //text-align: center;
             //text-transform: uppercase;
             text: {
                 align: center;
                 transform: uppercase;
             }
-            font-size: 2.5rem;
+           // font-size: 2.5rem;
+           @include mixin.titulos(1);
         }
     }
 
@@ -48,8 +90,7 @@ body{
     }
 
     footer {
-        background-color: var.$color-fondo;
         text-align: center;
-        @include mixin.ancho-alto();
+        @extend %fondo;
     }
 }
