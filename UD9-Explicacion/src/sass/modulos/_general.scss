@@ -1,96 +1,97 @@
 @use "variables" as var;
 @use "mixin" as mixin;
 
-*, *::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  @include mixin.ancho-alto(100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  //font-family: $fuente-primaria;
+  //font-size: 16px;
+  font: {
+    family: var.$fuente-primaria;
+    size: 16px;
+  }
+  line-height: 1.6;
 
-body{
-    @include mixin.ancho-alto(100%);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    //font-family: $fuente-primaria;
-    //font-size: 16px;
+  h2 {
+    @include mixin.titulos(2);
+  }
+  // h3{
+  //     @include mixin.titulos(3);
+  // }
+  h3 {
+    //font: mixin.titulos(3){
     font: {
-        family: var.$fuente-primaria;
-        size: 16px;
+      family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      style: oblique;
+      size: mixin.titulos(3);
     }
-    line-height: 1.6;
-    
-    h2{
-        @include mixin.titulos(2);
-    }
-    // h3{
-    //     @include mixin.titulos(3);
-    // }
-    h3{
-        //font: mixin.titulos(3){
-        font: {
-            family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            style: oblique;
-            size: mixin.titulos(3);
-        }
-    }
-    h4{
-        @include mixin.titulos(4);
-    }
-    img{
-        width: 100%;
-    }
-    
-    %fondo{
-        @include mixin.ancho-alto();
-        background-color: var.$color-fondo;
-        @include mixin.flex($justify: space-between);
-        padding: 0.5rem 2rem;
-    }
-    
-    .avatar{
-        border: 4px double white;
-        overflow: hidden;
-        img{
-            transition: all 0.2s ease-in-out; 
-        }
-    
-        &--retangular{
-            @include mixin.avatar(50px, false);
-        }
-        
-        &--circular{
-            @include mixin.avatar(70px);
-        } 
+  }
+  h4 {
+    @include mixin.titulos(4);
+  }
+  img {
+    width: 100%;
+  }
 
-        &:hover img{
-            $propiedad: rotate(360deg);
-            @include mixin.transform($propiedad);
-        }
-    }
-    header{
-        @extend %fondo;
+  %fondo {
+    @include mixin.ancho-alto();
+    background-color: var.$color-fondo;
+    @include mixin.flex($justify: space-between);
+    padding: 0.5rem 2rem;
+  }
 
-        h1{
-            flex: 1;
-            //text-align: center;
-            //text-transform: uppercase;
-            text: {
-                align: center;
-                transform: uppercase;
-            }
-           // font-size: 2.5rem;
-           @include mixin.titulos(1);
-        }
+  .avatar {
+    border: 4px double white;
+    overflow: hidden;
+    img {
+      transition: all 0.2s ease-in-out;
     }
 
-    main{
-        flex: 1;
+    &--retangular {
+      @include mixin.avatar(50px, false);
     }
 
-    footer {
-        text-align: center;
-        @extend %fondo;
+    &--circular {
+      @include mixin.avatar(70px);
     }
+
+    &:hover img {
+      $propiedad: rotate(360deg);
+      @include mixin.transform($propiedad);
+    }
+  }
+  header {
+    @extend %fondo;
+
+    h1 {
+      flex: 1;
+      //text-align: center;
+      //text-transform: uppercase;
+      text: {
+        align: center;
+        transform: uppercase;
+      }
+      // font-size: 2.5rem;
+      @include mixin.titulos(1);
+    }
+  }
+
+  main {
+    flex: 1;
+  }
+
+  footer {
+    text-align: center;
+    @extend %fondo;
+  }
 }

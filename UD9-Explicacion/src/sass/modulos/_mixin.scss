@@ -3,66 +3,66 @@
 //@forward "variables";
 @use "variables";
 
-@mixin ancho-alto($ancho:100%, $alto:auto){
-    width: $ancho;
-    height: $alto;
+@mixin ancho-alto($ancho: 100%, $alto: auto) {
+  width: $ancho;
+  height: $alto;
 }
 
-@mixin fuente($family, $size, $color:variables.$color-texto-primario){
-    font: {
-        size: $size;
-        family: $family;
-    }
-    color: $color;
+@mixin fuente($family, $size, $color: variables.$color-texto-primario) {
+  font: {
+    size: $size;
+    family: $family;
+  }
+  color: $color;
 }
 
-@mixin flex($direccion: row, $wrap: wrap, $justify: center, $align: center){
-    display: flex;
-    flex-flow: $direccion $wrap;    
-    justify-content: $justify;
-    align-items: $align;
-    align-content: $align;
+@mixin flex($direccion: row, $wrap: wrap, $justify: center, $align: center) {
+  display: flex;
+  flex-flow: $direccion $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  align-content: $align;
 }
 
-@mixin avatar($size, $circulo: true){
-    max-width: $size;
-    height: $size;
+@mixin avatar($size, $circulo: true) {
+  max-width: $size;
+  height: $size;
 
-    @if $circulo{
-        border-radius: ma.div($size,2);
-    }
+  @if $circulo {
+    border-radius: ma.div($size, 2);
+  }
 }
 
-@mixin transform($propiedad){
-    -webkit-transform: $propiedad;
-    -o-transform: $propiedad;
-    -moz-transform: $propiedad;
-    -ms-transform: $propiedad;
-    transform: $propiedad;
+@mixin transform($propiedad) {
+  -webkit-transform: $propiedad;
+  -o-transform: $propiedad;
+  -moz-transform: $propiedad;
+  -ms-transform: $propiedad;
+  transform: $propiedad;
 }
 
-@mixin titulos($tipo){
-    @if $tipo == 1{
-        font-size: variables.$tam-h1 * 1rem ;
-    }@else if $tipo == 2 {
-        font-size: variables.$tam-h1 - 0.5rem;
-    }@else if $tipo == 3 {
-        font-size: ma.div(variables.$tam-h1,1.5) * 1rem;
-    } @else{
-        font-size: ma.div(variables.$tam-h1,2) * 1rem;
-    }
+@mixin titulos($tipo) {
+  @if $tipo == 1 {
+    font-size: variables.$tam-h1 * 1rem;
+  } @else if $tipo == 2 {
+    font-size: variables.$tam-h1 - 0.5rem;
+  } @else if $tipo == 3 {
+    font-size: ma.div(variables.$tam-h1, 1.5) * 1rem;
+  } @else {
+    font-size: ma.div(variables.$tam-h1, 2) * 1rem;
+  }
 }
 
-@function titulos($tipo){
-    $valor: 1rem;
-    @if $tipo == 1{
-        $valor: variables.$tam-h1 * 1rem ;
-    }@else if $tipo == 2 {
-        $varlor: variables.$tam-h1 - 0.5rem;
-    }@else if $tipo == 3 {
-        $valor: ma.div(variables.$tam-h1,1.5) * 1rem;
-    } @else{
-        $valor: ma.div(variables.$tam-h1,2) * 1rem;
-    }
-    @return #{$valor};
+@function titulos($tipo) {
+  $valor: 1rem;
+  @if $tipo == 1 {
+    $valor: variables.$tam-h1 * 1rem;
+  } @else if $tipo == 2 {
+    $varlor: variables.$tam-h1 - 0.5rem;
+  } @else if $tipo == 3 {
+    $valor: ma.div(variables.$tam-h1, 1.5) * 1rem;
+  } @else {
+    $valor: ma.div(variables.$tam-h1, 2) * 1rem;
+  }
+  @return #{$valor};
 }
