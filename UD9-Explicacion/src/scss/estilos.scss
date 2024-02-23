@@ -6,14 +6,33 @@
 ********************************************* */
 // Sintaxis scss
 @use "./modulos" as modulos;
+@use "sass:string";
 
+.redes{
+
+    @each $red in modulos.$redes {
+        &--#{$red} {
+            $ruta: string.quote(#{modulos.$url-img}/redes/#{$red});
+            background: url($ruta + ".svg") no-repeat center;
+            background-size: contain;
+            @include modulos.ancho-alto(60px,60px);
+        }
+    }
+}
 .articulo {
     padding: 1rem;
+    position: fixed;
+    
 
     &-portada {
+        width: 100%;
         height: 300px;
         // interpolación de variables
         background: url(#{modulos.$url-img}/fondos/#{modulos.$fondo}) no-repeat center;
+        background-size: contain;
+        @include modulos.movil() {
+            height: 150px;
+        }
     }
 
     h2 {

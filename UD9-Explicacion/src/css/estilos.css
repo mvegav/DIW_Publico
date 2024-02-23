@@ -4,10 +4,24 @@
 **** fecha: 19/02/2024
 ****
 ********************************************* */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: var(--font-size);
+  line-height: 1.6;
+}
+@media screen and (max-width: 720px) {
+  :root {
+    --font-size: 12px;
+  }
 }
 
 body {
@@ -16,20 +30,22 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 16px;
-  line-height: 1.6;
+}
+body h1 {
+  font-size: 2.5rem;
 }
 body h2 {
   font-size: 2rem;
 }
 body h3 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-style: oblique;
   font-size: 1.6666666667rem;
 }
 body h4 {
   font-size: 1.25rem;
+}
+body h3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: oblique;
 }
 body img {
   width: 100%;
@@ -62,6 +78,10 @@ body .avatar--circular {
   border-radius: 35px;
 }
 body .avatar:hover img {
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
   transform: rotate(360deg);
 }
 body header h1 {
@@ -77,12 +97,45 @@ body footer {
   text-align: center;
 }
 
+.redes--facebook {
+  background: url("../../img/redes/facebook.svg") no-repeat center;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+}
+.redes--github {
+  background: url("../../img/redes/github.svg") no-repeat center;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+}
+.redes--gmail {
+  background: url("../../img/redes/gmail.svg") no-repeat center;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+}
+.redes--instagram {
+  background: url("../../img/redes/instagram.svg") no-repeat center;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+}
+
 .articulo {
   padding: 1rem;
+  position: fixed;
 }
 .articulo-portada {
+  width: 100%;
   height: 300px;
   background: url(../../img/fondos/fondo.png) no-repeat center;
+  background-size: contain;
+}
+@media screen and (max-width: 720px) {
+  .articulo-portada {
+    height: 150px;
+  }
 }
 .articulo h2 {
   font-size: 2rem;
@@ -138,4 +191,6 @@ body footer {
   font-size: 3rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
-}/*# sourceMappingURL=estilos.css.map */
+}
+
+/*# sourceMappingURL=estilos.css.map */
