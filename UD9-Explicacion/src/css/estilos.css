@@ -97,11 +97,134 @@ body footer {
   text-align: center;
 }
 
+dialog {
+  max-width: 650px;
+  padding: 2.8rem 5rem;
+  border: 8px solid;
+  background-color: #fafafa;
+  margin: 0 auto;
+  position: absolute;
+  top: calc(100vh - 75%);
+  text-align: center;
+  border-radius: 5px;
+  -o-animation: aparecer 0.5s ease-in-out;
+  -moz-animation: aparecer 0.5s ease-in-out;
+  -webkit-animation: aparecer 0.5s ease-in-out;
+  animation: aparecer 0.5s ease-in-out;
+}
+@keyframes aparecer {
+  from {
+    top: -50vw;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes aparecer {
+  from {
+    top: -50vw;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes aparecer {
+  from {
+    top: -50vw;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes aparecer {
+  from {
+    top: -50vw;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+dialog::backdrop {
+  background-color: rgba(238, 130, 238, 0.348);
+}
+dialog h2 {
+  padding-bottom: 1rem;
+}
+dialog .form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto 1fr);
+  justify-content: center;
+  justify-items: start;
+  align-items: stretch;
+}
+dialog .form__label, dialog .form__input {
+  grid-column: span 2;
+}
+dialog .form__label {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+dialog .form__input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+dialog .form__input:focus {
+  background-color: rgba(238, 130, 238, 0.348);
+}
+dialog .form__btn {
+  grid-row: span 2;
+  align-self: center;
+  justify-self: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+dialog .form__btn--cerrar {
+  background-color: rgba(255, 166, 0, 0.651);
+}
+dialog .form__btn--enviar {
+  background-color: rgba(0, 128, 0, 0.535);
+}
+dialog .form__btn:hover {
+  box-shadow: 0 4px 8px;
+}
+
+.redes {
+  align-self: flex-end;
+  position: fixed;
+  top: 40%;
+  right: 0%;
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.redes button {
+  border: none;
+  cursor: pointer;
+}
 .redes--facebook {
   background: url("../../img/redes/facebook.svg") no-repeat center;
   background-size: contain;
   width: 60px;
   height: 60px;
+}
+.redes--facebook:hover {
+  scale: 1.2;
 }
 .redes--github {
   background: url("../../img/redes/github.svg") no-repeat center;
@@ -109,11 +232,17 @@ body footer {
   width: 60px;
   height: 60px;
 }
+.redes--github:hover {
+  scale: 1.2;
+}
 .redes--gmail {
   background: url("../../img/redes/gmail.svg") no-repeat center;
   background-size: contain;
   width: 60px;
   height: 60px;
+}
+.redes--gmail:hover {
+  scale: 1.2;
 }
 .redes--instagram {
   background: url("../../img/redes/instagram.svg") no-repeat center;
@@ -121,10 +250,12 @@ body footer {
   width: 60px;
   height: 60px;
 }
+.redes--instagram:hover {
+  scale: 1.2;
+}
 
 .articulo {
   padding: 1rem;
-  position: fixed;
 }
 .articulo-portada {
   width: 100%;

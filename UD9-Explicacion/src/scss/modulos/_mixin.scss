@@ -73,3 +73,12 @@
     @content;
   }
 }
+
+@mixin grid($columnas, $filas, $justifyItem: center, $alignItems: center, $justifyContent: center){
+  display: grid;
+  grid-template-columns: $columnas;
+  grid-template-rows: $filas;
+  justify-content: $justifyContent;
+  justify-items: $justifyItem;
+  align-items: $alignItems;
+}

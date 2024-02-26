@@ -9,20 +9,34 @@
 @use "sass:string";
 
 .redes{
+    align-self: flex-end;
+    position: fixed;
+    top: 40%;
+    right: 0%;
+    border: 1px solid;
+    border-radius: modulos.$radio-small;
+    box-shadow: 0 4px 10px;
+    @include modulos.flex(column);
 
+    button{
+        border: none;
+        cursor: pointer;
+    }
     @each $red in modulos.$redes {
         &--#{$red} {
             $ruta: string.quote(#{modulos.$url-img}/redes/#{$red});
             background: url($ruta + ".svg") no-repeat center;
             background-size: contain;
             @include modulos.ancho-alto(60px,60px);
+            &:hover{
+                scale: 1.2;
+            }
         }
     }
 }
 .articulo {
     padding: 1rem;
-    position: fixed;
-    
+   
 
     &-portada {
         width: 100%;

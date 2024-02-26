@@ -1,0 +1,87 @@
+// Estilos de las ventanas modales
+@use "variables" as var;
+@use "animaciones" as anima;
+@use "mixin";
+
+dialog {
+    max-width: 650px;
+    padding: 2.8rem 5rem;
+    border: 8px solid;
+    background-color: #fafafa;
+    margin: 0 auto;
+    position: absolute;
+    top: calc(100vh - 75%);
+    text-align: center;
+    border-radius: var.$radio-small;
+
+    $propiedades: aparecer 0.5s ease-in-out;
+    @include anima.defAnimacion($propiedades);
+
+    // llamamos al mixin para generar el fotograma
+    @include anima.keyframes("aparecer"){
+        @include anima.animacionAparecer();
+    }
+
+    &::backdrop {
+        background-color: var.$color-fondo-h2;
+    }
+
+    h2 {
+        padding-bottom: 1rem;
+    }
+
+    .form {
+        $columnas: repeat(2, 1fr);
+        $filas: repeat(3, auto 1fr);
+        @include mixin.grid($columnas, $filas, start, stretch);
+
+        &__label,
+        &__input {
+            grid-column: span 2;
+        }
+
+        &__label{
+            font: {
+                weight: map-get(var.$font-weights, "medium");
+                size: 1.2rem;
+            }
+        }
+
+        &__input{
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: var.$radio-small;
+            &:focus{
+                background-color: var.$color-fondo-h2;
+            }
+        }
+
+        &__btn{
+            grid-row: span 2;
+            align-self: center;
+            justify-self: center;
+            padding: 0.5rem 1rem;
+            border-radius: var.$radio-small;
+            border: none;
+            cursor: pointer;
+
+            font: {
+                weight: map-get(var.$font-weights, "bold");
+                size: 1.2rem;
+            }
+
+            &--cerrar{
+                background-color: rgba(255, 166, 0, 0.651);
+            }
+            
+            &--enviar{
+                background-color: rgba(0, 128, 0, 0.535);
+            }
+
+            &:hover{
+                box-shadow: 0 4px 8px;
+            }
+        }
+    }
+}
