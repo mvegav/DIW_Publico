@@ -1,0 +1,35 @@
+// Estilos del pie
+@use "general" as general;
+
+.footer {
+  background-color: general.$color-fondo;
+  @include general.anchoAlto();
+  color: white;
+  @include general.flex($justify: space-between);
+  gap: 1rem;
+  padding: 1rem;
+
+  @include general.respond-to("movil") {
+    @include general.flex(column-reverse, $justify: center);
+  }
+
+  &__enlaces {
+    @include general.flex(row);
+    gap: 1rem;
+
+    div a > img {
+      text-decoration: none;
+    }
+  }
+
+  &__accesible {
+    .img__pie {
+      @include general.anchoAlto($ancho: 70px);
+    }
+  }
+
+  * img {
+    @include general.anchoAlto($ancho: 40px);
+    fill: white;
+  }
+}

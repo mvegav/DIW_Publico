@@ -1,0 +1,41 @@
+@forward "../../../src/scss/general";
+@use "../../../src/scss/general" as general;
+/* estilos ventana modal Dialog */
+/* ventana modal */
+dialog {
+  max-width: 650px;
+  padding: 40px 70px;
+  border: 8px solid general.$colorPrimario;
+  background-color: #fafafa;
+  margin: 0 auto;
+  position: absolute;
+  top: calc(100% - 75%);
+  text-align: center;
+
+  $propiedades: aparecer 0.5s ease-in-out;
+  @include general.defAnimacion($propiedades);
+  // llamamos al mixin que generará el fotograma clave
+  @include general.keyframes("aparecer") {
+    @include general.animacionAparecer();
+  }
+
+  &::backdrop {
+    background: general.$colorSecundario;
+  }
+
+  h2 {
+    padding-bottom: 1rem;
+  }
+
+  p,
+  pre,
+  code {
+    text-align: left;
+  }
+  button {
+    box-shadow: 0px 0px 0 general.$colorPrimario;
+    &:hover {
+      box-shadow: 8px 8px 0 general.$colorPrimario;
+    }
+  }
+}

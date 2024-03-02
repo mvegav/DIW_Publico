@@ -1,0 +1,75 @@
+@forward "../../../src/scss/general";
+@use "../../../src/scss/general" as general;
+
+:root {
+  --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+a[href^="http"]:hover:after {
+  content: " (" attr(href) " )";
+  background-color: antiquewhite;
+}
+
+dialog {
+  max-width: max-content;
+  padding: 40px 70px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  cursor: pointer;
+  border: 8px solid general.$colorPrimario;
+  background-color: #fafafa;
+
+  &::backdrop {
+    background-color: general.$colorSecundario;
+  }
+
+  h2 {
+    padding-bottom: 1rem;
+  }
+}
+// herencia
+%colorFondo {
+  background-color: general.$colorSecundario;
+}
+.modal {
+  p + p {
+    margin-top: 1rem;
+  }
+
+  &__dialog {
+    position: relative;
+    max: {
+      width: 800px;
+      height: 80vh;
+    }
+    border-radius: 5px;
+    background-color: white;
+    overflow: auto;
+    cursor: default;
+    @include general.flex($direccion: column, $wrap: nowrap);
+
+    & > * {
+      padding: 1rem;
+    }
+  }
+
+  &__header {
+    @include general.anchoAlto();
+    @extend %colorFondo;
+    @include general.flex($direccion: row, $justify: space-between);
+    .close-modal {
+      font-size: 1.5rem;
+    }
+  }
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__footer {
+    @extend %colorFondo;
+    @include general.anchoAlto();
+  }
+}
+
+/* Estilos de las animaciones */
