@@ -7,23 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda de mascotas - Off Canvas</title>
   <link rel="stylesheet" href="./assets/src/css/style.css">
-  <!-- AlpineJS para gestionar el evento Clic - Alpine.js es una librería javascript creada por Caleb Porzio, 
+  <!-- AlpineJS para gestionar el evento Click - Alpine.js es una librería javascript creada por Caleb Porzio, 
     también creador del componente Livewire para Laravel.-->
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
   <!-- Header -->
-  <header class="cabecera">
+  <header class="cabecera" x-data="{ open: false}">
     <!-- Logo -->
     <a href="" class="cabecera__logo"><img src="./assets/img/logo.jpg" alt=""></a>
     <!-- Boton abrir -->
-    <img src="./assets/img/menu-hamburgesa.svg" alt="" class="nav__button nav__button--open">
+    <img src="./assets/img/menu-hamburgesa.svg" alt="" class="nav__button nav__button--open" x-on:click="open = true">
     <!-- Navegador -->
 
-    <nav class="nav">
+    <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
       <!-- Boton cerrar -->
-      <img src="./assets/img/menu_close.svg" alt="" class="nav__button nav__button--close">
+      <img src="./assets/img/menu_close.svg" alt="" class="nav__button nav__button--close" x-on:click="open = false">
 
       <!-- Menu -->
       <ul class="nav__ul">

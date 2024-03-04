@@ -124,7 +124,7 @@
       right: 0;
       bottom: 0;
       background: general.$color-secundario;
-      transform: translateX(-100vw);
+      transform: translateX(-100vw); // oculta el menú hamburguesa
       transition: 0.5s;
 
       /* Definimos los botones*/

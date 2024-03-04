@@ -1,0 +1,36 @@
+@use "general" as use;
+
+.cabecera {
+    .off-canvas {
+        &__btn {
+
+            &:checked {
+                // mostramos el menú hamburguesa
+                & ~ .nav {
+                    transform: translateX(0);
+                    transition: 0.5s;
+                }
+
+                & + .off-canvas__burger {
+                    background-color: transparent;
+                }
+
+                // cuando está cheched
+                & + .off-canvas__burger::before {
+                    transform: rotate(45deg) translate(0, 0);
+                    background-color: general.$color-primario;
+                }
+
+                & + .off-canvas__burger::after {
+                    transform: rotate(-45deg) translate(0.3rem, -0.375rem);
+                    background-color: general.$color-primario;
+                }
+
+
+            }
+
+
+
+        }
+    }
+}
