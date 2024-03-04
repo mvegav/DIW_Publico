@@ -8,3 +8,20 @@ const $d = document,
 
 // función a la que se le pasa el botón y el modal
 // se encarga de capturar el evento click para sobre el boton y hacer un showModal sobre la ventana 
+function abrir(boton,modal,show){
+    boton.addEventListener('click', e =>{
+        (show) ? modal.show() : modal.showModal();
+    });
+}
+
+function cerrar(boton,modal){
+    boton.addEventListener('click', e =>{
+        modal.close()
+    });
+}
+
+abrir($botonAbrir,$ventana,true);
+cerrar($botonCerrar,$ventana);
+
+abrir($botonAbrir2,$ventana2,false);
+cerrar($botonCerrar2,$ventana2);

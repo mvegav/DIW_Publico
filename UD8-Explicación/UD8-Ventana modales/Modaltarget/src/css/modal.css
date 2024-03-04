@@ -104,7 +104,6 @@ body h4 {
 button,
 .eboton {
   cursor: pointer;
-  width: -moz-max-content;
   width: max-content;
   background-color: rgba(18, 18, 125, 0.83);
   color: white;
@@ -144,7 +143,6 @@ button:hover,
 
 .eboton {
   text-decoration: none;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -152,13 +150,13 @@ button:hover,
 .modal {
   background-color: rgba(18, 18, 125, 0.83);
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   opacity: 0;
   pointer-events: none;
   transition: all 1s ease-in;
+}
+.modal h2 {
+  text-align: center;
 }
 .modal__contenido {
   position: relative;
@@ -171,16 +169,19 @@ button:hover,
   justify-content: stretch;
   align-items: center;
   align-content: center;
-  height: -moz-max-content;
   height: max-content;
 }
 .modal__contenido #cierre {
-  margin-left: auto;
+  align-self: flex-end;
   text-decoration: none;
+  background-color: #fafafa;
   color: black;
   font-size: 1.2rem;
+  border: none;
 }
 .modal:target {
   opacity: 1;
   pointer-events: auto;
-}/*# sourceMappingURL=modal.css.map */
+}
+
+/*# sourceMappingURL=modal.css.map */
