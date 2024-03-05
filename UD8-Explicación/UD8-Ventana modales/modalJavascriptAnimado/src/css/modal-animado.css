@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -159,7 +158,6 @@ dialog {
   cursor: pointer;
   border: 8px solid rgba(18, 18, 125, 0.83);
   background-color: #fafafa;
-  transition: all 1s ease-in; /* hacemos una pequeña transición */
 }
 dialog::backdrop {
   background-color: rgba(90, 90, 231, 0.543);
@@ -245,7 +243,7 @@ dialog h2 {
 
 [data-animation=rotateInOutDown] .modal__dialog {
   transform-origin: top left;
-  transform: rotate(-1turn); /* rotar una vuelta al revés */
+  transform: rotate(-1turn);
 }
 
 [data-animation=slideInOutDown].is-visible .modal__dialog,
@@ -295,7 +293,7 @@ dialog h2 {
     transform: rotate(-5deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
 }
 @-moz-keyframes mixInAnimations {
@@ -330,7 +328,7 @@ dialog h2 {
     transform: rotate(-5deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
 }
 @-o-keyframes mixInAnimations {
@@ -365,7 +363,7 @@ dialog h2 {
     transform: rotate(-5deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
 }
 @-webkit-keyframes mixInAnimations {
@@ -400,7 +398,7 @@ dialog h2 {
     transform: rotate(-5deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
 }
 
