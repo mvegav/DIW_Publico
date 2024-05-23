@@ -7,15 +7,15 @@
    Unidad Didáctica 6
    Clases
 
-   Página Web del Cine Penguin Royal Wedding 
+   Página Web Ek periodico
    Autor: Marina Vega Vázquez
    Fecha: 08/02/2023
 
-   Fichero:  misestilos.css
+   Fichero:  style.css
 
 */
 /*============================ estilos básicos =====================*/
-* {
+*, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -32,8 +32,255 @@
     --color-fondo: #ffffff;
     --color-icono: #6c6c6c;
     --color-linea: #7e7e7ea9;
+    --color-fondo-html: #6c6c6c11;
     --color-fondo-card-desc: rgba(122, 121, 121, 0.106);
+    --font-size: 12px;
+    --font-h1: 2.5rem;
     font-family: var(--ff-secundaria);
-    font-size: 12px;
+    font-size: var(--font-size);
     line-height: 1.6rem;
 }
+
+html{
+    background-color: var(--color-fondo-html);
+}
+
+[tema="dark"]{
+    --color-fuente: #ffffff;
+    --color-fondo: #000000;
+    --color-icono: #ffffff;
+    --color-boton: #ffffff;
+    --color-boton2: #666;
+    --color-linea: #fff;
+    --color-fuente-boton: #000;
+    --color-fondo-card-desc: #fff;
+    --color-fondo-html: #11111100;
+}
+
+svg{
+    max-width: 30px;
+    fill: var(--color-fuente)
+}
+
+img, video{
+    width: 100%;
+    object-fit: cover;
+}
+h1, h2, h3, h4{
+    font-family: var(--ff-primaria);
+    color: var(--color-fuente);
+}
+
+h1{
+    font-size: var(--font-h1);
+    font-style: normal;
+}
+
+h2{
+    font-size: calc(var(--font-h1) - 1.25rem);
+    line-height: 2rem;
+    text-align: center;
+}
+
+/* Estilos de los iconos */
+.icono a{
+    display: inline-block;
+    height: 40px;
+}
+
+
+/* Enlaces sin decoración */
+.aSinDeco{
+    color: var(--color-fuente);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Estilos para enlaces con forma de botones o botones */
+.btn{
+    color: var(--color-fuente-boton);
+    background-color: var(--color-boton);
+    outline: 1px solid var(--color-boton);
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    font-weight: 600;
+    box-shadow: 3px 5px 3px var(--color-boton2);
+}
+
+
+/*=============================================
+=            Estilos del body            =
+=============================================*/
+body{
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    background-color: var(--color-fondo);
+}
+
+/*=====  End of Estilos del body  ======*/
+
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header{
+    max-width: 100%;
+    border-bottom: 3px solid var(--color-linea);
+}
+
+.header{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem 1rem;
+}
+
+#user{
+    width: max-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+#icon_user{
+    width: 2rem;
+    height: auto;
+}
+
+a:hover #icon_user{
+    fill: var(--color-boton);
+}
+
+/* Estilos del modo día y modo noche */
+/*Botón de cambio de tema*/
+#switch{
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    position: relative;
+}
+#switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    background-color: var(--color-fuente);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.slider::before{
+    content: "";
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--color-fondo);
+    transition: all 0.4s;
+}
+
+#switch .round{
+    border-radius: 17px;
+}
+
+#switch .round::before{
+    border-radius: 50%;
+}
+
+#switch input:checked + .slider::before{
+    transform: translateX(26px);
+}
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+
+/*=============================================
+=            Estilos del menu            =
+=============================================*/
+#menu{
+    width: 100%;
+    border-bottom: 1px solid #6c6c6c;
+}
+
+#activa{
+    font-weight: bold;
+}
+
+#menu ul{
+    padding: .5rem;
+    list-style: none;
+    font-size: 1.4rem;
+    letter-spacing: 1.2px;
+    font-family: var(--ff-secundaria);
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: .5rem;
+}
+
+#menu ul li{
+    margin: .25rem;
+    text-align: center;
+    padding: 0.25rem .5rem;
+}
+
+#menu ul li:hover{
+    background-color: #666;
+    border-radius: 20px;
+}
+#menu ul li:hover a{
+    color: var(--color-fondo);
+}
+
+/*=====  End of Estilos del menu  ======*/
+
+
+
+
+
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer{
+    border-top: 1px dotted #444;
+}
+
+nav.redes ul li{
+    font-size: 2.5rem;
+    width: max-content;
+}
+nav.redes a[href*="facebook"]::after{
+    font-family: "FontAwesome";
+    color: var(--color-fuente);
+    font-weight: 900;
+    content: "\f082";
+}
+nav.redes a[href*="twitter"]::after{
+    font-family: "FontAwesome";
+    color: var(--color-fuente);
+    font-weight: 900;
+    content: "\f081";
+}
+/*=====  End of Estilos del footer  ======*/
+
+
+
