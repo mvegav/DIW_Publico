@@ -1,0 +1,15 @@
+/* importamos las fuentes */
+
+/* fuente Sanchez */
+
+
+/* fuentes PlayFair Display - Empleamos los ficheros que tienen todos los estilos*/
+
+
+@font-face {
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-display: auto;
+    font-style: normal;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2") format("woff2");
+}
