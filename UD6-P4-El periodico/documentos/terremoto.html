@@ -1,225 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/media.css" />
-    <title>El Periódico- Terremoto en Turquía</title>
-    <script src="./js/diaNoche.js" defer></script>
-  </head>
 
-  <body>
-    <header class="columna">
-      <div class="header" role="heading">
-        <a
-          href="documentos/suscripciones.html"
-          id="suscribete"
-          class="btn aSinDeco"
-          >Suscribete</a
-        >
-        <h1>El periódico</h1>
-        <div
-          role="link"
-          id="user"
-          aria-label="Opción para entrar en la zona privada"
-        >
-          <a href="" class="izq aSinDeco" aria-label="Enlace a la zona privada">
-            <svg
-              id="icon_user"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
-            >
-              <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-              <path
-                d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/media.css" />
+  <title>El Periódico- Terremoto en Turquía</title>
+  <script src="./js/diaNoche.js" defer></script>
+</head>
+
+<body>
+  <header class="columna">
+    <div class="header" role="heading">
+      <a href="documentos/suscripciones.html" id="suscribete" class="btn aSinDeco">Suscribete</a>
+      <h1>El periódico</h1>
+      <div role="link" id="user" aria-label="Opción para entrar en la zona privada">
+        <a href="" class="izq aSinDeco" aria-label="Enlace a la zona privada">
+          <svg id="icon_user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32
               32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99
               464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127
               112H48.99zM224 256c70.69 0 128-57.31
               128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3
               256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80
-              80S144 172.1 144 128C144 83.89 179.9 48 224 48z"
-              />
-            </svg>
-          </a>
-          <label
-            id="swidth"
-            for="diaNoche"
-            aria-label="Etiqueta del input diaNoche"
-          >
-            <input type="checkbox" id="diaNoche" />
-            <span class="slider round"></span>
-          </label>
+              80S144 172.1 144 128C144 83.89 179.9 48 224 48z" />
+          </svg>
+        </a>
+        <label id="switch" for="diaNoche" aria-label="Etiqueta del input diaNoche">
+          <input type="checkbox" id="diaNoche" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </header>
+  <nav id="menu">
+    <ul>
+      <li><a class="aSinDeco" id="activa" href="">Actualidad</a></li>
+      <li><a class="aSinDeco" href="">Galicia</a></li>
+      <li>
+        <a class="aSinDeco" href="../internacional.html">Internacional</a>
+      </li>
+      <li><a class="aSinDeco" href="">Economía</a></li>
+      <li><a class="aSinDeco" href="">Sociedad</a></li>
+      <li><a class="aSinDeco" href="">Opinión</a></li>
+    </ul>
+  </nav>
+  <main class="contenedor">
+    <article>
+      <h2>
+        Turquía y Siria buscan contra reloj supervivientes de los terremotos
+        que han causado más de 5.000 muertos.
+      </h2>
+      <span class="autor">Marina Vega Vázquez|Turquía</span>
+      <p>
+        Cientos de miles de personas pasan la noche en sus vehículos o
+        agolpados en polideportivos y refugios. Las autoridades temen que la
+        cifra final de víctimas sea mucho más alta
+      </p>
+      <video controls poster="../img/Terremoto.jpg" class="VideoArticulo" preload="metadata">
+        <source src="../videos/terremoto.mp4" type="video/mp4" />
+        <source src="../videos/terremoto.webm" type="video/webm" />
+        <track kind="subtitles" src="../videos/caption_es.vtt" label="Subtítulos" srclang="es" default />
+        <track kind="subtitles" src="../subtitulos//cp_captions_fr.vtt" label="Sous-titres" srclang="fr" />
+        <track kind="subtitles" src="../subtitulos//cp_captions_en.vtt" label="subtitles" srclang="en" />
+        <track kind="subtitles" src="../subtitulos//cp_captions_de.vtt" label="Untertitel" srclang="de" />
+        <objeto data="../videos/terremoto.swf" type="application/x-shockwave-flash" width="320" height="240">
+          <param name="movie" value="cp_dance.swf" />
+          <param name="quality" value="high" />
+          <p>Debe tener el Flash Player para reproducir el videoclip</p>
+        </objeto>
+        <p>
+          <em>Para reproducir este videoclip, su navegador debe soportar
+            HTML5.</em>
+        </p>
+        <hr />
+      </video>
+      <p>
+        El presidente turco, Recep Tayyip Erdogan, ha visitado este miércoles
+        la zona afectada por los terremotos de magnitud 7,8 y 7,5,
+        respectivamente, que sacudieron el lunes el sudeste de Turquía y el
+        noroeste de Siria. “Hemos movilizado todos los recursos del Estado,
+        trabajamos con todos nuestros medios a disposición”, ha asegurado ante
+        la prensa en Kahramanmaras.
+      </p>
+      <p>
+        Sin embargo, el mandatario turco ha reconocido que ha habido
+        “dificultades” para acceder a determinados lugares afectados, debido
+        al estado de algunas carreteras, cerradas a causa de la nieve y de los
+        daños sufridos durante el seísmo. Las víctimas mortales de los seísmos
+        ya son 11.719. Las autoridades turcas han informado de que al menos
+        9.057 personas han muerto, mientras que en Siria hay alrededor de
+        2.700 fallecidos (1.400 en las zonas en manos de los rebeldes y 1.262
+        en los territorios controlados por el Gobierno), lo que convierte los
+        temblores en los más mortíferos de todas las otras catástrofes
+        sísmicas del último decenio.
+      </p>
+      <p>
+        Los heridos en ambos países suman más de 53.600. Mientras, los equipos
+        de rescate siguen trabajando para intentar salvar a las personas
+        atrapadas bajo los escombros, aunque, más de 72 horas después, las
+        posibilidades de hallarlas con vida se reducen considerablemente, más
+        aún teniendo en cuenta las bajas temperaturas de la noche.
+      </p>
+      <p>
+        El presidente turco, Recep Tayyip Erdogan, reconoció este miércoles
+        "deficiencias" en la respuesta al terremoto. "Por supuesto, hay
+        deficiencias, es imposible estar preparado para una catástrofe así",
+        dijo el jefe de Estado, que visitó la provincia de Hatay (sur), una de
+        las más afectadas, en la frontera con Siria.
+      </p>
+      <div class="testimonio">
+        <figure><img src="../img/Testimonio.jpg" alt="" /></figure>
+        <div>
+          <h3>Testimonio de Ramón Pérez desde Turquía</h3>
+          <h4>00:00 / 02:52</h4>
+          <audio controls>
+            <source src="../audio/testimonioTerremoto.mp3" type="audio/mp3" />
+            <source src="../audio/testimonioTerremoto.ogg" type="audio/ogg" />
+            <embed src="../audio/testimonioTerremoto.mp3" width="250" height="50" controller="yes" autoplay="no"
+              type="audio/mp3" showcontrols="yes" autostart="no" />
+          </audio>
         </div>
       </div>
-    </header>
-    <nav id="menu">
+    </article>
+  </main>
+  <footer>
+    <address>C\ Pérez Reverte, nº 1. 32005. Ourense. Galicia</address>
+    <p id="copyright">Copyright &copy;Marina Vega Vázquez</p>
+    <nav class="redes icono">
       <ul>
-        <li><a class="aSinDeco" id="activa" href="">Actualidad</a></li>
-        <li><a class="aSinDeco" href="">Galicia</a></li>
         <li>
-          <a class="aSinDeco" href="../internacional.html">Internacional</a>
+          <a href="https://www.facebook.com/?locale=es_ES" aria-label="Imagen facebook"></a>
         </li>
-        <li><a class="aSinDeco" href="">Economía</a></li>
-        <li><a class="aSinDeco" href="">Sociedad</a></li>
-        <li><a class="aSinDeco" href="">Opinión</a></li>
+        <li>
+          <a href="https://twitter.com/?lang=es" aria-label="Imagen X-twitter"></a>
+        </li>
       </ul>
     </nav>
-    <main class="contenedor">
-      <article>
-        <h2>
-          Turquía y Siria buscan contra reloj supervivientes de los terremotos
-          que han causado más de 5.000 muertos.
-        </h2>
-        <span class="autor">Marina Vega Vázquez|Turquía</span>
-        <p>
-          Cientos de miles de personas pasan la noche en sus vehículos o
-          agolpados en polideportivos y refugios. Las autoridades temen que la
-          cifra final de víctimas sea mucho más alta
-        </p>
-        <video
-          controls
-          poster="../img/Terremoto.jpg"
-          class="VideoArticulo"
-          preload="metadata"
-        >
-          <source src="../videos/terremoto.mp4" type="video/mp4" />
-          <source src="../videos/terremoto.webm" type="video/webm" />
-          <track
-            kind="subtitles"
-            src="../videos/caption_es.vtt"
-            label="Subtítulos"
-            srclang="es"
-            default
-          />
-          <track
-            kind="subtitles"
-            src="../subtitulos//cp_captions_fr.vtt"
-            label="Sous-titres"
-            srclang="fr"
-          />
-          <track
-            kind="subtitles"
-            src="../subtitulos//cp_captions_en.vtt"
-            label="subtitles"
-            srclang="en"
-          />
-          <track
-            kind="subtitles"
-            src="../subtitulos//cp_captions_de.vtt"
-            label="Untertitel"
-            srclang="de"
-          />
-          <objeto
-            data="../videos/terremoto.swf"
-            type="application/x-shockwave-flash"
-            width="320"
-            height="240"
-          >
-            <param name="movie" value="cp_dance.swf" />
-            <param name="quality" value="high" />
-            <p>Debe tener el Flash Player para reproducir el videoclip</p>
-          </objeto>
-          <p>
-            <em
-              >Para reproducir este videoclip, su navegador debe soportar
-              HTML5.</em
-            >
-          </p>
-          <hr />
-        </video>
-        <p>
-          El presidente turco, Recep Tayyip Erdogan, ha visitado este miércoles
-          la zona afectada por los terremotos de magnitud 7,8 y 7,5,
-          respectivamente, que sacudieron el lunes el sudeste de Turquía y el
-          noroeste de Siria. “Hemos movilizado todos los recursos del Estado,
-          trabajamos con todos nuestros medios a disposición”, ha asegurado ante
-          la prensa en Kahramanmaras.
-        </p>
-        <p>
-          Sin embargo, el mandatario turco ha reconocido que ha habido
-          “dificultades” para acceder a determinados lugares afectados, debido
-          al estado de algunas carreteras, cerradas a causa de la nieve y de los
-          daños sufridos durante el seísmo. Las víctimas mortales de los seísmos
-          ya son 11.719. Las autoridades turcas han informado de que al menos
-          9.057 personas han muerto, mientras que en Siria hay alrededor de
-          2.700 fallecidos (1.400 en las zonas en manos de los rebeldes y 1.262
-          en los territorios controlados por el Gobierno), lo que convierte los
-          temblores en los más mortíferos de todas las otras catástrofes
-          sísmicas del último decenio.
-        </p>
-        <p>
-          Los heridos en ambos países suman más de 53.600. Mientras, los equipos
-          de rescate siguen trabajando para intentar salvar a las personas
-          atrapadas bajo los escombros, aunque, más de 72 horas después, las
-          posibilidades de hallarlas con vida se reducen considerablemente, más
-          aún teniendo en cuenta las bajas temperaturas de la noche.
-        </p>
-        <p>
-          El presidente turco, Recep Tayyip Erdogan, reconoció este miércoles
-          "deficiencias" en la respuesta al terremoto. "Por supuesto, hay
-          deficiencias, es imposible estar preparado para una catástrofe así",
-          dijo el jefe de Estado, que visitó la provincia de Hatay (sur), una de
-          las más afectadas, en la frontera con Siria.
-        </p>
-        <div class="testimonio">
-          <figure><img src="../img/Testimonio.jpg" alt="" /></figure>
-          <div>
-            <h3>Testimonio de Ramón Pérez desde Turquía</h3>
-            <h4>00:00 / 02:52</h4>
-            <audio controls>
-              <source src="../audio/testimonioTerremoto.mp3" type="audio/mp3" />
-              <source src="../audio/testimonioTerremoto.ogg" type="audio/ogg" />
-              <embed
-                src="../audio/testimonioTerremoto.mp3"
-                width="250"
-                height="50"
-                controller="yes"
-                autoplay="no"
-                type="audio/mp3"
-                showcontrols="yes"
-                autostart="no"
-              />
-            </audio>
-          </div>
-        </div>
-      </article>
-    </main>
-    <footer>
-      <address>C\ Pérez Reverte, nº 1. 32005. Ourense. Galicia</address>
-      <p id="copyright">Copyright &copy;Marina Vega Vázquez</p>
-      <nav class="redes icono">
-        <ul>
-          <li>
-            <a
-              href="https://www.facebook.com/?locale=es_ES"
-              aria-label="Imagen facebook"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/?lang=es"
-              aria-label="Imagen X-twitter"
-            ></a>
-          </li>
-        </ul>
-      </nav>
-      <p class="icono">
-        <a
-          href="https://www.w3.org/WAI/WCAG2AA-Conformance"
-          title="Explanation of WCAG 2 Level AA conformance"
-        >
-          <img
-            height="32"
-            width="88"
-            src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-v"
-            alt="Level AA
+    <p class="icono">
+      <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance">
+        <img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-v" alt="Level AA
             conformance,
-            W3C WAI Web Content Accessibility Guidelines 2.1"
-          />
-        </a>
-      </p>
-    </footer>
-  </body>
+            W3C WAI Web Content Accessibility Guidelines 2.1" />
+      </a>
+    </p>
+  </footer>
+</body>
+
 </html>
