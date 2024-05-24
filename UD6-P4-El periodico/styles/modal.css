@@ -1,0 +1,32 @@
+
+/*=============================================
+=            Estilos de la ventana modal            =
+=============================================*/
+dialog{
+    max-width: 650px;
+    padding: 2.8rem 5rem;
+    border: 8px solid var(--color-fuente);
+    background-color: var(--color-fondo);
+    position: absolute;
+    top: 25%;
+    margin: 0 auto;
+}
+
+dialog::backdrop{
+    background-color: #66666681;
+}
+
+.close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+.close::after{
+    color: var(--color-fuente);
+    font-family: "FontAwesome";
+    font-size: 2rem;
+    content: \f00d;
+}
+/*=====  End of Estilos de la ventana modal  ======*/
+

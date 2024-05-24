@@ -17,7 +17,7 @@
       <a href="documentos/suscripciones.html" id="suscribete" class="btn aSinDeco">Suscribete</a>
       <h1>El periódico</h1>
       <div role="link" id="user" aria-label="Opción para entrar en la zona privada">
-        <a href="" class="izq aSinDeco" aria-label="Enlace a la zona privada">
+        <div role="link" aria-label="Enlace a la zona privada" onclick="window.privada.showModal()">
           <svg id="icon_user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
             <path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32
@@ -28,7 +28,7 @@
               256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80
               80S144 172.1 144 128C144 83.89 179.9 48 224 48z" />
           </svg>
-        </a>
+        </div>
         <label id="switch" for="diaNoche" aria-label="Etiqueta del input diaNoche">
           <input type="checkbox" id="diaNoche" />
           <span class="slider round"></span>
@@ -58,6 +58,20 @@
       </li>
     </ul>
   </nav>
+  <dialog id="privada">
+    <h2>Inicio de sesión</h2>
+    <div class="close" role="button" aria-label="Cerrar ventana" onclick="window.privada.close()"></div>
+    <form action="">
+      <p>
+        <label for="usuario">Usuario</label>
+        <input type="email" name="usuario" id="usuario" placeholder="marina@gmail.com" required>
+      </p>
+      <p>
+        <label for="passwd">Contraseña</label>
+        <input type="password" name="passwd" id="passwd" placeholder="Rlsh.98&" pattern="^([A-Za-z])+[A-Za-z\d.%_\$]{8,}" title="Mínimo 8 caracteres, al menos una letra mayúscula o minúscula, admite números y . _ % $" required >
+      </p>
+    </form>
+  </dialog>
   <main class="contenedor">
     <section class="titulares">
       <article class="dos-columnas">
@@ -83,7 +97,7 @@
           <a class="aSinDeco" href="documentos/terremoto.html">Turquía y Siria buscan contra reloj supervivientes de los
             terremotos que han causado más de 5.000 muertos</a>
         </h2>
-        <span class="autor">Marina Vega Vázquez|Turquía</span>
+        <span class="autor">Marina Vega Vázquez | Turquía</span>
         <p>
           Cientos de miles de personas pasan la noche en sus vehículos o
           agolpados en polideportivos y refugios. Las autoridades temen que la
@@ -97,7 +111,7 @@
         <p>Los equipos de búsqueda salvan a 8.000 personas solo en Turquía</p>
         <span class="borde-inferior"></span>
       </article>
-      <article>
+      <article class="ultimos">
         <h2>
           La maldición de la tierra: 50 seísmos en suelo turco en un siglo
         </h2>
@@ -116,7 +130,7 @@
           hace casi 12 años una guerra civil
         </p>
       </article>
-      <article>
+      <article class="ultimos">
         <h2>
           El Pentágono reconoce que no detectó las incursiones de globos
           chinos durante el mandato de Trump
@@ -142,7 +156,7 @@
         </p>
         <span class="borde-inferior"></span>
       </article>
-      <article class="dosColumnas">
+      <article class="dos-columnas">
         <img src="img/hongKong.avif" alt="" />
         <span class="autor">Andrés mourenza|Pekin</span>
         <h2>
@@ -152,9 +166,8 @@
           Este sábado, en Hong Kong, a empeazado un macrojuicio contra la
           oposición democrática.
         </p>
-        <span class="borde-inferior"></span>
       </article>
-      <article>
+      <article class="ultimos">
         <h2>
           Detenidos dos supremacistas blancos en EE UU que planeaban “destruir
           por completo” Baltimore
@@ -163,8 +176,10 @@
           Las redes eléctricas se convierten en un objetivo preferente para
           los grupos neonazis violentos
         </p>
+        <span class="borde-inferior"></span>
+
       </article>
-      <article class="dosColumnas">
+      <article>
         <figure>
           <img src="./img/Francia.avif" alt="" />
         </figure>
@@ -174,7 +189,7 @@
           episodio
         </h2>
       </article>
-      <article>
+      <article class="ultimos">
         <h2>
           Cinco medios independientes acusan al Kremlin de pagar a políticos
           europeos por apoyar la anexión de Crimea
@@ -192,8 +207,7 @@
   <footer>
     <address>C\ Pérez Reverte, nº 1. 32005. Ourense. Galicia</address>
     <p id="copyright">Copyright &copy;Marina Vega Vázquez</p>
-    <nav class="redes icono">
-      <ul>
+      <ul class="redes icono">
         <li>
           <a href="https://www.facebook.com/?locale=es_ES" aria-label="Imagen facebook"></a>
         </li>
@@ -201,7 +215,6 @@
           <a href="https://twitter.com/?lang=es" aria-label="Imagen X-twitter"></a>
         </li>
       </ul>
-    </nav>
     <p class="icono">
       <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance">
         <img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-v" alt="Level AA

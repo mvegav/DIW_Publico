@@ -2,6 +2,8 @@
 @import "./normalize.css";
 /* importamos las fuentes */
 @import "./fuentes.css";
+@import "./modal.css";
+
 /*
    Deseño de interfaces Web
    Unidad Didáctica 6
@@ -15,7 +17,9 @@
 
 */
 /*============================ estilos básicos =====================*/
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -41,11 +45,11 @@
     line-height: 1.6rem;
 }
 
-html{
+html {
     background-color: var(--color-fondo-html);
 }
 
-[tema="dark"]{
+[tema="dark"] {
     --color-fuente: #ffffff;
     --color-fondo: #000000;
     --color-icono: #ffffff;
@@ -57,40 +61,45 @@ html{
     --color-fondo-html: #11111100;
 }
 
-svg{
+svg {
     max-width: 30px;
     fill: var(--color-fuente)
 }
 
-img, video{
+img,
+video {
     width: 100%;
     object-fit: cover;
 }
-h1, h2, h3, h4{
+
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--ff-primaria);
     color: var(--color-fuente);
 }
 
-h1{
+h1 {
     font-size: var(--font-h1);
     font-style: normal;
 }
 
-h2{
-    font-size: calc(var(--font-h1) - 1.25rem);
+h2 {
+    font-size: calc(var(--font-h1) / 2);
     line-height: 2rem;
     text-align: center;
 }
 
 /* Estilos de los iconos */
-.icono a{
+.icono a {
     display: inline-block;
-    height: 40px;
+    /* height: 40px; */
 }
 
 
 /* Enlaces sin decoración */
-.aSinDeco{
+.aSinDeco {
     color: var(--color-fuente);
     text-decoration: none;
     cursor: pointer;
@@ -98,7 +107,7 @@ h2{
 
 
 /* Estilos para enlaces con forma de botones o botones */
-.btn{
+.btn {
     color: var(--color-fuente-boton);
     background-color: var(--color-boton);
     outline: 1px solid var(--color-boton);
@@ -112,12 +121,13 @@ h2{
 /*=============================================
 =            Estilos del body            =
 =============================================*/
-body{
+body {
     width: 100vw;
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto auto 1fr auto;
     background-color: var(--color-fondo);
+    color: var(--color-fuente);
 }
 
 /*=====  End of Estilos del body  ======*/
@@ -126,12 +136,12 @@ body{
 /*=============================================
 =            Estilos de la cabecera            =
 =============================================*/
-header{
+header {
     max-width: 100%;
     border-bottom: 3px solid var(--color-linea);
 }
 
-.header{
+.header {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -141,7 +151,7 @@ header{
     padding: .5rem 1rem;
 }
 
-#user{
+#user {
     width: max-content;
     display: flex;
     justify-content: space-around;
@@ -149,30 +159,31 @@ header{
     gap: 1rem;
 }
 
-#icon_user{
+#icon_user {
     width: 2rem;
     height: auto;
 }
 
-a:hover #icon_user{
+a:hover #icon_user {
     fill: var(--color-boton);
 }
 
 /* Estilos del modo día y modo noche */
 /*Botón de cambio de tema*/
-#switch{
+#switch {
     display: inline-block;
     width: 50px;
     height: 24px;
     position: relative;
 }
-#switch input{
+
+#switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.slider{
+.slider {
     background-color: var(--color-fuente);
     position: absolute;
     top: 0;
@@ -183,7 +194,7 @@ a:hover #icon_user{
     transition: all 0.4s;
 }
 
-.slider::before{
+.slider::before {
     content: "";
     height: 18px;
     width: 18px;
@@ -194,17 +205,18 @@ a:hover #icon_user{
     transition: all 0.4s;
 }
 
-#switch .round{
+#switch .round {
     border-radius: 17px;
 }
 
-#switch .round::before{
+#switch .round::before {
     border-radius: 50%;
 }
 
-#switch input:checked + .slider::before{
+#switch input:checked+.slider::before {
     transform: translateX(26px);
 }
+
 /*=====  End of Estilos de la cabecera  ======*/
 
 
@@ -212,16 +224,16 @@ a:hover #icon_user{
 /*=============================================
 =            Estilos del menu            =
 =============================================*/
-#menu{
+#menu {
     width: 100%;
     border-bottom: 1px solid #6c6c6c;
 }
 
-#activa{
+#activa {
     font-weight: bold;
 }
 
-#menu ul{
+#menu ul {
     padding: .5rem;
     list-style: none;
     font-size: 1.4rem;
@@ -235,21 +247,59 @@ a:hover #icon_user{
     gap: .5rem;
 }
 
-#menu ul li{
+#menu ul li {
     margin: .25rem;
     text-align: center;
     padding: 0.25rem .5rem;
 }
 
-#menu ul li:hover{
+#menu ul li:hover {
     background-color: #666;
     border-radius: 20px;
 }
-#menu ul li:hover a{
+
+#menu ul li:hover a {
     color: var(--color-fondo);
 }
 
 /*=====  End of Estilos del menu  ======*/
+
+
+/*=============================================
+=            Estilos del main            =
+=============================================*/
+main {
+    width: 100%;
+    max-width: 100vw;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+/* Estilos de los artículos */
+article:not(:last-of-type) {
+    padding: 1rem 0;
+    border-bottom: .5px solid var(--color-linea);
+}
+
+article p {
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: var(--color-fuente);
+}
+
+span.autor {
+    display: block;
+    opacity: 0.5;
+    padding-top: .5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--ff-primaria);
+}
+
+/*=====  End of Estilos del main  ======*/
 
 
 
@@ -260,27 +310,113 @@ a:hover #icon_user{
 /*=============================================
 =            Estilos del footer            =
 =============================================*/
-footer{
+footer {
     border-top: 1px dotted #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem 0;
 }
 
-nav.redes ul li{
+.redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.redes li {
     font-size: 2.5rem;
     width: max-content;
+    list-style: none;
 }
-nav.redes a[href*="facebook"]::after{
+
+.redes a {
+    text-decoration: none;
+}
+
+.redes a[href*="facebook"]::after {
     font-family: "FontAwesome";
     color: var(--color-fuente);
     font-weight: 900;
     content: "\f082";
 }
-nav.redes a[href*="twitter"]::after{
+
+.redes a[href*="twitter"]::after {
     font-family: "FontAwesome";
     color: var(--color-fuente);
     font-weight: 900;
     content: "\f081";
 }
+
+#copyright {
+    order: 1;
+}
+
 /*=====  End of Estilos del footer  ======*/
 
 
+/*=============================================
+=            Media queries            =
+=============================================*/
+@media screen and (min-width: 769px) {
+    :root {
+        --font-size: 14px;
+        --font-h1: 3rem;
+    }
 
+    body {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+
+
+    /* Estilos de los titulares y article */
+    .titulares:not(:first-of-type) {
+        border-top: 2px solid var(--color-linea);
+    }
+
+    .titulares {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(auto, 33%));
+    }
+
+    .titulares article {
+        border-bottom: none;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .titulares article:not(.ultimos) {
+        border-right: 0.5px solid var(--color-linea);
+    }
+    article.dos-columnas{
+        grid-row: span 2;
+    }
+    .borde-inferior{
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        border-bottom: 0.5px solid var(--color-linea);
+        position: absolute;
+        bottom: 10px;
+    }
+    /* Estilos del footer */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+    }
+
+}
+
+
+/*=====  End of Media queries  ======*/
