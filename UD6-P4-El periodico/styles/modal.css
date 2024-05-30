@@ -16,6 +16,30 @@ dialog::backdrop{
     background-color: #66666681;
 }
 
+dialog h2{
+    padding-bottom: 3rem;
+}
+
+dialog form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+dialog form p{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+dialog label{
+    width: 8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .close{
     position: absolute;
     top: 1rem;
@@ -26,7 +50,7 @@ dialog::backdrop{
     color: var(--color-fuente);
     font-family: "FontAwesome";
     font-size: 2rem;
-    content: \f00d;
+    content: "\f00d";
 }
 /*=====  End of Estilos de la ventana modal  ======*/
 
