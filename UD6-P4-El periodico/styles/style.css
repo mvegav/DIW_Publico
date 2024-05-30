@@ -111,6 +111,7 @@ h2 {
     color: var(--color-fuente-boton);
     background-color: var(--color-boton);
     outline: 1px solid var(--color-boton);
+    border: none;
     border-radius: 5px;
     padding: .5rem 1rem;
     font-weight: 600;

@@ -12,6 +12,7 @@ dialog{
     margin: 0 auto;
 }
 
+
 dialog::backdrop{
     background-color: #66666681;
 }
@@ -40,6 +41,14 @@ dialog label{
     font-weight: bold;
 }
 
+dialog input{
+    padding: .5rem;
+}
+
+dialog input:not(:placeholder-shown):invalid{
+    border-color: red;
+}
+
 .close{
     position: absolute;
     top: 1rem;
@@ -51,6 +60,9 @@ dialog label{
     font-family: "FontAwesome";
     font-size: 2rem;
     content: "\f00d";
+}
+.close:hover::after{
+    color: var(--color-boton2);
 }
 /*=====  End of Estilos de la ventana modal  ======*/
 
