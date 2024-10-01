@@ -1,0 +1,289 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  line-height: 1.6rem;
+  --color-fondo: rgba(191, 222, 227, 0.207);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 1rem 0;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+#saltar {
+  width: 100vw;
+  height: max-content;
+  padding-left: 4rem;
+  background-color: rgba(191, 222, 227, 0.207);
+}
+
+#saltar ul {
+  list-style: none;
+}
+
+#saltar ul li,
+#menu ul li {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+#saltar ul li:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+header,
+#cabecera {
+  width: 100vw;
+  height: max-content;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px dotted #666;
+  background-color: var(--color-fondo);
+}
+
+#menu a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: rgb(18, 79, 18);
+}
+
+a.activa {
+  font-weight: 600;
+}
+
+main,
+#contenido {
+  flex: 2 1 auto;
+  width: 90vw;
+  margin: 0 auto;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  /* text-align: justify; */
+}
+
+section {
+  width: 100%;
+  height: max-content;
+  padding: 1rem;
+}
+
+section h2 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+figure {
+  width: max-content;
+  height: max-content;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos para tablas */
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+p#tabla-des {
+  color: darkslategrey;
+  font-weight: bold;
+  text-align: center;
+}
+
+td,
+th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(235, 235, 235);
+  font-size: 1.1rem;
+}
+
+td:last-of-type {
+  text-align: left;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250, 250, 250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgba(108, 108, 184, 0.068);
+}
+
+caption {
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+
+tfoot tr {
+  font-weight: bold;
+  border-color: blue;
+  background-color: rgba(0, 255, 255, 0.384);
+}
+
+/*==================== Estilos formulario ===========================*/
+form {
+  max-width: 600px;
+  width: 100vw;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #666;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px #666;
+  background-color: var(--color-fondo);
+}
+
+fieldset {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.campo,
+.campo2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  gap: 0.5rem;
+}
+
+.campo2 {
+  flex-direction: column;
+}
+
+label {
+  min-width: 130px;
+  height: auto;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+}
+
+input,
+textarea {
+  min-width: 200px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  outline: 1px solid #666;
+}
+
+textarea {
+  min-width: 100%;
+}
+
+.boton {
+  font-size: 1.2rem;
+  min-width: 100px;
+  color: white;
+  outline: none;
+}
+
+input:required,
+textarea:required {
+  background-color: lightyellow;
+}
+
+input:focus:valid {
+  outline-color: green;
+}
+
+input:focus:not(valid) {
+  outline-color: red;
+}
+
+input[type="submit"] {
+  background-color: rgb(5, 66, 5);
+}
+
+input[type="reset"] {
+  background-color: rgb(110, 31, 31);
+}
+
+input[type="submit"]:hover {
+  color: rgb(5, 66, 5);
+  outline: 1px solid rgb(5, 66, 5);
+  background-color: white;
+}
+
+input[type="reset"]:hover {
+  color: rgb(110, 31, 31);
+  outline: 1px solid rgb(110, 31, 31);
+  background-color: white;
+}
+
+footer {
+  width: 100vw;
+  padding-top: 0.5rem;
+  height: max-content;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  /* position: absolute;
+    bottom: 0; */
+  background-color: rgba(191, 222, 227, 0.207);
+  border-top: 1px dotted #666;
+}
