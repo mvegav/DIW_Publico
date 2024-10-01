@@ -46,6 +46,18 @@ h3 {
   font-size: 2rem;
 }
 
+p {
+  padding: 0.5rem 0;
+}
+ul {
+  padding-left: 2rem;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
 #saltar {
   width: 100vw;
   height: max-content;
@@ -72,6 +84,7 @@ header,
   width: 100vw;
   height: max-content;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   border-bottom: 1px dotted #666;
   background-color: var(--color-fondo);
@@ -96,12 +109,17 @@ main,
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  align-items: center;
+  /* align-items: center; */
   padding: 1rem 0;
   font-size: 1rem;
   /* text-align: justify; */
 }
 
+.subir {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: right;
+}
 section {
   width: 100%;
   height: max-content;
@@ -114,8 +132,10 @@ section h2 {
 }
 
 figure {
-  width: max-content;
-  height: max-content;
+  /* width: max-content;
+  height: max-content; */
+  max-width: max-content;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -281,6 +301,7 @@ footer {
   height: max-content;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   /* position: absolute;
     bottom: 0; */
