@@ -11,6 +11,7 @@
   font-size: 14px;
   line-height: 1.6rem;
   --color-fondo: rgba(191, 222, 227, 0.207);
+  /* --color-fondo: rgb(58, 65, 66); */
 }
 
 body {
@@ -64,6 +65,9 @@ img {
   padding-left: 4rem;
   background-color: rgba(191, 222, 227, 0.207);
 }
+/* #saltar{
+  display: none;
+} */
 
 #saltar ul {
   list-style: none;
@@ -109,7 +113,7 @@ main,
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  /* align-items: center; */
+  align-items: center;
   padding: 1rem 0;
   font-size: 1rem;
   /* text-align: justify; */
@@ -271,9 +275,13 @@ input:focus:valid {
   outline-color: green;
 }
 
-input:focus:not(valid) {
+/* input:focus:not(valid) {
+  outline-color: red;
+} */
+input:focus:invalid {
   outline-color: red;
 }
+
 
 input[type="submit"] {
   background-color: rgb(5, 66, 5);
