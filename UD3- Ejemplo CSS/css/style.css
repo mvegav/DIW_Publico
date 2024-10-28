@@ -1,0 +1,46 @@
+a[href~="contacta"]::after {
+    content: " \260E";
+    color: red;
+}
+
+nav.menu ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav.menu a{
+    color: brown;
+    font-size: 16px;
+}
+
+nav a {
+    color: red;
+}
+
+li a {
+    text-decoration: none;
+    color: yellow;
+}
+
+@media screen and (min-width: 720px) {
+    ul {
+        flex-direction: row;
+    }
+    nav a{
+        font-size: 20px;
+        text-transform: uppercase;
+        color: blueviolet;
+    }
+    a{
+        color: grey;
+    }
+}
+
+a#activa{
+    font-weight: 600;
+    text-decoration: 1px double black;
+    text-emphasis-style: "🎈";
+}
