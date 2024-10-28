@@ -1,0 +1,14 @@
+
+/*=============================================
+=            Reglas de importación de fuentes            =
+=============================================*/
+@font-face {
+    font-family: "Raleway";
+    src: url(../fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: "Rammetto One";
+    src: url(../fonts/Rammetto_One/RammettoOne-Regular.ttf) format(truetype);
+}
+

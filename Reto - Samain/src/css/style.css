@@ -1,0 +1,92 @@
+@import "./fonts.css";
+
+
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 14px;
+    line-height: 1.6;
+    --color-texto: #945cb4;
+    --color-texto-cuerpo: #fff;
+    --color-enlaces: #744494;
+    --bg-color: #161616;
+    --fuente-primaria: "Raleway", sans-serif;
+    --fuente-secundaria: "Rammetto One", cursive;
+    font-family: var(--fuente-primaria);
+    color: var(--color-texto-cuerpo);
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+}
+
+.logo{
+    width: 40%;
+    height: 250px;
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 700;
+    font-size: 2rem;
+}
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+header .logo{
+    background-image: url(../../img/bgheader.png);
+    background-size: cover;
+    float: left;
+}
+
+header nav.menu{
+    float: right;
+    width: 60%;
+    text-align: right;
+    position: absolute;
+    top: 20%;
+    right: 7rem;
+}
+
+header nav.menu ul li{
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+header nav.menu a{
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: 2px solid var(--bg-color);
+    border-radius: 2rem;
+    transition: 0.3s;
+}
+header nav.menu a:hover{
+    border: 2px solid var(--color-enlaces);
+}
+/*=====  End of Estilos de la cabecera  ======*/
+
+
