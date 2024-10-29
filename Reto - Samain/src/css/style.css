@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-:root{
+:root {
     font-size: 14px;
     line-height: 1.6;
     --color-texto: #945cb4;
@@ -25,58 +25,87 @@
     color: var(--color-texto-cuerpo);
 }
 
-body{
+body {
     background-color: var(--bg-color);
+    overflow: hidden;
 }
 
-nav ul li{
+nav ul li {
     list-style: none;
 }
-nav ul li a{
+
+nav ul li a {
     text-decoration: none;
 }
 
-.logo{
+.logo {
     width: 40%;
+    max-width: 800px;
     height: 250px;
     text-decoration: none;
     color: var(--color-texto);
     font-weight: 700;
     font-size: 2rem;
 }
+
+h1,
+h2 {
+    color: var(--color-texto);
+    font-weight: 800;
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-secundaria);
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+img{
+    width: 100%;
+    object-fit: contain;
+}
+
 /*=====  End of Estilos generales  ======*/
 
 
 /*=============================================
 =            Estilos de la cabecera            =
 =============================================*/
-header{
+header {
     width: 100%;
     height: 300px;
     position: relative;
 }
 
-header .logo{
+header .logo {
     background-image: url(../../img/bgheader.png);
-    background-size: cover;
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
     float: left;
+    z-index: 999;
 }
 
-header nav.menu{
+header nav.menu {
     float: right;
     width: 60%;
     text-align: right;
     position: absolute;
     top: 20%;
-    right: 7rem;
+    right: 5rem;
 }
 
-header nav.menu ul li{
+header nav.menu ul li {
     display: inline-block;
     margin-left: 1rem;
 }
 
-header nav.menu a{
+header nav.menu a {
     color: var(--color-texto);
     font-size: 1.5rem;
     padding: 0.5rem;
@@ -84,9 +113,126 @@ header nav.menu a{
     border-radius: 2rem;
     transition: 0.3s;
 }
-header nav.menu a:hover{
+
+header nav.menu a:hover {
     border: 2px solid var(--color-enlaces);
 }
+
 /*=====  End of Estilos de la cabecera  ======*/
 
+/*=============================================
+=            Estilos del bgcolor            =
+=============================================*/
+.bgcolor {
+    position: absolute;
+    background-color: var(--color-texto);
+    border-radius: 100%;
+    filter: blur(150px);
+    opacity: 0.4;
+}
+
+
+/*=====  End of Estilos del bgcolor  ======*/
+
+/*=============================================
+=            Estilos del main            =
+=============================================*/
+main {
+    clear: both;
+}
+
+main article {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+main h2 {
+    text-align: center;
+}
+
+/*=====  End of Estilos del main  ======*/
+
+
+/*=============================================
+=            Estilos de la portada            =
+=============================================*/
+.portada .contenido {
+    min-height: 300px;
+    /* max-width: 630px; */
+    max-width: 45vw;
+    height: 30vh;
+    position: relative;
+    top: 10%;
+    left: 15%;
+}
+
+.portada .contenido p {
+    margin-bottom: 2.2rem;
+}
+
+.portada .contenido a.btn {
+    padding: .8rem 2rem;
+    text-decoration: none;
+    color: var(--color-texto-cuerpo);
+    background-color: var(--color-enlaces);
+    border: 2px solid var(--bg-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.portada .contenido a.btn:hover {
+    color: var(--color-enlaces);
+    background: transparent;
+    border-color: var(--color-texto);
+}
+
+/* primer div llamado .bgcolor de .portada*/
+.portada .bgcolor:nth-child(1) {
+    width: 500px;
+    height: 500px;
+    top:-150px;
+    left: -110px;
+}
+
+/* segunda div llamado .bgcolor de .portada*/
+.portada .bgcolor:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    top: 300px;
+    right: 10%;
+}
+
+
+/*=====  End of Estilos de la portada  ======*/
+
+
+/*=============================================
+=            Estilos del fantasma            =
+=============================================*/
+.imgBx{
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    width: 787px;
+    max-width: 40vw;
+    z-index: -1;
+}
+
+.imgBx img{
+    animation: subeBaja 10s linear infinite;
+}
+
+@keyframes subeBaja {
+    0%, 100% {
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+/*=====  End of Estilos del fantasma  ======*/
 
