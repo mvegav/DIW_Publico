@@ -28,6 +28,9 @@
 body {
     background-color: var(--bg-color);
     overflow-x: hidden;
+    position: relative;
+    padding-bottom: 140px;
+    min-height: 100vh;
 }
 
 nav ul li {
@@ -70,6 +73,19 @@ img{
     object-fit: contain;
 }
 
+
+.subir{
+    display: inline-block;
+    height: 68px;
+    position: sticky;
+    top: 80vh;
+    left: 92vw;
+    z-index: 99;
+    transition: 0.3s;
+}
+.subir:hover{
+    transform: scale(1.2);
+}
 /*=====  End of Estilos generales  ======*/
 
 
@@ -182,7 +198,8 @@ main h2 {
     border-radius: 20px;
     transition: 0.2s;
 }
-
+Section comment block
+Section comment block
 .portada .contenido a.btn:hover {
     color: var(--color-enlaces);
     background: transparent;
@@ -211,12 +228,11 @@ main h2 {
 /*=============================================
 =            Estilos de los artículos            =
 =============================================*/
-article {
+main article {
     min-height: 55vh;
     position: relative;
     margin-top: 1rem;
 }
-
 
 /* Estilos de las card */
 
@@ -349,4 +365,44 @@ article {
 }
 
 /*=====  End of Estilos del fantasma  ======*/
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer{
+    width: 100%;
+    height: 140px;
+    padding: 1rem 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #c3c3ce;
+    font-size: 0.8rem;
+}
+
+footer h3{
+    color: var(--color-texto);
+}
+
+footer article:nth-child(1){
+    float: left;
+    width: 33%;
+}
+
+footer article:nth-child(2){
+    float: right;
+    width: 66%;
+}
+
+footer article:nth-child(2) nav{
+    float: left;
+    width: 50%;
+}
+
+footer a{
+    color: #c3c3ce;
+}
+
+/*=====  End of Estilos del footer  ======*/
 
