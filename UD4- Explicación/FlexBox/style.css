@@ -1,0 +1,83 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+}
+.container{
+    /* width: 100%; */
+    height: 30vh;
+    background-color: #333;
+    margin-bottom: 1rem;
+    
+    /* Maquetamos con flexbox */
+    /* Defecto: maqueta en una fila (flex-direcction: row) */
+    /*display : flex |inline-flex*/
+    /* display: inline-flex; el contenedor ocupa el espacio de sus items*/
+    display: flex;
+    /* row|row-reverse|column|column-revere*/
+    flex-direction: row;
+    /* flex-wrap - propiedad envoltorio - nowrap */
+    /*nowrap|wrap|wrap-reverse*/
+    flex-wrap: nowrap;
+    
+    /* Atajo flex-flow: flex-direcction flex-wrap */
+    /* flex-flow: column wrap; */
+    flex-flow: row nowrap;
+    
+    
+    /* Alineación de los items en el eje principal */
+    /* flex-start|center|flex-end|space-between|space-around|space-evenly */
+    justify-content: flex-start;
+    
+    /* Alineación en el eje trasversal */
+    /* strech| flex-start| flex-end | center| baseline*/
+    align-items: stretch;
+
+    flex-wrap: nowrap;
+
+    /* aling-content Define la alineación de los hijos en el eje trasversal
+    solo con wrap*/
+    /* flex-start|center|flex-end|space-between|space-around|space-evenly|strech */
+    /* align-content: stretch; */
+
+    justify-content: space-between;
+}
+
+
+.item{
+    background-color: #666;
+    /* width: 20%; */
+    height: 20%; 
+    border: medium solid #999;
+    /* factor de crecimiento. No aceptan valores negativos*/
+    /* valor por defecto 0*/
+    flex-grow: 0;
+    
+    /* factor de decrecimiento */
+    flex-shrink: 0;
+    
+    /* define el ancho de los items */
+    flex-basis: auto;
+    flex-basis: 200px;
+    
+    /* atajo flex: flex-grow flex-shrink flex-basis */
+    flex: 0 0 auto;
+    flex: 0 1 50px;
+    
+    
+    width: 100px; 
+}
+
+/* .item:nth-child(2){
+    font-size: 250%;
+    height: auto;
+    flex-grow: 1;
+    text-align: center;
+}  */
+
+.item:nth-child(2n+1){
+    /* flex-shrink: 1; */
+    /* flex: 0 0 200px; */
+    flex-basis: 200px;
+}
