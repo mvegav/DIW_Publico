@@ -1,0 +1,221 @@
+@charset "UTF-8";
+@import "./normalize.css";
+@import "./fonts.css";
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+:root {
+    font-family: 'roboto', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    --color-primario: #004bad;
+    --color-primario-claro: #6da7d9;
+    --color-secundario: #ffa843;
+    --color-secundario-oscuro: #c66320;
+    --tam-h1: 2.5rem;
+}
+
+p {
+    padding: .5rem;
+}
+
+/* h1, h2, h3, h4{
+    font-weight: bold;
+} */
+
+/* :where(h1,h2,h3,h4,.negrita){
+    font-weight: bold;
+    }  */
+:is(h1, h2, h3, h4, .negrita, .activa) {
+    font-weight: bold;
+}
+
+.activa {
+    font-weight: bold;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    padding: 1.5rem 0;
+}
+
+h1 {
+    font-size: var(--tam-h1);
+    position: absolute;
+    top: -100%;
+    transition: all 3ms ease-in-out;
+}
+
+/* calc: +, -, *, /, % */
+h2 {
+    font-size: calc(var(--tam-h1) - .5rem);
+    color: var(--color-primario);
+    text-align: center;
+}
+
+
+h3 {
+    font-size: calc(var(--tam-h1) - 1rem);
+}
+
+a>i {
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-size: 1.6rem;
+}
+
+/* a:has(i, span, #icono){ */
+a:has(i) {
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-size: 1.6rem;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+/* nav ul {
+    padding-left: 2rem;
+} */
+
+nav ul , .lista-fila{
+    list-style: none;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+header,
+footer {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos del body            =
+=============================================*/
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*=====  End of Estilos del body  ======*/
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header {
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    min-height: 100px;
+    padding-bottom: 1rem;
+}
+
+header nav a {
+    color: var(--color-secundario);
+    font-size: 1.4rem;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+}
+
+header nav a:hover {
+    border-bottom: 2px solid;
+}
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+/*=============================================
+=            Estilos del main            =
+=============================================*/
+main {
+    flex: 1;
+}
+
+/*=====  End of Estilos del main  ======*/
+
+/*=============================================
+=            Estilos del pie            =
+=============================================*/
+#autor{
+    order: 1;
+}
+.lista-fila{
+    display: flex;
+    gap: .5rem;
+}
+/*=====  End of Estilos del pie  ======*/
+
+
+/*=============================================
+=            Media queries            =
+=============================================*/
+
+/* Tablet - Media queries pantallas de 720px para arriba */
+
+@media screen and (min-width:720px){
+    :root{
+        font-size: 16px;
+        --tam-h1: 3rem;
+    }
+     header, footer{
+        flex-direction: row;
+    }
+    #autor{
+        order: 0;
+    }
+}
+
+
+/* Escritorio */
+@media screen and (min-width:1024px){
+    html {
+        background-color: var(--color-primario-claro);
+    }
+    h1{
+        position: static;
+    }
+    body{
+        max-width: 90%;
+        margin: 0 auto;
+        background-color: white;
+    }
+}
+
+/* Pantalla muy grandes */
+
+@media screen and (min-width:2000px){
+    body{
+        max-width: 60%;
+    }
+}
+
+/*=====  End of Media queries  ======*/
