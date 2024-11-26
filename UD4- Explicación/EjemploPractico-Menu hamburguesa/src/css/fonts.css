@@ -1,0 +1,23 @@
+
+/*=============================================
+=            Definición de fuentes            =
+=============================================*/
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto/roboto-regular.woff2") format("woff2"),
+        url("../fonts/Roboto/roboto-regular.woff") format("woff"),
+        url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto/roboto-bold.woff2") format("woff2"),
+        url("../fonts/Roboto/roboto-bold.woff") format("woff"),
+        url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+
+

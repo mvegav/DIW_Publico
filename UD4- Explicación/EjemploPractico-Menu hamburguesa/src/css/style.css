@@ -129,8 +129,6 @@ body {
 =            Estilos de la cabecera            =
 =============================================*/
 header {
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
     width: 100%;
     min-height: 100px;
     padding-bottom: 1rem;
@@ -140,21 +138,12 @@ header {
     justify-content: center;
 }
 
-header nav#menu-escritorio {
-    display: none;
-}
-
 header nav a {
     color: var(--color-secundario);
     font-size: 1.4rem;
 }
 
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: .5rem;
-}
+
 
 header nav a:hover {
     border-bottom: 2px solid;
@@ -171,23 +160,19 @@ header .fas{
     font-size: 2rem;
 }
 
-#menu-movil{
+#menu{
     background-color: #88b7e0e8;
     position: fixed;
     top: 100px;
     left: 0;
-    /* right: 0;
-    bottom: 0; */
     width: 100%;
-    /* height: calc(100% - 150px); */
-    /* min-height: 300px; */
     height: max-content;
     max-height: 80%; 
     border-bottom: medium solid var(--color-primario); 
     transition: all 1s ease-in-out;
 }
 
-header #menu-movil ul{
+header #menu ul{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -197,33 +182,33 @@ header #menu-movil ul{
     gap: 2rem;
 }
 
-#menu-movil ul li a{
+#menu ul li a{
     font-size: 2.3rem;
     color: #004bad;
     display: block;
 }
 
-#menu-movil ul li{
+#menu ul li{
     width: 100%;
     text-align: center;
 }
 
 /* sacamos de pantalla el menu movil cuando no pinchamos en el enlace del menu hamburguesa*/
-header #menu-movil:not(:target){
+header #menu:not(:target){
     top: -100%;
 }
 
 /* cuando no hacemos target no se vé el icono de cerrar */
-#menu-movil:not(:target) > a {
+#menu:not(:target) > a {
     display: none;
 }
 
 /* hacemos visible el menú al pulsar en el menú hamburguesa */
-#menu-movil:target{
+#menu:target{
     top: 100px;
 }
 
-#menu-movil:target + a:has(i.fas), #menu-movil:target + a{
+#menu:target + a:has(i.fas), #menu:target + a{
     display: none;
 }
 /*=====  End of Estilos menú movil  ======*/
@@ -292,14 +277,33 @@ main {
     }
     h1{
         position: static;
+        flex: 1;
+        text-align: center;
     }
-    header nav#menu-movil {
-        display: none;
+    header nav#menu {
+        position: static;
+        background-color: transparent;
+        width: max-content;
     }
-    header nav#menu-escritorio {
-        display: unset;
+  
+    header nav#menu ul a{
+        color: var(--color-secundario); 
+        font-size: 1.4rem;
+        display: inline;
     }
-    #menu-movil + a:has(i.fas), #menu-movil + a{
+    header nav#menu ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    #menu ul li{
+        width: max-content;
+        text-align: center;
+    }
+    
+     #menu + a:has(i.fas), #menu + a{
         display: none;
     }
 }
