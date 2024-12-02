@@ -1,0 +1,85 @@
+/**
+ *
+ * Galiría con CSS
+ * Autor: Marina Vega Vázquez
+ */
+
+/* Estilos generales */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 16px;
+  color: #555;
+}
+
+html {
+  background-color: #eee;
+}
+
+body {
+  border-radius: 20px;
+  background-color: white;
+  width: 90vw;
+  max-width: 1200px;
+  margin: 0.5rem auto;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 1rem);
+}
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header {
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  border-bottom: 1px solid #c3c3c3;
+}
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+/*=============================================
+=            Estilos de la galería            =
+=============================================*/
+main {
+  flex: 1;
+  width: 100%;
+}
+
+
+/*=====  End of Estilos de la galería  ======*/
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+  display: flex;
+  justify-content: center;
+  color: #666;
+  min-height: 50px;
+}
+
+/*=====  End of Estilos del footer  ======*/
+
+
+/*=============================================
+=            Estilos media queries            =
+=============================================*/
+@media screen and (min-width: 720px) {
+  figure:nth-of-type(5) {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+}
