@@ -27,7 +27,7 @@ html {
 body {
   border-radius: 20px;
   background-color: white;
-  width: 90vw;
+  width: 99vw;
   max-width: 1200px;
   margin: 0.5rem auto;
   display: flex;
@@ -58,6 +58,30 @@ main {
   width: 100%;
 }
 
+.galeria{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(auto,200px));
+  grid-auto-flow: row dense;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+figure{
+  border-radius: 20px;
+  box-shadow: 0 4px 5px;
+  overflow: hidden;
+  transition: all 2ms ease-out;
+  display: flex;
+}
+
+img{
+  width: 100%;
+  object-fit: cover;
+}
+
+
 
 /*=====  End of Estilos de la galería  ======*/
 
@@ -71,6 +95,13 @@ footer {
   min-height: 50px;
 }
 
+figure:hover{
+  box-shadow: 2px 5px 10px goldenrod;
+}
+/* figure:hover{ */
+  img:hover{ 
+     transform: scale(1.2);
+}
 /*=====  End of Estilos del footer  ======*/
 
 
@@ -78,8 +109,8 @@ footer {
 =            Estilos media queries            =
 =============================================*/
 @media screen and (min-width: 720px) {
-  figure:nth-of-type(5) {
-    grid-row: span 2;
+  figure:nth-of-type(5){
     grid-column: span 2;
+    grid-row: span 2;
   }
 }
