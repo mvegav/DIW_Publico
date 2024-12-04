@@ -18,19 +18,15 @@
   --clr-letra-2: hsl(205, 22%, 34%);
   --clr-fondo: hsl(210, 36%, 96%);
   --clr-white: #fff;
-  --clr-red-dark: hsl(360, 67%, 44%);
-  --clr-red-light: hsl(360, 71%, 66%);
-  --clr-green-dark: hsl(125, 67%, 44%);
-  --clr-green-light: hsl(125, 71%, 66%);
-  --clr-blue-light: hsl(207, 82%, 44%);
   --clr-black: #222;
   /* fuentes*/
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
-  --transition: all 0.3s linear;
+  --transition-lineal: all 0.3s linear;
+  --transition: all 0.3s ease-in-out;
   /* sombras */
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --dark-shadow: 5px 5px 15px rgba(0, 0, 0, 0.826);
   /* dimensiones*/
   --radius: 0.25rem;
   --spacing: 0.1rem;
@@ -43,12 +39,16 @@
 }
 
 body {
+  width: 100vw;
+  min-height: 100vh;
   font-family: var(--ff-secondary);
   background: var(--clr-fondo);
   color: var(--clr-letra);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
-ul {
-  list-style-type: none;
+ul.empleados {
+  list-style: none;
 }
 a {
   text-decoration: none;
@@ -69,16 +69,45 @@ p {
   color: var(--clr-letra-2);
 }
 
+img{
+  width: 100%;
+  object-fit: cover;
+}
 /*=============================================
 =            Estilos de la cabecera            =
 =============================================*/
+header{
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.subrayado{
+  height: .25rem;
+  width: 5rem;
+  background-color: var(--clr-primario);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+header:hover .subrayado{
+  transform: scaleX(3.5);
+  background-color: var(--clr-secundario-2);
+}
 
 /*=====  End of Estilos de la cabecera  ======*/
 
 /*=============================================
 =            Estilos del main            =
 =============================================*/
-
+main{
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
 /*=====  End of Estilos del main  ======*/
 
 /*=============================================
@@ -86,29 +115,128 @@ p {
 =============================================*/
 
 /* Estilos del contenedor de cards de empleados */
+.empleados{
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(auto,var(--max-width-cards)));
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 auto;
+}
 
-/* Estilos del article de empleados */
+/* Estilos del li de empleados */
+.empleado{
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  background-color: var(--clr-white);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition-lineal);
+}
 
+.empleado:hover{
+  box-shadow: var(--dark-shadow);
+}
+
+.empleado:hover .persona-img{
+  filter: grayscale(1);
+}
 /* Estilos del figure que tiene la imagen del empleado */
-
+.img-contenedor{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
 /* Estilos para poner las comillas en la esfera de delante de la imagen */
-
+.img-contenedor::after{
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f10e";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--clr-primario);
+  color: var(--clr-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transform: translateY(25%);
+}
 /* Esfera que tenemos debajo de la imagen */
-
+.img-contenedor::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-primario);
+  position: absolute;
+  top: -0.25rem;
+  right: -0.5rem;
+  border-radius: 50%;
+}
 /* Estilos de la imagen */
+.persona-img{
+  /* width: 100%; */
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  transition: var(--transition-lineal);
+}
 
 /* Estilos del h2 que contiene el nombre del empleado */
 
 /* Estilos del h3 que contiene el puesto */
-
+.trabajo{
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+  color: var(--clr-primario);
+}
 /* Estilos del párrafo que tiene la información del empleado*/
 #info {
   margin-bottom: 0.75rem;
 }
 
 /* Estilos del botón contactar */
+.contacta-btn{
+  background-color: var(--clr-secundario);
+  color: var(--clr-primario);
+  padding: .25rem .5rem;
+  border: 1px solid;
+  border-radius: var(--radius);
+  transition: var(--transition-lineal);
+  /* cursor: pointer; */
+}
 
+.contacta-btn:hover{
+  background-color: var(--clr-primario);
+  color: var(--clr-secundario);
+}
 /*=====  End of Estilos de las cards  ======*/
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer{
+  margin: 0 auto;
+  height: 2rem;
+  padding: .5rem;
+}
+
+
+/*=====  End of Estilos del footer  ======*/
+
+
 
 /* Media querie */
 @media screen and (min-width: 800px) {
