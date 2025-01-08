@@ -1,0 +1,178 @@
+*,*::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12px;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header{
+    width: 100%;
+    background-color: rgba(255,255,255,0.301);
+    padding: .5rem;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    /* display: inline-block; */
+    max-width: 80px;
+}
+
+
+/* Estilos del menú */
+.menu ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.menu__link{
+    font-size: 1.6rem;
+    padding: 0 .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.menu__icono{
+    max-width: 30px;
+    padding: 5px;
+}
+
+.menu__link:hover .menu__icono{
+    border-radius: 100%;
+    background-color: white;
+}
+
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+/*=============================================
+=            Estilos del hero            =
+=============================================*/
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+
+/* Estilos del contenido */
+.content{
+    text-align: center;
+}
+
+.content h2{
+    font-size: 6rem;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.content h2:hover{
+    color: transparent;
+    text-stroke: 2px white;
+    -webkit-text-stroke: 2px white;
+}
+
+a.btn{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    font-size: 2rem;
+    padding: 1.2rem 3rem;
+    border: 2px solid white;
+    margin-top: 20px;
+    transition: .5s;
+}
+
+a.btn:hover{
+    background: white;
+    color: black;
+}
+
+/*=====  End of Estilos del hero  ======*/
+
+
+/*=============================================
+=            Media queries            =
+=============================================*/
+
+@media screen and (min-width: 720px) {
+    :root{
+        font-size: 14px;
+    }
+    .content h2{
+        font-size: 10rem;
+    }
+}
+
+/* en el caso de tener una relación de pantalla mínima de 16/9 (pantalla panorámica)
+tomamos como ancho el ancho de la pantalla*/
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* para pantallas con una relación de pantalla de hasta 16/9 (en vertical)
+tomamos como ancho automático y como alto el 100% del section que es la pantalla*/
+@media (max-aspect-ratio: 16/9){
+    .back-video{
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+
+
+/*=====  End of Media queries  ======*/
+
