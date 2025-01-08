@@ -76,7 +76,7 @@ a.btn {
 }
 
 /* enlaces sin decoración*/
-.aSinDeco {
+.anotdeco {
   text-decoration: none;
   color: var(--color-fuente);
 }
@@ -263,7 +263,7 @@ figure iframe {
   padding-right: 1rem;
 }
 
-.VideoArticulo {
+.video {
   max-width: 800px;
   width: 80%;
   display: block;
@@ -273,7 +273,7 @@ figure iframe {
   border: 1px double var(--color-boton2);
 }
 
-.VideoArticulo .vjs-dock-text {
+.video .vjs-dock-text {
   background: linear-gradient(180deg, rgba(0, 0, 0, .5) 20%, transparent);
   height: 25%;
 }
