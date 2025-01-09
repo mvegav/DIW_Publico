@@ -2,10 +2,11 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./assets/styles/misestilos.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/styles/misestilos.css">
+  <link rel="stylesheet" href="./assets/styles/media.css">
   <title>El Periódico- Terremoto en Turquía</title>
 </head>
 
@@ -53,15 +54,32 @@
         <param name="quality" value="high" />
         <p>Debe tener el Flash Player para reproducir el videoclip</p>
       </objeto> -->
-      <video controls poster="./assets/img/Terremoto.jpg" class="video" preload="metadata">
+      <video controls poster="./assets/img/Terremoto.jpg" class="video" preload="metadata" aria-label="El terremoto" 
+      aria-details="#transcripcion">
         <source src="./assets/videos/terremoto.mp4" type="video/mp4">
         <source src="./assets/videos/terremoto.ogv" type="video/ogg">
         <source src="./assets/videos/terremoto.webm" type="video/webm">
+        <track src="./assets/videos/subtitles.es.vtt" kind="subtitles" srclang="es" label="Español" default>
+        <track src="./assets/videos/subtitles.en.vtt" kind="subtitles" srclang="en" label="English">
+        <track src="./assets/videos/subtitles.de.vtt" kind="subtitles" srclang="de" label="Deutsch">
+        <track src="./assets/videos/subtitles.fr.vtt" kind="subtitles" srclang="fr" label="Français">
         <p>
           <em>Para reproducir este video, su navegador debe soportar HTML5.</em> Puede descargarlo en el siguiente 
           <a href="./assets/videos/terremoto.mp4">enlace</a> para poder visualizarlo.
         </p>
       </video>
+      <details id="transcripcion">
+        <summary>Transcripción del video del terremoto</summary>
+        <p>Todas son piedras muy grandes. Y bueno, toda la escalera está rota.</p>
+        <p>Desde Alepo el padre Farid nos ensaña como ha quedado su iglesia tras el terremoto</p>
+        <p>El está a salvo, pero en el interior <strong>uno de sus compañeros sigue desaparecido.</strong></p>
+        <p><span>A 700 Km de la zona más afectada</span>, en Turquía, vive Ismael.
+          Forma parte del grupo de entrenadores del Galatasaray.<strong>Y la noticia les ha impactado</strong>
+        </p>
+        <p>En Estambul no ha afectado directamente.
+          Lo que si sé por compañeros turcos es que la <strong>preocupación es grande</strong>.</p>
+        <p>Más noticias en nuestro canal <strong>"http://elperiodico.es/directo"</strong>.</p>
+      </details>
       <p>El presidente turco, Recep Tayyip Erdogan, ha visitado este miércoles la zona afectada por los terremotos de
         magnitud 7,8 y 7,5, respectivamente, que sacudieron el lunes el sudeste de Turquía y el noroeste de Siria.
         “Hemos movilizado todos los recursos del Estado, trabajamos con todos nuestros medios a disposición”, ha
@@ -95,8 +113,8 @@
     <p>Copyright &copy;Marina Vega Vázquez</p>
     <nav class="redes icono">
       <ul>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+        <li><a href="#" aria-label="Enlace a facebook"></a></li>
+        <li><a href="#" aria-label="Enlace a twitter"></a></li>
       </ul>
     </nav>
     <p class="icono"><a href="https://www.w3.org/WAI/WCAG2AA-Conformance"

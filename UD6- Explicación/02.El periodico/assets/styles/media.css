@@ -14,3 +14,39 @@
 */
 
 /* Estilos de reproducción de audio y vídeo */
+::cue {
+   background-color: rgba(0, 0, 0, 0.3);
+   text-shadow: 1px 1px 2px black;
+   color: orange;
+   font: 1.2rem sans-serif;
+}
+
+::cue(v[voice=padre]){
+   font: 1.5rem Georgia;
+   color: white;
+}
+
+::cue(v[voice=narrador]){
+   font: 1.7rem Verdana;
+}
+
+::cue(v[voice=entrenador]){
+   font: 1.7rem Cambria;
+   color: yellow;
+}
+
+::cue(.fin){
+   font-size: 1.8rem;
+   color: brown;
+   background-color: rgba(255, 255, 255, 0.546);
+}
+
+
+/* Estilos de pistas de audio y video */
+audio, video{
+   box-shadow: 10px 15px 20px rgb(44,43,43);
+   display: block;
+   margin: 1% auto;
+   width: 95%;
+   border-radius: 20px;
+}
