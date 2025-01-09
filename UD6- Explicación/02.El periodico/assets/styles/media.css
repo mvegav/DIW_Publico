@@ -50,3 +50,51 @@ audio, video{
    width: 95%;
    border-radius: 20px;
 }
+
+
+
+/* Estilos para el audio */
+.testimonio {
+   margin: 0 auto;
+   width: auto;
+   max-width: 800px;
+   background-color: #ccc;
+   border-radius: 20px;
+   box-shadow: 3px 3px 20px #ccc;
+   display: flex;
+   text-align: center;
+}
+
+.testimonio h3{
+   font-size: 1.5rem;
+}
+
+.testimonio figure{
+   width: 100%;
+   max-width: 200px;
+   max-height: 200px;
+}
+
+.testimonio figure img{
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+   border-radius: 20px;
+}
+
+@media screen and (min-width: 720px){
+   .testimonio{
+      max-height: 200px;
+      display: grid;
+      grid-template-columns: minmax(auto,200px) 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      justify-content: center;
+      align-items: center;
+   }
+
+   .testimonio figure{
+      grid-row: 1/4;
+   }
+
+   
+}
