@@ -1,0 +1,191 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font: 14px/1.6 "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
+}
+ /*=============================================
+ =            Estilos generales de las secciones            =
+ =============================================*/
+ 
+ 
+ 
+ 
+/** Estilos generales de las secciones **/
+section {
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+figure {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+
+/** Estilos de la cabecera **/
+header {
+  text-align: center;
+  background-color: white;
+  z-index: 99;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+
+/*=============================================
+=            Estilos para la pelota            =
+=============================================*/
+
+#pelota {
+  width: 100px;
+  height: auto;
+}
+
+#pelota svg {
+  visibility: hidden;
+  width: 100px;
+  height: auto;
+  fill: wheat;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+
+
+/* Animación de vuelo de la pelota por la ventana */
+
+ 
+
+/*=============================================
+=            Estilos del boton de pausar            =
+=============================================*/
+.btn {
+  color: white;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  text-align: center;
+  position: fixed;
+  top: 90vh;
+  right: 10%;
+  border: none;
+  box-shadow: 0 4px 10px black;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 10px black inset;
+}
+.pausar {
+  background-color: red;
+
+}
+.arrancar {
+  background-color: green;
+}
+
+/*=============================================
+=            Estilos de la nota            =
+=============================================*/
+/** Estilos para los elementos animados con trasnsition */
+section#nota {
+  transition: all 1s ease-in-out 1s;
+}
+
+section#nota:hover {
+  background-color: coral;
+  border-color: orange;
+  color: white;
+}
+
+section.mover {
+  background-color: rgba(0, 204, 255, 0.336);
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 20px;
+  box-shadow: 3px 4px 10px rgb(82, 82, 204);
+  
+}
+
+
+
+/*=============================================
+=            Estilos perro girando            =
+=============================================*/
+
+/** Estilos para los elementos animados con fotorograma clave */
+.girar img {
+  position: relative;
+  left: 0;
+}
+
+
+/* Animación de movimiento giratorio */
+
+/* FX 5+ */
+
+
+/* Safari 4+ */
+
+/* Opera 12+ */
+
+
+/* estilos del perro que aumenta */
+
+.ampliar{
+  scale: 0.8;
+}
+
+
+/*=============================================
+=            Animación ampliar            =
+=============================================*/
+
+/*=============================================
+=            Estilos corazón            =
+=============================================*/
+
+section.latir img {
+  
+  transform: scale(0.8);
+}
+
+
+
+/*=============================================
+=            animación latir            =
+=============================================*/
+

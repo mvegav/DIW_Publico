@@ -1,0 +1,264 @@
+:root{
+  --coche1-color: blue;
+  --coche2-color: red;
+}
+.contain-animation {
+  height: 400px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+h2{
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: bold;
+  text-anchor: end;
+  text-transform: capitalize;
+  color: white;
+  font-size: 2em;
+}
+.both-cars {
+  position: relative;
+  /* margin: -100px auto; */
+  margin: 0 auto;
+  border-left: 6px solid white;
+  border-right: 6px solid white;
+  width: 640px;
+  height: 250px;
+}
+
+/*============ estilo para los coches ====================*/
+.contain-car {
+  position: absolute;
+  width: 160px;
+  height: 110px;
+}
+
+.contain-car-2 {
+  top: 120px;
+  left: 480px;
+}
+
+.car-top {
+  position: absolute;
+  left: 35px;
+  border-radius: 50%;
+  width: 90px;
+  height: 80px;
+}
+
+.contain-car-1 > .car-top {
+  background: var(--coche1-color);
+}
+.contain-car-1 > .car-bottom {
+  background: var(--coche1-color);
+}
+.contain-car-2 > .car-top {
+  background: var(--coche2-color);
+}
+.contain-car-2 > .car-bottom{
+  background: var(--coche2-color);
+}
+.window {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background: white;
+  border-radius: 100px 0 0 0;
+  width: 30px;
+  height: 30px;
+}
+
+.window-right {
+  left: 50px;
+  border-radius: 0 100px 0 0;
+}
+
+.car-bottom {
+  position: absolute;
+  top: 40px;
+  color: white;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 100px 100px 10px 10px;
+  width: 160px;
+  height: 50px;
+}
+
+/*============ Estilos texto *========*/
+div.animText {
+  margin: 0 auto;
+  position: absolute;
+  top: 250px;
+  font-size: 1.4em;
+  font-family: sans-serif;
+  line-height: 1.2em;
+  text-align: center;   
+}
+
+div#textoAntes{
+  opacity: 1;
+  top: 220px;
+}
+
+/*============= Estilo para las ruedas ==============*/
+
+.rueda {
+  position: absolute;
+  top: 60px;
+  left: 12px;
+  border-radius: 50%;
+  background: #333333;
+  width: 50px;
+  height: 50px;
+}
+
+
+.rueda-right {
+  left: 98px;
+}
+
+.rueda:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background: gray;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.rueda-center {
+  position: absolute;
+  left: 18px;
+  top: 15px;
+  width: 0; 
+  height: 0; 
+  border-left: 7px dotted transparent;
+  border-right: 7px dotted transparent;
+  border-bottom: 15px solid #333333;
+  z-index: 20;
+}
+
+.rueda-center:after {
+  content:'';
+  display: block;
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 0; 
+  height: 0; 
+  border-left: 7px dotted transparent;
+  border-right: 7px dotted transparent;
+  border-top: 15px solid #333333;
+}
+
+/*============= ESTILO LLAMAR ANIMACIÓN ============*/
+.contain-car-1 {
+  animation: drive 5.7s linear 1 forwards; 
+ -webkit-animation: drive 5.7s linear 1 forwards;
+}
+
+.contain-car-2 {
+ animation: drive2 8s linear 1 forwards;
+ -webkit-animation: drive2 8s linear 1 forwards;
+}
+.rueda{
+  animation: spin 5.7s linear 1;
+  -webkit-animation: spin 5.7s linear 1;
+}
+.rueda-2{
+  animation: spin2 8s linear 1;
+  -webkit-animation: spin2 8s linear 1;
+}
+
+
+/*=============== ANIMACIÓN ===============*/
+@keyframes drive {
+  to {
+    transform: translateX(640px);
+  }
+}
+@keyframes drive2 {
+  to {
+    transform: translateX(-640px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin2 {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes drive {
+  to {
+    -webkit-transform: translateX(640px);
+  }
+}
+
+@-webkit-keyframes drive2 {
+  to {
+    -webkit-transform: translateX(-640px);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin2 {
+  to {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+
+@keyframes mostrarTexto {
+  0% { opacity: 0;}
+  49% { opacity: 0;}
+  51% { opacity: 1;}
+  100% { opacity: 1;}
+}
+
+@-o-keyframes mostrarTexto {
+  0% { opacity: 0;}
+  49% { opacity: 0;}
+  51% { opacity: 1;}
+  100% { opacity: 1;}
+}
+
+@-moz-keyframes mostrarTexto {
+  0% { opacity: 0;}
+  49% { opacity: 0;}
+  51% { opacity: 1;}
+  100% { opacity: 1;}
+}
+
+@-webkit-keyframes mostrarTexto {
+  0% { opacity: 0;}
+  49% { opacity: 0;}
+  51% { opacity: 1;}
+  100% { opacity: 1;}
+}
+
+div#textoDespues {
+  animation: mostrarTexto 5s linear 1;
+  -webkit-animation: mostrarTexto 5s linear 1;
+  -o-animation: mostrarTexto 5s linear 1;
+  -moz-animation: mostrarTexto 5s linear 1;
+}
