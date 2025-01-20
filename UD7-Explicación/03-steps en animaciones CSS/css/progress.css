@@ -1,0 +1,37 @@
+.contain-animation {
+  height: 350px;
+}
+
+.contain-circle {
+  position: relative;
+  /* margin: -50px auto; */
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  background: #ed6e46;
+  opacity: 0;
+  border: 10px solid white;
+  border-radius: 50%;
+  color: white;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  line-height: 95px;
+  width: 100px;
+  height: 100px;
+
+}
+
+.percentage {
+  position: absolute;
+  width: 100px;
+  height: 475px;
+
+
+}
