@@ -207,7 +207,11 @@ h1 {
 .arrancar {
   background-color: green;
 }
-
+/* #animacion:active ~ section,
+#animacion:active ~ section * img,
+#animacion:active ~ figure > svg {
+  animation-play-state: paused;
+}  */
 /*=============================================
 =            Estilos de la nota            =
 =============================================*/
