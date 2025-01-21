@@ -16,12 +16,33 @@
 }
 
 .contain-car {
-  /* position: absolute; */
   width: 160px;
   height: 110px;
+  /* position: absolute; */
 }
 
-.contain-car-2 {}
+/* Primer coche */
+.contain-car:first-of-type{
+  /* top: 40%; */
+  /*se traslada 640px en el eje X, se salta el último fotograma*/
+  animation: drive 4s steps(4, end) infinite;
+}
+
+.contain-car:first-of-type .rueda{
+  animation: spin 4s steps(8, end) infinite;
+}
+
+
+/* segundo coche */
+.contain-car-2 {
+  /* bottom: 5%; */
+  /* se traslada 640px en el eje X, arrancando en los 160px (primer movimiento)*/
+  animation: drive 4s steps(4,start) forwards;
+}
+
+.contain-car-2 .rueda {
+  animation: spin 4s steps(8, end) forwards;
+}
 
 .car-top {
   position: absolute;
@@ -71,7 +92,6 @@
 
 }
 
-.contain-car-2 .rueda {}
 
 .rueda-right {
   left: 98px;
@@ -150,4 +170,27 @@ input {
 
 #parar:checked+label::after {
   content: "\21bb";
+}
+
+
+#parar:checked ~ .contain-car, #parar:checked ~ .contain-car *{
+  animation-play-state: paused;
+}
+
+#parar:not(:checked) ~ .contain-car, #parar:not(:checked) ~ .contain-car *{
+  animation-play-state: running;
+}
+/*=============================================
+=            Animación fotograma clave            =
+=============================================*/
+@keyframes drive {
+  to{
+    transform: translateX(640px);
+  }
+}
+
+@keyframes spin {
+  to{
+    transform: rotate(360deg);
+  }
 }

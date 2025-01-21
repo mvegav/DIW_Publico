@@ -25,13 +25,24 @@
   line-height: 95px;
   width: 100px;
   height: 100px;
-
+  animation: fill 5s steps(5, start) forwards;
 }
 
 .percentage {
   position: absolute;
   width: 100px;
   height: 475px;
+  animation: load 4s steps(4, end) forwards;
+}
 
+@keyframes fill{
+  to{
+    opacity: 1;
+  }
+}
 
+@keyframes load{
+  to{
+    transform: translateY(-380px);
+  }
 }

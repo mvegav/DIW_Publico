@@ -159,7 +159,6 @@
 
 
 
-/*=====  End of Estilos de las partes del reloj  ======*/
 
 
 .arm {
@@ -240,6 +239,21 @@
   height: 15px;
 }
 
+.center {
+  position: absolute;
+  top: 62px;
+  margin-top: -15px;
+  left: 55px;
+  margin-left: -8px;
+  border-radius: 50%;
+  background: #ed6e46;
+  width: 16px;
+  height: 16px;
+  z-index: 20;
+}
+
+
+/*=====  End of Estilos de las partes del reloj  ======*/
 
 /*=============================================
 =            Estilos de la esfera de horas, minutos, segundos            =
@@ -265,7 +279,6 @@
 }
 
 .hours {
-
   top: 20px;
   left: 52px;
   background: rgb(197, 34, 50);
@@ -278,38 +291,34 @@
 }
 
 .minutes {
-
   top: 5px;
   left: 52px;
   background: #f8b65b;
   border-radius: 50px;
-
   width: 8px;
   height: 50px;
-
 }
 
 .seconds {
   top: 5px;
-  left: 52px;
+  left: 55px;
   background: #333333;
   border-radius: 50px;
-
   width: 4px;
   height: 50px;
   z-index: 5;
-
+  animation: tick-tock 60s steps(60, start) infinite forwards;
 }
 
-.center {
-  position: absolute;
-  top: 62px;
-  margin-top: -15px;
-  left: 55px;
-  margin-left: -8px;
-  border-radius: 50%;
-  background: #ed6e46;
-  width: 16px;
-  height: 16px;
-  z-index: 20;
+
+@keyframes tick-tock {
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes tick-tock {
+  to {
+    -webkit-transform: rotate(360deg) translate3d(0, 0, 0);
+  }
 }

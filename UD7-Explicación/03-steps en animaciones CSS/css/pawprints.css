@@ -17,5 +17,11 @@
   background: #8fd5d5;
   height: 150px;
   width: 675px;
+  animation: walk 7s steps(7, end) infinite;
+}
 
+@keyframes walk {
+  to{
+    transform: translateX(675px);
+  }
 }
