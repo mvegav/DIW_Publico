@@ -9,7 +9,7 @@
 window.addEventListener('load',function () {
    calculateHourDegrees();
    calculateMinuteDegrees();
-    // calculateSeconds();
+   calculateSeconds();
    });
 
 function linearMap(value, min, max, newMin, newMax) {

@@ -288,6 +288,11 @@
   width: 8px;
   height: 35px;
   z-index: 5;
+  -moz-animation: tick-tock 43200s steps(43200,end) infinite normal forwards;
+  -webkit-animation: tick-tock 43200s steps(43200,end) infinite normal forwards;
+  -o-animation: tick-tock 43200s steps(43200,end) infinite normal forwards;
+  animation: tick-tock 43200s steps(43200,end) infinite normal forwards;
+  animation-composition: add;
 }
 
 .minutes {
@@ -297,6 +302,8 @@
   border-radius: 50px;
   width: 8px;
   height: 50px;
+  animation: tick-tock 3600s steps(360,end) infinite normal forwards;
+  animation-composition: add;
 }
 
 .seconds {
@@ -307,7 +314,8 @@
   width: 4px;
   height: 50px;
   z-index: 5;
-  animation: tick-tock 60s steps(60, start) infinite forwards;
+  animation: tick-tock 60s steps(60, start) infinite normal forwards;
+  animation-composition: add;
 }
 
 
