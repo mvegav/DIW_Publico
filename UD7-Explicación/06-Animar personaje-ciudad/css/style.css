@@ -25,6 +25,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 50%;
+  will-change: background-position;
   animation: caminar 1s steps(6) infinite;
 }
 
@@ -33,9 +34,12 @@ body {
   background-size: contain;
   position: relative;
   bottom: 0;
+  left: 0;
   height: 100vh;
   max-height: 770px;
-  animation: moverbg 30s linear infinite normal;
+  will-change: background-position;
+  animation: moverbg 20s linear infinite normal forwards;
+  animation-composition: add;
 }
 
 @keyframes caminar{
@@ -48,7 +52,10 @@ body {
 }
 
 @keyframes moverbg {
+ 0%{
+    background-position: 0;
+  } 
   100% { 
-    background-position: -1170px 0;
+    background-position: -100% 0;
   }
 }
