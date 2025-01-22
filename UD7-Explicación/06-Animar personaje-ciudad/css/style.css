@@ -1,0 +1,37 @@
+/**
+ *
+ * UD7- Aninamción con fotograma clave
+ * Animando un personaje
+ * Autor: Marina Vega Vázquez
+ * Fecha: 4/02/2024
+ *
+ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #050808;
+}
+#personaje {
+  width: 112px;
+  height: 156px;
+  margin: auto;
+  background: url(../img/bern.png) repeat-x;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+}
+
+#fondo {
+  background: url(../img/ciudad.avif) repeat-x;
+  position: relative;
+  bottom: 0;
+  height: 100vh;
+  max-height: 770px;
+
+}
