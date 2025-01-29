@@ -1,0 +1,92 @@
+/* *****************************
+*** Primer ejemplo scss
+*** Autor: Marina Vega Vázquez
+*** Fecha: 29/01/25
+********************************/
+// Definición de variables
+$color-fondo: violet;
+$color-fondo-h2: rgba(238,130,238,0.348);
+$color-texto-primario: #333;
+$color-enlaces: #901490;
+$radio-borde: 5px;
+$fuente-primaria: Cambria, Cochin, Georgia, Times, serif;
+$fuente-secundaria: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+
+*, *::after, *::before{
+ margin:0;
+ padding:0;
+ box-sizing: border-box;
+}
+
+// interpolación de variables
+:root{
+    --fuente-primaria: #{$fuente-primaria};
+    --fuente-secundaria: #{$fuente-secundaria};
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // propiedades anidadas
+  font: 16px/1.6{
+    family: var(--fuente-primaria);
+  }
+
+  header, footer{
+    width: 100%;
+    padding: 1rem;
+    background-color: $color-fondo;
+
+    h1{
+        text: {
+            align: center;
+            transform: uppercase;
+        }
+        font: 2.5rem var(--fuente-secundaria);
+    }
+  }
+
+  
+  /*=============================================
+  =            Estilos del main            =
+  =============================================*/
+  main{
+    flex: 1;
+
+    .articulo{
+        padding: 1rem;
+
+        h2{
+            font: {
+                size: 2rem;
+                family: var(--fuente-secundaria);
+            }
+            background-color: $color-fondo-h2;
+            padding-left: 1rem;
+        }
+
+        p {
+            padding: 0.5rem;
+
+            &.autor{
+                font-style: italic;
+                font-size: .8rem;
+            }
+
+            a {
+                color: $color-enlaces;
+                padding: 4px;
+
+                &:hover{
+                    background-color: #333;
+                }
+            }
+        }
+    }
+  }
+  
+  
+  
+
+}
