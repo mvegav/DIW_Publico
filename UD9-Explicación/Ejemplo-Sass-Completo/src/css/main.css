@@ -1,0 +1,14 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/static/Roboto-Regular.ttf") format(truetype);
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=main.css.map */

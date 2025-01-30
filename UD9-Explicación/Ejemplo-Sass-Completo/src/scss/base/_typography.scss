@@ -1,0 +1,10 @@
+// Estilos de la tipografía
+@use "sass:string";
+@use "../utilities/variables" as var;
+
+@font-face {
+    font-family: Roboto;
+    src: url(string.quote(#{var.$roboto}) + "/Roboto-Regular.ttf") format(truetype);
+    font-style: normal;
+    font-weight: normal;
+}
