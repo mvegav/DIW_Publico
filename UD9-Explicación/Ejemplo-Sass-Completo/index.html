@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usando Sass</title>
+  <link rel="stylesheet" href="src/css/main.css">
+</head>
+
+<body>
+  <header class="fondo">
+    <h1>Ejemplo de uso de <a href="#">Sass</a></h1>
+    <h2>Pre-procesador de hojas de estilos</h2>
+  </header>
+  <main>
+    <section>
+      <h2>Compilar Sass</h2>
+      <p>La forma más directa de compilar sass es emplear el terminal. Una vez que Sass está instalado, puedes
+        compilar los ficheros Sass por medio del comando <span class="codigo-texto">sass</span>. Debemos decirle
+        a
+        Sass a partir de qué archivo compilar y
+        dónde enviar el CSS .</p>
+      <p>Por ejemplo, </p>
+      <p class="codigo">sass input.scss output.css</p>
+      <p>Dará como resultado la traducción del fichero input.scss en ouput.css</p>
+      </p>
+      <p>Si queremos que cada vez que se realicen modificaciones en el fichero original se compile dicho fichero,
+        emplearemos la opción <span class="codigo-texto">--watch</span></p>
+      <p>Con la opción --watch le indicamos a Sass que observe los archivos de origen en busca de cambios y vuelva
+        a compilar CSS cada vez que
+        guarde su Sass. </p>
+      <p>Ejemplo:</p>
+      <p class="codigo">sass --watch input.scss output.css</p>
+      <p>También podemos idnciar el directorio de entrada y el de salida de los ficheros, para ello idnicasmos la
+        ruta del directorio desde donde nos encontramos ejecutando el comando separando por dos puntos el
+        directorio de entrada del de salida. Ejemplo:
+      </p>
+      <p class="codigo">sass --watch proyecto/sass:proyecto/css</p>
+      <p>Sass observaría todos los archivos que están en el directorio proyecto/sass en busca de cambios y
+        traduciendolos a CSS en el directorio proyecto/css</p>
+    </section>
+    <section>
+      <h2>Variables</h2>
+      <p>Piense en las variables como una forma de almacenar información que desea reutilizar en su hoja de
+        estilo. Puede almacenar cosas como colores, pilas de fuentes o cualquier valor DE CSS que crea que
+        querrá reutilizar. Sass usa el $ símbolo para convertir algo en una variable. Aquí hay un ejemplo:</p>
+      <div class="columnas" role="region">
+        <div>
+          <h3>Scss</h3>
+          <pre class="codigo">
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+body {
+    font: 16px $font-stack;
+    color: $primary-color;
+}
+                    </pre>
+        </div>
+        <div>
+          <h3>CSS</h3>
+          <pre class="codigo">
+body {
+    font: 16px Helvetica, sans-serif;
+    color: #333;
+}
+                    </pre>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Anidamiento</h2>
+      <p>La Anidación de reglas es una de las ventajas del uso de Sass y consiste en la colocación de reglas para
+        elementos hijos o pseudoelementos de forma que el código será más jerárquico.
+      </p>
+      <p>Debemos de ser cuidadosos con la anidación y no usarla alocadamente. Esto es algo importante en el desarrollo
+        CSS en general, no solamente con los preprocesadores.</p>
+      <p>Usar selectores complejos, en los que se apliquen varios niveles de anidación puede llegar a ser
+        contraproducente, ya que estamos siendo muy específicos con ciertos estilos, que llegarán a aplicarse en
+        situaciones muy concretas.</p>
+      <p>En lugar de anidar a veces es preferible por ejemplo usar clases. Lo bueno de la clase es que la puedes
+        reutilizar todas las veces que desees, a lo largo de cualquier parte de tu HTML, independientemente de la
+        estructura de tu HTML.
+      </p>
+      <p>La regla, no escrita, es que no debes de definir estilos CSS a selectores que aniden más de tres elementos.
+      </p>
+      <section>
+        <h3>Referencia al selector padre
+        </h3>
+        <p>A la hora de producir código anidado en Sass hay otra técnica que se usa bastante, que es la referencia al
+          selector padre, usando el caracter "&".</p>
+        <p>Esto nos sirve para que, al definir código anidado, podamos continuar en el uso del selector sobre el que
+          estamos trabajando</p>
+        <div class="columnas" role="region">
+          <div>
+            <h3>Scss</h3>
+            <pre class="codigo">
+a.dinamico {
+    color: red;
+    &:hover {
+        background-color: #ff6;
+    }
+}
+                      </pre>
+          </div>
+          <div>
+            <h3>CSS</h3>
+            <pre class="codigo">
+body {
+    font: 16px Helvetica, sans-serif;
+    color: #333;
+}
+                        </pre>
+          </div>
+        </div>
+
+      </section>
+    </section>
+    <section>
+      <h2>Mixins en Sass</h2>
+      <p>En Sass, así como en otros preprocesadores, existen herramientas para reutilizar código, y para hacer cálculos
+        que devuelvan un código procesado. Para esta parcela de trabajo, en Sass tenemos los mixins, que serían algo así
+        como lo que conocemos como funciones en un lenguaje de programación.</p>
+      <p>Podemos escribir un mixin e invocarlo tantas veces como sea necesario, produciendo una salida CSS. Un mixin
+        además tiene la habilidad de recibir parámetros, como las funciones, de modo que se produzca la salida a partir
+        del valor de los parámetros recibidos en su invocación.</p>
+      <p>Los mixin se pueden usar pasando parámetros o sin ellos. Una de las utilidades que puede tener el empleo de
+        mixin está en el uso de estos para definir los prefijos CSS del navegador.</p>
+      <div class="columnas">
+        <div>
+          <h3>Scss</h3>
+          <pre class="codigo">
+@mixin transformar($propiedad) {
+    -webkit-transform: $propiedad;
+    -ms-transform: $propiedad;
+    transform: $propiedad;
+}
+
+escalada {
+    @include transformar(scale(2, 3))
+}  
+
+h1 {
+    color: blue;
+    @include transformar(rotate(22deg))
+}
+    </pre>
+        </div>
+        <div>
+          <h3>CSS</h3>
+          <pre class="codigo">
+.escalada {
+    -webkit-transform: scale(2, 3);
+    -ms-transform: scale(2, 3);
+    transform: scale(2, 3); }
+                          
+h1 {
+    color: blue;
+    -webkit-transform: rotate(22deg);
+    -ms-transform: rotate(22deg);
+    transform: rotate(22deg); 
+}
+                    </pre>
+        </div>
+      </div>
+      <p>Otra utilidad de los mixin la encontramos cuando en un mismo sitio tenemos diferentes animaciones con
+        fotograma clave. En este caso lo que haremos es definir un mixin para la definición del fotograma clave,
+        no de su contenido.</p>
+      <div class="columnas">
+        <div>
+          <h3>Scss</h3>
+          <pre class="codigo">
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+div {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+
+    @include keyframes(escalar) {
+        0%,100% {
+            transform: scale(0.2);
+        }
+        40% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1);
+      }
+    }
+  
+    animate: escalar 2s ease-in-out infinite;
+}
+                        </pre>
+        </div>
+        <div>
+          <h3>CSS</h3>
+          <pre class="codigo">
+div {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+                    
+    animate: escalar 2s ease-in-out infinite;
+}
+
+@keyframes escalar {
+    0%,100% {
+        transform: scale(0.2);
+    }
+    40% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+                        </pre>
+        </div>
+      </div>
+      <p>De esta forma podemos emplear el mixin keyframes en otro elemento para realizar una animación distinta.</p>
+
+    </section>
+    <section>
+      <h2>Funciones nativas de Sass</h2>
+      <ul>
+        <li>rgb($red, $green, $blue): Define un color con sus componentes roja, verde y azul</li>
+        <li>rgba($red, $green, $blue, $alpha): Lo mismo pero además incluyendo el canal alpha</li>
+        <li>red($color): Obtiene la componente roja de un color.</li>
+        <li>green($color)</li>
+        <li>blue($color)</li>
+        <li>hsl($hue, $saturation, $lightness): Define un color a partir de su tono, saturación y luminosidad.
+        </li>
+        <li>lighten($color, $amount): Aclara un color dando por ejemplo un valor de cantidad en porcentaje: 20%
+        </li>
+        <li>darken($color, $amount)</li>
+        <li>complement($color): Obtiene color complementario al color dado</li>
+        <li>invert($color): Obtiene el color opuesto al color dado.</li>
+        <li>to-upper-case($string)</li>
+        <li>to-lower-case($string)</li>
+        <li>percentage($number): Convierte un número sin unidades a porcentaje, por ejemplo percentage(0.5) =>
+          50%</li>
+        <li>round($number) redondea un número</li>
+        <li>ceil($number)</li>
+        <li>floor($number)</li>
+        <li>abs($number)</li>
+        <li>min($numbers…): Devuelve el menor de los elementos de una lista.</li>
+        <li>max($numbers…)</li>
+        <li>random([$limit]): Devuelve un número aleatorio entre 1 y 100, pero si pasamos el parámetro opcional
+          entonces podemos cambiar el límite superior.</li>
+        <li>length($list): Devuelve la longitud de una lista de elementos</li>
+        <li>nth($list, $n) : obtiene en elemento n de la lista</li>
+        <li>join($list1, $list2, [$separator]): Compone una cadena concatenando dos listas, pudiendo usar un
+          carácter intermedio en la unión. Ej: join((blue, red), (#abc, #def), space) => blue red #abc #def
+        </li>
+        <li>if($condition, $if-true, $if-false)</li>
+      </ul>
+      <p>Ejemplo con los colores</p>
+      <div class="funciones">
+        <p><span>Color letra</span> - <span>Color opuesto al de la letra</span></p>
+        <p><span>Color fondo</span> - <span>Color invertido al color del texto</span></p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copysr; Realizado por Marina Vega Vázquez</p>
+    <ul class="footer__redes">
+      <li>
+        <a href="https://github.com/mvegav/Diw_publico" aria-label="Enlace a github de mvegav">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 496 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+          </svg>
+        </a>
+      </li>
+
+    </ul>
+  </footer>
+</body>
+
+</html>
