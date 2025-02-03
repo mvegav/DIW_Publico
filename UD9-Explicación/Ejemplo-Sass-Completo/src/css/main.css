@@ -43,7 +43,8 @@ header a {
   font-weight: 500;
 }
 
-ul, li {
+ul,
+li {
   margin-left: 1rem;
 }
 
@@ -55,9 +56,6 @@ body main * h2, body main * h3 {
 
 body {
   max-width: 100vw;
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
 }
 body h1 {
   font-size: 2rem;
@@ -179,7 +177,7 @@ header h1 + h2 {
   display: inline-block;
   background-color: orange;
 }
-.columnas div:nth-of-type(2n+1) {
+.columnas div:nth-of-type(2n + 1) {
   background-color: orange;
   color: black;
 }

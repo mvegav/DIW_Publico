@@ -2,24 +2,27 @@
 @use "../utilities/mixins";
 @use "../utilities/variables" as var;
 
-.columnas{
-    max-width: 100%;
-    @include mixins.flex($gap:2rem);
-    margin: 0 auto;
-    background-color: var.$negro;
+.columnas {
+  max-width: 100%;
+  //Añadir: width: max-content;
+  @include mixins.flex($gap: 2rem);
+  //Cambiar por: @include mixins.flex($align: flex-start, $gap: 1rem);
+  margin: 0 auto;
+  background-color: var.$negro;
+  //Añadir: padding: 1rem;
 
-    div {
-        @include mixins.colorFondoTexto(var.$negro,var.$naranja);
-        padding: .25rem;
+  div {
+    @include mixins.colorFondoTexto(var.$negro, var.$naranja);
+    padding: 0.25rem;
+    // Falta: max-width: 100%;
 
-        & h3{
-            display: inline-block;
-            background-color: var.$naranja;
-        }
-
-        &:nth-of-type(2n+1){
-            @include mixins.colorFondoTexto(var.$naranja,var.$negro)
-        }
+    & h3 {
+      display: inline-block;
+      background-color: var.$naranja;
     }
 
+    &:nth-of-type(2n + 1) {
+      @include mixins.colorFondoTexto(var.$naranja, var.$negro);
+    }
+  }
 }
