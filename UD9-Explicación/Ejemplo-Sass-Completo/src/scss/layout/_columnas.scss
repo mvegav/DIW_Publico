@@ -1,0 +1,25 @@
+// Estilos para las columnas
+@use "../utilities/mixins";
+@use "../utilities/variables" as var;
+
+.columnas{
+    max-width: 100%;
+    @include mixins.flex($gap:2rem);
+    margin: 0 auto;
+    background-color: var.$negro;
+
+    div {
+        @include mixins.colorFondoTexto(var.$negro,var.$naranja);
+        padding: .25rem;
+
+        & h3{
+            display: inline-block;
+            background-color: var.$naranja;
+        }
+
+        &:nth-of-type(2n+1){
+            @include mixins.colorFondoTexto(var.$naranja,var.$negro)
+        }
+    }
+
+}
