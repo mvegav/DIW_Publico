@@ -1,0 +1,69 @@
+//mixins
+@use "./variables" as var;
+// Mixin para los estilos de los svg
+@mixin svg($max-width: 30px,$width:100%,$height:auto,$color){
+    max-width: $max-width;
+    width: $width;
+    height: $height;
+    fill: $color;
+}
+
+// mixin para maquetar con flex
+
+@mixin flex($direccion: row, $wrap: wrap, $justify: center, $align: center, $gap: null){
+    display: flex;
+    flex-flow: $direccion $wrap;
+    justify-content: $justify;
+    align-items: $align;
+    align-content: $align;
+    gap: $gap;
+}
+
+// mixin para el maquetado con grid
+@mixin grid($columnas, $filas:null, $justify-content: center, $justify-items: null, $align-content: center, $align-items: null, $gap: null){
+    display: grid;
+    grid-template-columns: $columnas;
+    grid-template-rows: $filas;
+    justify-content: $justify-content;
+    justify-items: $justify-items;
+    align-content: $align-content;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+// mixin para media querie desde tablet
+@mixin escritorio{
+    @media screen and (min-width: 720px) {
+        @content;
+    }
+}
+
+// mixin para los títulos
+@mixin titulos($tipo) {
+    $varlor: var.$tam-h1 * 1rem;
+    
+}
+
+// mixin color fondo - texto
+@mixin colorFondoTexto($fondo, $texto){
+    background-color: $fondo;
+    color: $texto;
+}
+
+// mixin tranform
+@mixin transform($propiedades...){
+    -ms-transform: $propiedades;
+    -o-transform: $propiedades;
+    -moz-transform: $propiedades;
+    -webkit-transform: $propiedades;
+    transform: $propiedades;
+}
+
+// mixin transition
+@mixin transition($propiedades...){
+    -ms-transition: $propiedades;
+    -o-transition: $propiedades;
+    -moz-transition: $propiedades;
+    -webkit-transition: $propiedades;
+    transition: $propiedades;
+}
