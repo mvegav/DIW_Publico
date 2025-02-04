@@ -46,3 +46,21 @@
     background-color: $fondo;
     color: $texto;
 }
+
+// mixin tranform
+@mixin transform($propiedades...){
+    -ms-transform: $propiedades;
+    -o-transform: $propiedades;
+    -moz-transform: $propiedades;
+    -webkit-transform: $propiedades;
+    transform: $propiedades;
+}
+
+// mixin transition
+@mixin transition($propiedades...){
+    -ms-transition: $propiedades;
+    -o-transition: $propiedades;
+    -moz-transition: $propiedades;
+    -webkit-transition: $propiedades;
+    transition: $propiedades;
+}

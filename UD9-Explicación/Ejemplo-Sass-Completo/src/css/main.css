@@ -159,19 +159,27 @@ header h1 + h2 {
 
 .columnas {
   max-width: 100%;
+  width: max-content;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
-  align-content: center;
-  gap: 2rem;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 1rem;
   margin: 0 auto;
   background-color: black;
+  padding: 1rem;
 }
 .columnas div {
   background-color: black;
   color: orange;
   padding: 0.25rem;
+  max-width: 100%;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 .columnas div h3 {
   display: inline-block;
@@ -180,6 +188,27 @@ header h1 + h2 {
 .columnas div:nth-of-type(2n + 1) {
   background-color: orange;
   color: black;
+}
+.columnas div:hover {
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.codigo {
+  max-width: 100%;
+  text-wrap: wrap;
+  background-color: rgba(128, 128, 128, 0.288);
+  border-radius: 5px;
+  padding: 1rem;
+}
+.codigo, .codigo-texto {
+  font-family: "Courier New", Courier, monospace;
+}
+.codigo-texto {
+  color: orange;
 }
 
 /*# sourceMappingURL=main.css.map */

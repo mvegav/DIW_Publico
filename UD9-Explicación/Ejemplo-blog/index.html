@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primer ejemplo</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<!-- Uso de módulos css, variables, propiedades anidadas, interpolación de variables-->
+
+<body>
+  <header>
+    <figure class="avatar--circulo avatar"><img src="./assets/img/avatar.png" alt="" /></figure>
+    <h1>Mi Blog</h1>
+  </header>
+  <nav class="redes">
+    <a href="" aria-label="Enlace a facebook" class="redes--facebook"></a>
+    <a href="" aria-label="Enlace a github" class="redes--github"></a>
+    <button class="redes--gmail" onclick="window.modal.showModal();"></button>
+    <a href="" aria-label="Enlace a instagram" class="redes--instagram"></a>
+  </nav>
+  <dialog id="modal">
+    <h2>Formulario de contacto</h2>
+    <form action="" class="form">
+      <label for="nombre" class="form__label">Nombre</label>
+      <input type="text" class="form__input" name="nombre" id="nombre" placeholder="Andrés Julián"
+        title="Nombre de pila." required pattern="[a-zA-ZÁáàäÉéèëÍíìïÓóòöÚúùüçÇñ -]{3,}">
+      <label for="email" class="form__label">Email</label>
+      <input type="email" class="form__input" name="email" id="email" placeholder="andres@gmail.com" required>
+      <input type="submit" value="Enviar" class="form__btn form__btn--enviar">
+      <button onclick="window.modal.close();" class="form__btn form__btn--cerrar">Cerrar</button>
+    </form>
+  </dialog>
+  <main>
+    <article class="articulo__portada"></article>
+    <article class="articulo">
+      <h2 class="titulo">Los preprocesadores</h2>
+      <p class="autor icon--start">Marina Vega Vázquez</p>
+      <figure><img src="./assets/img/imagen.jpg" alt="" /></figure>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
+        suscipit quis corrupti accusantium nisi assumenda voluptatem
+        consequatur iusto, odit aliquid totam minima vel soluta, similique
+        tempore illo nihil alias omnis! Podemos usar el preprocesadores como
+        <a href="#">Sass</a> o Less, por línea de comandos o con editores
+        gráficos.
+      </p>
+    </article>
+    <article class="articulo">
+      <h2 class="titulo">Frameworks CSS</h2>
+      <p class="autor">Marina Vega Vázquez</p>
+      <figure><img src="./assets/img/frameworks.jpg" alt="" /></figure>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
+        suscipit quis corrupti accusantium nisi assumenda voluptatem
+        consequatur iusto, odit aliquid totam minima vel soluta, similique
+        tempore illo nihil alias omnis! Podemos usar el preprocesadores como
+        <a href="#">Sass</a> o Less, por línea de comandos o con editores
+        gráficos.
+      </p>
+    </article>
+    <article class="articulo">
+      <h2 class="titulo">Galeria de codigo de preporcesadores CSS</h2>
+      <p class="autor">Marina Vega Vázquez</p>
+      <section class="cards">
+        <section class="card card-sass">
+          <h3>Sass</h3>
+        </section>
+        <section class="card card-less">
+          <h3>Less</h3>
+        </section>
+        <section class="card card-stylus">
+          <h3>Stylus</h3>
+        </section>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <p>2024 &copy; Marina Vega Vázquez</p>
+    <figure class="avatar avatar--retangulo"><img src="./assets/img/avatar.png" alt=""></figure>
+  </footer>
+</body>
+
+</html>
