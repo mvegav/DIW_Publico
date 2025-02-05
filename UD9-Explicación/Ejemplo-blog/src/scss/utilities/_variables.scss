@@ -6,12 +6,31 @@ $color-enlaces: #901490;
 $radio-borde: 5;
 $fuente-primaria: Cambria, Cochin, Georgia, Times, serif;
 $fuente-secundaria: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+$fuente-terciaria: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
 $fuente-size: 14;
 $tam-h1: 2.5;
 $redes: "facebook","github","gmail","instagram";
+$prepro: sass, less, stylus;
+$url: "../../assets/img";
+
 
 $font-weghts: (
     "regular": 400,
     "medium": 500,
     "bold": 700
-)
+);
+
+$prefixes: (
+  "firefox": moz,
+  "safari": webkit,
+  "ie": ms,
+  "opera": o
+);
+
+$icons: (
+  "copy": "\00A9",
+  "eye": "\e8f4",
+  "start": "\e885",
+  "stop": "\e888",
+  "bookmark": "\e866"
+);

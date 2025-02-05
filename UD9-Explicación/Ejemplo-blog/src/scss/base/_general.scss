@@ -1,6 +1,7 @@
 // Estilos generales
 @use "../utilities/variables" as var;
 @use "../utilities/mixins";
+@use "../utilities/functions";
 /*=============================================
 =            Estilos generales            =
 =============================================*/
@@ -16,15 +17,84 @@
     }
 }
 
+%fondo {
+    background-color: var.$color-fondo;
+    @include mixins.ancho-alto($alto:auto);
+    max-width: 100%;
+    @include mixins.flex($justify: space-between);
+    padding: .5rem 2rem;
+}
+
 body{
     max-width: 100vw;
     min-height: 100vh;
     $filas: auto 1fr auto;
     @include mixins.grid(null,$filas,null, $align-content: null);
 
+    @for $i from 1 through 4 {
+      h#{$i}{
+        font-size: functions.titulos($i);
+        //@include mixins.titulos($i);
+//        @debug $i;
+      }  
+    }
+
+    .avatar{
+        @include mixins.ancho-alto(40px,40px);
+        border: 4px double white;
+
+        &--circulo{
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 99;
+        }
+
+        img{
+            @include mixins.transition(all .2s ease-in-out);
+        }
+
+        &:hover img{
+            $propiedad: rotate(360deg);
+            @include mixins.transform($propiedad);
+        }
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover
+    }
+
+    /*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos del header            =
+=============================================*/
+
+header{
+    @extend %fondo;
+    
+    h1{
+        flex: 1;
+        text-align: center;
+       transform: translateX(-30px);
+        text-transform: uppercase;
+        @include mixins.fuente(var.$fuente-secundaria,null,"bold");
+    }
 }
 
 
-/*=====  End of Estilos generales  ======*/
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer{
+    @extend %fondo;
+}
+
+    
+}
+
+
 
 

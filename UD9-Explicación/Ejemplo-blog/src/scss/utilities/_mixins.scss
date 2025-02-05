@@ -1,4 +1,6 @@
 //mixins
+@use "sass:math";
+@use "sass:map";
 @use "./variables" as var;
 // Mixin para los estilos de los svg
 @mixin svg($max-width: 30px,$width:100%,$height:auto,$color){
@@ -40,8 +42,17 @@
 
 // mixin para los títulos
 @mixin titulos($tipo) {
-    $varlor: var.$tam-h1 * 1rem;
-    
+    $valor: var.$tam-h1 * 1rem;
+    @if $tipo > 1 {
+        @if $tipo == 2 {
+            $valor: var.$tam-h1 - 0.5rem;
+        } @else if $tipo == 3 {
+            $valor: math.div(var.$tam-h1, 1.5) * 1rem;
+        } @else {
+            $valor: math.div(var.$tam-h1, 2) * 1rem;
+        }
+    }
+    font-size: $valor;
 }
 
 // mixin color fondo - texto
@@ -50,20 +61,38 @@
     color: $texto;
 }
 
+@mixin ancho-alto($ancho: 100%, $alto: 100%){
+    width: $ancho;
+    height: $alto;
+}
+
+@mixin fuente($fuente, $tam, $weigh: "regular"){
+    font-family: $fuente;
+    $font-size: $tam;
+    font-weight: map.get(var.$font-weghts, $weigh);
+}
+
+
 // mixin tranform
 @mixin transform($propiedades...){
-    -ms-transform: $propiedades;
-    -o-transform: $propiedades;
-    -moz-transform: $propiedades;
-    -webkit-transform: $propiedades;
+    // -ms-transform: $propiedades;
+    // -o-transform: $propiedades;
+    // -moz-transform: $propiedades;
+    // -webkit-transform: $propiedades;
+    @each $name, $valor in var.$prefixes{
+        -#{$valor}-transform: $propiedades;
+    }
     transform: $propiedades;
 }
 
 // mixin transition
 @mixin transition($propiedades...){
-    -ms-transition: $propiedades;
-    -o-transition: $propiedades;
-    -moz-transition: $propiedades;
-    -webkit-transition: $propiedades;
+    // -ms-transition: $propiedades;
+    // -o-transition: $propiedades;
+    // -moz-transition: $propiedades;
+    // -webkit-transition: $propiedades;
+    @each $name, $valor in var.$prefixes{
+        -#{$valor}-transition: $propiedades;
+    }
     transition: $propiedades;
 }
