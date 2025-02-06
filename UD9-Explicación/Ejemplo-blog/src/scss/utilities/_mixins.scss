@@ -66,10 +66,10 @@
     height: $alto;
 }
 
-@mixin fuente($fuente, $tam, $weigh: "regular"){
+@mixin fuente($fuente, $tam:null, $weight: "regular"){
     font-family: $fuente;
     $font-size: $tam;
-    font-weight: map.get(var.$font-weghts, $weigh);
+    font-weight: map.get(var.$font-weghts, $weight);
 }
 
 

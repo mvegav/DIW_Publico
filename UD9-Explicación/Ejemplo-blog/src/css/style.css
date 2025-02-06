@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -19,7 +20,7 @@
   }
 }
 
-body footer, body header {
+footer, header {
   background-color: violet;
   width: 100%;
   height: auto;
@@ -37,13 +38,6 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  /*=====  End of Estilos generales  ======*/
-  /*=============================================
-  =            Estilos del header            =
-  =============================================*/
-  /*=============================================
-  =            Estilos del footer            =
-  =============================================*/
 }
 body h1 {
   font-size: 2.5rem;
@@ -85,13 +79,139 @@ body img {
   width: 100%;
   object-fit: cover;
 }
-body header h1 {
+body main {
+  width: 100%;
+}
+
+/*=====  End of Estilos generales  ======*/
+/*=============================================
+=            Estilos del header            =
+=============================================*/
+header h1 {
   flex: 1;
   text-align: center;
   transform: translateX(-30px);
   text-transform: uppercase;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   font-weight: 700;
+}
+
+/*=============================================
+=            Estilos de los iconos            =
+=============================================*/
+.icon--copy::before {
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "©";
+}
+
+.icon--eye::before {
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e8f4";
+  color: orange;
+}
+
+.icon--start::before {
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e885";
+  color: orange;
+}
+
+.icon--stop::before {
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e888";
+  color: orange;
+}
+
+.icon--bookmark::before {
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e866";
+  color: orange;
+}
+
+/*=============================================
+=            Estilos del nav de redes            =
+=============================================*/
+.redes {
+  position: fixed;
+  top: 40%;
+  right: 0;
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.redes button {
+  border: none;
+  cursor: pointer;
+}
+.redes a, .redes button {
+  width: 60px;
+  height: 60px;
+}
+.redes a:hover, .redes button:hover {
+  scale: 1.2;
+}
+.redes--facebook {
+  background: url("../../assets/img/redes/facebook.svg") no-repeat center;
+  background-size: contain;
+}
+.redes--github {
+  background: url("../../assets/img/redes/github.svg") no-repeat center;
+  background-size: contain;
+}
+.redes--gmail {
+  background: url("../../assets/img/redes/gmail.svg") no-repeat center;
+  background-size: contain;
+}
+.redes--instagram {
+  background: url("../../assets/img/redes/instagram.svg") no-repeat center;
+  background-size: contain;
+}
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+.articulo {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.articulo__portada {
+  width: 100%;
+  height: 150px;
+  background: url(../../assets/img/fondos/fondo.png) no-repeat center;
+  background-size: contain;
+}
+@media screen and (min-width: 720px) {
+  .articulo__portada {
+    height: 300px;
+  }
+}
+.articulo h2 {
+  background-color: rgba(238, 130, 238, 0.348);
+  padding-left: 1rem;
+  border-radius: 5px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-weight: 700;
+}
+.articulo p {
+  padding: 0.5rem;
+}
+.articulo p.autor {
+  font-style: italic;
+}
+.articulo figure {
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */

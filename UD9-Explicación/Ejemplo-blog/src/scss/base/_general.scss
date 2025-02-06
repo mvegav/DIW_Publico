@@ -1,4 +1,5 @@
 // Estilos generales
+@use "sass:string";
 @use "../utilities/variables" as var;
 @use "../utilities/mixins";
 @use "../utilities/functions";
@@ -64,8 +65,12 @@ body{
         object-fit: cover
     }
 
-    /*=====  End of Estilos generales  ======*/
+    main{
+        width: 100%;
+    }
 
+}
+    /*=====  End of Estilos generales  ======*/
 
 /*=============================================
 =            Estilos del header            =
@@ -86,6 +91,57 @@ header{
 
 
 /*=============================================
+=            Estilos de los iconos            =
+=============================================*/
+@each $name, $valor in var.$icons{
+    .icon--#{$name}::before {
+        display: inline-block;
+        font-family: "Material Icons";
+        content: $valor;
+        @if #{$name} != "copy" {
+            color: orange;
+        }
+    }
+}
+
+
+/*=============================================
+=            Estilos del nav de redes            =
+=============================================*/
+.redes {
+    position: fixed;
+    top: 40%;
+    right: 0;
+    border: 1px solid;
+    border-radius: var.$radio-borde * 1px;
+    box-shadow: 0 4px 10px;
+    @include mixins.flex(column);
+    button {
+        border: none;
+        cursor: pointer;
+    }
+
+    a,button{
+        @include mixins.ancho-alto(60px, 60px);
+     
+        &:hover{
+            scale: 1.2;
+        }
+    }
+
+    @each $name in var.$redes{
+        &--#{$name} {
+            background: url(string.quote(#{var.$url})+"/redes/#{$name}.svg") no-repeat center;
+            background-size: contain;
+        }
+    }
+
+}
+
+
+
+
+/*=============================================
 =            Estilos del footer            =
 =============================================*/
 footer{
@@ -93,7 +149,7 @@ footer{
 }
 
     
-}
+
 
 
 
