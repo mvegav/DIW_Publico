@@ -5,6 +5,111 @@
   box-sizing: border-box;
 }
 
+@-moz-keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@-webkit-keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@-ms-keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@-o-keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@-moz-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-webkit-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-ms-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-o-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
 /*=============================================
 =            Estilos generales            =
 =============================================*/
@@ -178,6 +283,46 @@ header h1 {
 }
 
 /*=============================================
+=            Estilos de los popover            =
+=============================================*/
+.p__popover {
+  position: relative;
+}
+
+.btn__help {
+  background-color: #02bdda;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  color: #fafafa;
+}
+.btn__help:hover [popover] {
+  display: block;
+  -moz-animation: fade-in 0.3s linear 1, move-up 0.3s linear 1;
+  -webkit-animation: fade-in 0.3s linear 1, move-up 0.3s linear 1;
+  -ms-animation: fade-in 0.3s linear 1, move-up 0.3s linear 1;
+  -o-animation: fade-in 0.3s linear 1, move-up 0.3s linear 1;
+  animation: fade-in 0.3s linear 1, move-up 0.3s linear 1;
+}
+
+[popover] {
+  background-color: #02bdda;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: -100%;
+  left: 42%;
+  min-width: max-content;
+  min-height: max-content;
+  z-index: 10;
+}
+
+/*=============================================
 =            Estilos del footer            =
 =============================================*/
 .articulo {
@@ -213,5 +358,134 @@ header h1 {
   max-width: 640px;
   margin: 0 auto;
 }
+
+.cards {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+}
+.cards .card {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.cards .card--sass {
+  background: url(../../assets/img/prepro/sass.jpg) no-repeat;
+  background-size: cover;
+}
+.cards .card--less {
+  background: url(../../assets/img/prepro/less.jpg) no-repeat;
+  background-size: cover;
+}
+.cards .card--stylus {
+  background: url(../../assets/img/prepro/stylus.jpg) no-repeat;
+  background-size: cover;
+}
+.cards .card h3 {
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+/*=============================================
+=            Estilos de los modales            =
+=============================================*/
+dialog {
+  overflow: hidden;
+  max-width: 650px;
+  min-width: 280px;
+  min-height: max-content;
+  padding: 1% 2%;
+  border: 8px solid;
+  background-color: #fafafa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -moz-animation: aparecer 0.5s ease-in-out, face-in 0.75s ease-in-out forwards;
+  -webkit-animation: aparecer 0.5s ease-in-out, face-in 0.75s ease-in-out forwards;
+  -ms-animation: aparecer 0.5s ease-in-out, face-in 0.75s ease-in-out forwards;
+  -o-animation: aparecer 0.5s ease-in-out, face-in 0.75s ease-in-out forwards;
+  animation: aparecer 0.5s ease-in-out, face-in 0.75s ease-in-out forwards;
+}
+dialog::backdrop {
+  background-color: rgba(238, 130, 238, 0.348);
+}
+dialog h2 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+dialog section {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  height: max-content;
+}
+dialog .form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+dialog .form__label {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+}
+dialog .form__input {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  outline: 1px solid;
+}
+dialog .form__input:focus {
+  background-color: rgba(238, 130, 238, 0.348);
+}
+dialog .form__input:not(:placeholder-shown):invalid {
+  outline-color: red;
+}
+dialog .form__btns {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+}
+dialog .form__btn {
+  padding: 0.5rem 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+}
+dialog .form__btn--enviar {
+  background-color: rgba(0, 128, 0, 0.651);
+}
+dialog .form__btn--cerrar {
+  background-color: rgba(255, 166, 0, 0.651);
+}
+dialog .form__btn:hover {
+  box-shadow: 0 4px 8px;
+}
+
+/*=====  End of Estilos modales  ======*/
 
 /*# sourceMappingURL=style.css.map */

@@ -66,9 +66,10 @@
     height: $alto;
 }
 
-@mixin fuente($fuente, $tam:null, $weight: "regular"){
+@mixin fuente($fuente, $tam:null, $weight: "regular", $color: null){
+    color: $color;
     font-family: $fuente;
-    $font-size: $tam;
+    font-size: $tam;
     font-weight: map.get(var.$font-weghts, $weight);
 }
 
@@ -96,3 +97,63 @@
     }
     transition: $propiedades;
 }
+
+// mixin para animaciones
+@mixin animation($propiedades...){
+    @each $name, $valor in var.$prefixes{
+        -#{$valor}-animation: $propiedades;
+    }
+    animation: $propiedades;
+}
+
+// mixin para generar el fotograma clave
+@mixin keyframe($nombre){
+    @each $name, $valor in var.$prefixes{
+        @-#{$valor}-keyframes #{$nombre}{
+            @content;
+        }
+    }
+    @keyframes #{$nombre} {
+        @content;
+    }
+   
+}
+
+
+// mixin animación aparecer
+@mixin aparecer(){
+    from {
+        top: math.div(100,2) * -1vw;
+    }
+}
+
+// mixin cambiar opacidad
+@mixin fade-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+// mixin cambiar opacidad
+@mixin move-up {
+    from{
+        bottom: 30px;
+    }
+    to{
+        bottom: 42px;
+    }
+}
+
+// llamamos al mixin del fotograma para generarlos
+@include keyframe("aparecer"){
+    @include aparecer();
+};
+@include keyframe("fade-in"){
+    @include fade-in();
+};
+@include keyframe("move-up"){
+    @include move-up();
+};

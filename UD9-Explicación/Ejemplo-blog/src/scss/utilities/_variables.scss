@@ -3,6 +3,7 @@ $color-fondo: violet;
 $color-fondo-h2: rgba(238,130,238,0.348);
 $color-texto-primario: #333;
 $color-enlaces: #901490;
+$color-popover: #02bdda;
 $radio-borde: 5;
 $fuente-primaria: Cambria, Cochin, Georgia, Times, serif;
 $fuente-secundaria: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
@@ -10,7 +11,7 @@ $fuente-terciaria: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucid
 $fuente-size: 14;
 $tam-h1: 2.5;
 $redes: "facebook","github","gmail","instagram";
-$prepro: sass, less, stylus;
+$prepro: "sass", "less", "stylus";
 $url: "../../assets/img";
 $fondo: "fondo.png";
 

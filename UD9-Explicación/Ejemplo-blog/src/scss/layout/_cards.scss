@@ -1,0 +1,26 @@
+// estilo de las cards
+@use "../utilities/variables" as var;
+@use "../utilities/mixins";
+
+.cards{
+    list-style: none;
+    @include mixins.flex($gap:1rem);
+
+    .card{
+        @include mixins.ancho-alto(250px, 250px);
+        @include mixins.flex(column);
+
+        @each $fondo in var.$prepro {
+            &--#{$fondo}{
+                background: url(#{var.$url}/prepro/#{$fondo}.jpg) no-repeat;
+                background-size: cover;
+            }
+        }
+
+        h3{
+            $family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            @include mixins.fuente($family, $tam: 3rem, $color: white);
+        }
+    }
+
+}

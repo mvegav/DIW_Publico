@@ -19,20 +19,29 @@
   <nav class="redes">
     <a href="" aria-label="Enlace a facebook" class="redes--facebook"></a>
     <a href="" aria-label="Enlace a github" class="redes--github"></a>
-    <button class="redes--gmail" onclick="window.modal.showModal();"></button>
+    <button class="redes--gmail" onclick="window.modal.showModal()"></button>
     <a href="" aria-label="Enlace a instagram" class="redes--instagram"></a>
   </nav>
   <dialog id="modal">
-    <h2>Formulario de contacto</h2>
-    <form action="" class="form">
-      <label for="nombre" class="form__label">Nombre</label>
-      <input type="text" class="form__input" name="nombre" id="nombre" placeholder="Andrés Julián"
-        title="Nombre de pila." required pattern="[a-zA-ZÁáàäÉéèëÍíìïÓóòöÚúùüçÇñ -]{3,}">
-      <label for="email" class="form__label">Email</label>
-      <input type="email" class="form__input" name="email" id="email" placeholder="andres@gmail.com" required>
-      <input type="submit" value="Enviar" class="form__btn form__btn--enviar">
-      <button onclick="window.modal.close();" class="form__btn form__btn--cerrar">Cerrar</button>
-    </form>
+    <section>
+      <h2>Formulario de contacto</h2>
+      <form action="" class="form">
+        <p class="p__popover">
+          <label for="nombre" class="form__label">Nombre</label>
+          <button class="btn__help" popovertarget="mensaje">? 
+            <spa class="popover" id="mensaje" popover="auto">Nombre de pila</spa>
+          </button>
+        </p>
+        <input type="text" class="form__input" name="nombre" id="nombre" placeholder="Andrés Julián"
+          title="Nombre de pila." required pattern="[a-zA-ZÁáàäÉéèëÍíìïÓóòöÚúùüçÇñÑ\- ]{3,}">
+        <label for="email" class="form__label">Email</label>
+        <input type="email" class="form__input" name="email" id="email" placeholder="andres@gmail.com" required>
+        <p class="form__btns">
+          <input type="submit" value="Enviar" class="form__btn form__btn--enviar">
+          <button class="form__btn form__btn--cerrar" onclick="window.modal.close()">Cerrar</button>
+        </p>
+      </form>
+    </section>
   </dialog>
   <main>
     <article class="articulo__portada"></article>
@@ -66,13 +75,13 @@
       <h2 class="titulo">Galeria de codigo de preporcesadores CSS</h2>
       <p class="autor">Marina Vega Vázquez</p>
       <ul class="cards">
-        <li class="card card-sass">
+        <li class="card card--sass">
           <h3>Sass</h3>
         </li>
-        <li class="card card-less">
+        <li class="card card--less">
           <h3>Less</h3>
         </li>
-        <li class="card card-stylus">
+        <li class="card card--stylus">
           <h3>Stylus</h3>
         </li>
       </ul>

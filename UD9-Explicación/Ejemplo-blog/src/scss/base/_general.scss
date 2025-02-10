@@ -139,6 +139,45 @@ header{
 }
 
 
+/*=============================================
+=            Estilos de los popover            =
+=============================================*/
+.p__popover{
+    position: relative;
+}
+.btn__help{
+    background-color: var.$color-popover;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    color: #fafafa;
+
+    &:hover{
+        [popover] {
+            display: block;
+            @include mixins.animation(fade-in .3s linear 1, move-up .3s linear 1);
+        }
+    }
+}
+
+[popover]{
+    background-color: var.$color-popover;
+    border-radius: var.$radio-borde * 1px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    @include mixins.fuente(var.$fuente-secundaria,$color: #fff);
+    padding: .5rem 1rem;
+    position: absolute;
+    top: -100%;
+    left: 42%;
+    min-width: max-content;
+    min-height: max-content;
+    z-index: 10;
+}
+
+
+
+
 
 
 /*=============================================

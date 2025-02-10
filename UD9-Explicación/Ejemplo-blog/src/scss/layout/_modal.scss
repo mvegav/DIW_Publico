@@ -1,0 +1,105 @@
+// Estilos de las ventanas modales
+
+/*=============================================
+=            Estilos de los modales            =
+=============================================*/
+
+
+@use "../utilities/variables" as var;
+@use "../utilities/mixins";
+
+
+dialog{
+    overflow: hidden;
+    max-width: 650px;
+    min-width: 280px;
+    min-height: max-content;
+    padding: 1% 2%;
+    border: 8px solid;
+    background-color: #fafafa;
+    //margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    //top: calc(100% - 75%);
+    transform: translate(-50%,-50%);
+    //transform: translateY(200px);
+    $propiedades: aparecer .5s ease-in-out, face-in .75s ease-in-out forwards;
+    //@include nixins.animation($propiedades);
+    @include mixins.animation(aparecer .5s ease-in-out, face-in .75s ease-in-out forwards);
+  
+
+    // @each $nombre in aparecer, fade-in{
+    //     @include mixins.keyframe($nombre){
+    //         @include mixins.#{$nombre}();
+    //     };
+    // }
+
+    &::backdrop{
+        background-color: var.$color-fondo-h2;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    section{
+        @include mixins.flex(column,$gap: 1rem);
+        height: max-content;
+    }
+
+    .form{
+        @include mixins.flex(column,$gap: .5rem);
+        @include mixins.ancho-alto(100%,100%);
+
+        &__label {
+            @include mixins.fuente(var.$fuente-terciaria, $tam: 1.2rem, $weight: 500);
+        }
+
+        &__input{
+            width: 100%;
+            padding: .9rem;
+            border-radius: var.$radio-borde * 1px;
+            border: none;
+            outline: 1px solid;
+            
+            &:focus{
+                background-color: var.$color-fondo-h2;
+            }
+            
+            &:not(:placeholder-shown):invalid {
+                outline-color: red;
+            }
+        }
+
+        &__btns{
+            margin: .5rem 0;
+            @include mixins.flex($gap: 1rem);
+        }
+        &__btn {
+            padding: .5rem 1rem;
+            @include mixins.fuente(var.$fuente-terciaria, $tam: 1.2rem, $weight: 500);
+            border-radius: var.$radio-borde * 1px;
+            border: none;
+            
+            &--enviar {
+                background-color: rgba(0,128,0,0.651);
+            }
+
+            &--cerrar {
+                background-color: rgba(255,166,0,0.651);
+            }
+
+            &:hover{
+                box-shadow: 0 4px 8px;
+            }
+
+        }
+    }
+}
+
+
+
+/*=====  End of Estilos modales  ======*/
+
