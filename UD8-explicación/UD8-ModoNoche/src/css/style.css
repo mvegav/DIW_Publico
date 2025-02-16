@@ -1,0 +1,43 @@
+@charset "UTF-8";
+body {
+  background-color: #FFEC8B;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
+button {
+  border: none;
+  background-color: #000;
+  color: white;
+  font-size: 2rem;
+  font-family: "Helvetica", sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1.61rem 1rem;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.modo-luna {
+  color: #EB4C49;
+  background-color: #2F3277;
+}
+.modo-luna span {
+  visibility: hidden;
+  position: relative;
+  display: inline-block;
+}
+.modo-luna span::after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "❍";
+}
+
+/*# sourceMappingURL=style.css.map */

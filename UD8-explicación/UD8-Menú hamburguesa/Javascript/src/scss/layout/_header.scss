@@ -1,0 +1,215 @@
+// Estilos de la cabecera
+@use "../utilities/variables" as var;
+@use "../utilities/mixin";
+
+.cabecera {
+  background-color: var.$color-fondo;
+  @include mixin.anchoAlto();
+  @include mixin.flex(row, $justify: space-between);
+  padding: 1rem;
+
+  &__logo {
+    width: 250px;
+    height: auto;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  // opciones generales del elemento menú
+  .nav {
+    font-size: 1.5rem;
+
+    &__link--activo {
+      font-weight: 800;
+      font-size: calc(100% + 0.15rem);
+    }
+
+    * svg,
+    * img {
+      width: 32px;
+      height: 32px;
+      //fill: white;
+      margin-top: 0;
+      padding-top: 0;
+
+      &:hover {
+        fill: yellow;
+      }
+    }
+  }
+
+  // fin nav mixin
+
+  // opciones de los botones del menú hamburguesa
+  .off-canvas {
+    &__btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 999;
+      @include mixin.anchoAlto(3rem, 3rem);
+      cursor: pointer;
+      opacity: 0;
+    }
+
+    // creamo el icono en el label
+    &__burger {
+      position: fixed;
+      top: 3.5rem;
+      right: 1rem;
+      z-index: 998;
+      @include mixin.anchoAlto(2.25rem, 0.45rem);
+      background-color: var.$color-adicional;
+      border-radius: 0.3rem;
+      // subimos la primera raya a la mitad de los 3rem. Tiene que subir
+      transform: rotate(0deg) translate(0, -0.9rem);
+      transition:
+        transform 0.5s ease,
+        background-color 0.5s ease;
+
+      @include mixin.respond-to("escritorio") {
+        display: none;
+      }
+
+      // creamos las otras líneas empleando las pseudoclases before y after
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        @include mixin.anchoAlto(100%, 0.45rem);
+        background-color: var.$color-adicional;
+        border-radius: 0.3rem;
+      }
+
+      // la colocamos a 0.675rem de la parte superior del label
+
+      &::before {
+        transform: rotate(0deg) translate(0, -0.675rem);
+      }
+
+      // colocamos esta línea abajo, a 0.rem del fondo
+
+      &::after {
+        transform: rotate(0deg) translate(0, 0.225rem);
+      }
+    }
+  }
+
+  @mixin efectoButton($color: var.$color-primario, $fondo: var.$color-adicional) {
+    color: $color;
+    background-color: $fondo;
+    border-radius: 5px;
+  }
+
+  /* Estilos móvil */
+  //@media all and (max-width: 700px) {
+  @include mixin.respond-to("movil") {
+    .centrado {
+      // padding: 0.8rem;
+      text-align: center;
+      text-decoration: none;
+      color: var.$color-primario;
+    }
+
+    &__logo {
+      width: 125px;
+    }
+
+    /* ocultamos el menu en la parte izquierda */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var.$color-secundario;
+      transform: translateX(-100vw);
+      transition: 0.5s;
+
+      /* Definimos los botones*/
+      &__button {
+        height: auto;
+        display: inline-block;
+        // margin-right: 1rem;
+        fill: var.$color-adicional;
+
+        &--open {
+          width: 40px;
+          align-self: flex-start;
+          fill: var.$color-adicional;
+        }
+        &--close {
+          width: 30px;
+          float: right;
+          margin: 1rem;
+        }
+      }
+
+      /* Muestra el nav*/
+      &--show {
+        transform: translateX(0);
+      }
+
+      // colocamos los item del menú en columna
+      &__ul {
+        $filas: repeat(4, 1fr);
+        @include mixin.grid(auto, $filas);
+        gap: 1rem;
+        padding-top: 1rem;
+        margin-top: 4rem;
+        display: block;
+      }
+
+      &__link {
+        @extend .centrado;
+        display: block;
+
+        &:hover {
+          padding: 0.5rem;
+          @include efectoButton(var.$color-secundario, var.$color-primario);
+        }
+
+        &:first-child {
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
+
+  /* Estilos Escritorio*/
+  //@media all and (min-width: 701px) {
+  @include mixin.respond-to("escritorio") {
+    .nav {
+      width: calc(100% - 250px);
+
+      /* ocultamos el boton de abrir o cerrar */
+      &__button {
+        display: none;
+      }
+
+      &__ul {
+        list-style: none;
+        padding-top: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(auto, 150px));
+        grid-template-rows: max-content;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      &__link {
+        padding: 0.25rem 1rem;
+        text-align: center;
+        text-decoration: none;
+        color: var.$color-adicional;
+        transition: 0.6s;
+
+        &:hover {
+          @include efectoButton();
+        }
+      }
+    }
+  }
+}

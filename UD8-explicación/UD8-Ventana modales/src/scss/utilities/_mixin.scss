@@ -1,0 +1,85 @@
+@use "sass:math";
+
+//mixin posicionar con flex
+@mixin flex($direccion: row, $wrap: wrap, $justify: center, $align: center) {
+  display: flex;
+  flex-flow: $direccion $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  align-content: $align;
+}
+
+// mixin par definir el ancho y el alto
+@mixin anchoAlto($ancho: 100%, $alto: auto) {
+  width: $ancho;
+  height: $alto;
+}
+
+// mixin para definir los títulos
+@mixin titulos($tam: 3) {
+  h1 {
+    font-size: $tam * 1rem;
+  }
+
+  h2 {
+    font-size: ($tam - 0.5) * 1rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: ($tam - 1) * 1rem;
+  }
+
+  h4 {
+    font-size: ($tam - 1.5) * 1rem;
+  }
+}
+
+// mixin para el posicionamiento con grid
+@mixin grid($columnas, $filas, $justifyItem: center, $alignItems: center) {
+  display: grid;
+  grid-template-columns: $columnas;
+  grid-template-rows: $filas;
+  justify-content: center;
+  justify-items: $justifyItem;
+  align-items: $alignItems;
+}
+
+// mixin para definir las propiedades de la animacion
+@mixin defAnimacion($propiedades) {
+  animation: $propiedades;
+  -o-animation: $propiedades;
+  -moz-animation: $propiedades;
+  -webkit-animation: $propiedades;
+}
+
+// mixin para añadir los fotogramas claves
+@mixin keyframes($nombre) {
+  @keyframes #{$nombre} {
+    @content;
+  }
+
+  @-moz-keyframes #{$nombre} {
+    @content;
+  }
+
+  @-o-keyframes #{$nombre} {
+    @content;
+  }
+
+  @-webkit-keyframes #{$nombre} {
+    @content;
+  }
+}
+
+// mixin animacion de aparecer ventana modal
+@mixin animacionAparecer() {
+  from {
+    top: math.div(100, 2) * -1vw;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

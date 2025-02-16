@@ -1,0 +1,132 @@
+@use "../utilities/variables" as var;
+@use "../utilities/mixin";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: var.$colorPrimario;
+
+  font: {
+    size: var.$tamFuente * 1px;
+    family: var.$fuente;
+  }
+
+  line-height: 1.5;
+}
+
+body {
+  @include mixin.flex(column, nowrap, space-between);
+  min-height: 100vh;
+  @include mixin.anchoAlto(100vw);
+  @include mixin.titulos();
+
+  .cabecera {
+    background-color: var(--bg-primary);
+    color: white;
+    padding: 1rem 0;
+    $columnas: 150px 1fr;
+    @include mixin.grid($columnas, auto);
+    @include mixin.anchoAlto();
+
+    &__logo {
+      @include mixin.anchoAlto($ancho: 80px);
+      background-color: rgba(255, 255, 255, 0.792);
+      border-radius: 50%;
+
+      img {
+        @include mixin.anchoAlto();
+      }
+    }
+  }
+
+  .main {
+    flex-grow: 1;
+    max-width: 90%;
+    margin: 0 auto;
+
+    &__seccion {
+      padding: 1rem;
+
+      h2,
+      h3 {
+        padding: 1rem 0;
+        text-align: center;
+      }
+
+      ul,
+      ol,
+      li {
+        margin-left: 2rem;
+      }
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      .centrar {
+        text-align: center;
+      }
+    }
+
+    pre {
+      background-color: #cacaca51;
+      width: 100%;
+      overflow: auto;
+    }
+
+    .codigo {
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgba(73, 65, 232);
+      font-size: 1.2rem;
+      background-color: rgba(215, 215, 24, 0.302);
+      border-bottom: 1px dotted #6c6c6c;
+    }
+  }
+
+  button,
+  .eboton {
+    cursor: pointer;
+    width: max-content;
+    background-color: var.$colorPrimario;
+    color: white;
+    padding: 10px 25px;
+    border-color: var.$colorPrimario;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+
+    &:hover {
+      background-color: thistle;
+      color: darkmagenta;
+    }
+  }
+
+  .footer {
+    background-color: var.$colorPrimario;
+    color: white;
+    @include mixin.anchoAlto();
+    @include mixin.flex($justify: space-between);
+    padding: 1rem;
+
+    &__accesible {
+      .img_pie {
+        @include mixin.anchoAlto($ancho: 80px);
+      }
+    }
+
+    * img {
+      @include mixin.anchoAlto($ancho: 40px);
+      fill: white;
+    }
+  }
+}

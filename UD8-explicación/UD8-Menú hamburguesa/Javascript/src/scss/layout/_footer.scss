@@ -1,0 +1,36 @@
+// Estilos del pie
+@use "../utilities/variables" as var;
+@use "../utilities/mixin";
+
+.footer {
+  background-color: var.$color-fondo;
+  @include mixin.anchoAlto();
+  color: white;
+  @include mixin.flex($justify: space-between);
+  gap: 1rem;
+  padding: 1rem;
+
+  @include mixin.respond-to("movil") {
+    @include mixin.flex(column-reverse, $justify: center);
+  }
+
+  &__enlaces {
+    @include mixin.flex(row);
+    gap: 1rem;
+
+    div a > img {
+      text-decoration: none;
+    }
+  }
+
+  &__accesible {
+    .img__pie {
+      @include mixin.anchoAlto($ancho: 70px);
+    }
+  }
+
+  * img {
+    @include mixin.anchoAlto($ancho: 40px);
+    fill: white;
+  }
+}

@@ -1,0 +1,106 @@
+// mixin anchoAlto
+@use "sass:map";
+@use "sass:string";
+@use "sass:meta";
+@use "../utilities/variables" as var;
+
+@mixin anchoAlto($ancho: 100%, $alto: auto) {
+  width: $ancho;
+  height: $alto;
+}
+
+// mixin para posicionar con flex
+@mixin flex($direccion: row, $wrap: wrap, $justify: center, $align: center) {
+  display: flex;
+  flex-flow: $direccion $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  align-content: $align;
+}
+
+@mixin grid($columnas, $filas, $justifyItem: center, $alignItems: center) {
+  display: grid;
+  grid-template-columns: $columnas;
+  grid-template-rows: $filas;
+  justify-content: center;
+  justify-items: $justifyItem;
+  align-items: $alignItems;
+}
+
+@mixin titulos($tam: 3) {
+  h1 {
+    font-size: $tam * 1rem;
+  }
+
+  h2 {
+    font-size: ($tam - 0.5) * 1rem;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: ($tam - 1) * 1rem;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: ($tam - 1.5) * 1rem;
+    padding: 1rem;
+  }
+}
+
+@mixin defAnimacion($propiedades) {
+  animation: $propiedades;
+  -moz-animation: $propiedades;
+  -o-animation: $propiedades;
+  -webkit-animation: $propiedades;
+}
+
+/* animación para que aparezca la ventana modal*/
+@mixin animacionAparecer() {
+  from {
+    top: math.div(100, 2) * -1vw;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin keyframes($nombre) {
+  @keyframes #{$nombre} {
+    @content;
+  }
+
+  @-moz-keyframes #{$nombre} {
+    @content;
+  }
+
+  @-o-keyframes #{$nombre} {
+    @content;
+  }
+
+  @-webkit-keyframes #{$nombre} {
+    @content;
+  }
+}
+
+// Gestor Responsive
+/// @access public
+/// @param {String} $breakpoint - Punto de ruptura
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+  $raw-query: map.get(var.$breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(meta.type-of($raw-query) == "string", string.unquote($raw-query), meta.inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No se ha encontrado un valor para `#{$breakpoint}`. '
+           + 'Por favor, asegúrate que está definido en el mapa `$breakpoints`.';
+  }
+}

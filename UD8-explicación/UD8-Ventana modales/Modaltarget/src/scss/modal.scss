@@ -1,0 +1,41 @@
+@forward "../../../src/scss/general";
+@use "../../../src/scss/general";
+.eboton {
+  text-decoration: none;
+  width: max-content;
+}
+
+/* clase que representa el fondo de la ventana */
+.modal {
+  background-color: $colorPrimario;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s ease-in;
+
+  &__contenido {
+    position: relative;
+    border: 8px solid #321c3b;
+    background-color: #fafafa;
+    padding: 1rem 2rem;
+    margin: 20%;
+    @include flex(column, nowrap, stretch);
+    height: max-content;
+
+    #cierre {
+      margin-left: auto;
+      text-decoration: none;
+      color: black;
+      font-size: 1.2rem;
+    }
+  }
+
+  &:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

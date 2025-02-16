@@ -1,0 +1,86 @@
+@use "../utilities/variables" as var;
+@use "../utilities/mixin";
+:root {
+  font: {
+    size: 16px;
+    family: var.$fuente;
+  }
+
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 90vw;
+}
+
+.visible {
+  opacity: 1;
+}
+body {
+  @include mixin.flex($direccion: column, $wrap: nowrap, $justify: space-between);
+  min-height: 100vh;
+  @include mixin.anchoAlto($ancho: 100vw);
+  @include mixin.titulos();
+
+  .main {
+    flex-grow: 1;
+    max-width: 90%;
+    margin: 0 auto;
+    justify-self: flex-start;
+
+    &__seccion {
+      padding: 1rem;
+
+      &--dos {
+        $columnas: repeat(auto-fit, minmax(280px, auto));
+        @include mixin.grid($columnas, auto);
+        gap: 1rem;
+      }
+
+      * h2,
+      * h3 {
+        padding: 1rem 0;
+      }
+
+      * p {
+        padding: 1rem;
+      }
+
+      ul,
+      li,
+      ol {
+        margin-left: 2rem;
+      }
+
+      div {
+        padding: 1rem 0;
+      }
+
+      * .centrar {
+        text-align: center;
+      }
+    }
+  }
+}
+
+//eboton
+// button {
+//   cursor: pointer;
+//   width: max-content;
+//   background-color: var(--bg-fondo);
+//   padding: 10px 25px;
+//   color: white;
+//   border-color: var(--bg-fondo);
+//   border: 0;
+//   border-radius: 5px;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+//   margin: 1rem;
+//   font-size: 1rem;
+
+//   &:hover {
+//     background-color: thistle;
+//     color: darkmagenta;
+//   }
+// }

@@ -1,0 +1,30 @@
+// estilos menú hamburquesa solo css
+
+@use "../utilities/variables" as var;
+
+.cabecera {
+  .off-canvas {
+    &__btn {
+      // Usamos un input de tipo checkbox, que aparece cuando estamos en un tamaño movil
+      // para seleccionar si se muestra o no el menú hamburquesa
+      &:checked ~ .nav {
+        transform: translateX(0);
+        transition: 0.5s;
+      }
+
+      &:checked + .off-canvas__burger {
+        background-color: transparent;
+      }
+      // cuando está cheched
+      &:checked + .off-canvas__burger::before {
+        transform: rotate(45deg) translate(0, 0);
+        background-color: var.$color-primario;
+      }
+
+      &:checked + .off-canvas__burger::after {
+        transform: rotate(-45deg) translate(0.3rem, -0.375rem);
+        background-color: var.$color-primario;
+      }
+    }
+  }
+}

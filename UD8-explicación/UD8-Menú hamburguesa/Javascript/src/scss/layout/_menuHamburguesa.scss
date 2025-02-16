@@ -1,0 +1,43 @@
+// estilos del menú hamburguesa con javascript
+@use "../utilities/variables" as var;
+@use "../utilities/mixin";
+
+.cabecera {
+  .off-canvas {
+    &__btn {
+      background: none;
+      border: none;
+      box-shadow: none;
+      @include mixin.respond-to("movil") {
+        opacity: 1;
+      }
+      // cuando el botón tiene la clase close la caja de selección hacemos transparente el fondo del span por lo tanto la línea central
+      .close {
+        background-color: transparent;
+      }
+
+      // creamos la x
+      .close::before {
+        // girará respecto a la línea superior izquierda y así se centre
+        // movemos la línea para que se centre la línea
+        transform: rotate(45deg) translate(0, 0);
+        background-color: var.$color-primario;
+      }
+      .close::after {
+        // girará respecto a la línea superior izquierda y así se centre
+        // se mueve de 0.4rem a -0.5rem
+        transform: rotate(-45deg) translate(0.3rem, -0.375rem);
+        background-color: var.$color-primario;
+      }
+    }
+    // @include general.respond-to("movil") {
+    //   nav {
+    //     transform: translateX(0);
+    //     transition: 0.5s;
+    //   }
+    //   &__menu {
+    //     z-index: 997;
+    //   }
+    // }
+  }
+}

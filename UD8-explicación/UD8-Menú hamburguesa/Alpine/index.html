@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de mascotas - Off Canvas</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+  /home/marina/Documentos/VisualStudio/DIW/UD8-explicación
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="cabecera">
+    <!-- Logo -->
+    <a href="" class="cabecera__logo"><img src="./assets/img/logo.jpg" alt=""></a>
+    <!-- Boton abrir -->
+    <!-- Adjunta el evento click al elemento img, de forma que al hacer click sobre el cambiamos el valor de la variable open de false a true-->
+    <img src="./assets/img/menu-hamburgesa.svg" alt="" class="nav__button nav__button--open">
+    <!-- Navegador -->
+    <!-- Asigna la clase nav--show al elemento nav en el caso de que la variable open tenga valor true-->
+    <nav class="nav">
+      <!-- Boton cerrar -->
+      <!-- Adjunta el evento click al elemento img, de forma que al hacer click sobre el cambiamos el valor de la variable open de true a false-->
+      <img src="./assets/img/menu_close.svg" alt="" class="nav__button nav__button--close">
+
+      <!-- Menu -->
+      <ul class="nav__ul">
+        <li class="nav__item"><a href="#" class="nav__link nav__link--activo">Nosotros</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Servicios</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Seguros</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Contacta</a></li>
+      </ul>
+    </nav>
+    <!-- Fin Navegador -->
+  </header>
+  <main class="main">
+    <section class="main__seccion main__seccion--dos">
+      <article>
+        <h2>Clinica Veterinaria Mascotas</h2>
+        <p>Nos encanta escuchar a nuestros clientes, oír lo que necesitan y cumplir los objetivos que buscan
+          para su
+          mascota, por eso hace casi 30 años que nuestro equipo veterinario en Santiago trabaja para prestar
+          un
+          servicio profesional y de calidad a sus clientes.</p>
+        <p>
+          Desde sus inicios hasta hoy la Clínica Veterinaria Amigos ha ido creciendo y adquiriendo las
+          infraestructuras necesarias para poder ofrecer un amplio abanico de servicios y especialidades, sin
+          dejar de atender de forma personalizada a cada una de las más de 8000 mascotas que confían en
+          nosotros.
+        </p>
+      </article>
+      <div>
+        <figure><img src="./assets/img/cat-and-dog.jpg" alt=""></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__derechos">
+      <small>&copy; Copyright 2023. Todos los derechos reservados. </small>
+      <p><small>Realizado por: Marina Vega Vázquez</small></p>
+    </div>
+    <div class="footer__enlaces footer__accesible">
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="./assets/img/wcag1AA.gif" class="img__pie" alt="¡CSS Válido!" />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="./assets/img/wcag1AA-blue.gif" class="img__pie" alt="¡CSS Válido!" />
+      </a>
+    </div>
+    <div class="footer__enlaces footer__redes">
+      <a href="https://github.com/mvegav/Publico.git" target="_blank">
+        <img src="./assets/img/github.svg" alt="logo enlace a github"></img>
+      </a>
+      <a href="mailto:marinavv@iessanclemente.net">
+        <img src="./assets/img/gmail.svg" size="32" alt="logo de gmail"></img>
+      </a>
+  </footer>
+</body>
+
+</html>

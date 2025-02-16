@@ -1,0 +1,53 @@
+$bg-dia: #ffec8b;
+$color-dia: #000;
+$bg-noche: #2f3277;
+$color-noche: #eb4c49;
+$fuente: "Helvetica", sans-serif;
+
+body {
+  background-color: $bg-dia;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-dia;
+}
+
+button {
+  border: none;
+  background-color: #000;
+  color: white;
+
+  font: {
+    size: 2rem;
+    family: $fuente;
+    weight: 600;
+  }
+
+  letter-spacing: 2px;
+  padding: 1.61rem 1rem;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.modo-luna {
+  color: $color-noche;
+  background-color: $bg-noche;
+
+  & span {
+    visibility: hidden;
+    position: relative;
+    display: inline-block;
+
+    // añadimos la luna detrás del span
+    &::after {
+      visibility: visible;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "\274D";
+    }
+  }
+}
