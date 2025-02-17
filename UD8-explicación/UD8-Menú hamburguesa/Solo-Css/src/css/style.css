@@ -180,10 +180,7 @@ body .main__seccion * .centrar {
   }
   .cabecera .nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: #dcb78e;
     transform: translateX(-100vw);
     transition: 0.5s;

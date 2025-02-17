@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background-color: #FFEC8B;
+  background-color: #ffec8b;
   height: 100vh;
   margin: 0;
   display: flex;
@@ -9,8 +9,7 @@ body {
   align-items: center;
   color: #000;
 }
-
-button {
+body button {
   border: none;
   background-color: #000;
   color: white;
@@ -22,17 +21,16 @@ button {
   text-transform: uppercase;
   width: auto;
 }
-
-.modo-luna {
-  color: #EB4C49;
-  background-color: #2F3277;
+body.dark-mode {
+  color: #eb4c49;
+  background-color: #2f3277;
 }
-.modo-luna span {
+body.dark-mode span {
   visibility: hidden;
   position: relative;
   display: inline-block;
 }
-.modo-luna span::after {
+body.dark-mode span::after {
   visibility: visible;
   position: absolute;
   top: 0;

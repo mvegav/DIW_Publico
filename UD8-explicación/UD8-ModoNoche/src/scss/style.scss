@@ -13,7 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   color: $color-dia;
-}
+
 
 button {
   border: none;
@@ -30,9 +30,10 @@ button {
   padding: 1.61rem 1rem;
   text-transform: uppercase;
   width: auto;
-}
 
-.modo-luna {
+}
+  
+&.dark-mode{
   color: $color-noche;
   background-color: $bg-noche;
 
@@ -50,4 +51,5 @@ button {
       content: "\274D";
     }
   }
+}
 }

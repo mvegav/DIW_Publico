@@ -7,24 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda de mascotas - Off Canvas</title>
   <link rel="stylesheet" href="./src/css/style.css">
-  /home/marina/Documentos/VisualStudio/DIW/UD8-explicación
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
   <!-- Header -->
-  <header class="cabecera">
+  <header class="cabecera" x-data="{open: false}">
     <!-- Logo -->
     <a href="" class="cabecera__logo"><img src="./assets/img/logo.jpg" alt=""></a>
     <!-- Boton abrir -->
     <!-- Adjunta el evento click al elemento img, de forma que al hacer click sobre el cambiamos el valor de la variable open de false a true-->
-    <img src="./assets/img/menu-hamburgesa.svg" alt="" class="nav__button nav__button--open">
+    <img src="./assets/img/menu-hamburgesa.svg" alt="" class="nav__button nav__button--open" x-on:click="open=true">
     <!-- Navegador -->
     <!-- Asigna la clase nav--show al elemento nav en el caso de que la variable open tenga valor true-->
-    <nav class="nav">
+    <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
       <!-- Boton cerrar -->
       <!-- Adjunta el evento click al elemento img, de forma que al hacer click sobre el cambiamos el valor de la variable open de true a false-->
-      <img src="./assets/img/menu_close.svg" alt="" class="nav__button nav__button--close">
+      <img src="./assets/img/menu_close.svg" alt="" class="nav__button nav__button--close" x-on:click="open=false">
 
       <!-- Menu -->
       <ul class="nav__ul">
