@@ -1,18 +1,42 @@
 /* Estilos para el modo claro */
 :root {
-    --content: ' 🙅‍♀️ no compatible';
+  --bg-color: #fff;
+  --color-texto: black;
+  --content: ' 🙅‍♀️ no compatible';
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+  background-color: var(--bg-color);
+  color: var(--color-texto);
 }
 
+h1{
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
 h1::after {
   content: var(--content);
+  font-size: 2rem;
 }
 
---content: ' 🌑 Modo oscuro';
---content: ' 🌞 Modo claro';
+
+/* Estilos para el modo oscuro */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg-color: black;
+    --color-texto: white;
+    --content: ' 🌑 Modo oscuro';
+  }
+}
+
+/* Estilos para el modo claro*/
+@media (prefers-color-scheme: light){
+  :root{
+    --content: ' 🌞 Modo claro';
+  }
+}
