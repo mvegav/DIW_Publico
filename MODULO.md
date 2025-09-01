@@ -2,14 +2,14 @@
 
 ## Especificaciones del módulo
 
-- Sesiones anuales: 188
-- Sesiones semanales: 9
-- Evaluaciones: 2
+- Sesiones anuales: 219
+- Sesiones semanales: 8
+- Evaluaciones: 2 - Formación en la empresa
 - Unidades didácticas: 8
 
 ### Unidades didácticas del módulo
 
-El módulo formativo consta de 8 unidades didácticas distribuidas en 2 trimestres.
+El módulo formativo consta de 8 unidades didácticas distribuidas en 2 trimestres en el centro educativo.
 
 #### UD1 -  Planificación de interfaces gráficas
 
