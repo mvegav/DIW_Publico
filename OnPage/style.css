@@ -26,15 +26,103 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  padding: .5rem 0;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav.menu ul a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+a#activa {
+  border-bottom: 3px solid;
+}
+
+.menu li a:hover {
+  font-weight: bold;
 }
 
 
 /*=====  End of Estilos del header  ======*/
 
-
-
-
-
 main {
   flex: 1;
+  background-color: #ececec;
+}
+
+#portada {
+  height: 40vh;
+  background: url(./img/galeria.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  align-content: center;
+}
+
+#portada h2, #portada h3 {
+  color: rgb(20, 20, 20);
+  letter-spacing: 3px;
+}
+
+#portada h2 {
+  font-size: 5rem;
+  text-transform: capitalize;
+}
+
+#portada h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+main section:not(#portada) {
+  padding: 1rem;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+main section:not(#portada) h2 {
+  padding: 1rem 0;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+  padding: 1rem;
+}
+
+
+/*=============================================
+=            Media queries            =
+=============================================*/
+@media screen and (min-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+
+  #portada {
+    height: 60vh;
+  }
 }
