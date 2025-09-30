@@ -49,6 +49,7 @@ h3 {
 p {
   padding: 0.5rem 0;
 }
+
 ul {
   padding-left: 2rem;
 }
@@ -120,6 +121,7 @@ main,
   font-weight: 600;
   text-align: right;
 }
+
 section {
   width: 100%;
   height: max-content;
