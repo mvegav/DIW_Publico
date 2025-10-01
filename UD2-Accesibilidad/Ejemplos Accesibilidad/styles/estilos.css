@@ -80,6 +80,11 @@ img {
   margin-right: 1rem;
 }
 
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+
 header,
 #cabecera {
   width: 100vw;
@@ -90,6 +95,7 @@ header,
   border-bottom: 1px dotted #666;
   background-color: var(--color-fondo);
 }
+
 
 #menu a {
   text-decoration: none;
