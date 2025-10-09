@@ -49,6 +49,7 @@ h3 {
 p {
   padding: 0.5rem 0;
 }
+
 ul {
   padding-left: 2rem;
 }
@@ -79,6 +80,11 @@ img {
   margin-right: 1rem;
 }
 
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+
 header,
 #cabecera {
   width: 100vw;
@@ -89,6 +95,7 @@ header,
   border-bottom: 1px dotted #666;
   background-color: var(--color-fondo);
 }
+
 
 #menu a {
   text-decoration: none;
@@ -120,6 +127,7 @@ main,
   font-weight: 600;
   text-align: right;
 }
+
 section {
   width: 100%;
   height: max-content;
@@ -247,13 +255,21 @@ label {
   font-size: 1.1rem;
 }
 
-input,
+input:not([type="radio"]),
 textarea {
   min-width: 200px;
   padding: 0.5rem;
   border-radius: 5px;
   border: none;
   outline: 1px solid #666;
+}
+
+input[type="radio"]+label {
+  min-width: max-content;
+}
+
+input[type="radio"]:checked+label {
+  font-weight: bold;
 }
 
 textarea {
@@ -272,13 +288,26 @@ textarea:required {
   background-color: lightyellow;
 }
 
-input:focus:valid {
+/* input:focus:valid {
+  outline-color: green;
+} */
+
+input:focus:not(:placeholder-shown):valid {
   outline-color: green;
 }
 
-input:focus:not(valid) {
+/* input:focus:not(valid) {
+  outline-color: red;
+} */
+
+/* input:focus:invalid {
+  outline-color: red;
+} */
+
+input:focus:not(:placeholder-shown):invalid {
   outline-color: red;
 }
+
 
 input[type="submit"] {
   background-color: rgb(5, 66, 5);
@@ -299,6 +328,24 @@ input[type="reset"]:hover {
   outline: 1px solid rgb(110, 31, 31);
   background-color: white;
 }
+
+
+/*=============================================
+=            Estilos del sronly            =
+=============================================*/
+
+
+
+
+
+
+/*=============================================
+=            Etilos del footer            =
+=============================================*/
+
+
+
+
 
 footer {
   width: 100vw;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -10,19 +10,28 @@
 </head>
 
 <body>
-  <div id="cabecera">
+  <!--saltar-->
+  <nav id="saltar">
+    <ul>
+      <li><a href="#menu">Saltar al menú principal</a></li>
+      <li><a href="#contenido">Saltar al contenido</a></li>
+      <li><a href="#pie">Saltar al pie</a></li>
+    </ul>
+  </nav>
+  <header id="cabecera">
     <h1>La Accesibilidad</h1>
-    <div id="menu">
-      <a href="index.html">Inicio</a>
-      <a href="#">La Accesibilidad</a>
-      <a href="./accesibilidadSi.html">Ejemplo Accesible</a>
-      <a href="">Contacta</a>
-    </div>
-  </div>
-  <div id="contenido">
-
-    <div>
-      <h1>¿Qué es la Accesibilidad de la Web?</h1>
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">La Accesibilidad</a></li>
+        <li><a href="./accesibilidadSi.html">Ejemplo Accesible</a></li>
+        <li><a href="">Contacta</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="contenido">
+    <section>
+      <h2>¿Qué es la Accesibilidad de la Web?</h2>
       <p>La <strong>accesibilidad</strong> web se refiere a la capacidad de acceso a la Web y a sus contenidos por
         todas las personas
         independientemente de la discapacidad (física, intelectual o técnica) que presenten o de las que se
@@ -37,89 +46,97 @@
         <li>Discapacidades neurológicas o cognitivas.</li>
         <li>Discapacidad motrices, distrofias muscular, distrofia, demencias, discapacidades físicas,.... </li>
       </ul>
-    </div>
-    <div>
+    </section>
+    <section>
       <h2>Principos de diseño de accesibilidad - Pautas o directrices</h2>
       <table>
-        <tr>
-          <td>Principios de diseño accesible</td>
-          <td>Pautas o directrices de accesibilidad</td>
-        </tr>
-        <tr>
-          <td>Perceptibilidad</td>
-          <td>
-            <ul>
-              <li>Pauta 1.1: alternativas textuales</li>
-              <li>Pauta 1.2: componentes basados en el tiempo</li>
-              <li>Pauta 1.3: contingentes adaptables</li>
-              <li>Pauta 1.4: contingentes distinguibles</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td>Operativilidad</td>
-          <td>
-            <ul>
-              <li>Pauta 2.1: accesibilidad mediante tecnología</li>
-              <li>Pauta 2.2: ofrecer tiempo suficiente</li>
-              <li>Pauta 2.3: convulsiones</li>
-              <li>Pauta 2.4: navegabilidad</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td>Comprensibilidad</td>
-          <td>
-            <ul>
-              <li>Pauta 3.1: accesibilidad de los contingentes</li>
-              <li>Pauta 3.2: predecible</li>
-              <li>Pauta 3.3: asistencia a los usuarios</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td>Robustez</td>
-          <td>Pauta 4.1: maximizar la compatibilidad</td>
-        </tr>
+        <caption>Pautas o directrices WCAG 2.0</caption>
+        <thead>
+          <tr>
+            <th>Principios de diseño accesible</th>
+            <th>Pautas o directrices de accesibilidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Perceptibilidad</td>
+            <td>
+              <ul>
+                <li>Pauta 1.1: alternativas textuales</li>
+                <li>Pauta 1.2: componentes basados en el tiempo</li>
+                <li>Pauta 1.3: contingentes adaptables</li>
+                <li>Pauta 1.4: contingentes distinguibles</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Operativilidad</td>
+            <td>
+              <ul>
+                <li>Pauta 2.1: accesibilidad mediante tecnología</li>
+                <li>Pauta 2.2: ofrecer tiempo suficiente</li>
+                <li>Pauta 2.3: convulsiones</li>
+                <li>Pauta 2.4: navegabilidad</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Comprensibilidad</td>
+            <td>
+              <ul>
+                <li>Pauta 3.1: accesibilidad de los contingentes</li>
+                <li>Pauta 3.2: predecible</li>
+                <li>Pauta 3.3: asistencia a los usuarios</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Robustez</td>
+            <td>Pauta 4.1: maximizar la compatibilidad</td>
+          </tr>
+        </tbody>
       </table>
-    </div>
-    <div>
+    </section>
+    <section>
       <h2>Principios de accesibilidad - POUR</h2>
-
       <figure>
-        <img src="img/POUR.png">
-
+        <img src="img/POUR.png" alt="Principios de accesibilidad" usemap="#image-map" aria-labelledby="desc">
         <map name="image-map" id="image-map">
-          <area target="_self" title="Perceivable"
+          <area target="_self" title="Perceivable" alt="Perceivable"
             href="https://www.w3.org/WAI/fundamentals/accessibility-principles/es#perceivable"
             coords="125,138,128,108,141,82,163,50,191,34,219,21,244,14,245,35,246,53,246,67,224,71,204,84,190,99,182,118,176,138,146,137,124,138,136,136,125,138"
             shape="poly">
-          <area target="_self" title="Operable"
+          <area target="_self" title="Operable" alt="Operable"
             href="https://www.w3.org/WAI/fundamentals/accessibility-principles/es#operable"
             coords="254,66,252,15,302,27,341,57,357,82,370,113,374,138,347,135,323,136,314,107,289,80" shape="poly">
           <area target="_self" alt="Understandable" title="Understandable"
             href="https://www.w3.org/WAI/fundamentals/accessibility-principles/es#understandable"
             coords="253,216,294,203,318,175,322,147,373,147,364,184,355,207,341,227,321,244,296,255,258,265,254,269"
             shape="poly">
-          <area target="_self" title="Robust"
+          <area target="_self" title="Robust" alt="Robust"
             href="https://www.w3.org/WAI/fundamentals/accessibility-principles/es#robust"
             coords="246,263,246,214,209,201,186,178,176,142,126,143,127,168,143,206,166,233,197,252,217,261"
             shape="poly">
-          <area target="_self" title="WCAG" href="https://www.w3.org/WAI/standards-guidelines/wcag/faq/"
+          <area target="_self" title="WCAG" alt="WCAG" href="https://www.w3.org/WAI/standards-guidelines/wcag/faq/"
             coords="250,142,68" shape="circle">
         </map>
-
-        <figcaption>Diagrama con las directrices POUR -
-          Perceivable-Operable-Understandable-Robust - de la WCAG</figcaption>
+        <figcaption class="longdesc" id="desc">Diagrama con las directrices POUR -
+          Perceivable-Operable-Understandable-Robust - de la
+          WCAG
+        </figcaption>
       </figure>
-    </div>
-  </div>
-  <footer>
-    <p>C/ Calle 1</p>
-    <p>Telefono: 981232323</p>
-    <p>Email: correo@prueba.com</p>
+    </section>
+    <a href="#menu">Saltar arriba</a>
+  </main>
+  <footer id="pie">
+    <address>
+      <p>C/ Calle 1</p>
+      <p>Telefono: <a href="tel:+981232323">981232323</a></p>
+      <p>Email: <a href="mailto:correo@prueba.com">correo@prueba.com</a></p>
+    </address>
     <p>&copy; Marina Vega Vázquez &cir; Todos los derechos reservados </p>
-    <h4>Importante! esta página tal y como está realizada NO es accesible</h4>
+    <p><a href="http://www.w3.org/WAI/WCAG1AA-conformance" aria-label="Enlace a la página de WCAG AA">
+        <img src="http://www.w3.org/WAI/wcag1AA" height="32" width="88" alt="W3C- WAI-AA - WCAG 1.0"></a></p>
   </footer>
 </body>
 
