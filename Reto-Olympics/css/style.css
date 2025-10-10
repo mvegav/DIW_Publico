@@ -7,10 +7,15 @@
 }
 
 :root {
+  --bg-color: #F8F8F8;
+  --bg-tabla: #194B5F;
   --color-primario: white;
   --color-secundario: black;
+  --color-equipo: #B30000;
   --font-title: 'Syncopate'.'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   --font-primaria: 'Open sans', sans-serif;
+  --font-title-segunda: 'Syne', 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 12px;
   line-height: 1.5;
 }
@@ -20,14 +25,10 @@ img {
   object-fit: cover;
 }
 
-.logo {
-  display: inline-block;
-  max-width: 80px;
+.logo, .icon {
+  max-width: 40px;
 }
 
-.icon {
-  width: 60px;
-}
 
 body {
   max-width: 100vw;
@@ -37,15 +38,41 @@ body {
   font-family: var(--font-primaria);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: var(--font-title);
 }
 
+h2, h3, h4, h5, h6 {
+  font-family: var(--font-title-segunda);
+}
+
+.cards {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--color-secundario);
+  background-color: var(--color-primario);
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  color: var(--color-primario);
+  background-color: var(--color-secundario);
+}
 
 /*=============================================
 =            Estilos del header            =
 =============================================*/
 header {
+  padding: 1rem;
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: wrap;
@@ -68,7 +95,7 @@ header {
 }
 
 .menu ul a:hover {
-  color: #006646;
+  color: var(--color-equipo);
 }
 
 /*=====  End of Estilos del header  ======*/
@@ -84,12 +111,11 @@ main {
 
 #portada {
   width: 100%;
-  padding: 50px 1rem 1rem 2rem;
-  padding-top: 10vh;
+  padding: 10vh 1rem 1rem 2rem;
   background: var(--color-secundario) url(../assets/images/fondo.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
-  /*min-height: 40vh;*/
+  /* min-height: 40vh; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -105,7 +131,91 @@ h1 {
     -1px 1px 0 #666,
     -1px -1px 0 #666,
     1px -1px 0 #666;
+
 }
+
+
+/*=============================================
+=            Estilos contador            =
+=============================================*/
+#contador {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: -2vh;
+  box-shadow: 4px 4px 10px;
+  background-color: var(--color-primario);
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#contador h2 {
+  font-size: 2rem;
+}
+
+/* #contador div:nth-of-type(2) p:first-of-type { */
+#contador div:nth-child(2) p:first-child {
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+#contador div {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+
+/*=============================================
+=            Estilos deportes            =
+=============================================*/
+#deportes {
+  margin-top: 3rem;
+}
+
+#deportes .card {
+  width: 280px;
+  height: 260px;
+  padding: 5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  color: var(--color-primario);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#deportes h2 {
+  font-size: 2.8rem;
+}
+
+#deportes .card:nth-of-type(1) {
+  background-image: url(../assets/images/features-athletics.png);
+}
+
+#deportes .card:nth-of-type(2) {
+  background-image: url(../assets/images/features-boxing.png);
+}
+
+#deportes .card:nth-of-type(3) {
+  background-image: url(../assets/images/features-weightlifting.png);
+}
+
+#deportes .card:nth-of-type(4) {
+  background-image: url(../assets/images/features-cycling.png);
+}
+
+
 
 /*=====  End of Estilos del main  ======*/
 
@@ -127,9 +237,13 @@ footer {
 /*=============================================
 =            media queries            =
 =============================================*/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 800px) {
   :root {
     font-size: 14px;
+  }
+
+  .logo, .icon {
+    max-width: 60px;
   }
 
   header {
@@ -139,6 +253,10 @@ footer {
   #portada {
     /* min-height: 80vh; */
     background-size: cover;
+  }
+
+  #contador {
+    max-width: 700px;
   }
 }
 
