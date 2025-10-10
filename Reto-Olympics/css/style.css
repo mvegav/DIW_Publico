@@ -1,0 +1,146 @@
+@import "./fonts.css";
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primario: white;
+  --color-secundario: black;
+  --font-title: 'Syncopate'.'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --font-primaria: 'Open sans', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.logo {
+  display: inline-block;
+  max-width: 80px;
+}
+
+.icon {
+  width: 60px;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-primaria);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+}
+
+
+/*=============================================
+=            Estilos del header            =
+=============================================*/
+header {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.menu ul a {
+  text-decoration: none;
+  color: var(--color-secundario);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: var(--font-title);
+}
+
+.menu ul a:hover {
+  color: #006646;
+}
+
+/*=====  End of Estilos del header  ======*/
+
+
+
+/*=============================================
+=            Estilos del main            =
+=============================================*/
+main {
+  flex: 1;
+}
+
+#portada {
+  width: 100%;
+  padding: 50px 1rem 1rem 2rem;
+  padding-top: 10vh;
+  background: var(--color-secundario) url(../assets/images/fondo.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /*min-height: 40vh;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+h1 {
+  font-size: 12vw;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  /* definimos un borde */
+  text-shadow:
+    1px 1px 0 #666,
+    -1px 1px 0 #666,
+    -1px -1px 0 #666,
+    1px -1px 0 #666;
+}
+
+/*=====  End of Estilos del main  ======*/
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+  padding: 1rem;
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+  text-align: center;
+}
+
+
+/*=====  End of Estilos del footer  ======*/
+
+
+/*=============================================
+=            media queries            =
+=============================================*/
+@media screen and (min-width: 1024px) {
+  :root {
+    font-size: 14px;
+  }
+
+  header {
+    flex-direction: row;
+  }
+
+  #portada {
+    /* min-height: 80vh; */
+    background-size: cover;
+  }
+}
+
+
+/*=====  End of media queries  ======*/
