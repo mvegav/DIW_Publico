@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primaria: 'Roboto', sans-serif;
+  --ff-secundaria: 'Open Sans', sans-serif;
+
+  --color-fondo-pagina: hsl(206, 33%, 96%);
+  --color-letra-1: hsl(209, 61%, 16%);
+  --color-letra-2: hsl(210, 22%, 49%);
+  --color-letra-3: #222;
+  --color-letra-4: #fff;
+  --spacing: .1rem;
+  --radius: .25rem;
+  /* font-family: var(--ff-secundaria);
+  font-size: 16px;
+  line-height: 1.5; */
+  font: 16px/1.5 var(--ff-secundaria);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-fondo-pagina);
+}
+
+
+/*=============================================
+=            Estilos del main            =
+============================================*/
+
+main {
+  /* flex-grow: 1; */
+  flex: 1;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.contenedor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/*=============================================
+=            Estilos del pie            =
+=============================================*/
+footer {
+  padding: .5rem;
+  text-align: center;
+}

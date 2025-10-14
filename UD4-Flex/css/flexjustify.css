@@ -4,11 +4,37 @@
 }
 
 .item {
-  width: 200px;
+  width: 100px;
   height: 150px;
   color: #FFF;
   text-align: center;
   line-height: 150px;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
+  border: medium solid #666;
+  background-color: brown;
+}
+
+#flex-container1 {
+  justify-content: flex-start;
+}
+
+#flex-container2 {
+  justify-content: flex-end;
+}
+
+#flex-container3 {
+  justify-content: center;
+}
+
+#flex-container4 {
+  justify-content: space-between;
+}
+
+#flex-container5 {
+  justify-content: space-around;
+}
+
+#flex-container6 {
+  justify-content: space-evenly;
 }
