@@ -1,0 +1,14 @@
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.item {
+  width: 200px;
+  height: 150px;
+  color: #FFF;
+  text-align: center;
+  line-height: 150px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}
