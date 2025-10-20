@@ -29,8 +29,10 @@ img {
   max-width: 40px;
 }
 
+html {}
 
 body {
+  background-color: var(--bg-color);
   max-width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -44,6 +46,10 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   font-family: var(--font-title-segunda);
+}
+
+h2 {
+  font-size: 2.5rem;
 }
 
 .cards {
@@ -216,6 +222,54 @@ h1 {
 }
 
 
+/*=============================================
+=            Estilos de la sección equipo            =
+=============================================*/
+#equipo {
+  background: url("../assets/images/background-about2.png");
+  color: var(--color-primario);
+  padding: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+#equipo figure {
+  max-width: 400px;
+  /* overflow: hidden; */
+}
+
+#equipo figure img {
+  border-radius: 5px;
+}
+
+
+
+/*=============================================
+=            Estilos medallero            =
+=============================================*/
+#medallero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+#medallero caption {
+  padding-bottom: .5rem;
+}
+
+table {
+  font-size: 1.1rem;
+  background-color: var(--color-primario);
+}
+
+
+
+
+
 
 /*=====  End of Estilos del main  ======*/
 
@@ -257,6 +311,16 @@ footer {
 
   #contador {
     max-width: 700px;
+  }
+
+  /* #equipo .contenido {
+    flex: 1;
+  } */
+
+  #equipo .contenido {
+    /*flex-basis: 70%;
+    /* flex-grow: 1; */
+    flex: 1 0 70%;
   }
 }
 
