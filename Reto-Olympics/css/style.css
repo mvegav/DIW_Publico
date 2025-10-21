@@ -29,7 +29,6 @@ img {
   max-width: 40px;
 }
 
-html {}
 
 body {
   background-color: var(--bg-color);
@@ -72,6 +71,10 @@ h2 {
 .btn:hover {
   color: var(--color-primario);
   background-color: var(--color-secundario);
+}
+
+section:not(#portada) {
+  margin-bottom: 1rem;
 }
 
 /*=============================================
@@ -264,8 +267,28 @@ h1 {
 table {
   font-size: 1.1rem;
   background-color: var(--color-primario);
+  box-shadow: 4px 4px 10px #c3c3c3;
 }
 
+/* table, th, td, tr {
+  border: 1px solid;
+  border-collapse: collapse;
+} */
+
+th, td {
+  padding: 1rem;
+}
+
+th {
+  background-color: var(--bg-tabla);
+  color: var(--color-primario);
+  font-family: var(--font-title-segunda);
+  font-size: 1.3rem;
+}
+
+tr:not(:last-of-type) td {
+  border-bottom: 1px dotted #c4c4c4;
+}
 
 
 
