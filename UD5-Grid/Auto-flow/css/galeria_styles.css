@@ -13,6 +13,7 @@
 
 .galeria li {
   /*width: 100%;*/
+  position: relative;
   background-color: white;
   padding: 5px;
   border-radius: 5px;
@@ -27,4 +28,45 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.numero {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(105, 105, 105, 0.462);
+  color: white;
+  font-size: 1.5rem;
+  /* posicionamos el número en el centro*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity .5s;
+}
+
+/* Efecto */
+.galeria li:hover .numero {
+  opacity: 0;
+}
+
+.galeria li:nth-of-type(2),
+.galeria li:nth-of-type(4),
+.galeria li:nth-of-type(6) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+
+/*  galeria con auto-flow */
+
+.auto-flow {
+  grid-auto-flow: dense;
+  /*
+  grid: auto-flow dense 100px 200px / repeat(8,1fr);
+  */
 }
