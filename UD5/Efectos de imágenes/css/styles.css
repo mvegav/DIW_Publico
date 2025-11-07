@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #c6cac683;
+  --color-title: rgb(4, 4, 36);
+  --color-texto: black;
+  font: 14px/1.6 "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-title);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+html {
+  background-color: var(--bg-color);
+}
+
+body {
+  width: 80%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  box-shadow: 0px 3px 10px #666;
+}
+
+/************** header ****************/
+header {
+  display: flex;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+/************** main ********************/
+main {
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+  border-bottom: 2px solid #c6c6c6;
+}
+
+h4 {
+  font-size: 1.5rem;
+  padding-left: 0.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+code.codigo {
+  background-color: var(--bg-color);
+  width: 100%;
+  height: max-content;
+  display: block;
+  padding: 1rem 0.5rem;
+  margin: 1rem 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+}
+
+figure.retangulo {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+}
+
+dt {
+  padding: 1rem;
+  font-weight: 600;
+}
+
+dd {
+  padding-left: 2rem;
+}
+
+
+figure.sale {
+  overflow: initial;
+}
+
+
+figure.cuadrada {
+  width: auto;
+  max-width: max-content;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/************ footer ******************/
+footer {
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid #c6c6c6;
+  padding: 1rem 0;
+  color: #666;
+  font-size: 0.8rem;
+}

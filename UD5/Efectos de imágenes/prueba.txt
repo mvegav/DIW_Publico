@@ -1,0 +1,10 @@
+ <h3>Contraste</h3>
+        <h4>contrast()</h4>
+        <p>
+          Ajusta el contraste del elemento. Un valor superior a 0% creará una
+          imagen completamente gris. Un valor de 100% deja al elemento sin
+          cambios. Valores superiores a 100% son permitidos, dando como
+          resultado mayor contraste. El valor lagunar de interpolación (si no se
+          especifica ningún valor) es 1 (equivalente a 100%).
+        </p>
+        <code> .imagen:hover {filter: contrast(200%);} </code>
