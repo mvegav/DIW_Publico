@@ -1,0 +1,103 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+  color: #555;
+  background-color: #eee;
+}
+
+body {
+  width: 90vw;
+  max-width: 1200px;
+  min-height: calc(100vh - 1rem);
+  background-color: white;
+  margin: 0.5rem auto;
+  border-radius: 20px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-out;
+}
+
+
+/*=============================================
+=            Estilos de las cabecera            =
+=============================================*/
+header {
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  border-bottom: 1px solid #c3c3c3;
+  font-size: 3rem;
+}
+
+
+/*=====  End of Estilos de las cabecera  ======*/
+
+
+/*=============================================
+=            Estilos de la galería            =
+=============================================*/
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 200px));
+  grid-auto-rows: minmax(auto, 300px);
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+figure {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 5px;
+  transition: all 0.2s ease-out;
+}
+
+figure:hover {
+  box-shadow: 2px 5px 10px goldenrod;
+}
+
+figure:hover img {
+  filter: saturate(180%);
+}
+
+/*=====  End of Estilos de la galería  ======*/
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+  text-align: center;
+}
+
+
+/*=====  End of Estilos del footer  ======*/
+
+/*=============================================
+=            Media querie            =
+=============================================*/
+
+@media screen and (min-width: 720px) {
+  :root {
+    font-size: 16px;
+  }
+
+  figure:nth-of-type(5) {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+}
