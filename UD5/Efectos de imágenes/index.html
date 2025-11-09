@@ -44,7 +44,7 @@
   .imagen:hover {
       filter: blur(5px);
   }</pre> </code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -64,7 +64,7 @@
   .imagen:hover {
       filter: brightness(1.5);
   } </pre></code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -82,7 +82,7 @@
   .imagen:hover {
       filter: contrast(200%);
   } </code></code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -139,7 +139,7 @@
             WebKit es transparente, y por lo tanto, es inútil si se omite <code>&lt;color&gt;</code>.</p>
         </dd>
         <code class="codigo"> .imagen:hover {drop-shadow(16px 16px 10px black);} </code>
-        <figure class="borde">
+        <figure class="borde rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -159,7 +159,7 @@
   .imagen:hover {
       filter: grayscale(80%);
     }</pre> </code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -176,7 +176,7 @@
   .imagen:hover {
     filter: hue-rotate(90deg);
   }</pre> </code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -192,7 +192,7 @@
   .imagen:hover {
       filter: invert(100%);
     }</pre> </code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -209,7 +209,7 @@
   .imagen:hover {
       filter: saturate(180%);
     } </pre></code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -225,12 +225,12 @@
   .imagen:hover {
       filter: sepia(100%);
   } </pre> </code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
       <section>
-        <h3>Trasparencia</h3>
+        <h3>Trassparencia</h3>
         <h4>opacity()</h4>
         <p>
           Aplica transparencia a la imagen. El valor del parámetro define la proporción de la conversión. Un valor
@@ -244,7 +244,7 @@
   .imagen:hover {
       filter: opacity(.5);
   }</pre> </code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -256,7 +256,7 @@
   .imagen:hover { 
       filter: contrast(175%) brightness(30%);
   } </pre></code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -291,7 +291,7 @@
   }
 </pre>
           </code>
-        <figure class="retangulo sale" id="matriz">
+        <figure class="rectangulo sale" id="matrix">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -302,7 +302,7 @@
           Especifica una operación de escalado 2D descrita por [sx, sy].
         </p>
         <p>
-          <strong>Nota: Si sy no es especificado, se asumirá que tanto sx como sy tendrán el mismo
+          <strong>Nota: Si "sy" no es especificado, se asumirá que tanto "sx" como "sy" tendrán el mismo
             valor</strong>
           Disponemos de la versión scaleX para escalar solo en el eje de las X y scaleY, para escalar en el
           eje Y.
@@ -316,7 +316,7 @@
   }
 </pre>
           </code> </code>
-        <figure class="retangulo">
+        <figure class="rectangulo">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
         <p>
@@ -325,7 +325,7 @@
           pero estableciendo un contenedor que oculta todo lo que sale del tamaño original (gracias al
           overflow:hidden). Con un escalado de este tipo sin contenedor conseguimos una imagen que se agranda:
         </p>
-        <figure class="retangulo sale">
+        <figure class="rectangulo sale">
           <img src="./img/paisaje.jpg" class="imagen" alt="" />
         </figure>
       </section>
@@ -415,9 +415,26 @@
     transform: rotateY(180deg) translateX(100%);
   }
           </pre> </code>
-        <figure class="retangulo sale">
-          <img src="./img/19734726_zdxn_8utu_200403.svg" class="svg" alt="" />
-        </figure>
+        <ul class="cards">
+          <li>
+            <h3>Origin center</h3>
+            <figure class="rectangulo sale">
+              <img src="./img/19734726_zdxn_8utu_200403.svg" class="svg" alt="" />
+            </figure>
+          </li>
+          <li>
+            <h3>Origin Bootom right</h3>
+            <figure class="rectangulo sale">
+              <img src="./img/19734726_zdxn_8utu_200403.svg" class="svg" alt="" />
+            </figure>
+          </li>
+          <li>
+            <h3>Origin Top Left</h3>
+            <figure class="rectangulo sale">
+              <img src="./img/19734726_zdxn_8utu_200403.svg" class="svg" alt="" />
+            </figure>
+          </li>
+        </ul>
       </section>
     </section>
   </main>

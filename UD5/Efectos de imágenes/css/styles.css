@@ -76,15 +76,16 @@ code.codigo {
   font-size: 1.2rem;
 }
 
-figure.retangulo {
+
+figure.rectangulo {
   width: auto;
-  max-width: 100%;
+  max-width: 800px;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  margin: 0 auto;
   overflow: hidden;
 }
+
+
 
 dt {
   padding: 1rem;
@@ -95,12 +96,95 @@ dd {
   padding-left: 2rem;
 }
 
+figure img {
+  transition: all 0.5s ease-in-out;
+  border: 1px solid black;
+  width: 100%;
+}
 
-figure.sale {
+/*=============================================
+=            Estilos de desenfoque - blur     =
+=============================================*/
+
+#filtros section:first-of-type figure .imagen:hover {}
+
+
+/*=============================================
+=            Estilos de Brillo - brightness   =
+=============================================*/
+
+#filtros section:nth-of-type(2) figure .imagen:hover {}
+
+/*=============================================
+=            Estilos de contraste - contrast            =
+=============================================*/
+
+#filtros section:nth-of-type(3) figure .imagen:hover {}
+
+
+/*=============================================
+=            Estilos Sombra a la imagen  - drop-shadow       =
+=============================================*/
+#filtros section:nth-of-type(4) figure {
   overflow: initial;
 }
 
+#filtros section:nth-of-type(4) figure .imagen:hover {}
 
+/*=============================================
+=            Estilos Escala de grises - grayscale           =
+=============================================*/
+
+#filtros section:nth-of-type(5) figure .imagen:hover {}
+
+/*=============================================
+=            Estilos Rotación en el tono - hue-rotate            =
+=============================================*/
+
+#filtros section:nth-of-type(6) figure .imagen:hover {}
+
+/*=============================================
+=            Estilos  Inversión de colores - invert         =
+=============================================*/
+#filtros section:nth-of-type(7) figure .imagen:hover {}
+
+/*=============================================
+=            Estilos saturación - saturate            =
+============================================*/
+
+#filtros section:nth-of-type(8) figure .imagen:hover {}
+
+
+/*=============================================
+=            Estilos Sepia            =
+=============================================*/
+
+#filtros section:nth-of-type(9) figure .imagen:hover {}
+
+
+/*=============================================
+=            Estilos Trassparencia - opacity           =
+=============================================*/
+
+#filtros section:nth-of-type(10) figure .imagen:hover {}
+
+
+/*=============================================
+=            Estilos Combinación de funciones            =
+=============================================*/
+
+#filtros section:nth-of-type(11) figure .imagen:hover {}
+
+/*=============================================
+=            Estilos Transformación 2D - matrix            =
+=============================================*/
+
+#matrix .imagen:hover {}
+
+
+/*=============================================
+=            Estilos Zoom y cambios de tamaño            =
+=============================================*/
 figure.cuadrada {
   width: auto;
   max-width: max-content;
@@ -112,6 +196,58 @@ figure.cuadrada {
   margin: 0 auto;
 }
 
+
+figure.sale {}
+
+#trasformaciones section:nth-of-type(2) figure .imagen:hover {}
+
+/*=============================================
+=            Estilos Giros y rotaciones            =
+=============================================*/
+
+#trasformaciones section:nth-of-type(3) figure:first-of-type .imagen:hover {}
+
+
+
+#trasformaciones section:nth-of-type(3) figure:last-of-type .imagen:hover {
+
+
+  /* transform-style	flat | preserve-3d	Modifica el tratamiento 3D de los elementos hijos.
+  Por defecto, la propiedad transform-style está establecida a flat, o lo que es lo mismo,
+   trata los elementos como elementos 2D, por lo que no podemos usar 3D, salvo que lo 
+   indiquemos expresamente con el valor preserve-3d. De esta forma, todos los elementos
+    hijos del elemento que tenga esa propiedad, se tratarán como elementos 3D:*/
+  /*transform-origin	  	Cambia el punto de origen del elemento en una transformación.*/
+
+}
+
+
+/*=============================================
+=            Estilos combinando efectos            =
+=============================================*/
+
+#combinar figure {
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+#combinar img:hover {}
+
+
+/*=============================================
+=            Estilos punto de origen            =
+=============================================*/
+
+#origen figure {}
+
+.cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 400px));
+  justify-content: center;
+  gap: 1rem;
+}
+
 /************ footer ******************/
 footer {
   width: 100%;
@@ -120,4 +256,12 @@ footer {
   padding: 1rem 0;
   color: #666;
   font-size: 0.8rem;
+}
+
+
+@media screen and (min-width: 720px) {
+  :root {
+    font-size: 16px;
+  }
+
 }
