@@ -231,7 +231,6 @@ figure.sale {
 }
 
 #trasformaciones section:nth-of-type(2) figure .imagen:hover {
-
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
 }
