@@ -274,14 +274,38 @@ figure.sale {
   overflow: hidden;
 }
 
-#combinar img:hover {}
+#combinar img:hover {
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px 15px #ec731e;
+  -webkit-transform: rotate(360deg) scale(.5);
+  -moz-transform: rotate(360deg) scale(.5);
+  transform: rotate(360deg) scale(.5);
+}
 
 
 /*=============================================
 =            Estilos punto de origen            =
 =============================================*/
 
-#origen figure {}
+#origen figure {
+  max-width: 400px;
+}
+
+#origen li:first-of-type figure:hover img {
+  transform-origin: center;
+  /* por defecto */
+  transform: rotateY(180deg);
+}
+
+#origen li:nth-of-type(2) figure:hover img {
+  transform-origin: bottom right;
+  transform: rotateY(180deg) translate(100%);
+}
+
+#origen li:nth-of-type(3) figure:hover img {
+  transform-origin: top left;
+  transform: rotateY(180deg) translate(-100%);
+}
 
 .cards {
   list-style: none;
