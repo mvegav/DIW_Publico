@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+
+::cue {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: orange;
+  font: 1.2rem Sans serif;
+  text-shadow: 1px 1px 2px black;
+}
+
+::cue(v[voice=padre]) {
+  font-family: Georgia;
+  color: white;
+  font-size: 1.5rem;
+}
+
+::cue(v[voice=narrador]) {
+  font-family: Verdana;
+  font-size: 1.7rem;
+}
+
+::cue(.fin) {
+  font-family: 'Franklin Gothic Medium';
+  color: brown;
+  background-color: rgba(255, 255, 255, 0.546);
+}
+
+
+/* Estilos video y audio */
+audio, video {
+  max-width: 95%;
+  box-shadow: 10px 15px 20px rgb(44, 43, 43);
+  margin: 1% auto;
+  border-radius: 20px;
+}
+
+
+/* Estilos para el audio */
+.testimonio {
+  margin: 0 auto;
+  width: auto;
+  max-width: 800px;
+  background-color: #ccc;
+  border-radius: 20px;
+  box-shadow: 3px 3px 20px #ccc;
+  display: flex;
+
+  text-align: center;
+
+}
+
+.testimonio h3 {
+  font-size: 1.5rem;
+}
+
+.testimonio figure {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  max-height: 200px;
+}
+
+.testimonio figure {
+  width: 100%;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+@media screen and (min-width: 720px) {
+  .testimonio {
+    max-height: 200px;
+    display: grid;
+    grid-template-columns: minmax(auto, 200px) 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .testimonio figure {
+    grid-row: 1/5;
+  }
+
+}
