@@ -57,18 +57,23 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  animation-name: color;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
   /* estilos finales tras la animación estado final de la misma 
   none - ningun estilo
   backwards - los estilos del primer fotograma
   forwards - los estilos del último fotograma
   both - aplica los estilos en ambas direcciones*/
+  animation-direction: normal;
   /* Define la dirección de la animación
   normal - se reproduce tal cual se define en el @keyframe
   reverse - se invierte el orden 
   alternate - para múltiples interacciones alterna el normal con el reverse 
   alternate-reverse - reproduce la animación en la dirección reverse seguida de la dirección normal
   */
+  animation: color 5s ease-in-out forwards normal;
 }
 
 h1 {
@@ -76,6 +81,21 @@ h1 {
 }
 
 /* Animación de cambio de color del fondo */
+@keyframes color {
+  from {
+    background-color: white;
+  }
+
+  50% {
+    background-color: antiquewhite;
+    box-shadow: 1px 1px 1px burlywood;
+  }
+
+  to {
+    background-color: wheat;
+    box-shadow: 4px 4px 10px burlywood;
+  }
+}
 
 /*=============================================
 =            Estilos para la pelota            =
@@ -95,6 +115,7 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
+  animation-name: vuelo;
 
 }
 
