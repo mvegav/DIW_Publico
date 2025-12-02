@@ -116,12 +116,46 @@ h1 {
   top: 0;
   left: 0;
   animation-name: vuelo;
-
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -moz-animation: vuelo 5s linear 5s infinite alternate;
+  -o-animation: vuelo 5s linear 5s infinite alternate;
+  -webkit-animation: vuelo 5s linear 5s infinite alternate;
+  animation: vuelo 5s linear 5s infinite alternate;
 }
 
 
 /* Animación de vuelo de la pelota por la ventana */
+@keyframes vuelo {
+  from {
+    visibility: visible;
+    left: 0;
+    top: 0;
+  }
 
+  15% {
+    left: calc(100vw / 4);
+    top: calc(100vh / 2);
+  }
+
+  25% {
+    left: calc(100vw - 100px);
+    top: calc(100vh - 200px);
+  }
+
+  50% {
+    left: calc(100vw / 3);
+    top: 100px;
+  }
+
+  to {
+    left: calc(100vw - 100px);
+    top: calc(100vh - 200px);
+  }
+}
 
 /*=============================================
 =            Estilos del boton de pausar            =
@@ -157,7 +191,9 @@ h1 {
 =            Estilos de la nota            =
 =============================================*/
 /** Estilos para los elementos animados con trasnsition */
-section#nota {}
+section#nota {
+  transition: all 1s ease-in-out 1s;
+}
 
 section#nota:hover {
   background-color: coral;
@@ -171,11 +207,23 @@ section.mover {
   margin: 1rem auto;
   border-radius: 20px;
   box-shadow: 3px 4px 10px rgb(82, 82, 204);
-
   position: relative;
   text-align: center;
+  animation: abajo-arriba 5s;
 }
 
+@keyframes abajo-arriba {
+  0% {
+    top: 90vh;
+    left: 0;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+  }
+
+}
 
 
 /*=============================================
@@ -186,11 +234,118 @@ section.mover {
 .girar img {
   position: relative;
   left: 0;
+  animation: move-rote 3s 2 linear;
 }
 
 
 /* Animación de movimiento giratorio */
+@-moz-keyframes move-rote {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    filter: blur(0px);
+  }
 
+  25% {
+    transform: translateX(400%) rotate(90deg);
+    filter: blur(5px);
+  }
+
+  50% {
+    transform: translateX(0) rotate(180deg);
+    filter: blur(0px);
+  }
+
+  75% {
+    transform: translateX(-400%) rotate(270deg);
+    filter: blur(5px);
+  }
+
+  100% {
+    transform: translateX(0) rotate(36deg);
+    filter: blur(0px);
+  }
+}
+
+@-o-keyframes move-rote {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    filter: blur(0px);
+  }
+
+  25% {
+    transform: translateX(400%) rotate(90deg);
+    filter: blur(5px);
+  }
+
+  50% {
+    transform: translateX(0) rotate(180deg);
+    filter: blur(0px);
+  }
+
+  75% {
+    transform: translateX(-400%) rotate(270deg);
+    filter: blur(5px);
+  }
+
+  100% {
+    transform: translateX(0) rotate(36deg);
+    filter: blur(0px);
+  }
+}
+
+@-webkit-keyframes move-rote {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    filter: blur(0px);
+  }
+
+  25% {
+    transform: translateX(400%) rotate(90deg);
+    filter: blur(5px);
+  }
+
+  50% {
+    transform: translateX(0) rotate(180deg);
+    filter: blur(0px);
+  }
+
+  75% {
+    transform: translateX(-400%) rotate(270deg);
+    filter: blur(5px);
+  }
+
+  100% {
+    transform: translateX(0) rotate(36deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes move-rote {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    filter: blur(0px);
+  }
+
+  25% {
+    transform: translateX(400%) rotate(90deg);
+    filter: blur(5px);
+  }
+
+  50% {
+    transform: translateX(0) rotate(180deg);
+    filter: blur(0px);
+  }
+
+  75% {
+    transform: translateX(-400%) rotate(270deg);
+    filter: blur(5px);
+  }
+
+  100% {
+    transform: translateX(0) rotate(36deg);
+    filter: blur(0px);
+  }
+}
 
 /* estilos del perro que aumenta */
 
@@ -198,24 +353,67 @@ section.mover {
   scale: 0.8;
 }
 
-.ampliar:hover {}
+.ampliar:hover {
+  animation: ampliar 5s 2 alternate;
+}
 
 /*=============================================
 =            Animación ampliar            =
 =============================================*/
 
+@keyframes ampliar {
+  0% {
+    scale: 0.8;
+  }
+
+  25% {
+    scale: 0.75;
+  }
+
+  50% {
+    scale: 1;
+  }
+
+  75% {
+    scale: 1.25;
+  }
+
+  100% {
+    scale: 1.5;
+  }
+}
 
 /*=============================================
 =            Estilos corazón            =
 =============================================*/
 
-section.latir img {}
+section.latir img {
+  animation: latir 1s infinite 5s;
+  transform: scale(0.8);
+  /* animation-play-state: paused; */
+}
 
-
+/* 
+section.latir img:hover {
+  animation-play-state: running;
+} */
 
 /*=============================================
 =            animación latir            =
 =============================================*/
+@keyframes latir {
+  0%, 50%, 100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.9);
+  }
+
+  75% {
+    transform: scale(1.1);
+  }
+}
 
 /*=============================================
 =            fotogramas claves            =

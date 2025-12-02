@@ -1,0 +1,163 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6; */
+  --color-lados: gold;
+  color: #444;
+  font: 14px/1.6 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* display: flex;
+  flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+main {
+  /* flex: 1; */
+}
+
+
+/*=============================================
+=            Estilos del cubo            =
+=============================================*/
+.espacio3d {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  perspective: 500px;
+  transform: scale(0.75) translateY(-200px);
+}
+
+
+.cubo {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: gira 3000ms infinite;
+}
+
+.cara {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: white;
+  border: 1px solid white;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+
+/* Posicionamos las caras del cubo */
+
+/* frente */
+.front {
+  background-color: #ff8a65;
+  transform: translateZ(100px);
+}
+
+
+/* Atrás */
+
+.back {
+  background-color: #4fc3f7;
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+/* derecha */
+
+.right {
+  background-color: #81c784;
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+/* izquierda */
+
+.left {
+  background-color: #9575cd;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+/* arriba */
+
+.top {
+  background-color: #ffb74d;
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+/* arriba */
+
+.bootom {
+  background-color: #f06292;
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+
+/*=============================================
+=            Estilos de la animación            =
+=============================================*/
+@keyframes gira {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  25% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+
+  50% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+
+  75% {
+    transform: rotateX(270deg) rotateY(270deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* 
+@keyframes gira {
+  0% {
+    transform: translateZ(150px) rotateX(0deg);
+  }
+
+  100% {
+    transform: translateZ(150px) rotateX(360deg);
+  }
+} */
+
+
+
+
+/*=====  End of Estilos del cubo  ======*/
+
+@media screen and (min-width: 720px) {
+  :root {
+    font-size: 16px;
+  }
+}
