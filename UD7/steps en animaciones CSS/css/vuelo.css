@@ -276,9 +276,3 @@
     transform: translateY(0vh) translateX(110vw) scale(0.45);
   }
 }
-
-100% {
-  -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
-  transform: translateY(0vh) translateX(110vw) scale(0.45);
-}
-}
