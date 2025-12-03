@@ -1,0 +1,42 @@
+.bird {
+  background-image: url("../img/bird-cells-new.svg");
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  /* will-change optimiza las animaciones al permitir que el navegador sepa qué propiedades 
+  y elementos están a punto de ser manipulados, aumentando potencialmente el rendimiento de esa operación en particular.*/
+
+  /*steps()es una función de temporización que nos permite dividir una animación o transición en segmentos, 
+  en lugar de una transición continua de un estado a otro. 
+  La función toma dos parámetros: el primero especifica el número positivo de pasos que queremos que 
+  tome nuestra animación.
+  steps(<number_of_steps>, <direction>)
+  En este caso solo pasamos uno por lo tanto indica que los pasos se hacen cada 10 segmentos,
+  tantos como pájaros tiene el svg original*/
+  /* creamos una animación con continuidad infinita que muestre cada transición de la imagen del pájaro*/
+
+}
+
+
+.bird-container {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  -webkit-transform: scale(0) translateX(-10vw);
+  transform: scale(0) translateX(-10vw);
+  -moz-transform: scale(0) translateX(-10vw);
+  -o-transform: scale(0) translateX(-10vw);
+
+  /*Esto permitirá que el navegador prepare la transición 
+        con anticipación y permitirá transiciones rápidas entre las páginas
+         tan pronto como se presione la tecla. Pero will-change cuidado con
+          la propiedad will-change directamente en las hojas de estilo. 
+          Puede hacer que el navegador mantenga la optimización en la 
+          memoria durante mucho más tiempo del necesario.
+          Esto es, lo que hace es facilitar el rendimiento del navegador (UA)
+           a la hora de manejar las páginas y su renderizado, pues de antemano 
+           sabe qué elementos van a sufrir qué cambios
+           y de esta manera estar preparado para cuando sucedan. */
+  will-change: transform;
+
+}
