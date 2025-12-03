@@ -31,9 +31,15 @@ body {
   /* animation: caminar 8s linear infinite; */
   position: relative;
   bottom: 36px;
+  --position: -672px;
+  animation: caminar 1s steps(6) infinite;
 }
 
 /* Animación del cielo. Efecto "Parallax", va más lento que el mar. */
+#cielo {
+  background: url(../img/monkey-sky.png) repeat-x;
+  animation: movebg 9s linear infinite;
+}
 
 /* Animación del mar. */
 #mar {
@@ -43,17 +49,41 @@ body {
   top: 145px;
   /* Pequeño degradado interior para suavizar el mar. Puede consumir muchos recursos */
   box-shadow: 10px 10px 45px rgba(0, 0, 0, 0.85) inset;
+  animation: movebg 9s linear infinite;
 }
+
+
+@keyframes movebg {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: -672px;
+  }
+}
+
 
 /* OPCIONAL: Guybrush */
 #gb {
   width: 104px;
   height: 150px;
-  background: url(https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/monkey-guybrush.png) no-repeat;
+  background: url(../img/monkey-guybrush.png) no-repeat;
   margin: auto;
   position: absolute;
   top: -30px;
-
+  animation: caminar 1s steps(6) infinite;
+  --position: -624px;
   /* Ojo, muy costoso en rendimiento */
   /* filter:drop-shadow(5px 5px 5px #000); */
+}
+
+@keyframes caminar {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: var(--position);
+  }
 }
