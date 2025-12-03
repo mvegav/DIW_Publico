@@ -1,0 +1,27 @@
+.contain-animation {
+  height: 350px;
+}
+
+.contain-bear {
+  width: 575px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cover {
+  width: 675px;
+  height: 150px;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #8fd5d5;
+  /* border: 1px solid red; */
+  animation: walk 7s steps(7, end) infinite;
+}
+
+@keyframes walk {
+  to {
+    transform: translateX(675px);
+  }
+}

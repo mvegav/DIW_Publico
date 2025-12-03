@@ -283,9 +283,9 @@
   z-index: 5;
   /*rotación completa de 360 grados en 43200s (12h), moviendose cada 
   minuto 30 grados */
-
+  animation: tick-tock 43200s steps(43200, end) infinite forwards;
   /* añadimos a las propiedades subyacentes al primer fotograma*/
-
+  animation-composition: add;
 }
 
 .minutes {
@@ -307,7 +307,8 @@
   Realiza la vuelta completa en 60 minutos
   dividimos 360deg en 60 fragmentos (60 minutos) nos da que se mueve 30deg y
   como la animación es de 3600s cada minuto se mueve 30grados */
-
+  animation: tick-tock 3600s steps(60, end) infinite forwards;
+  animation-composition: add;
 }
 
 
@@ -332,7 +333,8 @@
   dividimos 360deg en 60 fragmentos nos da que se mueve 30grados y
   como la animación es de 60s cada segundo se mueve 30grados
   */
-
+  animation: tick-tock 60s steps(60, start) infinite forwards;
+  animation-composition: add;
 }
 
 .center {
@@ -346,4 +348,21 @@
   width: 16px;
   height: 16px;
   z-index: 20;
+}
+
+@keyframes tick-tock {
+  from {
+    transform: var(--rotacion);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes tick-tock {
+  to {
+    -webkit-transform: rotate(360deg) translate3d(0, 0, 0);
+    --rotation: 360deg;
+  }
 }

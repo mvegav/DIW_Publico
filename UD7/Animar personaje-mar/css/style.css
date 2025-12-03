@@ -1,0 +1,91 @@
+/**
+ *
+ * UD7- Aninamción con fotograma clave
+ * Animando un personaje
+ * Autor: Marina Vega Vázquez
+ * Fecha: 4/02/2024
+ *
+ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #000;
+}
+#personaje {
+  /* Tamaño de la viñeta individual */
+  width: 112px;
+  height: 156px;
+  /* Cómo hay establecido un tamaño, centramos con margin:auto */
+  margin: auto;
+  /* background: red;  para enseñar*/
+  background: url(../img/bern.png) repeat-x;
+  /* background-position: -112px; */
+  /* animation: caminar 8s linear infinite; */
+  animation: caminar 1s steps(6) infinite;
+  position: relative;
+  bottom: 36px;
+}
+
+/* Animación del cielo. Efecto "Parallax", va más lento que el mar. */
+#cielo {
+  background: url(../img/monkey-sky.png) repeat-X;
+  animation: movebg 9s linear infinite;
+}
+
+/* Animación del mar. */
+#mar {
+  background: url("../img/monkey-sea.png") repeat-x;
+  animation: movebg 6s linear infinite;
+  /* Posicionamos el mar, para que no solape al cielo */
+  position: relative;
+  top: 145px;
+  /* Pequeño degradado interior para suavizar el mar. Puede consumir muchos recursos */
+  box-shadow: 10px 10px 45px rgba(0, 0, 0, 0.85) inset;
+}
+@keyframes caminar {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -672px;
+  }
+}
+
+@keyframes movebg {
+  0% {
+    background-position: 550px;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+
+/* OPCIONAL: Guybrush */
+#gb {
+  width: 104px;
+  height: 150px;
+  background: url(https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/monkey-guybrush.png)
+    no-repeat;
+  animation: gbwalk 1s steps(6) infinite;
+  margin: auto;
+  position: absolute;
+  top: -30px;
+
+  /* Ojo, muy costoso en rendimiento */
+  /* filter:drop-shadow(5px 5px 5px #000); */
+}
+
+@keyframes gbwalk {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -624px;
+  }
+}

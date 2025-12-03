@@ -20,17 +20,13 @@
   width: 160px;
   height: 110px;
   animation: drive 4s steps(4, end) infinite;
-  -webkit-animation: drive 4s steps(4, end) infinite;
 }
 
 .contain-car-2 {
-  /* margin-top: 120px; */
-  /* al poner start se traslada 640px en el eje de las X al iniciar la animación*/
+  /* position: absolute; */
   animation: drive 4s steps(4, start) forwards;
-  -webkit-animation: drive 4s steps(4, start) forwards;
-  /* si ponemos forwards la posición
-  en la que se queda es la de llegada*/
 }
+
 
 .car-top {
   position: absolute;
@@ -78,13 +74,12 @@
   width: 50px;
   height: 50px;
   animation: spin 4s steps(8, end) infinite;
-  -webkit-animation: spin 4s steps(8, end) infinite;
 }
 
 .contain-car-2 .rueda {
-  animation: spin 4s steps(8, end) forwards;
-  -webkit-animation: spin 4s steps(8, end) forwards;
+  animation: spin 2.5s steps(8, end) forwards .5s;
 }
+
 
 .rueda-right {
   left: 98px;
@@ -166,14 +161,14 @@ input {
   content: "\21bb";
 }
 
-#parar:checked~.contain-car,
-#parar:checked~.contain-car * {
-  animation-play-state: paused;
-}
-
 #parar:not(:checked)~.contain-car,
 #parar:not(:checked)~.contain-car * {
   animation-play-state: running;
+}
+
+#parar:checked~.contain-car,
+#parar:checked~.contain-car * {
+  animation-play-state: paused;
 }
 
 @keyframes drive {
@@ -185,17 +180,5 @@ input {
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes drive {
-  to {
-    -webkit-transform: translateX(640px);
-  }
-}
-
-@-webkit-keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
   }
 }
