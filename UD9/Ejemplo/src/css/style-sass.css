@@ -1,0 +1,43 @@
+/* 
+Estilos para el blog de sass
+*/
+/* estilos generales */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fuente-primaria: Cambria, Cochi, Georgia, serif;
+  --fuente-secundaria: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font: 16px/1.6;
+  font-family: var(--fuente-primaria);
+}
+body header,
+body footer {
+  background-color: violet;
+}
+body header h1,
+body footer h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-family: var(--fuente-secundaria);
+}
+body main {
+  flex: 1;
+}
+body main .articulo {
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=style-sass.css.map */

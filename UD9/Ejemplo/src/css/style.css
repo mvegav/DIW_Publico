@@ -1,0 +1,66 @@
+/* 
+Estilos para el blog de sass
+*/
+/* estilos generales */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fuente-primaria: Cambria, Cochi, Georgia, serif;
+  --fuente-secundaria: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+}
+
+/*=============================================
+=            Estilos del body           =
+=============================================*/
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: var(--fuente-primaria);
+  line-height: 1.6;
+}
+body header,
+body footer {
+  background-color: violet;
+}
+body header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-family: var(--fuente-secundaria);
+}
+body main {
+  flex: 1;
+}
+body main .articulo {
+  padding: 1rem;
+}
+body main .articulo h2 {
+  font-size: 2rem;
+  font-family: var(--fuente-secundaria);
+  padding-left: 1rem;
+  background-color: rgba(238, 130, 238, 0.348);
+  border-radius: 5px;
+}
+body main .articulo p {
+  padding: 0.5rem;
+}
+body main .articulo p.autor {
+  font-style: italic;
+}
+body main .articulo p a {
+  color: #901490;
+  padding: 4px;
+}
+body main .articulo p::selection {
+  background-color: rgba(238, 130, 238, 0.348);
+}
+
+/*# sourceMappingURL=style.css.map */

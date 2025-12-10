@@ -1,0 +1,95 @@
+/* 
+Estilos para el blog de sass
+*/
+// Sintaxis sccs
+$color-fondo: violet;
+$color-fondo-h2: rgba(238, 130, 238, 0.348);
+$color-texto-primario: #333;
+$color-enlaces: #901490;
+$radio-borde: 5px;
+$fuente-primaria: Cambria, Cochi, Georgia, serif;
+$fuente-secundaria: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+$tipo: autor, titulo;
+
+/* estilos generales */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// interpolación
+:root {
+  --fuente-primaria: #{$fuente-primaria};
+  --fuente-secundaria: #{$fuente-secundaria};
+}
+
+/*=============================================
+=            Estilos del body           =
+=============================================*/
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font: {
+    size: 16px;
+    family: var(--fuente-primaria);
+  }
+  line-height: 1.6;
+
+  header,
+  footer {
+    background-color: $color-fondo;
+  }
+
+  header {
+    h1 {
+      text: {
+        align: center;
+        transform: uppercase;
+      }
+      font: {
+        size: 2.5rem;
+        family: var(--fuente-secundaria);
+      }
+    }
+  }
+
+  main {
+    flex: 1;
+
+    & .articulo {
+      padding: 1rem;
+
+      h2 {
+        font: {
+          size: 2rem;
+          family: var(--fuente-secundaria);
+        }
+        padding-left: 1rem;
+        background-color: $color-fondo-h2;
+        border-radius: $radio-borde;
+      }
+
+      p {
+        padding: 0.5rem;
+
+        &.autor {
+          font-style: italic;
+        }
+
+        a {
+          color: $color-enlaces;
+          padding: 4px;
+        }
+
+        &::selection {
+          background-color: $color-fondo-h2;
+        }
+      }
+    }
+  }
+}

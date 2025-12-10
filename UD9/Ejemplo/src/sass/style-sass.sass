@@ -1,0 +1,54 @@
+// Sintaxis original de sass
+$color-fondo: violet
+$color-fondo-h2: rgba(238, 130, 238, 0.348)
+$color-texto-primario: #333
+$color-enlaces: #901490
+$radio-borde: 5px
+$fuente-primaria: Cambria, Cochi, Georgia, serif
+$fuente-secundaria: "Gill Sans", "Gill Sans MT", Calibri, sans-serif
+
+*,*::after,*::before
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  font-size: 16px
+  line-height: 1.6
+  font-family: $fuente-primaria
+
+  header, footer
+    width: 100%
+    padding: .5rem
+    background-color: $color-fondo
+    h1
+      text-align: center
+      text-transform: uppercase
+      font-size: 2.5rem
+      font-family: $fuente-secundaria
+
+  main
+    flex: 1
+
+    .articulo
+      padding: 1rem
+
+      h2
+        font-size: 2rem
+        background-color: $color-fondo-h2
+        padding-left: 1rem
+        border-radius: $radio-borde
+
+      p
+        padding: .5rem
+
+        &.autor
+          font-style: italic
+          font-size: 0.8rem
+
+        a
+          color: $color-enlaces
+          padding: 4px
