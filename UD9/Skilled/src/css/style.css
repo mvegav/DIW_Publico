@@ -1,0 +1,88 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  src: url("../../assets/fonts/Rubik/static/Rubik-Regular.ttf") format(truetype);
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  src: url("../../assets/fonts/Rubik/static/Rubik-Bold.ttf") format(truetype);
+  font-weight: bold;
+}
+:root {
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #14183c;
+}
+@media screen and (min-width: 701px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+a {
+  text-decoration: none;
+  color: #ff94d2;
+  font-size: 1.2rem;
+}
+a:hover {
+  color: #02bdda;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Estilos generales de los nav */
+nav.menu ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+}
+nav.menu .menu__item--activa {
+  border-bottom: 2px solid;
+}
+nav.menu .menu__item a {
+  font-size: 1.5rem;
+}
+nav ul {
+  list-style: none;
+}
+
+/* Estilos de los botones */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1.2rem;
+  background: linear-gradient(#ff5e34, #ff28a4);
+  color: #fff;
+  border-radius: 20rem;
+}
+.btn:hover {
+  background: linear-gradient(#8744d2, #f767bb);
+}
+
+/*# sourceMappingURL=style.css.map */

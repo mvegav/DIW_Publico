@@ -1,0 +1,19 @@
+// Módulo para importar las fuentes
+@use "../utilities/variables" as var;
+
+@mixin fuentes {
+  font-family: "Rubik";
+  font-style: normal;
+}
+
+@font-face {
+  @include fuentes;
+  src: url(var.$url-assets + "fonts/Rubik/static/Rubik-Regular.ttf") format(truetype);
+  font-weight: normal;
+}
+
+@font-face {
+  @include fuentes;
+  src: url(var.$url-assets + "fonts/Rubik/static/Rubik-Bold.ttf") format(truetype);
+  font-weight: bold;
+}

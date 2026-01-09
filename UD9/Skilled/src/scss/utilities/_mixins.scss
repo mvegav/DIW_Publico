@@ -1,0 +1,10 @@
+// Módulo para los mixins
+
+@mixin flex($direccion: row, $wrap: wrap, $justify: center, $align: center, $gap: 1rem) {
+  display: flex;
+  flex-flow: $direccion $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  align-content: $align;
+  gap: $gap;
+}

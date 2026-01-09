@@ -1,0 +1,77 @@
+// modulo de reglas generales
+@use "../utilities/variables" as var;
+@use "../utilities/mixins";
+
+:root {
+  font: {
+    size: var.$fuente-size * 1px;
+    family: var.$fuente-primaria;
+  }
+  line-height: 1.6;
+  color: var.$color-texto;
+  background-color: var.$bg-primario;
+
+  @media screen and (min-width: 701px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+a {
+  text-decoration: none;
+  color: var.$color-enlaces;
+  font-size: 1.2rem;
+
+  &:hover {
+    color: var.$color-hover;
+  }
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Estilos generales de los nav */
+nav {
+  &.menu {
+    ul {
+      @include mixins.flex();
+    }
+
+    .menu__item {
+      &--activa {
+        border-bottom: 2px solid;
+      }
+
+      a {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+/* Estilos de los botones */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1.2rem;
+  background: var.$bg-btn;
+  color: var.$color-texto;
+  border-radius: var.$radio-borde * 1rem;
+
+  &:hover {
+    background: var.$bg-hover;
+  }
+}

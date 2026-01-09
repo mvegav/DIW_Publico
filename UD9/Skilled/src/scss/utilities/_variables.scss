@@ -16,4 +16,22 @@ $fuente-primaria: "Rubik", sans-serif;
 $fuente-secundaria: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 $fuente-size: 14;
 $tam-h1: 2.5;
-$url-assets: "../../assets/img";
+$url-assets: "../../assets/";
+$cursos: "animation", "design", "photography", "crypto", "business";
+
+// puntos de ruptura
+$breakpoints: (
+  "movil": (
+    max-width: 700px
+  ),
+  "escritorio": (
+    min-widht: 701px
+  )
+);
+
+$prefixes: (
+  "firefox": moz,
+  "safari": webkit,
+  "ie": ms,
+  "opera": o
+);
