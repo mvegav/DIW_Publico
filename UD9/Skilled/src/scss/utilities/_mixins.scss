@@ -8,3 +8,24 @@
   align-content: $align;
   gap: $gap;
 }
+
+// mixin para maquetar con grid
+
+@mixin grid(
+  $columnas,
+  $filas: null,
+  $justify-content: center,
+  $justify-items: null,
+  $align-content: center,
+  $aling-items: null,
+  $gap: null
+) {
+  display: grid;
+  grid-template-columns: $columnas;
+  grid-template-rows: $filas;
+  justify-content: $justify-content;
+  justify-items: $justify-items;
+  align-content: $align-content;
+  align-items: $aling-items;
+  gap: $gap;
+}

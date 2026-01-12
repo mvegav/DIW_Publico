@@ -16,7 +16,7 @@
   font-family: "Rubik";
   font-style: normal;
   src: url("../../assets/fonts/Rubik/static/Rubik-Bold.ttf") format(truetype);
-  font-weight: bold;
+  font-weight: 700;
 }
 :root {
   font-size: 14px;
@@ -83,6 +83,63 @@ nav ul {
 }
 .btn:hover {
   background: linear-gradient(#8744d2, #f767bb);
+}
+
+/* Estilos para el footer */
+footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+/*=============================================
+=            Estilos del header            =
+=============================================*/
+header {
+  padding: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+}
+header h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.portada {
+  padding: 1rem;
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 600px));
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+}
+.portada__contenido {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 2rem;
+}
+.portada__contenido h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media screen and (min-width: 700px) {
+  .portada__img {
+    max-width: 590px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.cards {
+  margin-top: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

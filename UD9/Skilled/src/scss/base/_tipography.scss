@@ -15,5 +15,5 @@
 @font-face {
   @include fuentes;
   src: url(var.$url-assets + "fonts/Rubik/static/Rubik-Bold.ttf") format(truetype);
-  font-weight: bold;
+  font-weight: 700;
 }

@@ -1,0 +1,8 @@
+// Módulo de estilos para cards
+@use "../utilities/variables" as var;
+@use "../utilities/mixins";
+
+.cards {
+  margin-top: 3rem;
+  $columnas: repeat(auto-fit, minmax(auto, 320px));
+}

@@ -1,0 +1,30 @@
+// Módulo para la portada
+@use "sass:map";
+@use "../utilities/variables" as var;
+@use "../utilities/mixins";
+
+.portada {
+  padding: 1rem;
+  margin-top: 4rem;
+  $columnas: repeat(auto-fit, minmax(auto, 600px));
+  @include mixins.grid($columnas, $gap: 1rem);
+
+  &__contenido {
+    @include mixins.flex($gap: 2rem);
+    h2 {
+      font: {
+        size: 3.2rem;
+        weight: map.get(var.$font-weights, "bold");
+      }
+      line-height: 1.2;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    &__img {
+      max-width: 590px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
