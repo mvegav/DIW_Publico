@@ -1,4 +1,7 @@
 // Módulo para los mixins
+@use "sass:meta";
+@use "sass:map";
+@use "../utilities/variables" as var;
 
 @mixin flex($direccion: row, $wrap: wrap, $justify: center, $align: center, $gap: 1rem) {
   display: flex;
@@ -28,4 +31,37 @@
   align-content: $align-content;
   align-items: $aling-items;
   gap: $gap;
+}
+
+@mixin transition($propiedades...) {
+  @each $name, $prefix in var.$prefixes {
+    -#{$prefix}-transition: $propiedades;
+  }
+  transition: $propiedades;
+}
+
+@mixin transform($propiedades...) {
+  @each $name, $prefix in var.$prefixes {
+    -#{$prefix}-transform: $propiedades;
+  }
+  transform: $propiedades;
+}
+
+// mixin para media queries
+/// @access public
+/// @param {String} $breakpoint - Punto de ruptura
+/// @requires $breakpoint
+@mixin respond-to($breakpoint) {
+  $raw-query: map.get(var.$breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(meta.type-of($raw-query) == "string", string.unquote($raw-query), meta.inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No se ha encontrado un valor para `#{$breakpoint}`.'
+          + 'Por favor, asegúrate que está definida en el mapa `$breakpoints`.';
+  }
 }

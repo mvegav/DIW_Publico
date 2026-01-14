@@ -1,0 +1,45 @@
+// Módulo con mixin de animaciones
+@use "../utilities/variables" as var;
+// @use "../utilities/mixins";
+
+// mixin para definir fotograma clave
+
+@mixin keyframes($nombre) {
+  // @-moz-keyframes #{$nombre}{
+  //   @content;
+  // }
+  @each $name, $prefix in var.$prefixes {
+    @-#{$prefix}-keyframes #{$nombre} {
+      @content;
+    }
+  }
+
+  @keyframes #{$nombre} {
+    @content;
+  }
+}
+
+// mixin animación aparecer cards
+@mixin animacionAparecer() {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// llamar al mixin para generar el fotograma
+@include keyframes(("aparecer")) {
+  @include animacionAparecer();
+}
+
+// mixin para definir las propiedades de la animación
+@mixin defAnimacion($propidades...) {
+  @each $name, $prefix in var.$prefixes {
+    -#{$prefix}-animation: $propidades;
+  }
+  animation: $propidades;
+}

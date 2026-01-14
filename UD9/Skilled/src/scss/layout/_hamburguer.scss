@@ -1,0 +1,83 @@
+// módulo estitilos del menú hamburguesa
+@use "../utilities/variables" as var;
+@use "../utilities/mixins";
+@use "./animaciones";
+
+/*=============================================
+=            Estilos del menú hamburguesa            =
+=============================================*/
+%linea {
+  height: 0.45rem;
+  background-color: var.$color-enlaces;
+  border-radius: 0.3rem;
+}
+
+.off-canvas {
+  // estilos de checkbox
+  &__btn {
+    position: fixed;
+    top: -100%;
+  }
+
+  // creamos el icono del menú
+  &__burger {
+    width: 2.25rem;
+    @extend %linea;
+    position: fixed;
+    top: 3.5rem;
+    right: 1rem;
+    z-index: 101;
+    // subimos la primera línea a la mitad
+    $propiedades: rotate(0deg) translate(0, -0.9rem);
+    @include mixins.transform($propiedades);
+
+    // creamos las otras dos líneas
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      @extend %linea;
+    }
+
+    &::before {
+      $propiedades: rotate(0deg) translate(0, -0.675rem);
+      @include mixins.transform($propiedades);
+    }
+
+    &::after {
+      $propiedades: rotate(0deg) translate(0, 0.225rem);
+      @include mixins.transform($propiedades);
+    }
+  }
+
+  // estilos menú para móvil
+  // ocultamos
+  @include mixins.respond-to("movil") {
+    &__menu {
+      position: fixed;
+      // top: 0;
+      // left: 0;
+      // bottom: 0;
+      // right: 0;
+      inset: 0;
+      background: var.$bg-menu;
+      z-index: 100;
+      // $propiedades: translateX(-100vw);
+      // @include mixins.transform($propiedades);
+    }
+  }
+}
+@include mixins.respond-to("movil") {
+  nav.menu ul {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    & .menu__item a {
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+  }
+}
+
+/*=====  End of Estilos del menú hamburguesa  ======*/

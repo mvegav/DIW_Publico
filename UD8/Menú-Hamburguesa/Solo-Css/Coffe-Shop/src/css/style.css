@@ -1,0 +1,24 @@
+/**
+ *
+ * Estilos generales
+ *
+ */
+@import "./fonts.css";
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Montaga', serif;
+  --color-texto: black;
+  --bg-color: #faf7f5;
+  --color-secundario: #ffc038;
+  --fg-secundario: #fdf5ef;
+  --bg-menu: #804000d3;
+  --size-h2: 2.5rem;
+  --size-h2-portada: 4rem;
+}

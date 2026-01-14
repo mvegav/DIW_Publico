@@ -1,8 +1,55 @@
 // Módulo de estilos para cards
 @use "../utilities/variables" as var;
 @use "../utilities/mixins";
+@use "./animaciones";
 
 .cards {
   margin-top: 3rem;
   $columnas: repeat(auto-fit, minmax(auto, 320px));
+  @include mixins.grid($columnas, $gap: 3rem);
+  list-style: none;
+
+  &__item {
+    background: var.$bg-cards;
+    border-radius: var.$radio-borde * 1px;
+    padding: 1rem;
+    box-shadow: var.$box-shadow;
+    @include mixins.flex(column, $justify: space-between);
+    @include animaciones.defAnimacion(aparecer 2s ease-in-out);
+    position: relative;
+    border: 1px solid transparent;
+
+    &:first-of-type {
+      background: var.$bg-card;
+      justify-content: center;
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    @each $img in var.$cursos {
+      .icon--#{$img} {
+        width: 50px;
+        height: 50px;
+        background:
+          url(#{var.$url-assets}img/icon-#{$img}.png) no-repeat,
+          var.$bg-card;
+        background-size: 40px;
+        background-position: center;
+        position: absolute;
+        top: -25px;
+        left: 20px;
+        border-radius: 100%;
+      }
+    }
+
+    &:not(:first-of-type):hover {
+      border-color: var.$color-hover;
+    }
+  }
 }

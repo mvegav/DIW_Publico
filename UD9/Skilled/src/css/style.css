@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -108,6 +109,56 @@ header h1 {
   font-size: 2.5rem;
 }
 
+@-moz-keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-ms-keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-o-keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .portada {
   padding: 1rem;
   margin-top: 4rem;
@@ -140,6 +191,165 @@ header h1 {
 
 .cards {
   margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 320px));
+  justify-content: center;
+  align-content: center;
+  gap: 3rem;
+  list-style: none;
 }
+.cards__item {
+  background: #252848;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  -moz-animation: aparecer 2s ease-in-out;
+  -webkit-animation: aparecer 2s ease-in-out;
+  -ms-animation: aparecer 2s ease-in-out;
+  -o-animation: aparecer 2s ease-in-out;
+  animation: aparecer 2s ease-in-out;
+  position: relative;
+  border: 1px solid transparent;
+}
+.cards__item:first-of-type {
+  background: linear-gradient(#ff5e34, #ff28a4);
+  justify-content: center;
+}
+.cards__item:first-of-type h2 {
+  font-size: 2rem;
+}
+.cards__item h3 {
+  font-size: 1.6rem;
+}
+.cards__item .icon--animation {
+  width: 50px;
+  height: 50px;
+  background: url(../../assets/img/icon-animation.png) no-repeat, linear-gradient(#ff5e34, #ff28a4);
+  background-size: 40px;
+  background-position: center;
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  border-radius: 100%;
+}
+.cards__item .icon--design {
+  width: 50px;
+  height: 50px;
+  background: url(../../assets/img/icon-design.png) no-repeat, linear-gradient(#ff5e34, #ff28a4);
+  background-size: 40px;
+  background-position: center;
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  border-radius: 100%;
+}
+.cards__item .icon--photography {
+  width: 50px;
+  height: 50px;
+  background: url(../../assets/img/icon-photography.png) no-repeat, linear-gradient(#ff5e34, #ff28a4);
+  background-size: 40px;
+  background-position: center;
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  border-radius: 100%;
+}
+.cards__item .icon--crypto {
+  width: 50px;
+  height: 50px;
+  background: url(../../assets/img/icon-crypto.png) no-repeat, linear-gradient(#ff5e34, #ff28a4);
+  background-size: 40px;
+  background-position: center;
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  border-radius: 100%;
+}
+.cards__item .icon--business {
+  width: 50px;
+  height: 50px;
+  background: url(../../assets/img/icon-business.png) no-repeat, linear-gradient(#ff5e34, #ff28a4);
+  background-size: 40px;
+  background-position: center;
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  border-radius: 100%;
+}
+.cards__item:not(:first-of-type):hover {
+  border-color: #02bdda;
+}
+
+/*=============================================
+=            Estilos del menú hamburguesa            =
+=============================================*/
+.off-canvas__burger::before, .off-canvas__burger::after, .off-canvas__burger {
+  height: 0.45rem;
+  background-color: #ff94d2;
+  border-radius: 0.3rem;
+}
+
+.off-canvas__btn {
+  position: fixed;
+  top: -100%;
+}
+.off-canvas__burger {
+  width: 2.25rem;
+  position: fixed;
+  top: 3.5rem;
+  right: 1rem;
+  z-index: 101;
+  -moz-transform: rotate(0deg) translate(0, -0.9rem);
+  -webkit-transform: rotate(0deg) translate(0, -0.9rem);
+  -ms-transform: rotate(0deg) translate(0, -0.9rem);
+  -o-transform: rotate(0deg) translate(0, -0.9rem);
+  transform: rotate(0deg) translate(0, -0.9rem);
+}
+.off-canvas__burger::before, .off-canvas__burger::after {
+  content: "";
+  display: block;
+  width: 100%;
+}
+.off-canvas__burger::before {
+  -moz-transform: rotate(0deg) translate(0, -0.675rem);
+  -webkit-transform: rotate(0deg) translate(0, -0.675rem);
+  -ms-transform: rotate(0deg) translate(0, -0.675rem);
+  -o-transform: rotate(0deg) translate(0, -0.675rem);
+  transform: rotate(0deg) translate(0, -0.675rem);
+}
+.off-canvas__burger::after {
+  -moz-transform: rotate(0deg) translate(0, 0.225rem);
+  -webkit-transform: rotate(0deg) translate(0, 0.225rem);
+  -ms-transform: rotate(0deg) translate(0, 0.225rem);
+  -o-transform: rotate(0deg) translate(0, 0.225rem);
+  transform: rotate(0deg) translate(0, 0.225rem);
+}
+@media (max-width: 700px) {
+  .off-canvas__menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(37, 40, 72, 0.9607843137);
+    z-index: 100;
+  }
+}
+
+@media (max-width: 700px) {
+  nav.menu ul {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+  nav.menu ul .menu__item a {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+}
+/*=====  End of Estilos del menú hamburguesa  ======*/
 
 /*# sourceMappingURL=style.css.map */
