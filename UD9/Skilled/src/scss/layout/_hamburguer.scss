@@ -31,6 +31,11 @@
     $propiedades: rotate(0deg) translate(0, -0.9rem);
     @include mixins.transform($propiedades);
 
+    // para pantallas por encima de 701px ocultamos el icono
+    @include mixins.respond-to("escritorio") {
+      display: none;
+    }
+
     // creamos las otras dos líneas
     &::before,
     &::after {
@@ -43,11 +48,13 @@
     &::before {
       $propiedades: rotate(0deg) translate(0, -0.675rem);
       @include mixins.transform($propiedades);
+      //  @include mixins.transition(0.5s);
     }
 
     &::after {
       $propiedades: rotate(0deg) translate(0, 0.225rem);
       @include mixins.transform($propiedades);
+      //@include mixins.transition(0.5s);
     }
   }
 
@@ -63,8 +70,32 @@
       inset: 0;
       background: var.$bg-menu;
       z-index: 100;
-      // $propiedades: translateX(-100vw);
-      // @include mixins.transform($propiedades);
+      $propiedades: translateX(-100vw);
+      @include mixins.transform($propiedades);
+      @include mixins.transition(0.5s);
+    }
+    &__btn {
+      //   @include mixins.transition(0.5s);
+
+      &:checked ~ .menu {
+        @include mixins.transform(translateX(0));
+      }
+
+      &:checked + .off-canvas__burger {
+        background-color: transparent;
+      }
+
+      &:checked + .off-canvas__burger::before {
+        background-color: var.$color-hover;
+        $propiedades: rotate(45deg) translate(0, 0);
+        @include mixins.transform($propiedades);
+      }
+
+      &:checked + .off-canvas__burger::after {
+        background-color: var.$color-hover;
+        $propiedades: rotate(-45deg) translate(0.3rem, -0.375rem);
+        @include mixins.transform($propiedades);
+      }
     }
   }
 }

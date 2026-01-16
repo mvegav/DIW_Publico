@@ -21,4 +21,242 @@
   --bg-menu: #804000d3;
   --size-h2: 2.5rem;
   --size-h2-portada: 4rem;
+  font: 12px/1.6 var(--font-primary);
+  color: var(--color-texto);
+  background-color: var(--bg-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+h2 {
+  font-size: var(--size-h2);
+}
+
+h3 {
+  font-size: calc(var(--size-h2) - .75rem);
+}
+
+h4 {
+  font-size: calc(var(--size-h2) - .85rem);
+}
+
+h5 {
+  font-size: calc(var(--size-h2) - 1rem);
+}
+
+.display-2, .display-3 {
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.display-2 {
+  font-weight: bold;
+}
+
+.display-3--small {
+  font-size: calc(var(--size-h2) - 1rem);
+  font-weight: normal;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem 0 1rem;
+}
+
+nav ul, .cards {
+  list-style: none;
+}
+
+p {
+  padding: .5rem;
+}
+
+.small {
+  font-weight: 300;
+}
+
+
+/*=============================================
+=            Estilos generales para cards            =
+=============================================*/
+.cards {
+  padding-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+}
+
+.cards__item {
+  max-width: calc(1000 / 3 * 1px);
+}
+
+/*=====  End of Estilos generales para cards  ======*/
+
+
+/* Estilos de los botones */
+
+.btn {
+  text-decoration: none;
+  color: white;
+  border: 1px solid;
+  padding: .5rem 1rem;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  transition: background-color .8s ease-in-out, color .5s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  border-color: white;
+}
+
+.btn--dark {
+  border-radius: 0;
+  background-color: var(--color-texto);
+}
+
+.btn--subir {
+  background-color: black;
+  border-radius: 100%;
+  border-color: black;
+  position: sticky;
+  bottom: 30px;
+  left: 30px;
+  padding: .8rem 1rem;
+}
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header {
+  background: var(--bg-menu) url(../../assets/img/showcase.jpg) no-repeat center;
+  background-size: cover;
+  min-height: 60vh;
+  color: white;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.8rem;
+}
+
+h1 span {
+  font-size: 2.2rem;
+}
+
+#cabecera {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Estilos del menú */
+
+.nav__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__menu a::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  border-radius: 10px;
+  background-color: transparent;
+  align-self: center;
+  transition: all .5s ease-in-out;
+}
+
+.nav__menu a:hover::after {
+  width: 100%;
+  background-color: var(--color-secundario);
+}
+
+
+/* Estilos de la portada */
+
+.portada__content h2, .portada__content h3 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.portada__content h3 {
+  color: var(--color-secundario);
+  order: -1;
+}
+
+.portada__content h2 {
+  font-size: var(--size-h2-portada);
+  line-height: 1;
+  font-style: italic;
+}
+
+.portada__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portada__texto {
+  font-size: 1.2rem;
+}
+
+.redes {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.redes a {
+  color: white;
+}
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+
+/*=============================================
+=            Media queries            =
+=============================================*/
+@media screen and (min-width: 720px) {
+  :root {
+    font-size: 16px;
+    --size-h2-portada: 6rem;
+  }
 }
