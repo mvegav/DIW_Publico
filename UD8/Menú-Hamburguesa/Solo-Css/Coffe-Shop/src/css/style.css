@@ -21,6 +21,7 @@
   --bg-menu: #804000d3;
   --size-h2: 2.5rem;
   --size-h2-portada: 4rem;
+  --transicion: all .5s ease-in-out;
   font: 12px/1.6 var(--font-primary);
   color: var(--color-texto);
   background-color: var(--bg-color);
@@ -71,8 +72,6 @@ h5 {
 }
 
 .contenedor {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 4rem 1rem 0 1rem;
 }
 
@@ -132,6 +131,7 @@ p {
 }
 
 .btn--subir {
+  align-self: flex-end;
   background-color: black;
   border-radius: 100%;
   border-color: black;
@@ -152,6 +152,7 @@ header {
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 4rem;
 }
 
@@ -198,7 +199,7 @@ h1 span {
   border-radius: 10px;
   background-color: transparent;
   align-self: center;
-  transition: all .5s ease-in-out;
+  transition: var(--transicion);
 }
 
 .nav__menu a:hover::after {
@@ -208,6 +209,15 @@ h1 span {
 
 
 /* Estilos de la portada */
+.portada {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 550px));
+  justify-content: center;
+  align-content: start;
+  align-items: center;
+  gap: 4rem;
+}
 
 .portada__content h2, .portada__content h3 {
   text-transform: uppercase;
@@ -237,6 +247,9 @@ h1 span {
 }
 
 .redes {
+  width: 100%;
+  padding-bottom: 2rem;
+  align-self: flex-end;
   display: flex;
   justify-content: flex-end;
   list-style: none;
@@ -250,6 +263,65 @@ h1 span {
 /*=====  End of Estilos de la cabecera  ======*/
 
 
+/*=============================================
+=            Estilos del main            =
+=============================================*/
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+}
+
+main div:nth-of-type(even) {
+  background-color: var(--fg-secundario);
+}
+
+
+/* Estilos de la tienda */
+
+#tienda .tipo, #tienda .precio {
+  padding-left: 0;
+  font-size: 1.2rem;
+}
+
+#tienda .tipo {
+  padding-left: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#tienda .precio::after {
+  content: " €";
+}
+
+#tienda .cards__item img {
+  transition: var(--transicion);
+}
+
+#tienda .cards__item img:hover {
+  filter: grayscale(80%);
+}
+
+#tienda h4 {
+  text-transform: capitalize;
+}
+
+
+
+/* Estilos de la sección de testimonios */
+
+#testimonios .cards__item {
+  background-color: var(--fg-secundario);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1rem;
+}
+
+/*=====  End of Estilos del main  ======*/
+
+
+
 
 /*=============================================
 =            Media queries            =
@@ -259,4 +331,30 @@ h1 span {
     font-size: 16px;
     --size-h2-portada: 6rem;
   }
+
+  .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  header {
+    min-height: 100vh;
+  }
+
+
+  /* Estilos sección nosotros */
+  #nosotros ul.grid {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+  }
+
+  #nosotros .cards__item--imagen {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    align-self: center;
+    justify-self: center;
+  }
+
+
 }
