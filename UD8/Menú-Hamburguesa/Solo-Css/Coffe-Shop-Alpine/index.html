@@ -9,27 +9,24 @@
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/modal.css">
-  <script src="./src/js/menu.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.15.0/cdn.js"
+    integrity="sha512-nHfCQtLDRfNgzsuMx2O2Joo3+xM8antMOBxo9GodZry1h33+lWa2Dd3a/lkVY4fHJK1CAkFcUrz2jilsaZFWeQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
   <header>
-    <div class="contenedor" id="cabecera" role="heading">
+    <div class="contenedor" id="cabecera" role="heading" x-data="{ open: false}">
       <h1>Coffe <span>&</span> Shop</h1>
       <!--Enlace de abrir-->
-      <a href="" id="nav__open" class="nav__btn">
-        <i class="fa-solid fa-bars"></i>
-      </a>
-      <nav class="nav">
-        <a href="" id="nav__close" class="nav__btn">
-          <i class="fa-solid fa-xmark"></i>
-        </a>
+      <i class="nav__btn fa-solid fa-bars" x-on:click="open = true"></i>
+      <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+        <i class="nav__btn fa-solid fa-xmark" x-on:click="open = false"></i>
         <ul class="nav__menu">
-          <li class="menu__item"><a href="#tienda">Tienda</a></li>
-          <li class="menu__item"><a href="#nosotros">Nosotros</a></li>
-          <li class="menu__item"><a href="#testimonios">Testimonios</a></li>
-          <li class="menu__item"><a href="#suscribete">Suscribete</a></li>
+          <li class="menu__item"><a href="#tienda" x-on:click="open = false">Tienda</a></li>
+          <li class="menu__item"><a href="#nosotros" x-on:click="open = false">Nosotros</a></li>
+          <li class="menu__item"><a href="#testimonios" x-on:click="open = false">Testimonios</a></li>
+          <li class="menu__item"><a href="#suscribete" x-on:click="open = false">Suscribete</a></li>
         </ul>
       </nav>
     </div>
@@ -49,48 +46,6 @@
       <li><a href="" aria-label="Enlace a X de Coffe Shop"><i class="fa-brands fa-x-twitter"></i></a></li>
     </ul>
   </header>
-  <dialog id="comprar" class="modal">
-    <button type="button" id="closeModal" class="btn--close"></button>
-    <section>
-      <h2 class="display-2">Haz tu pedido</h2>
-      <form action="" class="form">
-        <fieldset>
-          <legend>Pedido</legend>
-          <p class="form__campo">
-            <label for="tipo">Tipo de producto</label>
-            <select name="tipo" id="tipo" required>
-              <option value="0">Tipo</option>
-              <option value="1">Bebidas frías</option>
-              <option value="2" selected>Cafés</option>
-              <option value="3">Panadería</option>
-              <option value="4">Tés e infusiones</option>
-            </select>
-          </p>
-          <p class="form__campo">
-            <label for="producto">Producto</label>
-            <select name="producto" id="producto" required>
-              <option value="0" selected>Americano</option>
-              <option value="1">Blanco y negro</option>
-              <option value="2">Cappuccino</option>
-              <option value="3">Expresso</option>
-              <option value="4">Latte</option>
-              <option value="4">Vainilla</option>
-            </select>
-          </p>
-          <p class="form__campo">
-            <label for="cantidad">Cantidad</label>
-            <input type="number" name="cantidad" id="cantidad" min="1" value="1" required>
-          </p>
-        </fieldset>
-        <fieldset>
-          <legend>Datos cliente<legend>
-              <p class="form__campo">
-                <label for="nombre">Nombre</label>
-              </p>
-        </fieldset>
-      </form>
-    </section>
-  </dialog>
   <main>
     <div class="fondo">
       <section id="tienda" class="contenedor">
@@ -104,7 +59,6 @@
             <p class="tipo">café</p>
             <h4>americano</h4>
             <p class="precio">1,99</p>
-            <p><button class="btn btn--dark openModal">Comprar</button></p>
           </li>
           <li class="cards__item">
             <figure>
@@ -113,7 +67,6 @@
             <p class="tipo">café</p>
             <h4>Vainilla</h4>
             <p class="precio">1,99</p>
-            <p><button class="btn btn--dark openModal">Comprar</button></p>
           </li>
           <li class="cards__item">
             <figure>
@@ -122,7 +75,6 @@
             <p class="tipo">café</p>
             <h4>expresso</h4>
             <p class="precio">1,99</p>
-            <p><button class="btn btn--dark openModal">Comprar</button></p>
           </li>
         </ul>
       </section>
