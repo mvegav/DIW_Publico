@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="stylesheet" href="./src/css/modal.css">
   <script src="./src/js/menu.js" defer></script>
+  <script src="./src/js/ventana.js" defer></script>
 </head>
 
 <body>
@@ -50,7 +51,9 @@
     </ul>
   </header>
   <dialog id="comprar" class="modal">
-    <button type="button" id="closeModal" class="btn--close"></button>
+    <button type="button" id="closeModal" class="btn--close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
     <section>
       <h2 class="display-2">Haz tu pedido</h2>
       <form action="" class="form">
@@ -83,11 +86,22 @@
           </p>
         </fieldset>
         <fieldset>
-          <legend>Datos cliente<legend>
-              <p class="form__campo">
-                <label for="nombre">Nombre</label>
-              </p>
+          <legend>Datos cliente</legend>
+          <p class="form__campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Ana María"
+              title="Nombre de pila. Letras mayúsculas y minúsculas con tilde"
+              pattern="[a-zA-ZáéíóúüàèìòùçñÁÉÍÓÚǗÀÈÌÒÙÇÑ\- ]{2,15}" required>
+          </p>
+          <p class="form__campo">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="anamaria@gmail.com" required>
+          </p>
         </fieldset>
+        <p class="form__acciones">
+          <button type="submit" class="btn btn--dark">Confirmar pedido</button>
+          <button type="reset" class="btn btn--reset">Limpiar</button>
+        </p>
       </form>
     </section>
   </dialog>

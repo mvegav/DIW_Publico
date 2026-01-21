@@ -1,3 +1,143 @@
+/**
+ *
+ * Estilos para las ventanas modales
+ *
+ */
+
+dialog {
+  min-width: 290px;
+  padding: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 8px solid var(--bg-menu);
+  -o-animation: aparecer 0.5s ease-in-out;
+  -moz-animation: aparecer 0.5s ease-in-out;
+  -webkit-animation: aparecer 0.5s ease-in-out;
+  animation: aparecer 0.5s ease-in-out;
+}
+
+dialog::backdrop {
+  background-color: var(--bg-secundario-claro);
+}
+
 dialog section {
+  width: 100%;
+  padding: 3rem 1rem 0 1rem;
   display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+dialog .display-2 {
+  font-size: 2rem;
+}
+
+dialog form {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+dialog fieldset {
+  width: 100%;
+  border-color: var(--bg-menu);
+  padding: .5rem;
+  background-color: var(--fg-secundario);
+}
+
+dialog legend {
+  color: var(--bg-menu);
+  font-size: 1.2rem;
+  padding: 0 4px;
+}
+
+dialog .form__campo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
+  /* gap: .25rem; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+input, select {
+  padding: .3rem;
+  border: none;
+  outline: 1px solid;
+  background-color: white;
+  border-radius: 2px;
+}
+
+input:focus, select:focus {
+  background-color: bisque;
+}
+
+input[type="number"] {
+  max-width: 50px;
+}
+
+input:focus:not(:placeholder-shown):valid {
+  outline-color: green;
+}
+
+input:focus:not(:placeholder-shown):invalid {
+  outline-color: orangered;
+}
+
+label:has(~ input:focus, ~ select:focus) {
+  font-weight: 600;
+}
+
+.form__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+}
+
+@-webkit-keyframes aparecer {
+  from {
+    top: -50vw;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes aparecer {
+  from {
+    top: -50vw;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes aparecer {
+  from {
+    top: -50vw;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes aparecer {
+  from {
+    top: -50vw;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

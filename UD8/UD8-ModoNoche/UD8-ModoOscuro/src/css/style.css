@@ -188,6 +188,20 @@ input:checked+.slider:before {
   height: min(300px, 30vh);
 }
 
+.head {
+  animation: var(--animation-main);
+}
+
+/* estilos modo oscuro */
+.dark-mode {
+  --visibility: hidden;
+  --filter: invert(100%);
+  --animation-main: rotating 10s ease-out infinite;
+  --offset-distance: 0%;
+  --offset-rotate: auto 45deg;
+  --animation-logo: rocket 6s linear infinite;
+}
+
 
 /*ANIMATION */
 
@@ -196,3 +210,30 @@ input:checked+.slider:before {
     A possible solution for animation along a motion path is Greensock
     MotionPathPlugin https://greensock.com/motionpath 
 */
+
+@keyframes rocket {
+  from {
+    offset-distance: 0%;
+  }
+
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes rotating {
+  from, to {
+    transform: rotate(0deg);
+    transform-origin: 50% 30%;
+  }
+
+  20%, 60% {
+    transform: rotate(20deg);
+    transform-origin: 50% 30%;
+  }
+
+  40%, 80% {
+    transform: rotate(-20deg);
+    transform-origin: 50% 30%;
+  }
+}

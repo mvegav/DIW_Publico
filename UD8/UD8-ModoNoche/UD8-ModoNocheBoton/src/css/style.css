@@ -1,0 +1,47 @@
+@charset "UTF-8";
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffec8b;
+  color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body button {
+  border: none;
+  background-color: #000;
+  color: white;
+  font-size: 2rem;
+  font-family: "Helvetica", sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1.61rem 1rem;
+  text-transform: uppercase;
+}
+body.dark--mode {
+  color: #eb4c49;
+  background-color: #2f3277;
+}
+body.dark--mode span {
+  visibility: hidden;
+  position: relative;
+  display: inline-block;
+}
+body.dark--mode span::after {
+  content: "❍";
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

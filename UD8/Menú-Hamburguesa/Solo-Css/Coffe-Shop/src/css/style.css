@@ -18,6 +18,7 @@
   --bg-color: #faf7f5;
   --color-secundario: #ffc038;
   --fg-secundario: #fdf5ef;
+  --bg-secundario-claro: #fdf5efd8;
   --bg-menu: #804000d3;
   --size-h2: 2.5rem;
   --size-h2-portada: 4rem;
@@ -139,6 +140,21 @@ p {
   bottom: 30px;
   left: 30px;
   padding: .8rem 1rem;
+}
+
+.btn--reset {
+  border-radius: 0;
+  background-color: orangered;
+}
+
+.btn--close {
+  border: none;
+  background-color: transparent;
+  font-size: 1.8rem;
+  color: var(--bg-menu);
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
 }
 
 /*=============================================
