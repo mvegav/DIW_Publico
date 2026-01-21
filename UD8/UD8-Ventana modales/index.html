@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejemplo ventanas modal</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+
+<body>
+  <header class="cabecera">
+    <a href="" class="cabecera__logo"><img src="img/logo.png" alt="Enlace a la página principal"></a>
+    <h1 class="cabecera__titulo">Ejemplo de ventanas modal</h1>
+  </header>
+  <main class="main">
+    <section class="main__seccion">
+      <h2>Ventana de diálogo básica</h2>
+      <p>
+        Las ventanas de diálogo se encuentran entre los elementos de diseño más efectivos que un diseñador web puede
+        emplear.
+      </p>
+      <p>Este tipo de elemento se diferencia de los típicos pop ups o ventanas emergentes en que no aparecen de forma
+        automática, sino que es el propio usuario el que tiene que clicar en alguna parte de la web (normalmente un
+        botón) para que aparezca. </p>
+      <p>Antes de continuar, aclaremos un poco de terminología potencialmente confusa en el mundo del diseño de
+        interfaces de usuario: la diferencia entre elementos de diseño modales y no modales (también conocidos como no
+        modales).
+      <p>
+      <p>Los cuadros (ventanas) de diálogo modales no permitirán a los usuarios trabajar con la ventana principal una
+        vez que se
+        invocan; mientras que los cuadros de diálogo no modales permitirán a los usuarios acceder a la ventana
+        principal, incluso después de haberlos invocado.</p>
+      <p>Disponemos de diversas formas de crear ventanas de diálogo:</p>
+      <ul>
+        <li>
+          <p>Empleando solo html y CSS con la pseudo-clase target.</p>
+          <a href="./Modaltarget/modaltarget.html" target="_blank">Ventana modal solo CSS</a>
+        </li>
+        <li>
+          <p>Empleando el elemento html dialog y javascript para abrir la venta
+            modal.</p>
+          <p><a href="./modalJavascript/modal.html" target="_blank">Ejemplo</a></p>
+          <a href="./modalDialog/modalDialog.html">Ventana modal con dialog</a>
+        </li>
+      </ul>
+      <p>A la hora de realizar ventanas modales con javascript podemos:</p>
+      <ul>
+        <li>Usar el javascript directamente en el html, con lo cual ese código no podemos reutilizarlo.</li>
+        <li>Usar el javascript en un documento externo. Esta opción nos permite separar la parte visual de la parte de
+          código y reutilizar ese script en diversas páginas.
+          <p><a href="./modalJavascript/modal.html" target="_blank">Ejemplo</a></p>
+        </li>
+      </ul>
+      <p>También podemos meter dentro de la ventana modal un formulario y escribir el resultado en la ventana principal.
+      </p>
+      <p><a href="./modalJavascript/modalAnimales.html" target="_blank">Ejemplo de una ventana modal con formulario.</a>
+      </p>
+    </section>
+    <section class="main__seccion">
+      <h2>Animaciones en las ventanas modales</h2>
+      <p>Podemos aplicar animaciones en las ventanas modales, de forma que al aparecer o al desaparecer se realice una
+        animación.</p>
+      <p>Para poder ver un ejemplo abre la siguiente venta:</p>
+      <a href="./modalJavascriptAnimado/modal.html" target="_blank">Ejemplo de uso de animaciones</a>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__derechos">
+      <small>&copy; Copyright 2023. Todos los derechos reservados. </small>
+      <p><small>Realizado por: Marina Vega Vázquez</small></p>
+    </div>
+    <div class="footer__accesible">
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="img/wcag1AA.gif" class="img_pie" alt="¡CSS Válido!" />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="img/wcag1AA-blue.gif" class="img_pie" alt="¡CSS Válido!" />
+      </a>
+    </div>
+    <div class="footer__redes">
+      <a href="https://github.com/mvegav/Publico.git" target="_blank">
+        <img src="./img/github.svg" alt="logo enlace a github"></img>
+      </a>
+      <a href="mailto:marinavv@iessanclemente.net">
+        <img src="./img/gmail.svg" alt="logo de gmail"></img>
+      </a>
+  </footer>
+</body>
+
+</html>
