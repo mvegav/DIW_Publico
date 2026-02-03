@@ -1,0 +1,97 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-principal: black;
+  --color-texto: white;
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  background-color: var(--color-principal);
+  min-height: 100vh;
+  max-width: 100vw;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  color: var(--color-texto);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header {
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 200px));
+  justify-content: center;
+  gap: 2rem;
+}
+
+.cards__item {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.cards__item figure {
+  border-radius: 100%;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.cards__item svg {
+  position: absolute;
+  bottom: 4rem;
+  background-color: green;
+  border-radius: 100%;
+  fill: white;
+}
+
+.cards__item:hover figure {
+  border-color: gold;
+}
+
+.cards__item:hover svg {
+  background-color: black;
+  fill: red;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+}
