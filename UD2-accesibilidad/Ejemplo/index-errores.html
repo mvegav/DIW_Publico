@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoShop</title>
   <style>
+    *,*::after, *::before{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root{
+      --bg-color: #a3e635;
+      font: 14px/1.6 Arial, sans-serif;
+    }
+
     /* Estilos con poco contraste y sin manejo de foco */
     body {
       background: #fdfdfd;
       color: #a0a0a0;
-      font-family: Arial, sans-serif;
     }
 
     /* Encabezado sin contraste adecuado */
     .header {
-      background: #a3e635;
+      background: var(--bg-color);
       padding: 15px;
       color: #ffffff;
     }
@@ -96,9 +108,7 @@
   <!-- FALLO 2: Encabezado maquetado con <div> en vez de <header> -->
   <div class="header">
     <!-- FALLO 3: Imagen del logo sin texto alternativo alt -->
-    <img
-      src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='100%' height='100%' fill='%23a3e635'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='16' fill='%23fff'>EcoShop</text></svg>">
-
+    <img src="./img/logo.png">
     <!-- FALLO 4: Menú de navegación sin etiqueta <nav> ni estructura de lista -->
     <div style="float: right;">
       <a href="#">Inicio</a>
@@ -115,12 +125,21 @@
     <!-- FALLO 6: Uso de <div> genérico para las tarjetas de producto -->
     <div class="product-box">
       <!-- FALLO 7: Atributo alt genérico que no aporta información -->
-      <img
-        src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='120'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999'>Foto</text></svg>"
-        alt="producto">
+      <img src="./img/botella.jpg" alt="producto">
       <h3>Botella Reutilizable</h3>
       <!-- FALLO 8: Contraste insuficiente en el precio (#ccc sobre #fff) -->
       <p class="price-tag">12,50 €</p>
+      <!-- FALLO 9: Texto de botón "Añadir" ambiguo para lectores de pantalla -->
+      <!-- FALLO 10: Texto blanco sobre botón amarillo (#facc15), invalida WCAG AA -->
+      <button class="btn-buy" onclick="alert('Añadido')">Añadir</button>
+    </div>
+
+    <div class="product-box">
+      <!-- FALLO 7: Atributo alt genérico que no aporta información -->
+      <img src="./img/bolsa.jpg" alt="producto">
+      <h3>Bolsa de tele reutilizable</h3>
+      <!-- FALLO 8: Contraste insuficiente en el precio (#ccc sobre #fff) -->
+      <p class="price-tag">8,99 €</p>
       <!-- FALLO 9: Texto de botón "Añadir" ambiguo para lectores de pantalla -->
       <!-- FALLO 10: Texto blanco sobre botón amarillo (#facc15), invalida WCAG AA -->
       <button class="btn-buy" onclick="alert('Añadido')">Añadir</button>
