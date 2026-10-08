@@ -364,34 +364,57 @@
   </footer>
 
   <script>
-    function cerrarModal() {
-        document.getElementById('promoModal').style.display = 'none';
-      }
-
-      function validar() {
-        const input = document.getElementById('nombreCliente');
-        const err = document.getElementById('nombreError');
-
-        if (!input.value.trim()) {
-          input.setAttribute('aria-invalid', 'true');
-          err.style.display = 'block';
-          // alert("El campo no puede estar vacio");
-          input.focus();
-        } else {
-          input.removeAttribute('aria-invalid');
-          err.style.display = 'none';
-          alert('Formulario enviado con éxito.');
+      function cerrarModal() {
+          document.getElementById('promoModal').style.display = 'none';
         }
-      }
 
-      function mostrar(n) {
-        for (let i = 1; i <= 3; i++) {
-          document.getElementById('t' + i).classList.remove('active');
-          document.getElementById('c' + i).classList.add('oculto');
+        function validar() {
+          const input = document.getElementById('nombreCliente');
+          const err = document.getElementById('nombreError');
+
+          if (!input.value.trim()) {
+            input.setAttribute('aria-invalid', 'true');
+            err.style.display = 'block';
+            // alert("El campo no puede estar vacio");
+            input.focus();
+          } else {
+            input.removeAttribute('aria-invalid');
+            err.style.display = 'none';
+            alert('Formulario enviado con éxito.');
+          }
         }
-        document.getElementById('t' + n).classList.add('active');
-        document.getElementById('c' + n).classList.remove('oculto');
-      }
+
+        // Pestañas accesibles: funciona con cualquier número de tablist en la página
+        document.querySelectorAll('[role="tablist"]').forEach(function (tablist) {
+          const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+
+          function activarTab(tab, darFoco) {
+            tabs.forEach(function (t) {
+              const activa = t === tab;
+              t.setAttribute('aria-selected', activa);
+              t.tabIndex = activa ? 0 : -1;
+              document.getElementById(t.getAttribute('aria-controls')).hidden = !activa;
+            });
+            if (darFoco) tab.focus();
+          }
+
+          tabs.forEach(function (tab, i) {
+            tab.addEventListener('click', function () {
+              activarTab(tab, false);
+            });
+
+            tab.addEventListener('keydown', function (e) {
+              let destino;
+              if (e.key === 'ArrowRight') destino = tabs[(i + 1) % tabs.length];
+              else if (e.key === 'ArrowLeft') destino = tabs[(i - 1 + tabs.length) % tabs.length];
+              else if (e.key === 'Home') destino = tabs[0];
+              else if (e.key === 'End') destino = tabs[tabs.length - 1];
+              else return;
+              e.preventDefault();
+              activarTab(destino, true);
+            });
+          });
+        });
   </script>
 
 </body>
