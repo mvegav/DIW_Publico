@@ -6,28 +6,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoShop</title>
   <style>
-    *,*::after, *::before{
+    *,
+    *::after,
+    *::before {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    :root{
-      --bg-color: #a3e635;
+    :root {
+      --bg-color: #84a188;
+      --color-title: #14532d;
       font: 14px/1.6 Arial, sans-serif;
+      color: black;
     }
 
     /* Estilos con poco contraste y sin manejo de foco */
     body {
+      max-width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       background: #fdfdfd;
-      color: #a0a0a0;
     }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .logo {
+      width: 100px;
+      display: inline-block;
+    }
+
+    h2,
+    h3,
+    h4 {
+      color: var(--color-title);
+    }
+
+    /*=============================================
+    =            Estilos del header            =
+    =============================================*/
 
     /* Encabezado sin contraste adecuado */
     .header {
       background: var(--bg-color);
       padding: 15px;
       color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .header a {
@@ -36,22 +66,84 @@
       margin-right: 15px;
     }
 
+    .menu ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .menu a {
+      font-size: 1.3rem;
+      color: black;
+      border-radius: 4px;
+      padding: .5rem .8rem;
+    }
+
+    .menu a:hover,
+    .menu a:focus {
+      background-color: var(--bg-color);
+      outline: 2px solid white;
+    }
+
+    h1 {
+      position: absolute;
+      top: -100vh;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    /*=====  End of Estilos del header  ======*/
+
+    /*=============================================
+    =            Estilos del main            =
+    =============================================*/
+    main {
+      flex: 1;
+    }
+
+
     /* Botones y tarjetas */
+    .cards{
+      list-style: none;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(auto,280px));
+      justify-content: center;
+      gap: 1rem;
+    }
+
     .product-box {
       border: 1px solid #ddd;
-      padding: 15px;
-      width: 220px;
+      padding: 1rem;
       float: left;
       margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: .5rem;
+    }
+    
+    .product-box h3 {
+      font-size: 1.3rem;
+      text-align: center;
     }
 
     .price-tag {
-      color: #ccc;
+      color: #575757;
       font-weight: bold;
     }
 
     .btn-buy {
-      background: #facc15;
+      background: var(--color-title);
       color: #ffffff;
       padding: 8px;
       border: none;
@@ -106,79 +198,90 @@
 
   <!-- FALLO 1: Sin enlace de salto (skip-link) -->
   <!-- FALLO 2: Encabezado maquetado con <div> en vez de <header> -->
-  <div class="header">
+  <header class="header">
     <!-- FALLO 3: Imagen del logo sin texto alternativo alt -->
-    <img src="./img/logo.png">
+    <a class="logo" href="#" aria-label="Enlace a la página principal">
+      <img src="./img/logo.png" alt="EcoShop">
+    </a>
+    <h1>EcoShop - Tienda de productos ecológicos</h1>
     <!-- FALLO 4: Menú de navegación sin etiqueta <nav> ni estructura de lista -->
-    <div style="float: right;">
-      <a href="#">Inicio</a>
-      <a href="#">Tienda</a>
-      <a href="#">Nosotros</a>
-      <a href="#">Contacto</a>
-    </div>
-  </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#" aria-current="page">Inicio</a></li>
+        <li><a href="#">Tienda</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- FALLO 5: Falta de jerarquía de encabezados (sin <h1>) -->
-  <div style="clear: both; padding: 20px;">
-    <h2>Productos Ecológicos</h2>
+  <main>
+    <section>
+      <h2>Productos Ecológicos</h2>
+      <!-- FALLO 6: Uso de <div> genérico para las tarjetas de producto -->
+      <ul class="cards">
+        <li class="product-box">
+          <!-- FALLO 7: Atributo alt genérico que no aporta información -->
+          <figure>
+            <img src="./img/botella.jpg" alt="">
+          </figure>
+          <h3>Botella Reutilizable</h3>
+          <!-- FALLO 8: Contraste insuficiente en el precio (#ccc sobre #fff) -->
+          <p class="price-tag">12,50 €</p>
+          <!-- FALLO 9: Texto de botón "Añadir" ambiguo para lectores de pantalla -->
+          <!-- FALLO 10: Texto blanco sobre botón amarillo (#facc15), invalida WCAG AA -->
+          <button class="btn-buy" onclick="alert('Añadido')">Añadir al carrito</button>
+        </li>
 
-    <!-- FALLO 6: Uso de <div> genérico para las tarjetas de producto -->
-    <div class="product-box">
-      <!-- FALLO 7: Atributo alt genérico que no aporta información -->
-      <img src="./img/botella.jpg" alt="producto">
-      <h3>Botella Reutilizable</h3>
-      <!-- FALLO 8: Contraste insuficiente en el precio (#ccc sobre #fff) -->
-      <p class="price-tag">12,50 €</p>
-      <!-- FALLO 9: Texto de botón "Añadir" ambiguo para lectores de pantalla -->
-      <!-- FALLO 10: Texto blanco sobre botón amarillo (#facc15), invalida WCAG AA -->
-      <button class="btn-buy" onclick="alert('Añadido')">Añadir</button>
-    </div>
+        <li class="product-box">
+          <!-- FALLO 7: Atributo alt genérico que no aporta información -->
+          <figure>
+            <img src="./img/bolsa.jpg" alt="">
+          </figure>
+          <h3>Bolsa de tele reutilizable</h3>
+          <!-- FALLO 8: Contraste insuficiente en el precio (#ccc sobre #fff) -->
+          <p class="price-tag">8,99 €</p>
+          <!-- FALLO 9: Texto de botón "Añadir" ambiguo para lectores de pantalla -->
+          <!-- FALLO 10: Texto blanco sobre botón amarillo (#facc15), invalida WCAG AA -->
+          <button class="btn-buy" onclick="alert('Añadido')">Añadir al carrito</button>
+        </li>
+      </ul>
+    </section>
+    <!-- FALLO 11: Modal flotante maquetado con <div>, sin roles ARIA ni trampa de foco -->
+    <dialog class="modal-overlay" id="promoModal">
+      <li class="modal-content">
+        <!-- FALLO 12: Cierre de modal hecho con un <span> no interactivo y un carácter "X" sin contexto -->
+        <span class="close-btn" onclick="document.getElementById('promoModal').style.display='none'">X</span>
+        <h3>¡Consigue un 10% de descuento!</h3>
+        <p>Suscríbete a nuestra lista de correo hoy mismo.</p>
+      </li>
+    </dialog>
 
-    <div class="product-box">
-      <!-- FALLO 7: Atributo alt genérico que no aporta información -->
-      <img src="./img/bolsa.jpg" alt="producto">
-      <h3>Bolsa de tele reutilizable</h3>
-      <!-- FALLO 8: Contraste insuficiente en el precio (#ccc sobre #fff) -->
-      <p class="price-tag">8,99 €</p>
-      <!-- FALLO 9: Texto de botón "Añadir" ambiguo para lectores de pantalla -->
-      <!-- FALLO 10: Texto blanco sobre botón amarillo (#facc15), invalida WCAG AA -->
-      <button class="btn-buy" onclick="alert('Añadido')">Añadir</button>
-    </div>
-  </div>
 
-  <!-- FALLO 11: Modal flotante maquetado con <div>, sin roles ARIA ni trampa de foco -->
-  <div class="modal-overlay" id="promoModal">
-    <div class="modal-content">
-      <!-- FALLO 12: Cierre de modal hecho con un <span> no interactivo y un carácter "X" sin contexto -->
-      <span class="close-btn" onclick="document.getElementById('promoModal').style.display='none'">X</span>
-      <h3>¡Consigue un 10% de descuento!</h3>
-      <p>Suscríbete a nuestra lista de correo hoy mismo.</p>
-    </div>
-  </div>
+    <section style="clear: both; padding: 20px;">
+      <h3>Contacto</h3>
+      <form id="contactForm">
+        <!-- FALLO 13: Campo de texto sin <label> asociado -->
+        <!-- FALLO 14: Marcado de campo obligatorio únicamente con placeholder o asterisco visual -->
+        <label for="nombreCliente">Nombre completo <span class="required-tab" aria-hidden="true">*</span></label>
+        <input type="text" id="nombreCliente" placeholder="María José" pattern="[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙüÜÇç\- ]{2,15}" aria-required="true"
+         required title="Nombre y apellidos. De 2 a 15 caracteres. Letras mayúsculas, minúsculas con tilde" aria-labelledby="nameErr">
+        <!-- FALLO 15: Mensaje de error no comunicado a lectores de pantalla (sin role="alert") -->
+        <span id="nameErr" role="alert" class="error-msg" style="display:none;">Error: el campo nombre es obligatorio para procesar la consulta.</span>
 
-  <div style="clear: both; padding: 20px;">
-    <h3>Contacto</h3>
-    <form id="contactForm">
-      <!-- FALLO 13: Campo de texto sin <label> asociado -->
-      <!-- FALLO 14: Marcado de campo obligatorio únicamente con placeholder o asterisco visual -->
-      Nombre (*):<br>
-      <input type="text" id="nombreCliente" placeholder="Tu nombre..."><br><br>
-
-      <!-- FALLO 15: Mensaje de error no comunicado a lectores de pantalla (sin role="alert") -->
-      <span id="nameErr" class="error-msg" style="display:none;">El campo nombre es obligatorio</span><br>
-
-      <button type="button" onclick="validarFormulario()">Enviar</button>
-    </form>
-  </div>
-
+        <button type="submit" onclick="validarFormulario()">Enviar</button>
+      </form>
+    </section>
+  </main>
   <!-- FALLO 16: Pie de página sin etiqueta <footer> -->
-  <div style="background: #222; color: #fff; padding: 15px; text-align: center;">
+  <footer style="background: #222; color: #fff; padding: 15px; text-align: center;">
     <p>Síguenos en redes:</p>
     <!-- FALLO 17: Enlaces que solo contienen un icono visual sin texto accesible -->
     <a href="#" class="social-icon">f</a>
     <a href="#" class="social-icon">t</a>
     <p>© 2026 EcoShop Verde</p>
-  </div>
+  </footer>
 
   <script>
     function validarFormulario() {
