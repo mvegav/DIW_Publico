@@ -111,11 +111,11 @@
 
 
     /* Botones y tarjetas */
-    .cards{
+    .cards {
       list-style: none;
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(auto,280px));
+      grid-template-columns: repeat(auto-fit, minmax(auto, 280px));
       justify-content: center;
       gap: 1rem;
     }
@@ -131,7 +131,7 @@
       align-items: center;
       gap: .5rem;
     }
-    
+
     .product-box h3 {
       font-size: 1.3rem;
       text-align: center;
@@ -149,6 +149,51 @@
       border: none;
       cursor: pointer;
     }
+
+
+    /* Pestañas */
+    .tabs {
+      max-width: 800px;
+      margin: 16px auto 0;
+    }
+
+    .tab-list {
+      display: flex;
+      gap: 4px;
+    }
+
+    .tab {
+      background: #f1f5f9;
+      color: #cbd5e1;
+      padding: 10px 18px;
+      font-size: .8rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .tab.active {
+      background: #e2e8f0;
+      color: #94a3b8;
+    }
+
+    .tab-content {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 24px;
+    }
+
+    .tab-content p {
+      margin-bottom: 12px;
+    }
+
+    .tab-content ul {
+      padding-left: 20px;
+    }
+
+    .oculto {
+      display: none;
+    }
+
 
     /* Ventana modal promocional sin accesibilidad */
     .modal-overlay {
@@ -248,6 +293,38 @@
         </li>
       </ul>
     </section>
+    <!-- Pestañas: ficha de producto -->
+    <section style="margin-top: 48px;">
+      <h3>Botella Reutilizable: detalles del producto</h3>
+
+      <div class="tabs">
+        <div class="tab-list">
+          <div class="tab active" id="t1" onclick="mostrar(1)">Descripción</div>
+          <div class="tab" id="t2" onclick="mostrar(2)">Materiales</div>
+          <div class="tab" id="t3" onclick="mostrar(3)"><span>🚚</span></div>
+        </div>
+
+        <div class="tab-content" id="c1">
+          <p>Botella libre de BPA con aislamiento térmico de doble pared. Mantiene las bebidas frías durante 24 horas y
+            calientes durante 12.</p>
+          <p>Capacidad de 500 ml, tapón hermético y boca ancha para añadir hielo o limpiar con facilidad.</p>
+        </div>
+
+        <div class="tab-content oculto" id="c2">
+          <ul>
+            <li>Cuerpo de acero inoxidable 18/8 reciclado</li>
+            <li>Tapón de bambú de origen certificado</li>
+            <li>Junta de silicona alimentaria</li>
+            <li>Embalaje 100% cartón reciclado</li>
+          </ul>
+        </div>
+
+        <div class="tab-content oculto" id="c3">
+          <p>Envío neutro en carbono en 2-4 días laborables. Envío gratuito en pedidos superiores a 30 €.</p>
+          <p>Dispones de 30 días para devolverla si no te convence.</p>
+        </div>
+      </div>
+    </section>
     <!-- FALLO 11: Modal flotante maquetado con <div>, sin roles ARIA ni trampa de foco -->
     <dialog class="modal-overlay" id="promoModal">
       <li class="modal-content">
@@ -265,10 +342,13 @@
         <!-- FALLO 13: Campo de texto sin <label> asociado -->
         <!-- FALLO 14: Marcado de campo obligatorio únicamente con placeholder o asterisco visual -->
         <label for="nombreCliente">Nombre completo <span class="required-tab" aria-hidden="true">*</span></label>
-        <input type="text" id="nombreCliente" placeholder="María José" pattern="[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙüÜÇç\- ]{2,15}" aria-required="true"
-         required title="Nombre y apellidos. De 2 a 15 caracteres. Letras mayúsculas, minúsculas con tilde" aria-labelledby="nameErr">
+        <input type="text" id="nombreCliente" placeholder="María José"
+          pattern="[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙüÜÇç\- ]{2,15}" aria-required="true" required
+          title="Nombre y apellidos. De 2 a 15 caracteres. Letras mayúsculas, minúsculas con tilde"
+          aria-labelledby="nameErr">
         <!-- FALLO 15: Mensaje de error no comunicado a lectores de pantalla (sin role="alert") -->
-        <span id="nameErr" role="alert" class="error-msg" style="display:none;">Error: el campo nombre es obligatorio para procesar la consulta.</span>
+        <span id="nameErr" role="alert" class="error-msg" style="display:none;">Error: el campo nombre es obligatorio
+          para procesar la consulta.</span>
 
         <button type="submit" onclick="validarFormulario()">Enviar</button>
       </form>
@@ -284,15 +364,34 @@
   </footer>
 
   <script>
-    function validarFormulario() {
-      var nom = document.getElementById('nombreCliente').value;
-      if (!nom) {
-        document.getElementById('nameErr').style.display = 'block';
-      } else {
-        document.getElementById('nameErr').style.display = 'none';
-        alert('Enviado');
+    function cerrarModal() {
+        document.getElementById('promoModal').style.display = 'none';
       }
-    }
+
+      function validar() {
+        const input = document.getElementById('nombreCliente');
+        const err = document.getElementById('nombreError');
+
+        if (!input.value.trim()) {
+          input.setAttribute('aria-invalid', 'true');
+          err.style.display = 'block';
+          // alert("El campo no puede estar vacio");
+          input.focus();
+        } else {
+          input.removeAttribute('aria-invalid');
+          err.style.display = 'none';
+          alert('Formulario enviado con éxito.');
+        }
+      }
+
+      function mostrar(n) {
+        for (let i = 1; i <= 3; i++) {
+          document.getElementById('t' + i).classList.remove('active');
+          document.getElementById('c' + i).classList.add('oculto');
+        }
+        document.getElementById('t' + n).classList.add('active');
+        document.getElementById('c' + n).classList.remove('oculto');
+      }
   </script>
 
 </body>
