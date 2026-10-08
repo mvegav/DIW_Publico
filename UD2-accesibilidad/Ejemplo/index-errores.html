@@ -221,7 +221,26 @@
       font-weight: bold;
     }
 
+    
+    /*=============================================
+    =            Estilos del footer            =
+    =============================================*/
+    footer{
+      background-color: #0f172a;
+      color: white;
+      padding: 1.8rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
     /* Redes sociales */
+    .social-link{
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
     .social-icon {
       display: inline-block;
       width: 30px;
@@ -232,7 +251,15 @@
       border-radius: 50%;
     }
 
-    .error-msg {
+    .sr-only{
+      position: absolute;
+      bottom: +100vh;
+      width: 0;
+      height: 0;
+    }
+
+
+    .error-text {
       color: #f87171;
       font-size: 12px;
     }
@@ -359,10 +386,15 @@
     <!-- FALLO 17: Enlaces que solo contienen un icono visual sin texto accesible -->
     <ul class="social-link">
       <li>
-        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">
+          <img src="./img/facebook.png" alt="Enlace a nuestra página de facebook">
+        </a>
       </li>
       <li>
-        <a href="#" class="social-icon">t</a>
+        <a href="#" class="social-icon">
+          <span aria-hidden="true">X</span>
+          <span class="sr-only">Enlace a nuestra cuenta de X</span>
+        </a>
       </li>
     </ul>
     <p>© 2026 EcoShop Verde</p>
