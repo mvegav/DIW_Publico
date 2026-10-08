@@ -220,7 +220,11 @@
       cursor: pointer;
       font-weight: bold;
     }
-
+   
+    .error-text {
+      color: #AF0808;
+      font-size: 12px;
+    }
     
     /*=============================================
     =            Estilos del footer            =
@@ -242,27 +246,36 @@
       gap: 1rem;
     }
     .social-icon {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      background: #888;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #1e293b;
       color: #fff;
       text-align: center;
       border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.2rem;
+      overflow: hidden;
+    }
+    
+    .social-icon:hover, .social-icon:focus{
+      background-color: var(--bg-color);
+      color: black;
+      outline: 2px solid var(--color-title);
     }
 
     .sr-only{
       position: absolute;
-      bottom: +100vh;
+      bottom: 200vh;
+      overflow: hidden;
       width: 0;
       height: 0;
     }
 
 
-    .error-text {
-      color: #f87171;
-      font-size: 12px;
-    }
+    
   </style>
 </head>
 
@@ -353,13 +366,12 @@
       </div>
     </section>
     <!-- FALLO 11: Modal flotante maquetado con <div>, sin roles ARIA ni trampa de foco -->
-    <dialog class="modal-overlay" id="promoModal">
-      <li class="modal-content">
-        <!-- FALLO 12: Cierre de modal hecho con un <span> no interactivo y un carácter "X" sin contexto -->
-        <span class="close-btn" onclick="document.getElementById('promoModal').style.display='none'">X</span>
+    <dialog class="modal-overlay" id="promoModal" aria-modal="true">
+      <section class="modal-content">
+        <button type="button" class="close-btn" onclick="cerrarModal()" aria-label="Cerrar ventana modal">X</button>
         <h3>¡Consigue un 10% de descuento!</h3>
         <p>Suscríbete a nuestra lista de correo hoy mismo.</p>
-      </li>
+      </section>
     </dialog>
 
 
