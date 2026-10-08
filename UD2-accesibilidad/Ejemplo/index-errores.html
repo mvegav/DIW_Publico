@@ -338,7 +338,7 @@
 
     <section style="clear: both; padding: 20px;">
       <h3>Contacto</h3>
-      <form id="contactForm">
+      <form id="contactForm" onsubmit="event.preventDefault(); validar();">
         <!-- FALLO 13: Campo de texto sin <label> asociado -->
         <!-- FALLO 14: Marcado de campo obligatorio únicamente con placeholder o asterisco visual -->
         <label for="nombreCliente">Nombre completo <span class="required-tab" aria-hidden="true">*</span></label>
@@ -347,74 +347,79 @@
           title="Nombre y apellidos. De 2 a 15 caracteres. Letras mayúsculas, minúsculas con tilde"
           aria-labelledby="nameErr">
         <!-- FALLO 15: Mensaje de error no comunicado a lectores de pantalla (sin role="alert") -->
-        <span id="nameErr" role="alert" class="error-msg" style="display:none;">Error: el campo nombre es obligatorio
+        <span id="nameErr" role="alert" class="error-text">Error: el campo nombre es obligatorio
           para procesar la consulta.</span>
-
-        <button type="submit" onclick="validarFormulario()">Enviar</button>
+        <button type="submit">Enviar consulta</button>
       </form>
     </section>
   </main>
   <!-- FALLO 16: Pie de página sin etiqueta <footer> -->
-  <footer style="background: #222; color: #fff; padding: 15px; text-align: center;">
+  <footer>
     <p>Síguenos en redes:</p>
     <!-- FALLO 17: Enlaces que solo contienen un icono visual sin texto accesible -->
-    <a href="#" class="social-icon">f</a>
-    <a href="#" class="social-icon">t</a>
+    <ul class="social-link">
+      <li>
+        <a href="#" class="social-icon">f</a>
+      </li>
+      <li>
+        <a href="#" class="social-icon">t</a>
+      </li>
+    </ul>
     <p>© 2026 EcoShop Verde</p>
   </footer>
 
   <script>
-      function cerrarModal() {
-          document.getElementById('promoModal').style.display = 'none';
-        }
+    function cerrarModal() {
+      document.getElementById('promoModal').style.display = 'none';
+    }
 
-        function validar() {
-          const input = document.getElementById('nombreCliente');
-          const err = document.getElementById('nombreError');
+    function validar() {
+      const input = document.getElementById('nombreCliente');
+      const err = document.getElementById('nombreError');
 
-          if (!input.value.trim()) {
-            input.setAttribute('aria-invalid', 'true');
-            err.style.display = 'block';
-            // alert("El campo no puede estar vacio");
-            input.focus();
-          } else {
-            input.removeAttribute('aria-invalid');
-            err.style.display = 'none';
-            alert('Formulario enviado con éxito.');
-          }
-        }
+      if (!input.value.trim()) {
+        input.setAttribute('aria-invalid', 'true');
+        err.style.display = 'block';
+        // alert("El campo no puede estar vacio");
+        input.focus();
+      } else {
+        input.removeAttribute('aria-invalid');
+        err.style.display = 'none';
+        alert('Formulario enviado con éxito.');
+      }
+    }
 
-        // Pestañas accesibles: funciona con cualquier número de tablist en la página
-        document.querySelectorAll('[role="tablist"]').forEach(function (tablist) {
-          const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    // Pestañas accesibles: funciona con cualquier número de tablist en la página
+    document.querySelectorAll('[role="tablist"]').forEach(function (tablist) {
+      const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
 
-          function activarTab(tab, darFoco) {
-            tabs.forEach(function (t) {
-              const activa = t === tab;
-              t.setAttribute('aria-selected', activa);
-              t.tabIndex = activa ? 0 : -1;
-              document.getElementById(t.getAttribute('aria-controls')).hidden = !activa;
-            });
-            if (darFoco) tab.focus();
-          }
-
-          tabs.forEach(function (tab, i) {
-            tab.addEventListener('click', function () {
-              activarTab(tab, false);
-            });
-
-            tab.addEventListener('keydown', function (e) {
-              let destino;
-              if (e.key === 'ArrowRight') destino = tabs[(i + 1) % tabs.length];
-              else if (e.key === 'ArrowLeft') destino = tabs[(i - 1 + tabs.length) % tabs.length];
-              else if (e.key === 'Home') destino = tabs[0];
-              else if (e.key === 'End') destino = tabs[tabs.length - 1];
-              else return;
-              e.preventDefault();
-              activarTab(destino, true);
-            });
-          });
+      function activarTab(tab, darFoco) {
+        tabs.forEach(function (t) {
+          const activa = t === tab;
+          t.setAttribute('aria-selected', activa);
+          t.tabIndex = activa ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !activa;
         });
+        if (darFoco) tab.focus();
+      }
+
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () {
+          activarTab(tab, false);
+        });
+
+        tab.addEventListener('keydown', function (e) {
+          let destino;
+          if (e.key === 'ArrowRight') destino = tabs[(i + 1) % tabs.length];
+          else if (e.key === 'ArrowLeft') destino = tabs[(i - 1 + tabs.length) % tabs.length];
+          else if (e.key === 'Home') destino = tabs[0];
+          else if (e.key === 'End') destino = tabs[tabs.length - 1];
+          else return;
+          e.preventDefault();
+          activarTab(destino, true);
+        });
+      });
+    });
   </script>
 
 </body>
