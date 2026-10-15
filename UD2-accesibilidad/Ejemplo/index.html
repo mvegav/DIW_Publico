@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoShop</title>
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-color: #84a188;
+      --color-title: #14532d;
+      font: 14px/1.6 Arial, sans-serif;
+      color: black;
+    }
+
+    /* Estilos con poco contraste y sin manejo de foco */
+    body {
+      max-width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #fdfdfd;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .logo {
+      width: 100px;
+      display: inline-block;
+    }
+
+    h2,
+    h3,
+    h4 {
+      color: var(--color-title);
+    }
+
+    /*=============================================
+    =            Estilos del header            =
+    =============================================*/
+
+    /* Encabezado sin contraste adecuado */
+    .header {
+      background: var(--bg-color);
+      padding: 15px;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    .menu ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .menu a {
+      font-size: 1.3rem;
+      color: black;
+      border-radius: 4px;
+      padding: .5rem .8rem;
+    }
+
+    .menu a:hover,
+    .menu a:focus {
+      background-color: var(--bg-color);
+      outline: 2px solid white;
+    }
+
+    h1 {
+      position: absolute;
+      top: -100vh;
+      color: black;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    /*=====  End of Estilos del header  ======*/
+
+    /*=============================================
+    =            Estilos del main            =
+    =============================================*/
+    main {
+      flex: 1;
+    }
+
+
+    /* Botones y tarjetas */
+    .cards {
+      list-style: none;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(auto, 280px));
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .product-box {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      float: left;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .product-box h3 {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    .price-tag {
+      color: #575757;
+      font-weight: bold;
+    }
+
+    .btn {
+      background: var(--color-title);
+      color: #ffffff;
+      padding: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+
+    /* Pestañas */
+    .tabs {
+      max-width: 800px;
+      margin: 16px auto 0;
+    }
+
+    [role="tablist"] {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      border-bottom: 3px solid #14532d;
+    }
+
+    [role="tab"] {
+      background-color: #e2e8f0;
+      color: #14532d;
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      padding: 10px 18px;
+      font-weight: bold;
+    }
+
+    [role="tab"][aria-selected="true"] {
+      background-color: #14532d;
+      color: white;
+      border-color: #14532d;
+    }
+
+    [role="tab"]:hover {
+      background-color: #84a188;
+      color: black;
+    }
+
+    [role="tab"]:focus-visible {
+      outline: 3px solid #facc15;
+      border-top: none;
+      padding: 24px;
+    }
+
+    [role="tabpanel"] {
+      background-color: white;
+      border: 1px solid #84a188;
+      border-top: none;
+      padding: 24px;
+    }
+
+    [role="tabpanel"][hidden] {
+      display: none;
+    }
+
+    [role="tabpanel"]:focus-visible {
+      outline: 3px solid #22c55e;
+    }
+
+    /* Ventana modal promocional sin accesibilidad */
+    .modal-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .modal-content .btn{
+      align-self: center;
+    }
+
+    .close-btn{
+      padding: 4px 8px;
+      background-color: transparent;
+      border: none;
+      outline: 1px solid #14532d;
+      border-radius: 4px;
+      align-self: flex-end;
+    }
+
+    .error-text {
+      color: #AF0808;
+      font-size: 1rem;
+      font-weight: bold;
+      position: absolute;
+      left: -100vw;
+    }
+
+    label{
+      font-weight: bold;
+    }
+
+    .campo{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    input[type="text"]{
+      max-width: 400px;
+      padding: .5rem .75rem;
+      border-radius: 6px;
+      border: 1px solid #14532d;
+    }
+    
+    input[type="text"]:focus{
+      background-color: rgba(245, 222, 179, 0.493);
+    }
+
+    input[type="text"]:not(:placeholder-shown):invalid{
+      outline: 2px solid red;
+    }
+    /*=============================================
+    =            Estilos del footer            =
+    =============================================*/
+    footer {
+      background-color: #0f172a;
+      color: white;
+      padding: 1.8rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    /* Redes sociales */
+    .social-link {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #1e293b;
+      color: #fff;
+      text-align: center;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.2rem;
+      overflow: hidden;
+    }
+
+    .social-icon:hover,
+    .social-icon:focus {
+      background-color: var(--bg-color);
+      color: black;
+      outline: 2px solid var(--color-title);
+    }
+
+    .sr-only {
+      position: absolute;
+      bottom: 200vh;
+      overflow: hidden;
+      width: 0;
+      height: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FALLO 1: Sin enlace de salto (skip-link) -->
+  <!-- FALLO 2: Encabezado maquetado con <div> en vez de <header> -->
+  <header class="header">
+    <!-- FALLO 3: Imagen del logo sin texto alternativo alt -->
+    <a class="logo" href="#" aria-label="Enlace a la página principal">
+      <img src="./img/logo.png" alt="EcoShop">
+    </a>
+    <h1>EcoShop - Tienda de productos ecológicos</h1>
+    <!-- FALLO 4: Menú de navegación sin etiqueta <nav> ni estructura de lista -->
+    <nav class="menu">
+      <ul>
+        <li><a href="#" aria-current="page">Inicio</a></li>
+        <li><a href="#">Tienda</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- FALLO 5: Falta de jerarquía de encabezados (sin <h1>) -->
+  <main>
+    <section>
+      <h2>Productos Ecológicos</h2>
+      <!-- FALLO 6: Uso de <div> genérico para las tarjetas de producto -->
+      <ul class="cards">
+        <li class="product-box">
+          <!-- FALLO 7: Atributo alt genérico que no aporta información -->
+          <figure>
+            <img src="./img/botella.jpg" alt="">
+          </figure>
+          <h3>Botella Reutilizable</h3>
+          <!-- FALLO 8: Contraste insuficiente en el precio (#ccc sobre #fff) -->
+          <p class="price-tag">12,50 €</p>
+          <!-- FALLO 9: Texto de botón "Añadir" ambiguo para lectores de pantalla -->
+          <!-- FALLO 10: Texto blanco sobre botón amarillo (#facc15), invalida WCAG AA -->
+          <button class="btn" onclick="alert('Añadido')">Añadir al carrito</button>
+        </li>
+
+        <li class="product-box">
+          <!-- FALLO 7: Atributo alt genérico que no aporta información -->
+          <figure>
+            <img src="./img/bolsa.jpg" alt="">
+          </figure>
+          <h3>Bolsa de tele reutilizable</h3>
+          <!-- FALLO 8: Contraste insuficiente en el precio (#ccc sobre #fff) -->
+          <p class="price-tag">8,99 €</p>
+          <!-- FALLO 9: Texto de botón "Añadir" ambiguo para lectores de pantalla -->
+          <!-- FALLO 10: Texto blanco sobre botón amarillo (#facc15), invalida WCAG AA -->
+          <button class="btn" onclick="alert('Añadido')">Añadir al carrito</button>
+        </li>
+      </ul>
+    </section>
+    <!-- Pestañas: ficha de producto -->
+    <section style="margin-top: 48px;">
+      <h3>Botella Reutilizable: detalles del producto</h3>
+
+      <div class="tabs">
+        <div class="tab-list" role="tablist">
+          <button role="tab" class="tab active" id="tab-desc" aria-selected="true"
+            aria-controls="panel-desc">Descripción</button>
+          <button role="tab" class="tab" id="tab-mat" aria-controls="panel-mat" aria-selected="false"
+            >Materiales</button>
+          <button role="tab" class="tab" id="tab-envio" aria-controls="panel-envio" aria-selected="false">Envíos y
+            devoluciones</button>
+        </div>
+
+        <div class="tab-content" role="tabpanel" id="panel-desc" aria-labelledby="tab-desc" tabindex="0">
+          <p>Botella libre de BPA con aislamiento térmico de doble pared. Mantiene las bebidas frías durante 24 horas y
+            calientes durante 12.</p>
+          <p>Capacidad de 500 ml, tapón hermético y boca ancha para añadir hielo o limpiar con facilidad.</p>
+        </div>
+
+        <div class="tab-content" role="tabpanel" id="panel-mat" aria-labelledby="tab-mat" tabindex="0" hidden>
+          <ul>
+            <li>Cuerpo de acero inoxidable 18/8 reciclado</li>
+            <li>Tapón de bambú de origen certificado</li>
+            <li>Junta de silicona alimentaria</li>
+            <li>Embalaje 100% cartón reciclado</li>
+          </ul>
+        </div>
+
+        <div class="tab-content" role="tabpanel" id="panel-envio" aria-labelledby="tab-envio" tabindex="0" hidden>
+          <p>Envío neutro en carbono en 2-4 días laborables. Envío gratuito en pedidos superiores a 30 €.</p>
+          <p>Dispones de 30 días para devolverla si no te convence.</p>
+        </div>
+      </div>
+    </section>
+    <!-- FALLO 11: Modal flotante maquetado con <div>, sin roles ARIA ni trampa de foco -->
+    <dialog class="modal-overlay" id="promoModal" aria-modal="true">
+      <section class="modal-content">
+        <button type="button" class="close-btn" onclick="cerrarModal()" aria-label="Cerrar ventana modal">X</button>
+        <h2>¡Consigue un 10% de descuento!</h2>
+        <p>Suscríbete a nuestra lista de correo hoy mismo.</p>
+        <button type="button" class="btn" onclick="cerrarModal()">Entendido</button>
+      </section>
+    </dialog>
+
+
+    <section style="clear: both; padding: 20px;">
+      <h3>Contacto</h3>
+      <form id="contactForm" onsubmit="event.preventDefault(); validar();">
+        <!-- FALLO 13: Campo de texto sin <label> asociado -->
+        <!-- FALLO 14: Marcado de campo obligatorio únicamente con placeholder o asterisco visual -->
+        <p class="campo">
+          <label for="nombreCliente">Nombre completo <span class="required-tab" aria-hidden="true">*</span></label>
+          <input type="text" id="nombreCliente" placeholder="María José Pérez López"
+            pattern="[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙüÜÇç\- ]{2,15}" aria-required="true" required
+            title="Nombre y apellidos. De 2 a 15 caracteres. Letras mayúsculas, minúsculas con tilde"
+            aria-labelledby="nombreError">
+          <!-- FALLO 15: Mensaje de error no comunicado a lectores de pantalla (sin role="alert") -->
+        </p>
+          <span id="nombreError" role="alert" class="error-text">Error: el campo nombre es obligatorio
+          para procesar la consulta.</span>
+        <button type="submit" class="btn">Enviar consulta</button>
+      </form>
+    </section>
+  </main>
+  <!-- FALLO 16: Pie de página sin etiqueta <footer> -->
+  <footer>
+    <p>Síguenos en redes:</p>
+    <!-- FALLO 17: Enlaces que solo contienen un icono visual sin texto accesible -->
+    <ul class="social-link">
+      <li>
+        <a href="#" class="social-icon">
+          <img src="./img/facebook.png" alt="Enlace a nuestra página de facebook">
+        </a>
+      </li>
+      <li>
+        <a href="#" class="social-icon">
+          <span aria-hidden="true">X</span>
+          <span class="sr-only">Enlace a nuestra cuenta de X</span>
+        </a>
+      </li>
+    </ul>
+    <p>© 2026 EcoShop Verde</p>
+  </footer>
+
+  <script>
+    function cerrarModal() {
+      document.getElementById('promoModal').style.display = 'none';
+    }
+
+    function validar() {
+      const input = document.getElementById('nombreCliente');
+      const err = document.getElementById('nombreError');
+
+      if (!input.value.trim()) {
+        input.setAttribute('aria-invalid', 'true');
+        err.style.display = 'block';
+        // alert("El campo no puede estar vacio");
+        input.focus();
+      } else {
+        input.removeAttribute('aria-invalid');
+        err.style.display = 'none';
+        alert('Formulario enviado con éxito.');
+      }
+    }
+
+    // Pestañas accesibles: funciona con cualquier número de tablist en la página
+    document.querySelectorAll('[role="tablist"]').forEach(function (tablist) {
+      const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+
+      function activarTab(tab, darFoco) {
+        tabs.forEach(function (t) {
+          const activa = t === tab;
+          t.setAttribute('aria-selected', activa);
+          t.tabIndex = activa ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !activa;
+        });
+        if (darFoco) tab.focus();
+      }
+
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () {
+          activarTab(tab, false);
+        });
+
+        tab.addEventListener('keydown', function (e) {
+          let destino;
+          if (e.key === 'ArrowRight') destino = tabs[(i + 1) % tabs.length];
+          else if (e.key === 'ArrowLeft') destino = tabs[(i - 1 + tabs.length) % tabs.length];
+          else if (e.key === 'Home') destino = tabs[0];
+          else if (e.key === 'End') destino = tabs[tabs.length - 1];
+          else return;
+          e.preventDefault();
+          activarTab(destino, true);
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
