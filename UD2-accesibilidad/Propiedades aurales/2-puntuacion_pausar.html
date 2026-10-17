@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de puntuación</title>
+  <style>
+    /* css */
+
+    .puntuar {
+      speak-as: literal-punctuation;
+    }
+
+    /* no hace la puntuación */
+    .silencio {
+      speak-as: no-punctuation;
+    }
+
+    /* hacemos una pausa antes y después de cada párrafo, h1 y h2 */
+    h1 {
+      pause: 20ms;
+      /* ponemos un sonido de ping para indicar el cambio  antes y despues.
+            Tenga en cuenta que la propiedad cue representará el clip de audio asociado tanto antes como después del encabezado si solo se especifica un valor:*/
+      cue: url('audio/ping.mp3') +6dB;
+      /*La propiedad rest controla la pausa que se produce entre las señales auditivas y la representación del elemento asociado, tanto antes como después.
+*/
+      rest: 10ms 0ms;
+    }
+
+    /* pause-before: 20ms; pause-after: 20ms */
+
+    h2 {
+      pause: 30ms 40ms;
+    }
+
+    /* pause-before: 30ms; pause-after: 40ms */
+
+    h3 {
+      pause-after: 10ms;
+    }
+
+    /* pause-before: sin especificar; pause-after: 10ms */
+
+    p {
+      pause: 10ms;
+    }
+
+    /*
+          NOTA PARA CLASE: estas propiedades pertenecen al módulo CSS Speech,
+          que sustituye a las antiguas propiedades aurales de CSS 2.1.
+          Hoy casi ningún navegador ni lector de pantalla las aplica, así que este
+          archivo sirve como ejemplo conceptual. Compruébalo en MDN o Can I use.
+        */
+
+    .discurso {
+      /* Reduce la velocidad de lectura */
+      voice-rate: slow;
+
+      /* Ajusta el volumen del lector de pantalla */
+      voice-volume: loud;
+    }
+
+    /* voz alternativa */
+    /*
+        familia de voces
+La propiedad voice-family brinda control sobre el género y el tipo de voz que se usa para la reproducción de TTS,
+lo que permite a los productores de contenido crear una reproducción de TTS más realista 
+por ejemplo, alternar el género para que coincida con el personaje).
+
+Aunque es posible nombrar la voz a usar:
+
+familia de voces: 'Dave';
+en la práctica, con la amplia variedad de dispositivos en los que se puede reproducir un EPUB, 
+tal especificidad solo es tan útil como requiere conocer los nombres de todas las 
+voces disponibles en todos los dispositivos.
+
+En cambio, es mejor solicitar una voz usando el patrón: ¿edad?, ¿género, número entero? 
+(donde el signo de interrogación indica que el campo es opcional):
+
+.Rey Lear {
+   familia de voces: old male 1;
+}
+El valor de la edad puede ser niño, joven o viejo; el género masculino, 
+femenino o neutro; y, cuando se especifica, el número entero indica la posición
+ ordinal de la voz a usar (es decir, cuando hay disponible más de una voz coincidente). */
+    .masculino {
+      voice-family: male;
+    }
+
+    .femenino {
+      voice-family: female;
+    }
+
+    .malala {
+      voice-family: "Apple Anna", female 1;
+    }
+
+    .king {
+      voice-family: old male 2;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Ejemplo de uso de propiedades aurales de puntuación</h1>
+  <h2>Ejemplos de puntuación</h2>
+  <p>En este ejemplo se realiza una puntuación correcta, de la siguiente manera:
+    <span class="puntuar">Los francos, un pueblo bélico Alemán, dio su nombre a Francia.</span>
+  </p>
+  <h3>El telegrama del Dr. King al presidente Kennedy, léase como sigue:</h3>
+  <blockquote>
+    <pre class="king">
+        SIN EMBARGO, ESTOY CONVENCIDO DE QUE A MENOS QUE SE TOMEN ALGUNAS MEDIDAS POR EL GOBIERNO FEDERAL PARA RESTABLECER UN SENTIDO DE CONFIANZA EN
+        LA PROTECCIÓN DE LA VIDA, LAS EXTREMIDADES Y LA PROPIEDAD, MIS SÚPLICAS CAERÁN EN OIDOS SORDOS Y VEREMOS EL PEOR HOLOCAUSTO RACIAL QUE ESTA
+        NACIÓN HA VISTO ALGUNA VEZ DESPUÉS DE LA TRAGEDIA DE HOY. LA INVESTIGACIÓN NO ES SUFICIENTE.
+        </pre>
+    <cite><a href="http://www.jfklibrary.org/Asset-Viewer/-crU2bLgN0CcGkys8dkuHg.aspx">Telegrama del 15 de
+        septiembre de 1963</a></cite>
+  </blockquote>
+  <h3>Discurso del 28 de agosto de 1963 por Martin Luther King</h3>
+  <blockquote>
+    <pre>
+          <p class="discurso">
+            Cuando dejemos repicar la libertad,
+            cuando la dejemos repicar desde cada pueblo y cada aldea,
+            desde cada estado y cada ciudad,
+            podremos acelerar la llegada de ese día en el que todos los hijos de Dios,
+            hombres blancos y hombres negros, judíos y gentiles, protestantes y católicos,
+            sean capaces de juntar las manos y cantar las palabras del viejo espiritual negro:
+            ¡Al fin libres! ¡Al fin libres!
+            Gracias a Dios Todopoderoso, ¡somos al fin libres!
+          </p>
+        </pre>
+  </blockquote>
+  <h3>Malala Yousafzai (Activista por la educación)</h3>
+  <p>Pronunciado tras sobrevivir a un atentado por defender el derecho de las niñas a estudiar:
+</p>
+  <blockquote>
+    <pre>
+          <p class="malala">
+            "Hacemos un llamado a todos los gobiernos para que garanticen la educación obligatoria gratuita para todos los niños del
+            mundo. Luchamos contra el analfabetismo, la pobreza y el terrorismo; tomemos nuestros libros y nuestros bolígrafos. Son
+            nuestras armas más poderosas".
+          </p>
+        </pre>
+  </blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de propiedades de voz (CSS Speech)</title>
+  <style>
+    /*
+          NOTA PARA CLASE: estas propiedades pertenecen al módulo CSS Speech,
+          que sustituye a las antiguas propiedades aurales de CSS 2.1.
+          Hoy casi ningún navegador ni lector de pantalla las aplica, así que este
+          archivo sirve como ejemplo conceptual. Compruébalo en MDN o Can I use.
+        */
+
+    /* ---------- Puntuación ---------- */
+
+    /* Lee en voz alta los signos de puntuación ("coma", "punto"...) */
+    .puntuar {
+      speak-as: literal-punctuation;
+    }
+
+    /* No lee los signos de puntuación */
+    .silencio {
+      speak-as: no-punctuation;
+    }
+
+    /* ---------- Pausas y señales sonoras ---------- */
+
+    /* Con un solo valor, la pausa se aplica antes y después del elemento.
+           Con dos valores: el primero es antes y el segundo después. */
+    h1 {
+      pause: 500ms;
+      /* pause-before: 500ms; pause-after: 500ms */
+      /* Sonido de aviso (ping) antes y después del encabezado.
+               Con un solo valor, cue se aplica antes y después. El archivo debe existir. */
+      cue: url('audio/ping.mp3') +6dB;
+      /* Pausa entre la señal sonora y la lectura del elemento */
+      rest: 100ms 0ms;
+    }
+
+    h2 {
+      pause: 300ms 200ms;
+      /* pause-before: 300ms; pause-after: 200ms */
+    }
+
+    h3 {
+      pause-after: 100ms;
+      /* solo pausa después */
+    }
+
+    p {
+      pause: 100ms;
+      /* pause-before: 100ms; pause-after: 100ms */
+    }
+
+    /* ---------- Velocidad y volumen ---------- */
+
+    .discurso {
+      voice-rate: slow;
+      /* reduce la velocidad de lectura */
+      voice-volume: loud;
+      /* sube el volumen de la voz */
+    }
+
+    /* ---------- Voces ---------- */
+
+    /*
+          voice-family elige el tipo de voz de la lectura (TTS).
+          Se podría nombrar una voz concreta (voice-family: "Dave"), pero no hay
+          garantía de que exista en todos los dispositivos. Es mejor pedirla con el patrón:
+
+              voice-family: [edad] [género] [número];
+
+          - edad: child, young u old (opcional)
+          - género: male, female o neutral
+          - número: posición de la voz si hay varias que coinciden (opcional)
+
+          Los valores se escriben en inglés. Los nombres de clase pueden ir en español.
+        */
+    .masculino {
+      voice-family: male;
+    }
+
+    .femenino {
+      voice-family: female;
+    }
+
+    .nino {
+      voice-family: child male 1;
+    }
+
+    .rey-lear {
+      voice-family: old male 1;
+    }
+
+    .king {
+      voice-family: old male 2;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Ejemplo de uso de propiedades de voz</h1>
+
+  <h2>Ejemplos de puntuación</h2>
+  <p>En este ejemplo se lee la puntuación en voz alta:
+    <span class="puntuar">Los francos, un pueblo bélico alemán, dio su nombre a Francia.</span>
+  </p>
+  <p>Y en este otro no se lee la puntuación:
+    <span class="silencio">Los francos, un pueblo bélico alemán, dio su nombre a Francia.</span>
+  </p>
+
+  <h2>Ejemplos de voces</h2>
+  <p class="masculino">Esta frase se lee con una voz masculina.</p>
+  <p class="femenino">Esta frase se lee con una voz femenina.</p>
+  <p class="nino">Esta frase se lee con una voz de niño.</p>
+  <p class="rey-lear">Esta frase se lee con una voz de hombre mayor.</p>
+
+  <h2>Telegrama del Dr. King al presidente Kennedy</h2>
+  <blockquote class="king">
+    <p>Sin embargo, estoy convencido de que a menos que se tomen algunas medidas por el gobierno federal
+      para restablecer un sentido de confianza en la protección de la vida, las extremidades y la propiedad,
+      mis súplicas caerán en oídos sordos y veremos el peor holocausto racial que esta nación ha visto alguna
+      vez después de la tragedia de hoy. La investigación no es suficiente.</p>
+  </blockquote>
+  <p><cite><a href="http://www.jfklibrary.org/Asset-Viewer/-crU2bLgN0CcGkys8dkuHg.aspx">Telegrama del 15 de
+        septiembre de 1963</a></cite></p>
+
+  <h3>Discurso del 28 de agosto de 1963 por Martin Luther King</h3>
+  <blockquote class="discurso">
+    <p>Cuando dejemos repicar la libertad, cuando la dejemos repicar desde cada pueblo y cada aldea,
+      desde cada estado y cada ciudad, podremos acelerar la llegada de ese día en el que todos los hijos
+      de Dios, hombres blancos y hombres negros, judíos y gentiles, protestantes y católicos, sean capaces
+      de juntar las manos y cantar las palabras del viejo espiritual negro: ¡Al fin libres! ¡Al fin libres!
+      Gracias a Dios Todopoderoso, ¡somos al fin libres!</p>
+  </blockquote>
+</body>
+
+</html>

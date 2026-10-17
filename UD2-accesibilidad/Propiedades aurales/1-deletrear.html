@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deleetrear</title>
+  <style>
+    /* css */
+    /* estas propiedades no son interpretadas por ninǵun navegador salvo Safari,
+    Ver https://caniuse.com/?search=speak-as para comprobar los cambios */
+    
+    .spell {
+      speak-as: spell-out;
+    }
+
+    .digits {
+      speak-as: digits;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .badge-sigla {
+      background-color: #eff6ff;
+      color: #1e40af;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      border: 1px solid #bfdbfe;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Ejemplo de uso de propiedades aurales de deletrear</h1>
+  <h2>Deletreando letras</h2>
+  <p>
+    <span class="badge-sigla">
+      <span aria-hidden="true">IBM</span>
+      <span class="sr-only">I B M</span>
+    </span>
+
+    <span class="spell">IOU</span>
+  </p>
+  <h2>Deletreando números</h2>
+  <p>Número de cuenta:
+    <span aria-hidden="true">ES91 2100 0418 45 020005 1332</span>
+    <span class="sr-only">E S 9 1  2 1 0 0  0 4 1 8  4 5  0 2 0 0 0 5  1 3 3 2</span>
+  </p>
+
+</body>
+
+</html>
