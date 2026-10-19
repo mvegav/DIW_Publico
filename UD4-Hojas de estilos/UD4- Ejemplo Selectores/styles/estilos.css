@@ -61,12 +61,16 @@ li {
 
 /* selectores de atributos */
 /* todos los enlaces que están dentro de un párrafo y empiezan por # color blueviolet*/
+p a[href^="#"] {
+  color: blueviolet;
+}
 
-
-
-/* Todos los enlaces que apunten a la cabeera, posicionalos con flex justificación
+/* Todos los enlaces que apunten a la cabecera, posicionalos con flex justificación
 en el eje principal al final.*/
-
+a[href="#cabecera"] {
+  display: flex;
+  justify-content: flex-end;
+}
 
 /* selector de pseudoclases */
 /* seleccionamos los hermanos impares de tipo section para que
@@ -74,15 +78,24 @@ en el eje principal al final.*/
 - relleno 1rem arriba y abajo, 0 derecha e izquierda
 - borde redondeado de 20px
 - margen 1rem */
-
-
+/* section:nth-of-type(odd){ */
+section:nth-of-type(odd) {
+  background-color: #c5c6c62f;
+  padding: 1rem 0;
+  border-radius: 20px;
+  margin: 1rem;
+}
 
 /* selector de hijo descendiente directo 
 Para todos los h2 hijos directos de un section:
 - Color de fondo --color-fondo
 - fuente: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 2 veces el tamaño de la fuente del root.*/
-
+section>h2 {
+  background-color: var(--color-fondo);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2rem;
+}
 
 /*selectores desdientes directos e indirectos */
 /* para los p y los li descendientes de un section:
@@ -90,11 +103,20 @@ Para todos los h2 hijos directos de un section:
 - interlineado 1.6
 */
 
+section p, section li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
 /* todos los h3 de un section:
 - tamaño fuente 1.5rem
 - borde 2px punteado verde.
 - borde redondeado de 5px */
-
+section h3 {
+  font-size: 1.5rem;
+  border: 2px dotted green;
+  border-radius: 5px;
+}
 
 
 pre {
@@ -106,16 +128,20 @@ pre {
 }
 
 /* selectores hermanos general */
-/* para los párrafos con clase subtitulo que sean hermano de un h4:
+/* para los párrafos con clase subtitulo que sean hermanos de un h4:
 - borde superior de 1px punteado color #666*/
-
-
+h4~p.subtitulo {
+  border-top: 1px dotted #666;
+}
 
 /* selectores hermanos adyacentes */
 /* para los ul que están justo después de un h3:
 - margen izquierdo: 2rem
 - estilo de la viñeta: ciculo */
-
+h3+ul {
+  margin: 2rem;
+  list-style-type: circle;
+}
 
 ul#ejemplo {
   text-align: center;
@@ -132,12 +158,18 @@ ul#ejemplo li {
 }
 
 /* css del ejemplo de pseudoclases */
-/* Selector de pseudoelemento para cambiar el color de fondo de los li impares que sean hijos de 
+/* Selector de pseudoclase para cambiar el color de fondo de los li impares que sean hijos de 
 la lista desordenada con id ejemplo
 Color fondo #FFD986*/
+ul#ejemplo li:nth-of-type(odd) {
+  background-color: #FFD986;
+}
 
 /* para los vares: color fondo #EFFFAB*/
 
+ul#ejemplo li:nth-of-type(even) {
+  background-color: #EFFFAB;
+}
 
 /* Estilos para la tabla */
 table {
@@ -169,14 +201,23 @@ tr {
 
 /* Empleamos selector no hijo directo, es decir para los code que NO sean hijos directos de un pre
 interlineado 100% color letra rgb(189, 33, 15) */
-
+:not(pre)>code {
+  line-height: 100%;
+  color: rgb(189, 33, 15);
+}
 
 a>code {
   color: darkblue;
 }
 
-/* Selector de pseudoelemento para cambiar el color de las filas pares */
+/* Selector de pseudoclase para cambiar el color de las filas pares */
 /* color --color-fondo para las filas pares de la tabla */
-
+tr:nth-of-type(even){
+  background-color: var(--color-fondo);
+}
 
 /* selector de pseudoelemento que al seleccionar un párrafo se ponga color de fondo darkblue y letra blanco*/
+p::selection{
+  background-color: violet;
+  color: white;
+}

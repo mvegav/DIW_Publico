@@ -12,7 +12,6 @@ Los diseños se han creado con los siguientes anchos:
 ## Colores
 
 - Blanco: hsl(0, 0%, 100%)
-
 - Piedra 100 (color página): hsl(30, 54%, 90%)
 - Piedra 150: hsl(30, 18%, 87%)
 - Piedra 600: hsl(30, 10%, 34%)

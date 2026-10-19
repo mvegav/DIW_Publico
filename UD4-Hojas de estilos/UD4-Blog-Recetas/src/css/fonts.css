@@ -1,0 +1,12 @@
+
+/**
+ *
+ * Estilos para importar las fuentes
+ *
+ */
+
+ @font-face {
+  font-family: 'outfit';
+  src: url(../../assets/fonts/outfit/static/Outfit-Regular.ttf) format(truetype);
+ }
+
