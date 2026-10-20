@@ -1,0 +1,103 @@
+/**
+ *
+ * Estilos generales de la página 
+ * Autor: Marina Vega Vázquez
+ * Fichero: style.css
+ * Fecha: 20/10/2026
+ *
+ */
+
+
+/*=============================================
+ =            Estilos generales            =
+ =============================================*/
+@charset "UTF-8";
+@import "./fonts.css";
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-page: hsl(31, 53%, 90%);
+  --bg-body: hsl(0, 0%, 100%);
+  --bg-secundario: hsl(330, 100%, 98%);
+  --color-texto: hsl(24, 5%, 18%);
+  --color-titulos: hsl(14, 45%, 36%);
+  --color-titulos-secundario: hsl(332, 51%, 32%);
+  --color-linea: hsl(30, 18%, 87%);
+  --fuente-titulos: 'young-serif', Arial, Helvetica, sans-serif;
+  --fuente-cuerpo: 'outfit', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: var(--color-texto);
+  font: 14px/1.6 var(--fuente-cuerpo);
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1{
+  position: absolute;
+  top: -100vh;
+}
+
+h1, h3, h4, h5, h6{
+  color: var(--color-titulos);
+  font-family: var(--fuente-titulos);
+}
+
+h2{
+  font-family: var(--fuente-titulos);
+  text-transform: capitalize;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+h3{
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: .75rem 0;
+}
+
+.receta section{
+  padding: 1rem;
+  margin: 0 1rem;
+}
+
+ul,ol{
+  padding-left: 1.5rem;
+}
+
+li {
+  padding: .25rem;
+}
+
+img{
+  width: 100%;
+  object-fit: cover;
+}
+
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos para el main            =
+=============================================*/
+main{
+  flex: 1;
+  background-color: var(--bg-body);
+}
+
+section figure{
+  width: 100%;
+}
+
+
+/*=====  End of Estilos para el main  ======*/
+
