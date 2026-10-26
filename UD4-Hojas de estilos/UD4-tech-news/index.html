@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- muestra el sitio correctamente según el dispositivo del usuario -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- muestra el sitio correctamente según el dispositivo del usuario -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
   <link rel="stylesheet" href="./src/css/style.css">
   <title>Página de inicio de noticias</title>
 </head>
+
 <body>
   <header>
-    <a href="#" class="logo" aria-label="Enlace a la página principal de Tech News"><img src="./assets/images/logo.png" alt="Tech news"></a>
+    <a href="#" class="logo" aria-label="Enlace a la página principal de Tech News"><img src="./assets/images/logo.png"
+        alt="Tech news"></a>
     <h1>Tech News</h1>
     <nav class="menu">
       <ul>
@@ -22,54 +26,76 @@
     </nav>
   </header>
   <main>
-    <article id="portada">
-      <figure><img src="./assets/images/image-web-3-desktop.jpg" alt=""></figure>
-      <h2>¿El brillante futuro de la Web 3.0?</h2>
-      <p>Nos adentramos en la próxima evolución de la web que promete devolver el poder de las plataformas a manos de la gente.
-      Pero, ¿está cumpliendo realmente su promesa?</p>
-      <a href="" class="btn">Leer más <span class="sr-only"> acerca del brillante futuro de la web 3.0</span></a>
-    </article>
-    <article id="novedades">
-      <h2>Novedades</h2>
-      <article>
-        <h3><a href="">Coches de hidrógeno frente a coches eléctricos</a></h3>
-        <p>¿Llegarán alguna vez los coches de hidrógeno a alcanzar a los vehículos eléctricos?</p>
+    <div class="main-cabecera">
+      <article id="portada">
+        <figure><img src="./assets/images/image-web-3-desktop.jpg" alt=""></figure>
+        <div>
+          <h2>¿El brillante futuro de la Web 3.0?</h2>
+          <div>
+            <p>Nos adentramos en la próxima evolución de la web que promete devolver el poder de las plataformas a manos
+              de la gente. Pero, ¿está cumpliendo realmente su promesa?</p>
+            <a href="" class="btn">Leer más <span class="sr-only"> acerca del brillante futuro de la web 3.0</span></a>
+          </div>
+        </div>
       </article>
-      <article>
-        <h3><a href="">Las desventajas del arte generado por IA</a></h3>
-        <p>¿Cuáles son los posibles efectos adversos de la generación de imágenes mediante IA bajo demanda?</p>
+      <article id="novedades">
+        <h2>Novedades</h2>
+        <article>
+          <h3><a href="">Coches de hidrógeno frente a coches eléctricos</a></h3>
+          <p>¿Llegarán alguna vez los coches de hidrógeno a alcanzar a los vehículos eléctricos?</p>
+        </article>
+        <article>
+          <h3><a href="">Las desventajas del arte generado por IA</a></h3>
+          <p>¿Cuáles son los posibles efectos adversos de la generación de imágenes mediante IA bajo demanda?</p>
+        </article>
+        <article>
+          <h3><a href="">¿Se está agotando la financiación de capital riesgo?</a></h3>
+          <p>La financiación privada por parte de empresas de capital riesgo ha descendido un 50 % interanual.
+            Analizamos
+            qué
+            significa esto.</p>
+        </article>
       </article>
-      <article>
-        <h3><a href="">¿Se está agotando la financiación de capital riesgo?</a></h3>
-        <p>La financiación privada por parte de empresas de capital riesgo ha descendido un 50 % interanual. Analizamos qué
-        significa esto.</p>
-      </article>
-    </article>
+    </div>
     <article>
       <ul class="cards">
         <li class="card">
           <figure><img src="./assets/images/image-retro-pcs.jpg" alt=""></figure>
-          <p class="numero">01</p>
-          <p class="titulo">La resurrección de los ordenadores retro</p>
-          <p>¿Qué ocurre cuando se actualizan los ordenadores antiguos con componentes modernos?</p>
+          <div class="card-content">
+            <p class="numero">01</p>
+            <p class="titulo">La resurrección de los ordenadores retro</p>
+            <p>¿Qué ocurre cuando se actualizan los ordenadores antiguos con componentes modernos?</p>
+          </div>
         </li>
         <li class="card">
           <figure><img src="./assets/images/image-top-laptops.jpg" alt=""></figure>
-          <p class="numero">02</p>
-          <p class="titulo">Los 10 mejores portátiles de 2022</p>
-          <p>Nuestras mejores recomendaciones para diversas necesidades y presupuestos.</p>
+          <div class="card-content">
+            <p class="numero">02</p>
+            <p class="titulo">Los 10 mejores portátiles de 2022</p>
+            <p>Nuestras mejores recomendaciones para diversas necesidades y presupuestos.</p>
+          </div>
         </li>
         <li class="card">
           <figure><img src="./assets/images/image-gaming-growth.jpg" alt=""></figure>
-          <p class="numero">03</p>
-          <p class="titulo">El auge de los videojuegos</p>
-          <p>Cómo la pandemia ha generado nuevas oportunidades.</p>
+          <div class="card-content">
+            <p class="numero">03</p>
+            <p class="titulo">El auge de los videojuegos</p>
+            <p>Cómo la pandemia ha generado nuevas oportunidades.</p>
+          </div>
         </li>
       </ul>
     </article>
   </main>
   <footer>
-     <p>2026 &copy; Marina Vega Vázquez</p>
+    <p>2026 &copy; Marina Vega Vázquez</p>
+    <ul class="redes">
+      <li><a href="" class="icono"><img src="./assets/images/facebook.svg"
+            alt="Enlace a nuestra página de facebook"></a></li>
+      <li><a href="" class="icono"><img src="./assets/images/twitter-x.svg" alt="Enlace a nuestra página de X"></a></li>
+      <li><a href="" class="icono"><img src="./assets/images/Instagram.svg"
+            alt="Enlace a nuestra página de Instagram"></a></li>
+    </ul>
   </footer>
 </body>
+
 </html>
