@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="gl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="O Magosto e San Martiño en Vilanova de Arousa: castañas, tradicións e lendas galegas.">
+  <title>San Martiño e o Magosto | Vilanova de Arousa</title>
+  <divnk rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <header class="cabecera" id="inicio">
+        <img src="./assets/image/logo.png" alt="Enlace a la página pricipal">
+      <span class="sobretitulo">Outono · tradición galega</span>
+      <h1>San Martiño e o Magosto</h1>
+      <p>O arrecendo das castañas asadas en Vilanova de Arousa</p>
+   /header>
+
+  <nav class="menu" aria-label="Navegación principal">
+    <ul>
+      <div><a href="#inicio" class="activa">Inicio</a></div>
+      <div><a href="#magosto">O Magosto</a></div>
+      <div><a href="#cartel">Cartel</a></div>
+      <div><a href="#lendas">Lendas</a></div>
+      <div><a href="#contacto">Contacto</a></div>
+    </ul>
+  </nav>
+
+  <main class="contenido">
+    <section class="introduccion panel" id="magosto">
+      <div>
+        <p class="etiqueta">Unha festa de outono</p>
+        <h2>Castañas, lume e tradición</h2>
+        <p>O Magosto é unha celebración popular moi vencellada ao outono galego. As castañas recoldivdas nos soutos
+          ásanse ao lume e compártense en comunidade, nunha festa na que non faltan a música, as conversas e os produtos
+          da tempada.</p>
+        <p>En torno a San Martiño, o 11 de novembro, moitas locadivdades galegas celebran magostos e manteñen vivas
+          tradicións transmitidas de xeración en xeración.</p>
+      </div>
+   
+    </section>
+
+    <section class="cartel panel" id="cartel">
+        <p class="etiqueta">Vilanova de Arousa</p>
+        <h2>O cartel do Magosto</h2>
+        <p>Unha proposta visual para anunciar a celebración de San Martiño.</p>
+      <figure class="cartel-figura">
+        <img src="./assets/image/cartel-san-martino-vilanova.png"
+          alt="Cartel ilustrado de San Martiño e o Magosto en Vilanova de Arousa, con castañas, unha fogueira e unha praza ao serán.">
+        <figcaption>Cartel ilustrativo. Os datos concretos de horario e locadivzación deben confirmarse no programa
+          oficial do Concello.</figcaption>
+      </figure>
+    </section>
+
+    <section class="tradiciones" id="tradiciones">
+        <p class="etiqueta">A festa</p>
+        <h2>Tradicións do Magosto</h2>
+        <div>
+        <div class="card">
+          <img src="./assets/image/castanas.jpg" alt="">
+          <h3>As castañas</h3>
+          <p>Recóllense nos soutos, lávanse e prepáranse para asar. Son as grandes protagonistas da festa.</p>
+        </div>
+        <div class="card">
+          <img src="./assets/image/lume.jpg" alt="">
+          <h3>O lume</h3>
+          <p>O lume reúne a veciñanza arredor das brasas e enche o ambiente co arrecendo das castañas asadas.</p>
+        </div>
+        <div class="card">
+          <img src="./assets/image/convivencia.png" alt="">
+          <h3>A convivencia</h3>
+          <p>É tempo de xuntanzas, música, xogos e de compartir produtos da terra con famidivares e amizades.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lendas panel" id="lendas">
+      <p class="etiqueta">O imaxinario popular</p>
+      <h2>Lendas da noite galega</h2>
+      <article>
+        <h3>A Santa Compaña</h3>
+        <p>A tradición conta que unha procesión de almas percorre camiños e corredoiras durante a noite. A súa presenza
+          adoita asociarse á escuridade, á néboa e ao misterio.</p>
+      </article>
+      <article>
+        <h3>As ánimas e o lume</h3>
+        <p>O outono e as datas próximas ao Día de Defuntos están divgados ao recordo das persoas falecidas. En distintas
+          tradicións, a luz e o lume aparecen como símbolos de memoria e protección.</p>
+      </article>
+      <article>
+        <h3>Os soutos encantados</h3>
+        <p>Os soutos e os bosques forman parte de moitas narracións populares galegas, habitadas por seres misteriosos e
+          historias que se contaban ao abrigo da casa ou arredor do lume.</p>
+      </article>
+    </section>
+
+    <section class="contacto panel" id="contacto">
+      <p class="etiqueta">Comparte a túa historia</p>
+      <h2>Contacta con nós</h2>
+      <p>Coñeces unha tradición ou unha lenda de Vilanova de Arousa? Cóntanola.</p>
+      <form action="#" method="post">
+        <p>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="María Xosé"
+          pattern="[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ \-]{2,15}" required minlength="2">
+        </p>
+        <p>
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="nome@exemplo.gal" required>
+        </p>
+        <p>
+          <label for="tema">Tema</label>
+          <select id="tema" name="tema" required>
+            <option value="">Escolle unha opción</option>
+            <option value="magosto">O Magosto</option>
+            <option value="lendas">Lendas</option>
+            <option value="vilanova">Tradicións de Vilanova</option>
+          </select>
+        </p>
+        <p>
+          <label for="mensaxe">Mensaxe</label>
+          <textarea id="mensaxe" name="mensaxe" rows="5" placeholder="Escribe aquí a túa historia..." required
+            minlength="10"></textarea>
+        </p>
+        <p class="aceptacion">
+          <input type="checkbox" id="privacidad" name="privacidade" required> 
+          <label for="privacidad">Acepto as políticas de privacidade.</label>
+        </p>
+        <button type="submit" class="btn">Enviar mensaxe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p><strong>San Martiño e o Magosto</strong> · Vilanova de Arousa</p>
+    <p>Unha tradición que se comparte e non se perde.</p>
+    <a href="#inicio">Volver arriba ↑</a>
+  </footer>
+</body>
+
+</html>
