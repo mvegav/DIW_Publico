@@ -332,4 +332,69 @@ section {
   grid-template-columns: repeat(3, 200px);
   grid-template-rows: repeat(2, 200px);
 
+  justify-content: start;
+  justify-content: end;
+  justify-content: center;
+  justify-content: stretch;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+
+  align-content: stretch;
+  align-content: start;
+  align-content: center;
+  align-content: space-between;
+  align-content: space-around;
+  align-content: space-evenly;
+}
+
+
+/* Definimos tamaño mínimo y máximo de los items */
+.grid-min-max {
+  display: grid;
+  /* 4cx?r */
+  grid-template-columns: repeat(4, minmax(100px, 200px));
+  grid-template-columns: repeat(4, minmax(min-content, 200px));
+  grid-template-columns: repeat(4, minmax(100px, min-content));
+  grid-template-columns: repeat(4, minmax(100px, max-content));
+  grid-template-columns: repeat(4, minmax(max-content, 200px));
+  grid-template-columns: repeat(4, minmax(min-content, max-content));
+
+}
+
+/* patrones repetitivos */
+
+.grid-repeat {
+  display: grid;
+  /* 4cx?r */
+  grid-template-columns: repeat(4, 10% 20% 30% 40%);
+  grid-template-columns: repeat(2, 10% 20% 30% 40%);
+  grid-template-columns: repeat(1, 10% 20% 30% 40%);
+  /* 4cx4r */
+  grid-template-columns: repeat(2, 100px 200px);
+  grid-auto-rows: 150px;
+}
+
+/* Estilos de la grid dinámicos */
+.grid-dynamics {
+  display: grid;
+  /* 4cx?r */
+  grid-template-columns: repeat(4, 100px);
+  grid-template-columns: repeat(auto-fill, 100px);
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+}
+
+
+/* Estilos para diseño responsive sin Media Queries */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 200px));
+  justify-content: center;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
 }

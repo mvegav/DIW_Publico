@@ -130,7 +130,9 @@
     </article>
     <article class="item">
       <p>Grid Item 12</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus dolore recusandae, impedit doloribus dolor numquam dolores beatae quam soluta ex, amet debitis nesciunt officia fugiat ducimus dolorem quae neque accusantium.</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus dolore recusandae, impedit doloribus dolor
+        numquam dolores beatae quam soluta ex, amet debitis nesciunt officia fugiat ducimus dolorem quae neque
+        accusantium.</p>
     </article>
     <article class="item">
       <p>Grid Item 13</p>
@@ -536,7 +538,8 @@
         start | end | center | stretch
       </li>
     </ul>
-  </section>  <section class="container grid-align">
+  </section>
+  <section class="container grid-align">
     <article class="item">
       <p>Grid Item 1</p>
     </article>
@@ -569,37 +572,202 @@
     </ul>
   </section>
   <section class="container grid-align-tracks">
-      <article class="item">
-        <p>Grid Item 1</p>
-      </article>
-      <article class="item">
-        <p>Grid Item 2</p>
-      </article>
-      <article class="item">
-        <p>Grid Item 3</p>
-      </article>
-      <article class="item">
-        <p>Grid Item 4</p>
-      </article>
-      <article class="item">
-        <p>Grid Item 5</p>
-      </article>
+    <article class="item">
+      <p>Grid Item 1</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 2</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 3</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 4</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 5</p>
+    </article>
   </section>
   <h2 id="grid-min-max">Tamaños Máximos y Mínimos de Grid Tracks</h2>
+  <section>
+    <p>Al emplear minmax(minio,máximo) definimos el tamaño mínimo y máximo de la celda</p>
+    <p>Un valor alternativo que podemos emplear es min-content, hace referencia al tamaño mínimo de la
+      celda referente al contendio de la misma. Este valor se puede emplear tanto en minimo como en máximo</p>
+    <p>De la misma forma también tenemos max-content.</p>
+  </section>
   <a href="#top">🔝</a>
   <section class="container grid-min-max">
+    <article class="item">
+      <p>Grid Item 1</p>
+      <p>Prueba tamaño mayor</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 2</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 3</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 4</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 5</p>
+    </article>
   </section>
   <h2 id="grid-repeat">Grid con Patrones Repetitivos</h2>
   <a href="#top">🔝</a>
   <section class="container grid-repeat">
+    <article class="item">
+      <p>Grid Item 1</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 2</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 3</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 4</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 5</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 6</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 7</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 8</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 9</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 10</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 11</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 12</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 13</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 14</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 15</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 16</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 17</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 18</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 19</p>
+    </article>
   </section>
   <h2 id="grid-dynamics">Grids Dinámicas</h2>
+  <section>
+    <p>Al emplear la grid dinámica haremos que nuestra grid sea respnsive, lo que hacemos para que la grid sea dinámica
+      es permitir el autoajustado de las celdas. Esto se consigue empleando auto-fill. auto-fill rellena la grid con
+      tracks (filas o columnas - en este caso columnas ) generados dinámicamente. Ojo con auto-fill! este divide el
+      tracks teniendo en cuenta los tamaños indicados
+      creando el mayor número de items posibles para esa tracks. </p>
+    <p>Si lo que queremos es tener en cuenta solo lo que tenemos en un principio en cada tracks emplearemos auto-fit.
+      auto-fit ajusta la grid con tracks (filas o columnas - en este caso columnas ) existentes. Como podemos ver el
+      track termina al terminar el último elemento</p>
+  </section>
   <a href="#top">🔝</a>
   <section class="container grid-dynamics">
+    <article class="item">
+      <p>Grid Item 1</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 2</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 3</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 4</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 5</p>
+    </article>
   </section>
   <h2 id="grid-responsive">Responsive sin Media Queries</h2>
+  <section>
+    <p>Para hacer nuestra grid responsive emplearemos auto-fit indicando el tamaño mímo y máximo. Tendremos en cuenta
+      que las pantallas más pequeñas de un móvil es de 320px</p>
+  </section>
   <a href="#top">🔝</a>
   <section class="container grid-responsive">
+    <article class="item">
+      <p>Grid Item 1</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 2</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 3</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 4</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 5</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 6</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 7</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 8</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 9</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 10</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 11</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 12</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 13</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 14</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 15</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 16</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 17</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 18</p>
+    </article>
+    <article class="item">
+      <p>Grid Item 19</p>
+    </article>
   </section>
   <h2 id="grid-nested">Grids Anidados</h2>
   <a href="#top">🔝</a>
