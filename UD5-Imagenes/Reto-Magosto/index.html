@@ -7,24 +7,29 @@
   <meta name="description"
     content="O Magosto e San Martiño en Vilanova de Arousa: castañas, tradicións e lendas galegas.">
   <title>San Martiño e o Magosto | Vilanova de Arousa</title>
-  <divnk rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="./css/estilos.css">
 </head>
 
 <body>
   <header class="cabecera" id="inicio">
+    <div class="header-logo">
+      <a href="index.html">
         <img src="./assets/image/logo.png" alt="Enlace a la página pricipal">
+      </a>
       <span class="sobretitulo">Outono · tradición galega</span>
+    </div>
+    <hgroup>
       <h1>San Martiño e o Magosto</h1>
       <p>O arrecendo das castañas asadas en Vilanova de Arousa</p>
-   /header>
-
+    </hgroup>
+  </header>
   <nav class="menu" aria-label="Navegación principal">
     <ul>
-      <div><a href="#inicio" class="activa">Inicio</a></div>
-      <div><a href="#magosto">O Magosto</a></div>
-      <div><a href="#cartel">Cartel</a></div>
-      <div><a href="#lendas">Lendas</a></div>
-      <div><a href="#contacto">Contacto</a></div>
+      <li><a href="#inicio" class="activa">Inicio</a></li>
+      <li><a href="#magosto">O Magosto</a></li>
+      <li><a href="#cartel">Cartel</a></li>
+      <li><a href="#lendas">Lendas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 
@@ -34,18 +39,25 @@
         <p class="etiqueta">Unha festa de outono</p>
         <h2>Castañas, lume e tradición</h2>
         <p>O Magosto é unha celebración popular moi vencellada ao outono galego. As castañas recoldivdas nos soutos
-          ásanse ao lume e compártense en comunidade, nunha festa na que non faltan a música, as conversas e os produtos
+          ásanse ao lume e compártense en comunidade, nunha festa na que non faltan a música, as conversas e os
+          produtos
           da tempada.</p>
         <p>En torno a San Martiño, o 11 de novembro, moitas locadivdades galegas celebran magostos e manteñen vivas
           tradicións transmitidas de xeración en xeración.</p>
       </div>
-   
+      <p class="dato">
+        <span class="dato-numero">11</span>
+        <span class="dato-mes">noviembre</span>
+        <span>San Martiño</span>
+      </p>
     </section>
 
     <section class="cartel panel" id="cartel">
+      <header class="seccion-cabecera">
         <p class="etiqueta">Vilanova de Arousa</p>
         <h2>O cartel do Magosto</h2>
         <p>Unha proposta visual para anunciar a celebración de San Martiño.</p>
+      </header>
       <figure class="cartel-figura">
         <img src="./assets/image/cartel-san-martino-vilanova.png"
           alt="Cartel ilustrado de San Martiño e o Magosto en Vilanova de Arousa, con castañas, unha fogueira e unha praza ao serán.">
@@ -55,56 +67,65 @@
     </section>
 
     <section class="tradiciones" id="tradiciones">
+      <header class="seccion-cabecera">
         <p class="etiqueta">A festa</p>
         <h2>Tradicións do Magosto</h2>
-        <div>
-        <div class="card">
+      </header>
+      <ul class="cards">
+        <li class="card">
           <img src="./assets/image/castanas.jpg" alt="">
           <h3>As castañas</h3>
           <p>Recóllense nos soutos, lávanse e prepáranse para asar. Son as grandes protagonistas da festa.</p>
-        </div>
+        </li>
         <div class="card">
           <img src="./assets/image/lume.jpg" alt="">
           <h3>O lume</h3>
           <p>O lume reúne a veciñanza arredor das brasas e enche o ambiente co arrecendo das castañas asadas.</p>
         </div>
-        <div class="card">
+        <li class="card">
           <img src="./assets/image/convivencia.png" alt="">
           <h3>A convivencia</h3>
           <p>É tempo de xuntanzas, música, xogos e de compartir produtos da terra con famidivares e amizades.</p>
-        </div>
-      </div>
+        </li>
+      </ul>
     </section>
 
     <section class="lendas panel" id="lendas">
-      <p class="etiqueta">O imaxinario popular</p>
-      <h2>Lendas da noite galega</h2>
+      <header class="seccion-cabecera">
+        <p class="etiqueta">O imaxinario popular</p>
+        <h2>Lendas da noite galega</h2>
+      </header>
       <article>
         <h3>A Santa Compaña</h3>
-        <p>A tradición conta que unha procesión de almas percorre camiños e corredoiras durante a noite. A súa presenza
+        <p>A tradición conta que unha procesión de almas percorre camiños e corredoiras durante a noite. A súa
+          presenza
           adoita asociarse á escuridade, á néboa e ao misterio.</p>
       </article>
       <article>
         <h3>As ánimas e o lume</h3>
-        <p>O outono e as datas próximas ao Día de Defuntos están divgados ao recordo das persoas falecidas. En distintas
+        <p>O outono e as datas próximas ao Día de Defuntos están divgados ao recordo das persoas falecidas. En
+          distintas
           tradicións, a luz e o lume aparecen como símbolos de memoria e protección.</p>
       </article>
       <article>
         <h3>Os soutos encantados</h3>
-        <p>Os soutos e os bosques forman parte de moitas narracións populares galegas, habitadas por seres misteriosos e
+        <p>Os soutos e os bosques forman parte de moitas narracións populares galegas, habitadas por seres misteriosos
+          e
           historias que se contaban ao abrigo da casa ou arredor do lume.</p>
       </article>
     </section>
 
     <section class="contacto panel" id="contacto">
-      <p class="etiqueta">Comparte a túa historia</p>
-      <h2>Contacta con nós</h2>
-      <p>Coñeces unha tradición ou unha lenda de Vilanova de Arousa? Cóntanola.</p>
+      <header class="seccion-cabecera">
+        <p class="etiqueta">Comparte a túa historia</p>
+        <h2>Contacta con nós</h2>
+        <p>Coñeces unha tradición ou unha lenda de Vilanova de Arousa? Cóntanola.</p>
+      </header>
       <form action="#" method="post">
         <p>
           <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="María Xosé"
-          pattern="[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ \-]{2,15}" required minlength="2">
+          <input type="text" id="nome" name="nome" placeholder="María Xosé" pattern="[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ \-]{2,15}"
+            required minlength="2">
         </p>
         <p>
           <label for="email">Correo electrónico</label>
@@ -125,7 +146,7 @@
             minlength="10"></textarea>
         </p>
         <p class="aceptacion">
-          <input type="checkbox" id="privacidad" name="privacidade" required> 
+          <input type="checkbox" id="privacidad" name="privacidade" required>
           <label for="privacidad">Acepto as políticas de privacidade.</label>
         </p>
         <button type="submit" class="btn">Enviar mensaxe</button>

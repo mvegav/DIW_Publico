@@ -116,7 +116,7 @@ figure img {
 =============================================*/
 
 #filtros section:nth-of-type(2) figure .imagen:hover {
-  filter: brightness(1.5);
+  filter: brightness(1.2);
 }
 
 /*=============================================
@@ -136,7 +136,7 @@ figure img {
 }
 
 #filtros section:nth-of-type(4) figure .imagen:hover {
-  filter: drop-shadow(16px 16px 10px black);
+  filter: drop-shadow(16px 16px 10px blue);
 }
 
 /*=============================================
@@ -185,7 +185,7 @@ figure img {
 =============================================*/
 
 #filtros section:nth-of-type(10) figure .imagen:hover {
-  filter: opacity(0.5);
+  filter: opacity(.5);
 }
 
 
@@ -298,6 +298,7 @@ figure.sale {
 #origen li:nth-of-type(2) figure:hover img {
   transform-origin: bottom right;
   transform: rotateY(180deg) translateX(100%);
+
 }
 
 #origen li:last-of-type figure:hover img {

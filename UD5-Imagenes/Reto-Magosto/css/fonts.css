@@ -1,0 +1,64 @@
+/**
+ *
+ * Estilos de las fuentes de magosto
+ * Autor: Marina Vega Vázques
+ * Fecha: 16/11/2026
+ * Fichero: fonts.css
+ *
+ */
+
+@font-face {
+  font-family: 'Lato';
+  src: url(../assets/fonts/Lato/Lato-Regular.ttf) format(truetype);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(../assets/fonts/Lato/Lato-Italic.ttf) format(truetype);
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(../assets/fonts/Lato/Lato-Bold.ttf) format(truetype);
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(../assets/fonts/Lato/Lato-BoldItalic.ttf) format(truetype);
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Arvo';
+  src: url(../assets/fonts/Arvo/Arvo-Regular.ttf) format(truetype);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Arvo';
+  src: url(../assets/fonts/Arvo/Arvo-Italic.ttf) format(truetype);
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Arvo';
+  src: url(../assets/fonts/Arvo/Arvo-Bold.ttf) format(truetype);
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Arvo';
+  src: url(../assets/fonts/Arvo/Arvo-BoldItalic.ttf) format(truetype);
+  font-style: italic;
+  font-weight: 700;
+}
