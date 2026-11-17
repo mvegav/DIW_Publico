@@ -10,13 +10,13 @@ La paleta cromática está inspirada en el otoño gallego, las castañas asadas,
 
 ### Colores Principales y de Marca
 
-| Token / Variable CSS        | Muestra / Hex         | Uso Principal                                                                            |
-| :-------------------------- | :-------------------- | :--------------------------------------------------------------------------------------- |
-| `--bg-cabecera-pie`         | `#37271E`             | Fondo de cabecera (`<header>`) y pie de página (`<footer>`).                             |
-| `--color-secundario`        | `#633b25`             | Títulos principales (`h2`, `h3`), barra de navegación, botones y tarjeta de fecha.       |
-| `--color-sobretitulos`      | `#b65b2c`             | Etiquetas superiores (`.etiqueta`, `.sobretitulo`) y estado _hover_ en datos destacados. |
-| `.sobretitulo` Cabecera     | `#ffd79a`             | Sobretítulo en cabecera oscura                                                           |
-| Línea inferior enlaces menu | `#ffd79a` / `#ffd18a` | Línea inferior que aparece al tener enlaces activos/hover del menú y del pie de página.  |
+| Token / Variable CSS        | Muestra / Hex | Uso Principal                                                                            |
+| :-------------------------- | :------------ | :--------------------------------------------------------------------------------------- |
+| `--bg-cabecera-pie`         | `#37271E`     | Fondo de cabecera (`<header>`) y pie de página (`<footer>`).                             |
+| `--color-secundario`        | `#633b25`     | Títulos principales (`h2`, `h3`), barra de navegación, botones y tarjeta de fecha.       |
+| `--color-sobretitulos`      | `#b65b2c`     | Etiquetas superiores (`.etiqueta`, `.sobretitulo`) y estado _hover_ en datos destacados. |
+| `.sobretitulo` Cabecera     | `#ffd79a`     | Sobretítulo en cabecera oscura                                                           |
+| Línea inferior enlaces menu | `#ffd18a`     | Línea inferior que aparece al tener enlaces activos/hover del menú y del pie de página.  |
 
 ### Fondos y Superficies
 
