@@ -52,7 +52,7 @@ El sistema tipográfico combina una fuente _serif_ robusta con remates cuadrados
 
 ### Familias Tipográficas
 
-- **Títulos (`--fuente-titulos`):** `'Arvo', 'Palatino Linotype', Palatino, serif`
+- **Títulos (`--fuente-titulos`):** `'Arvo', Verdana, Geneva, Tahoma, sans-serif`
   - Pesos disponibles: Regular (`400`), Italic (`400`), Bold (`700`), Bold Italic (`700`).
 - **Cuerpo (`--fuente-cuerpo`):** `'Lato', Georgia, 'Times New Roman', serif`
   - Pesos disponibles: Regular (`400`), Italic (`400`), Bold (`700`), Bold Italic (`700`).
