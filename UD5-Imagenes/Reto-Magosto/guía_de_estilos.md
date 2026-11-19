@@ -114,13 +114,20 @@ La maquetación utiliza **CSS Grid** tanto para la estructura global como para l
 ### Cartel Ilustrativo (`.cartel`)
 
 - **Efecto visual:** Aplica un filtro vintage en reposo (`sepia(40%) contrast(110%) brightness(95%)`) que se restaura a sus colores originales al pasar el cursor (`transition: filter 0.5s ease`).
-- **Alto máximo del figure del cartel:** 1000px.
-- **Color de fondo del figure**: #24130d.
+- **Ancho máximo del figure del cartel:** `650px`.
+- **Color de fondo del figure**: `#24130d`.
+- **Alto máximo de la imagen del cartel**: `1000px`
+- **Border radio de la imagen:** `10px`.
 
 ### Cards (.cards)
 
+- Borde redondeado card `12px`.
 - Emplea grid que no precisa media queries.
 - Tamaño mínimo de las cards 280px, máximo auto.
+- Imagenes:
+  - Alto máximo de la imagen de las cards: `190px`.
+  - Borde redondeado: `8px`.
+  - Margen inferior: `8px`.
 
 ### Botones (`.btn`)
 
