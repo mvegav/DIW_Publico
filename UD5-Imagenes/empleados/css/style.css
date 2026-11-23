@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+:root {
+  /*En esta ocasión las siglas no son colores, sino parámetros: 
+  Hue (tono), Saturation (saturacion) y Lightness (luminosidad).
+*/
+  --clr-primario: hsl(206, 80%, 32%);
+  --clr-secundario: hsl(206, 100%, 96%);
+  --clr-secundario-2: hsl(206, 90%, 76%);
+  --clr-letra: hsl(209, 61%, 16%);
+  --clr-letra-2: hsl(205, 22%, 34%);
+
+  --clr-fondo: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-blue-light: hsl(207, 82%, 44%);
+  --clr-black: 0.222;
+  /* fuentes*/
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  /* sombras */
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  /* dimensiones*/
+  --radius: 0.25rem;
+  --spacing: 0.1rem;
+  --max-width: 1170px;
+  --max-width-cards: 320px;
+  --fuente-h1: 2rem;
+  /* Estilos generales fuentes */
+  font-size: 14px;
+  line-height: 1.5;
+}
