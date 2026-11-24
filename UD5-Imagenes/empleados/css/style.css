@@ -25,19 +25,89 @@
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
-  
+
   /* sombras */
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  
+
   /* dimensiones*/
   --radius: 0.25rem;
   --spacing: 0.1rem;
   --max-width: 1170px;
   --max-width-cards: 320px;
   --fuente-h1: 2rem;
-  
+
   /* Estilos generales fuentes */
   font-size: 14px;
   line-height: 1.5;
 }
+
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: var(--clr-fondo);
+  color: var(--clr-letra);
+}
+
+ul.empleados {
+  list-style: none;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: var(--fuente-h1);
+}
+
+h2 {
+  font-size: calc(var(--fuente-h1) / 1.5);
+}
+
+h3 {
+  font-size: calc(var(--fuente-h1) / 2);
+}
+
+h4 {
+  font-size: calc(var(--fuente-h1) / 2.25);
+}
+
+p{
+  margin-bottom: 1.25rem;
+  color: var(--clr-letra-2);
+}
+
+img{
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/*=============================================
+=            Estilos para el main            =
+=============================================*/
+main{
+  flex: 1;
+  max-width: var(--max-width);
+}
+
+
+.empleado-figure{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+}
+
+.empleado-img{
+  border-radius: 50%;
+  height: 100%;
+}
+/*=====  End of Estilos para el main  ======*/
+
